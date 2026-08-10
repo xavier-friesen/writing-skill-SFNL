@@ -565,3 +565,41 @@ Wat nummer 1 nog mist voor een 10: ...
 - Gelijkenis met de bron niet belonen. De bron is AI-concepttekst en is de standaard niet.
 - Niet nivelleren. Een veld waarin alles een 6 of 7 krijgt, is een jurylid dat geen keuze durft te maken. Als niets goed is, geef dan vieren.
 - Cijfers niet terugdraaien nadat de rangschikking staat.
+
+---
+
+## Addendum na testronde 1 (bindend voor alle volgende rondes)
+
+### Kalibratie feitencontrole
+
+- Een getal dat rekenkundig exact volgt uit twee getallen die beide in de
+  kandidaattekst zelf staan, is een presentatiekeuze, geen verzinsel. Noteer
+  het, maar diskwalificeer niet. Een afgeleid getal waarvan een van de
+  componenten niet in de tekst staat, of een breuk met gemengde noemers, telt
+  wél als verzinsel.
+- Een oorzaakverband dat de bron niet legt, is betekenisverdraaiing: score het
+  onder D7 (maximaal 5 op die dimensie) en benoem het citaat. Dit weegt even
+  zwaar als een verdraaid cijfer. Een tekst die expliciet benoemt wat de bron
+  openlaat, beloon je onder D4.
+- Een totaal dat de samenstellende delen uit de feitenlijst vervangt (zodat de
+  delen nergens meer staan), kost een punt op D7.
+
+### Vijf extra detectievragen (tellpunten zoals de eerste tien)
+
+11. Eindigen twee of meer alinea's op een korte klap- of verdictzin (≤ 6
+    woorden)? Eén per tekst is toegestaan.
+12. Hebben de tussenkoppen dezelfde grammaticale mal (allemaal volzin met
+    getal, of allemaal stellingzin van gelijke lengte)?
+13. Staat er meer dan één spiegelpaar of negatieparallel ("Voor X ... Voor Y
+    niets") in de tekst?
+14. Zijn drie of meer opeenvolgende alinea's vrijwel even lang (binnen ± 10
+    procent)?
+15. Openen twee zinnen in de tekst met exact dezelfde constructie ("Wie ...",
+    "Wat ... betreft")?
+
+### Aangescherpte Turingpoort
+
+Stel bij de Turingpoort ook de omgekeerde vraag: noem het sterkste bewijs dat
+een méns dit schreef (een keuze die een model niet maakt: een weglating, een
+oneffenheid die werkt, een oordeel dat risico neemt). Kun je niets noemen, dan
+is het antwoord op de poort "nee" — ook als je geen tell kunt aanwijzen.
