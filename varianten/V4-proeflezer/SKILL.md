@@ -228,9 +228,10 @@ CONN = ["maar","toch","immers","namelijk","weliswaar","althans","overigens","jui
 cc = {x: len(re.findall(r'\b'+re.escape(x)+r'\b', low)) for x in CONN}
 cc = {k: v for k, v in cc.items() if v}
 p(len(cc) >= 6*N/800 and (max(cc.values()) if cc else 9) <= 3, "A7 connectieven", f"{len(cc)} soorten, max {max(cc.values()) if cc else 0}x {cc}")
-sw = [f"{k} {v}x" for k, v in Counter(w(z)[0].lower() for z in Z if w(z)).items() if v > 2]
-p(not sw, "V6 zinsbegin herhaald", sw if sw else "geen woord meer dan 2x")
-tel = {"em-streepje": len(re.findall(r'[—–]', B)), "Oxford-komma": len(re.findall(r',\s+(?:en|of)\s', B)),
+sw = [f"'{k}' {v}x" for k, v in Counter(' '.join(w(z)[:2]).lower() for z in Z if w(z)).items() if v > 2]
+sw += [f"'{k}' {v}x" for k, v in Counter(w(z)[0].lower() for z in Z if w(z)).items() if v > 2 and k not in ("de","het","een")]
+p(not sw, "V6 zinsbegin herhaald", sw if sw else "geen bigram of niet-lidwoord >2x")
+tel = {"em-streepje": len(re.findall(r'[—–]', B)), "Oxford-komma": len(re.findall(r'\w+,\s+\w+,\s+(?:en|of)\s', B)),
        "vet in tekst": len(re.findall(r'\*\*', T))//2, "drieslag": len(re.findall(r'\b\w+, \w+ en \w+\b', B)),
        "niet-alleen-maar": len(re.findall(r'niet alleen|niet zozeer|het gaat niet om', low)),
        "meta/samenvat": len(re.findall(r'in dit hoofdstuk|in deze paragraaf|hieronder|samengevat|kortom|al met al|zoals eerder|tot slot', low))}
@@ -242,8 +243,8 @@ def sig(x):
     d = re.sub(r'[.,]', '', x).lstrip('0').rstrip('0')
     return len(d) if d else 1
 gt = sorted({x for x in re.findall(r'\b\d[\d.,]*\b', B) if sig(x) > 2 and not re.fullmatch(r'(19|20)\d\d', x)})
-p(not gt, "C1 >2 significante cijfers", gt if gt else "geen (bronfeiten uitgezonderd: check zelf)")
-print("KOPPEN:", [k for k in KOP if len(re.findall(r'\b[A-Z]', k)) > 1] or "zinskapitalisatie ok")
+print("MELD C1 >2 sign. cijfers  ", gt or "geen", "-- bronfeit: laten staan; afgeleid: afronden")
+print("MELD koppen Title Case?   ", [k for k in KOP if len(re.findall(r'\s[A-ZÀ-Þ]', k)) >= 3] or "nee, zinskapitalisatie ok")
 ```
 
 Wat het script niet kan: Z1, Z2, Z4, Z5, A1 tot A5, C2, C3, F1 en de leesbaarheid van

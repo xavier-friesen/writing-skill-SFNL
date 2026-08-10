@@ -230,31 +230,30 @@ Deze kaart gaat mee in elke schrijversbriefing.
 2. Elke claim heeft een genoemd subject: het RIVM, de VNG, de gemeente, het
    fonds. Geen "onderzoek toont aan", geen "verschillende partijen geven aan".
 3. Tegenwoordige tijd is de standaard; verleden tijd voor casushistorie en
-   resultaten.
-4. Alinea's van drie tot zes zinnen; de eerste zin vat de alinea samen.
-5. Gemiddeld 14 tot 20 woorden per zin, en in elke alinea van vier of meer zinnen
+   resultaten. Alinea's van drie tot zes zinnen, de eerste zin vat samen.
+4. Gemiddeld 14 tot 20 woorden per zin, en in elke alinea van vier of meer zinnen
    staat er één onder de tien. Die korte zin draagt de pointe.
-6. Een mechanisme leg je in vier stappen uit: noem het ding bij naam en los het
+5. Een mechanisme leg je in vier stappen uit: noem het ding bij naam en los het
    binnen één zin af, beschrijf de geldstroom met genoemde partijen, zet de
    voorwaarde in een conditionele inversie ("Blijven de kosten daaronder,
    dan ..."), en sluit af met de gedragsverandering in één korte zin.
-7. Houd één concreet geval vast door een hele uitleg heen, in plaats van per stap
+6. Houd één concreet geval vast door een hele uitleg heen, in plaats van per stap
    een nieuw voorbeeld te nemen.
-8. Beeldspraak alleen uit het eigen domein: schotten, potjes, hefboom,
+7. Beeldspraak alleen uit het eigen domein: schotten, potjes, hefboom,
    spelregels, betaalladder. Eén beeld per passage, doorgevoerd. Geen metafoor
    uit een ander domein, geen ter plekke bedachte vergelijking.
-9. Kanttekeningen gaan vóór de claim: geef het bezwaar toe voordat de lezer het
+8. Kanttekeningen gaan vóór de claim: geef het bezwaar toe voordat de lezer het
    formuleert, en zet de claim daarna verkleind maar overeind.
-10. Een aanbeveling begint met een werkwoord dat een handeling is. "Verkennen" is
-    geen handeling.
-11. Secties sluiten op de kortste zin van de bladzijde, en die zin keert iets om.
-12. Nederlandse interpunctie: geen gedachtestreepje als accent in de zin (neem
+9. Een aanbeveling begint met een werkwoord dat een handeling is. "Verkennen" is
+   geen handeling. Secties sluiten op de kortste zin van de bladzijde, en die zin
+   keert iets om.
+10. Nederlandse interpunctie: geen gedachtestreepje als accent in de zin (neem
     een dubbele punt, komma's of haakjes), geen komma voor "en", decimaalkomma,
     kopjes in zinskapitalisatie.
-13. Modale partikels blijven staan: *toch, wel, nu eenmaal, immers, juist,
+11. Modale partikels blijven staan: *toch, wel, nu eenmaal, immers, juist,
     althans*. Ze dragen geen informatie maar wel toon. Wie ze wegstreept, levert
     correct en onmenselijk Nederlands.
-14. Frequentieplafond op de eigen lievelingsformules — "laat zien dat", "zo
+12. Frequentieplafond op de eigen lievelingsformules — "laat zien dat", "zo
     ontstaat", "structureel", "duurzaam", "integraal" — samen hoogstens één per
     500 woorden.
 
