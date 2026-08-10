@@ -10,7 +10,7 @@ de gebruiker op de stijl-check-in. Je levert: publiceerbare Nederlandse rapportt
 
 Deze skill werkt met twee instrumenten en één lus.
 
-1. **De meetlat.** Twintig drempels die vooraf vastliggen. Je telt ze écht — met het
+1. **De meetlat.** Negenentwintig drempels die vooraf vastliggen. Je telt ze écht — met het
    script in §4 en met de hand waar het script niet bij kan. Geen schattingen, geen
    "voelt goed". Een meting is groen of rood; iets ertussenin bestaat niet.
 2. **De koude lezer.** Een verse agent die het origineel niet kent, de meetlat niet
@@ -79,7 +79,7 @@ de gekozen defaults in logboekregel 1.
 
 ## 2. De meetlat
 
-Twintig drempels in vier groepen. **A-metingen zijn aanwezigheidseisen** — daar moet
+Negenentwintig drempels in vier groepen. **A-metingen zijn aanwezigheidseisen** — daar moet
 iets ín de tekst zitten. Die vervallen nooit. R, Z, V en C zijn vorm- en
 afwezigheidseisen; daarvoor geldt de uitweg in §6.
 
@@ -137,7 +137,7 @@ dan de rest, en de bespaarde woorden gaan daarheen.
 | V3 | Gedachtestreepje als bijzin · Oxford-komma · vet in lopende tekst · Title Case | 0 |
 | V4 | Hedgewoorden | ≤ 3 per 100 woorden, nooit twee in één zin |
 | V5 | Aankondigen en samenvatten ("in dit hoofdstuk", "kortom", "al met al") | 0 |
-| V6 | Zelfde beginwoord van een zin | ≤ 2× in de hele tekst |
+| V6 | Zelfde zinsbegin: eerste twee woorden, of beginwoord dat geen lidwoord is | ≤ 2× |
 | C1 | Getallen | max 2 significante cijfers, tenzij het bronfeit exact is |
 | C2 | Elk kerngetal | een schaalvertaling of vergelijkingspunt in dezelfde alinea |
 | C3 | Nieuwe getallen per alinea | ≤ 3 |
@@ -169,7 +169,7 @@ reparatie, en de verboden.
   vetdrukken, of een abstracte samenvatting scherp laten klínken.
 - **V6 (zinsbegin).** Legitiem: de alinea begint bij een ander onderdeel van de zaak.
   Verboden: de zin omkeren tot hij stroef wordt. Breek liever V6 dan iets barbaars te
-  schrijven — en meld dat in het logboek.
+  schrijven, en meld dat in het logboek.
 
 Overkoepelend: haal je een drempel alleen door de zin lelijker te maken, dan laat je
 de drempel vallen en noteer je het. Dat mag hoogstens één keer per tekst, en nooit

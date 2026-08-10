@@ -145,23 +145,21 @@ met goede bedoelingen. Kies de route die je omgeving toelaat.
 ### Route A — met subagents (voorkeur)
 
 1. Fase 1 is klaar en `dossier.md` staat op schijf.
-2. Start een **schrijver-subagent**. Die krijgt precies drie dingen: de volledige
-   inhoud van `dossier.md`, het schrijfdeel van deze skill (fase 3, inclusief de
-   huisstemkaart, de aanwezigheidscriteria en de voorbeeldparen), en de
+2. Start een **schrijver-subagent** met precies drie dingen: de volledige inhoud
+   van `dossier.md`, het schrijfdeel van deze skill (fase 3, inclusief
+   huisstemkaart, aanwezigheidscriteria en voorbeeldparen), en de
    kaderantwoorden. De brontekst gaat **niet** mee — niet samengevat, niet als
    "ter illustratie" geplakte zin, niet als losse formulering.
 3. Zet in de briefing letterlijk: *"Er is geen brontekst en die krijg je ook
    niet. Alles wat je nodig hebt staat in dit dossier. Wat er niet in staat,
    bestaat niet: schrijf `[GAT: ...]` waar je iets mist. Verzin geen getal, naam,
    jaartal, citaat of vergelijking."*
-4. De subagent levert alleen de tekst terug, geen proceslogboek.
-5. De hoofdagent doet fase 4 en mag de bron dan weer openen.
-6. Moet er herschreven worden, dan gaat een **aangevuld dossier** terug naar een
+4. De subagent levert alleen de tekst terug. De hoofdagent doet fase 4 en mag de
+   bron dan weer openen.
+5. Moet er herschreven worden, dan gaat een **aangevuld dossier** terug naar een
    nieuwe subagent. Nooit de bron, nooit een citaat eruit.
-
-Schrijf je een lange tekst in secties, geef elke schrijver dan dezelfde
-huisstemkaart plus het stemanker uit 4.5, zodat de secties van één schrijver
-klinken.
+6. Schrijf je in secties, geef elke schrijver dan dezelfde huisstemkaart plus het
+   stemanker uit 4.5, zodat de secties van één schrijver klinken.
 
 ### Route B — zonder subagents (solo)
 
@@ -297,9 +295,8 @@ zijn **illustratief en verzonnen**: patronen, nooit feiten die je overneemt.
 > Sterk: "In 2021 zette de deurwaarder in Zuiderveld negentien huishoudens op
 > straat. Vorig jaar vier."
 
-De sterke versie zegt nergens dat er iets belangrijks gebeurde en laat het de
-lezer vaststellen. Het onderwerp is een partij die handelt, en de val van zeven
-naar drie woorden doet het werk.
+Rechts staat nergens dat er iets belangrijks gebeurde; de lezer stelt het zelf
+vast. Het onderwerp handelt, en de val van zeven naar drie woorden doet het werk.
 
 **2. Het cijferblok: van opsomming naar verhouding.**
 
@@ -313,7 +310,7 @@ naar drie woorden doet het werk.
 
 Alle bedragen staan er nog, maar de lezer houdt er één van vast. De schaling is
 een deelsom met dossiergetallen, geen vergelijking van buiten. "Per adres" is het
-exacte woord waar "per bereikt huishouden" het beleidswoord is.
+exacte woord; "per bereikt huishouden" is het beleidswoord.
 
 **3. De tegenslag: van neutrale vorm naar gevolg.**
 
@@ -328,7 +325,8 @@ exacte woord waar "per bereikt huishouden" het beleidswoord is.
 
 De derde zin maakt een gat zichtbaar in plaats van het te dichten. Dat mag alleen
 als het dossier vaststelt dat het gegeven ontbreekt, en het is sterker dan elke
-gladde formulering: de lezer ziet wat de schrijver wel en niet weet.
+gladde formulering: de lezer ziet wat de schrijver wel en niet weet. Het gemiste
+doel krijgt hier meer ruimte dan in de bron, niet minder.
 
 **4. Het slot: van moraal naar feit.**
 
@@ -353,8 +351,8 @@ vraag staan zonder haar te stellen.
 > hulpverlener."
 
 De negatieparallel is weg, de nominalisaties zijn weg, en de 60 procent uit het
-dossier is een verhouding geworden die de lezer ziet. De bewoners zijn onderwerp
-van hun eigen handeling.
+dossier is een verhouding geworden. De bewoners zijn onderwerp van hun eigen
+handeling.
 
 **6. De ongedekte claim: van suggestie naar wat er staat.**
 
@@ -367,7 +365,7 @@ van hun eigen handeling.
 De bijzin links beweert een verhouding waarvoor geen gegeven bestaat. Je vervangt
 haar niet door een mooiere formulering van dezelfde bewering; je zegt wat er is.
 De tweede zin rechts mag alleen staan als het dossier vaststelt dat de meting
-ontbreekt. Kun je dat niet vaststellen, laat het bedrag dan alleen staan.
+ontbreekt — kun je dat niet vaststellen, laat het bedrag dan alleen staan.
 
 ---
 
@@ -472,13 +470,13 @@ logboekregel 8 als je haar toepast.
 ## Faalgedrag
 
 - **Het dossier is dun.** Levert de bron minder dan een handvol harde feiten, dan
-  is de tekst leeg, niet slecht geschreven. Schrijf kort wat er is, en meld in
-  het logboek wat je nodig had.
+  is de tekst leeg, niet slecht geschreven. Schrijf kort wat er is en meld in het
+  logboek wat je nodig had.
 - **De spanning is er niet.** Sommige teksten zijn een opsomming en horen dat te
   blijven. Kies dan optie vier bij vraag 2 en schrijf beschrijvend en
   chronologisch. Een verzonnen spanning is erger dan geen.
 - **Je komt niet onder de bronlengte.** Dan heb je geschoven, niet gekozen. Terug
   naar 3.3, en zoek het onderwerp dat één zin waard was.
 - **Een regel botst met de zin.** Betekenis gaat vóór alles, daarna de wens van de
-  gebruiker, daarna de huisstem, daarna de tells. Breek liever een regel dan dat
-  je iets barbaars schrijft.
+  gebruiker, daarna de huisstem, daarna de tells. Breek liever een regel dan dat je
+  iets barbaars schrijft.
