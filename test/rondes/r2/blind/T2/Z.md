@@ -1,0 +1,11 @@
+Het doel was 800 deelnemers; Stap Vooruit bereikte er 720. Na 24 maanden functioneerde 34% van hen zonder medicatie, waar de uitkomstenstructuur op 45% rekende. Op grond daarvan is toch 68% van het maximum uitbetaald: € 1,68 miljoen van € 2,47 miljoen.
+
+De uitkomstfinanciers gaven opdracht tot deze evaluatie. De gemeente Zwaanwijk en zorgverzekeraar Bornholt financierden de uitkomsten van Stap Vooruit, dat van 2020 tot en met 2025 liep en meer inwoners met diabetes type 2 zonder medicatie moest laten functioneren. Coöperatie Beweegkracht voerde de Health Impact Bond uit in Zwaanwijk, een gemeente van 86.000 inwoners. In 2022 breidde de gemeente haar reguliere aanbod uit, waardoor de controlegroep minder goed vergelijkbaar werd. De toerekening van de resultaten aan het programma raakte daardoor tussen partijen betwist.
+
+Hoe dat geschil afliep, staat er niet. Op basis van de beschikbare gegevens is niet met zekerheid vast te stellen in welke mate dat ruimere aanbod de gemeten uitkomsten heeft beïnvloed. Die € 1,68 miljoen is betaald voor een resultaat dat partijen niet op dezelfde manier toerekenen.
+
+Twee fondsen brachten de voorfinanciering van € 1,55 miljoen bijeen: Stichting Kapitaal voor Morgen legde € 1,1 miljoen in, het Van Dalen Familiefonds € 450.000. Dat kapitaal is wel volledig terugbetaald. Maar het rendement bleef steken op 2,1% per jaar, waar de fondsen op 6,5% hadden gerekend. De uitval liep op tot 27%, 194 van de 720 deelnemers, terwijl de businesscase van 15% was uitgegaan; het meten en verantwoorden van die uitkomsten kostte € 210.000, ofwel 13,5% van het investeringsvolume.
+
+Bij de deelnemers werd zelfs een resultaat gemeten waarvoor niemand had betaald: de ervaren psychische klachten namen met 41% af. Dat effect stond niet in de uitkomstenstructuur en is daarom niet beloond.
+
+We zien één voorwaarde voor een volgende keer. Wie de bondstructuur nog eens gebruikt, legt vóór de start vast hoe er wordt gemeten en aan wie het resultaat toevalt; ook hoort meer dan één uitkomst mee te tellen. Per 2026 gaat de aanpak verder als meerjarige subsidierelatie tussen de gemeente en Beweegkracht, zonder bondstructuur. Waarom die structuur vervalt, staat er niet bij.
