@@ -2,22 +2,22 @@
 titel: Evaluatie Health Impact Bond Stap Vooruit — bestuurlijke samenvatting
 teksttype: bestuurlijke-samenvatting
 doellezer: college van B&W van Zwaanwijk, directie van zorgverzekeraar Bornholt, bestuur van de investeerdersfondsen
-woorden: 000
+woorden: 436
 ---
 
 ## Invoertekst
 
 ## Bestuurlijke samenvatting
 
-Deze bestuurlijke samenvatting bevat de belangrijkste bevindingen van de evaluatie van de Health Impact Bond Stap Vooruit. Achtereenvolgens wordt ingegaan op de opzet van het arrangement, de behaalde resultaten, de belangrijkste knelpunten en de conclusies voor de toekomst. De evaluatie is uitgevoerd in opdracht van de gemeente Zwaanwijk en zorgverzekeraar Bornholt.
+Deze bestuurlijke samenvatting bevat de belangrijkste bevindingen van de evaluatie van de Health Impact Bond Stap Vooruit. Achtereenvolgens wordt ingegaan op de opzet, de resultaten, de knelpunten en de conclusies. De evaluatie is uitgevoerd in opdracht van de gemeente Zwaanwijk en zorgverzekeraar Bornholt.
 
-**Opzet.** De Health Impact Bond Stap Vooruit liep van 2020 tot en met 2025 en had tot doel het aantal inwoners met diabetes type 2 dat zonder medicatie kan functioneren te vergroten. De gemeente Zwaanwijk (86.000 inwoners) en zorgverzekeraar Bornholt traden op als uitkomstfinanciers; de uitvoering was belegd bij Coöperatie Beweegkracht. De voorfinanciering van € 1,55 miljoen werd verstrekt door Stichting Kapitaal voor Morgen (€ 1,1 miljoen) en het Van Dalen Familiefonds (€ 450.000). Daarmee vormt het arrangement een van de eerste voorbeelden in Nederland waarin preventie, uitkomstfinanciering en private voorfinanciering op deze schaal met elkaar zijn verbonden.
+**Opzet.** De Health Impact Bond Stap Vooruit liep van 2020 tot en met 2025 en had tot doel het aantal inwoners met diabetes type 2 dat zonder medicatie kan functioneren te vergroten. De gemeente Zwaanwijk (86.000 inwoners) en zorgverzekeraar Bornholt traden op als uitkomstfinanciers; de uitvoering was belegd bij Coöperatie Beweegkracht. De voorfinanciering van € 1,55 miljoen werd verstrekt door Stichting Kapitaal voor Morgen (€ 1,1 miljoen) en het Van Dalen Familiefonds (€ 450.000). Daarmee vormt het arrangement een van de eerste voorbeelden in Nederland waarin preventie, uitkomstfinanciering en private voorfinanciering op deze schaal samenkomen.
 
 **Resultaten.** Gedurende de looptijd werden 720 deelnemers geworven, tegenover een doelstelling van 800. Na 24 maanden functioneerde 34% van de deelnemers zonder medicatie, waar in de uitkomstenstructuur was uitgegaan van 45%. Op grond hiervan is 68% van de maximale uitkomstbetaling tot uitkering gekomen: € 1,68 miljoen van een maximum van € 2,47 miljoen. Het ingelegde kapitaal is volledig terugbetaald, bij een rendement van 2,1% per jaar tegenover een verwacht rendement van 6,5%.
 
 **Knelpunten.** In de uitvoering deden zich drie knelpunten voor. In de eerste plaats lag de uitval met 27% (194 deelnemers) aanzienlijk hoger dan de aanname van 15% waarop de businesscase was gebaseerd. In de tweede plaats bedroegen de kosten van meten en verantwoorden € 210.000, ofwel 13,5% van het investeringsvolume. In de derde plaats werd in 2022 het reguliere gemeentelijke aanbod uitgebreid, waardoor de vergelijkbaarheid met de controlegroep onder druk kwam te staan; de toerekening van de resultaten aan het programma is daardoor tussen partijen betwist geraakt. Het is op basis van de beschikbare gegevens niet met zekerheid vast te stellen in welke mate dit de gemeten uitkomsten heeft beïnvloed.
 
-**Onvoorzien effect.** Uit de deelnemersmetingen kwam naar voren dat de ervaren psychische klachten onder deelnemers met 41% afnamen. Dit effect was niet opgenomen in de uitkomstenstructuur en is derhalve niet beloond.
+**Onvoorzien effect.** Uit de deelnemersmetingen kwam naar voren dat de ervaren psychische klachten met 41% afnamen. Dit effect was niet opgenomen in de uitkomstenstructuur en is derhalve niet beloond.
 
 **Conclusie en vervolg.** Al met al laat de evaluatie een genuanceerd beeld zien. Het arrangement heeft geleid tot meetbare gezondheidswinst, tot een intensievere samenwerking tussen gemeente, verzekeraar en uitvoerder, en tot waardevolle inzichten over de vormgeving van uitkomstgerichte financiering — ook al zijn de oorspronkelijke ambities niet volledig gerealiseerd. Per 2026 wordt de aanpak voortgezet in een meerjarige subsidierelatie tussen de gemeente en Coöperatie Beweegkracht, zonder bondstructuur. Daarmee markeert Stap Vooruit een belangrijke stap in de ontwikkeling van maatschappelijke financiering in Nederland en biedt het lessen waar toekomstige initiatieven hun voordeel mee kunnen doen.
 
@@ -50,7 +50,7 @@ Dominante patronen in deze tekst: **sandwich-structuur, hedging-stapeling, lijde
 - **Rule of three als skelet.** "In de eerste plaats ... In de tweede plaats ... In de derde plaats", plus drie opgesomde opbrengsten in het slot ("meetbare gezondheidswinst, ... intensievere samenwerking ..., ... waardevolle inzichten").
 - **Hedging-stapeling.** "Het is op basis van de beschikbare gegevens niet met zekerheid vast te stellen in welke mate dit de gemeten uitkomsten heeft beïnvloed."
 - **Lijdende vorm die de actor verbergt.** "de uitvoering was belegd bij", "is tot uitkering gekomen", "werd het reguliere aanbod uitgebreid", "is derhalve niet beloond", "wordt de aanpak voortgezet". Wie het besluit nam om te stoppen met de bondstructuur staat er niet.
-- **Betekenis-inflatie.** "een van de eerste voorbeelden in Nederland waarin ... op deze schaal met elkaar zijn verbonden"; "markeert Stap Vooruit een belangrijke stap in de ontwikkeling van maatschappelijke financiering in Nederland".
+- **Betekenis-inflatie.** "een van de eerste voorbeelden in Nederland waarin ... op deze schaal samenkomen"; "markeert Stap Vooruit een belangrijke stap in de ontwikkeling van maatschappelijke financiering in Nederland".
 - **Gedachtestreepje als verzachter.** "— ook al zijn de oorspronkelijke ambities niet volledig gerealiseerd": de kern van de evaluatie wordt als bijzin achter een streepje weggezet.
 - **Ambtelijke registerwoorden.** derhalve, tot uitkering gekomen, op grond hiervan, gedurende de looptijd, al met al, genuanceerd beeld.
 - **Generiek positief slot.** "biedt het lessen waar toekomstige initiatieven hun voordeel mee kunnen doen" — zonder één concrete les te noemen.

@@ -2,7 +2,7 @@
 titel: Wijkkracht Molenhoek — samen bouwen aan financiële veerkracht
 teksttype: case-tekst
 doellezer: bezoekers van de SFNL-website en de projectpagina's; fondsen, gemeenten en corporaties die naar voorbeelden zoeken
-woorden: 000
+woorden: 305
 ---
 
 ## Invoertekst
@@ -43,7 +43,7 @@ Elke herschrijving moet deze feiten exact behouden. Cijfers mogen anders worden 
 Dominante patronen in deze tekst: **betekenis-inflatie, gedachtestreepjes, "niet alleen X maar ook Y", promotieregister met afgevlakte tegenslag, generiek positief slot.**
 
 - **Betekenis-inflatie in de openingszin.** "markeerde het project Wijkkracht Molenhoek een belangrijke stap voorwaarts" — de lezer weet na de eerste zin nog niets, behalve dat het belangrijk was.
-- **Gedachtestreepjes.** Vier em-dash-inschuivingen in zes alinea's, waarvan drie als toegevoegde duiding achteraf ("— een bedrag dat in verhouding staat tot de vermeden maatschappelijke kosten", "— en voor de bewoners die er wonen").
+- **Gedachtestreepjes.** Vier gedachtestreepjes in zes alinea's, waarvan twee als toegevoegde duiding achteraf ("— een bedrag dat in verhouding staat tot de vermeden maatschappelijke kosten", "— en voor de bewoners die er wonen").
 - **"Niet alleen X maar ook Y".** "werd niet alleen de drempel naar hulp verlaagd, maar ook het eigenaarschap in de wijk versterkt."
 - **Rule of three.** "de gemeente, fondsen, uitvoerders en bewoners" (vier, maar in het ritme van drie); "schulden, werk en welzijn".
 - **Lijdende vorm die de actor verbergt.** "werd mogelijk gemaakt", "werden 460 huishoudens bereikt", "werden opgeleid tot buurtbudgetmaatje", "is een stevig fundament gelegd". Er komt in de hele tekst geen enkele handelende persoon voor; ook de elf bewoners zijn grammaticaal lijdend voorwerp van hun eigen opleiding.
@@ -52,4 +52,4 @@ Dominante patronen in deze tekst: **betekenis-inflatie, gedachtestreepjes, "niet
 - **Losse eindjes als los feit.** Dat maatjes uit de wijk 60% van de eerste contacten deden — mogelijk de kern van waarom de aanpak werkte — staat als "ontwikkeling die vooraf niet was voorzien" tussen de andere resultaten, zonder verbinding met het lage werkresultaat of met de opname in de begroting.
 - **Onbewezen bewering.** "een bedrag dat in verhouding staat tot de vermeden maatschappelijke kosten" — er is geen enkel gegeven over vermeden kosten in de tekst.
 - **Generiek positief slot in twee lagen.** Eerst een moraal ("laat zien wat er mogelijk is wanneer partijen elkaar opzoeken en investeren in vertrouwen"), dan een tweede afsluiter ("een stevig fundament gelegd voor de toekomst van de wijk — en voor de bewoners die er wonen"), waarvan de laatste bepaling niets toevoegt.
-- **Sandwich in miniatuur.** Alinea 1 kondigt het project aan, alinea 6 vat het op ("laat zien wat er mogelijk is"); de twee dragende alinea's zitten ingeklemd.
+- **Sandwich in miniatuur.** Alinea 1 kondigt het project aan, alinea 6 vat het op ("laat zien wat er mogelijk is"); de dragende alinea's zitten daartussen ingeklemd.

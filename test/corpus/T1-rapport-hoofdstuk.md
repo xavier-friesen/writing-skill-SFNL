@@ -2,7 +2,7 @@
 titel: Innovatieve financiering van preventieve jeugdzorg (hoofdstuk 4)
 teksttype: rapport-hoofdstuk
 doellezer: beleidsadviseurs en bestuurders bij gemeenten en zorgverzekeraars
-woorden: 000
+woorden: 674
 ---
 
 ## Invoertekst
