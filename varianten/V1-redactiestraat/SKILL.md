@@ -150,7 +150,7 @@ bijgeschaafd durf je straks niet meer te schrappen.
 Mandaat: alinea en zin. De langste ronde en de enige waarin geschreven wordt. Interne volgorde per
 passage: eerst helderheid, dan samenhang en tempo, pas dan klank en woordkeus.
 
-### 3.1 De gesloten-bronprocedure
+### 3.1 Gesloten bron
 
 Een passage gaat hier doorheen zodra hij meer dan drie losse ingrepen nodig heeft, zodra je jezelf
 betrapt op het voor de tweede keer redden van dezelfde zwakke formulering, of als zijn functiezin op
@@ -310,8 +310,8 @@ Mandaat: spelling, interpunctie, notatie, consistentie. Deze rol herschrijft nie
 niets. Waar meer dan één oplossing verdedigbaar is, kiest hij de meest behoudende en noteert hij de
 kwestie; hij lost hem niet eenzijdig op door de zin om te gooien.
 
-- Eén aanspreekvorm door de hele tekst (u óf je, of geen).
-- Eén auteursperspectief (wij, of het onderzoek, of de organisatie bij naam).
+- Eén aanspreekvorm (u óf je, of geen) en één auteursperspectief (wij, of het onderzoek, of de
+  organisatie bij naam) door de hele tekst.
 - Eén notatie voor getallen, procenten, valuta en data. `40 procent` of `40%`, kies en houd vol.
   Decimaalkomma, duizendtal met punt.
 - Elk getal dat twee keer in de tekst voorkomt is beide keren identiek.
@@ -333,7 +333,6 @@ consistent in aanspreekvorm, perspectief en notatie, en klinken als dezelfde sch
 
 Mandaat: elk feit tegen de bron leggen, niet tegen je geheugen. Deze rol redigeert niet. Hij
 markeert en geeft één regel terug aan de line editor, die uitsluitend die zin herstelt.
-
 Haal de tekst uit elkaar. Loop de feitenlijst af, of bij ontbreken daarvan elk cijfer, jaartal,
 bedrag, naam, percentage en claim uit de invoertekst, en vink af waar het in de nieuwe tekst staat.
 
@@ -359,7 +358,6 @@ waarvan één overtreding de hele levering afkeurt.
 
 Mandaat: waarnemen. Deze rol verbetert niets en oordeelt niet over stijl. Hij rapporteert wat er met
 hem gebeurde tijdens het lezen.
-
 Start een subagent met de **Agent-tool** (general-purpose). Geef hem uitsluitend de tekst zoals die
 nu is, plus teksttype en doellezer. Niet de invoertekst, niet deze skill, niet de opdrachtkaart,
 niet de mededeling dat de tekst is geredigeerd of AI-gegenereerd. Verankering is een procedurele
@@ -397,7 +395,6 @@ zin of het woord GEEN. Bij vraag 6 staat een oordeel met reden.
 
 Mandaat: het rapport van de verse lezer afhandelen, met de bevoegdheid om te herschrijven. Dit is
 een schrijfronde, geen schrapronde.
-
 - **Scanpunt (vraag 1).** Daar zakt de aandacht weg. Kort in, of leg er een beloning: een concreet
   geval, een cijfer met een maatstaf, een scherpe formulering uit de bron.
 - **Struikelzin (vraag 2).** Herschrijf hem hardop. Loopt hij na twee pogingen nog niet, dan mist de
@@ -449,6 +446,5 @@ De tekst, dan `---`, dan het logboek: acht regels, elk één regel, geen inleidi
 8. Verse lezer: [uitkomst], daarop aangepast: [wat]; [x] → [y] woorden ([z] procent korter)
 ```
 
-Regel 1 vermeldt altijd of het kader is gekozen door de gebruiker of afgeleid uit de tekst. Regel 7
-en 8 zijn nooit leeg. Verder niets: geen aanbod om iets anders te proberen, geen samenvatting van
-wat je hebt gedaan.
+Regel 7 en 8 zijn nooit leeg. Verder niets: geen aanbod om iets anders te proberen, geen samenvatting
+van wat je hebt gedaan.
