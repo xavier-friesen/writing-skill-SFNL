@@ -151,11 +151,14 @@ zin is altijd van het type "X laat zien hoe…":
 > pleegzorg. […] De Finse Lapset-SIB laat zien hoe resultaatgerichte betaling en
 > gedeelde verantwoordelijkheid vroegtijdige hulp structureel mogelijk maakt."*
 
-Zeven van de negen casussen in 2025 doen dit letterlijk zo. Voordeel: de lezer
-weet binnen vier zinnen waarom deze casus in het rapport staat. Nadeel: negen
-keer dezelfde bouwsteen, met negen keer "laat zien" (30 hits in het rapport).
-De skill moet het patroon overnemen én de formule variëren — *"Kaiser Permanente
-neemt die spanning weg door…"* is het ene voorbeeld dat het wél anders doet.
+Zeven van de negen casussen in 2025 doen dit letterlijk zo, inclusief het
+werkwoord "laat zien" of "toont" (30 hits "laat/laten zien" in het rapport).
+Voordeel: de lezer weet binnen vier zinnen waarom deze casus in het rapport
+staat. Nadeel: zeven keer dezelfde bouwsteen met hetzelfde werkwoord. De skill
+moet het patroon overnemen én de formule variëren — *"Kaiser Permanente neemt die
+spanning weg door…"* en *"Het Britse Life Chances Fund biedt een nationale
+infrastructuur die deze impasse doorbreekt"* zijn de twee die het wél anders
+doen, en ze lezen beter dan de zeven andere.
 
 Daarnaast een tweede opening: **datum + naam + dubbele punt + definitie**:
 *"Eind 2022 lanceerden gemeenten en zorgverzekeraars Stevig Staan: de eerste
@@ -275,8 +278,11 @@ Drie sluittypes, in afnemende kwaliteit:
   *"Zo wordt preventie een gezamenlijke investering in plaats van een
   kostenpost."*
 - **De les-voor-Nederland**: drie tot vijf zinnen die de casus naar de
-  Nederlandse context vertalen, altijd beginnend met de naam van de casus. Nuttig,
-  maar formulematig — negen keer dezelfde opening.
+  Nederlandse context vertalen, zeven van de negen keer beginnend met de naam van
+  de casus plus "laat zien dat". Nuttig maar formulematig. De twee uitzonderingen
+  openen met een gebiedende wijs (*"Zet in op één regionaal
+  zorg-en-verzekeringsbudget"*) of met een stelling (*"Duurzame verankering van
+  preventie begint bij de begroting"*) en zijn duidelijk de sterkste twee.
 - **De hoofdstukconclusie**: recapituleert alle drie de casussen nog een keer,
   in dezelfde woorden als de casuspagina's. Dit is de zwakste sectie van het
   rapport (zie hieronder).
