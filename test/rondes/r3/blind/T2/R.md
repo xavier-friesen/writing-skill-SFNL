@@ -1,0 +1,35 @@
+### Stap Vooruit in het kort
+
+Zwaanwijk en zorgverzekeraar Bornholt betaalden pas als een inwoner met diabetes type 2 zonder medicatie kon leven. Zij wilden 800 deelnemers, maar het werden er 720.
+
+De Health Impact Bond Stap Vooruit liep van 2020 tot en met 2025. Hij krijgt geen vervolg: per 2026 betaalt de gemeente Coöperatie Beweegkracht uit een meerjarige subsidie, zonder bondstructuur. Dat besluit is de scherpste uitkomst van de evaluatie die Zwaanwijk en Bornholt lieten uitvoeren: de bond heeft zichzelf niet terugverdiend.
+
+### Hoe de bond in elkaar zat
+
+Stichting Kapitaal voor Morgen legde € 1,1 miljoen in en het Van Dalen Familiefonds € 450.000, samen € 1,55 miljoen, waarmee Coöperatie Beweegkracht het programma kon draaien voordat er één uitkomst was betaald.
+
+Zwaanwijk telt 86.000 inwoners. Preventie, privaat voorschot en betalen voor resultaat kwamen in Nederland zelden eerder op deze schaal samen. Het risico lag bij de fondsen.
+
+### Wat de bond opleverde
+
+Na 24 maanden functioneerde 34% van de deelnemers zonder medicatie. De uitkomstenstructuur ging uit van 45%.
+
+Dat gat drukte de betaling tot 68%: € 1,68 miljoen van maximaal € 2,47 miljoen.
+
+De fondsen kregen hun inleg wel volledig terug. Zij hielden er 2,1% per jaar aan over, waar de businesscase 6,5% beloofde.
+
+### Waar het misliep
+
+De uitval liep zelfs op tot 27%, ofwel 194 deelnemers, terwijl de businesscase met 15% rekende.
+
+In 2022 breidde de gemeente haar reguliere aanbod uit, waardoor de controlegroep op de deelnemersgroep ging lijken en partijen het oneens raakten over welk deel van het resultaat aan het programma toekwam. Hoeveel dat de gemeten uitkomsten beïnvloedde, is niet vast te stellen.
+
+Meten en verantwoorden kostte € 210.000, 13,5% van het investeringsvolume, zodat ruim een achtste van het geld opging aan het bewijs dat er iets was gebeurd. Geen euro daarvan bereikte een deelnemer.
+
+De ervaren psychische klachten namen met 41% af, maar juist die winst stond niet in de uitkomstenstructuur en is dus niet betaald. Wie een contract schrijft waarin alleen medicatievrij leven telt, koopt precies dat en niets meer.
+
+### Onze conclusie
+
+Het programma leverde gezondheidswinst op. Zwaanwijk, Bornholt en Beweegkracht werkten intensiever samen en weten nu wat betalen voor resultaat kost.
+
+Toch heeft de bondstructuur zelf meer gekost dan zij aan zekerheid opleverde, en die rekening kwam bij de fondsen terecht. Wie een volgende bond overweegt, raamt eerst de uitval en de meetkosten, en pas daarna het rendement.
