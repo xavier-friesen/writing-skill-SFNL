@@ -1,6 +1,6 @@
 ---
 name: sfnl-rapporttekst
-version: 2.0
+version: 3.0
 description: 'Zet een concepttekst, meestal door een model geschreven, om in publiceerbare Nederlandse rapporttekst voor Social Finance NL. Decompileert de bron tot een dossier, sluit de bron, schrijft vers, meet met een telscript, controleert feiten en causaliteit, en laat er een koude lezer overheen gaan. Gebruik deze skill wanneer een concept, AI-uitvoer, ruwe notitie of half afgemaakt stuk moet worden afgemaakt of omgezet naar tekst die naar buiten kan, zoals een rapporthoofdstuk, bestuurlijke samenvatting, casetekst, projectpagina, notitie of adviesparagraaf. Trigger ook op "maak dit af", "schrijf dit klaar voor de klant", "haal de AI eruit", "maak er een rapporttekst van" en "publiceerbaar maken".'
 ---
 
@@ -37,41 +37,56 @@ tot en met 7 openen hem weer om te controleren.
 7. **Breek liever een regel dan dat je iets barbaars schrijft.** Voorrang bij
    conflict: betekenis → wens van de gebruiker → huisstem → metingen.
 
-## De zeven aanwezigheidscriteria
+## De vier aanwezigheidscriteria
 
-Dit is de lat. Alle zeven moeten "ja" zijn vóór levering; het zijn geen foutentellers
+Dit is de lat. Alle vier moeten "ja" zijn vóór levering; het zijn geen foutentellers
 maar aanwezigheidseisen. Foutloos is expliciet onvoldoende: in ronde 1 scoorde
 technisch schone tekst zonder standpunt het laagst bij de doellezer ("hier kan ik geen
-besluit op nemen"). (e), (f) en (g) komen uit de enige output die de Turingpoort
-passeerde: zij zijn het verschil tussen goed en menselijk.
+besluit op nemen").
 
 - **(a) Openlating, gedoseerd.** Eén tot twee keer benoemt de tekst wat de bron
-  openlaat: "Waarom de verzekeraar afhaakte, is niet bekend." Alleen als het
-  dossier vaststelt dát het gegeven ontbreekt. Bij twee: andere zinsvorm, niet in
-  de slotalinea. Grootste vertrouwenswinst van het veld; in dezelfde mal herhaald
-  de zichtbaarste tell ervan (X6).
+  openlaat, en alleen waar het dossier vaststelt dát het gegeven ontbreekt. Bij twee:
+  andere zinsvorm, niet in de slotalinea. Grootste vertrouwenswinst van het veld; in
+  dezelfde mal herhaald de zichtbaarste tell ervan (X6).
 - **(b) Elk kerncijfer wordt ergens tegenaan gedrukt:** een schaalzin, een verhouding,
-  het doel, een ander bedrag. De cijferalinea zonder zaak is waar alle vijf de
-  varianten zakten.
+  het doel, een ander bedrag. De cijferalinea zonder zaak is waar alle vijf de varianten
+  zakten.
 - **(c) Eén beargumenteerd standpunt:** een uitspraak waarop de auteur over drie jaar
   afgerekend kan worden en waarmee een geïnformeerde lezer het oneens kan zijn.
-- **(d) Causaliteit alleen waar de kaart die dekt.** Geen "waardoor", "daardoor",
-  "dus" of causale kop zonder regel in K (fase 1).
-- **(e) De tegenslag krijgt een gevolg.** Het gemiste doel, de vertrokken partner
-  en het weggevallen bedrag staan nooit alleen genoemd: erbij staat wat het kostte,
-  wat het verschoof, of wat het betekent voor wie dit overneemt.
-- **(f) Eén oordeel dat iets kost:** een zin die de tekst zwakker maakt dan hij had
-  kunnen zijn — het beste cijfer waarvan je zelf de kracht wegneemt, een claim die
-  je verkleint, een succes dat je niet opeist. Tweemaal als beslissend aangewezen.
-- **(g) Het slot geeft de lezer iets om morgen te doen of te beslissen** — wat hij
-  kan navolgen, wat hij opnieuw moet ontwerpen, waar hij op moet letten. Zonder
-  adviesformule ("wij bevelen aan", "het verdient aanbeveling", "van belang is"):
-  een constatering met een handeling erin.
+- **(d) Causaliteit alleen waar de kaart die dekt.** Geen "waardoor", "daardoor", "dus"
+  of causale kop zonder regel in K (fase 1).
 
-## De elf verboden
+## De oordeel-grondregel
+
+Een tekst zonder standpunt is dood (verbod 10); een standpunt dat zijn eigen grond
+verzint is erger. Twee eisen, allebei hard. **Ondertekend.** Het standpunt is herkenbaar
+het oordeel van de schrijver: "wij vinden dit te smal", "dat is te mager, omdat …", "dat
+oogt duur voor een programma van deze omvang". Zonder ondertekening leest een oordeel als
+een bevinding, en een bevinding wordt aan de bron toegerekend — daar begint het
+verzinnen. Het scherpst is het oordeel dat je zelf iets kost: je beste cijfer
+relativeren, een claim verkleinen, een succes niet opeisen, mits het dossier dat draagt.
+**Gegrond.** Bij elk deel van de redengeving kun je
+een F- of C-regel aanwijzen. Let op de vermomming: beweringen over de bewijsbasis, de
+methode of het mechanisme zijn geen oordelen maar **feiten** — "het berust op één
+meting", "één indicator bepaalde de hele betaling", "de controlegroep ging op de
+deelnemersgroep lijken" — en vallen dus onder de omgekeerde feitencontrole (5.1), die
+voortaan **álle** beweringen over de wereld dekt, niet alleen getallen, namen en
+jaartallen. Levert het dossier de grond niet, dan verzwak je het oordeel tot wat de
+F-regels dragen, maak je er een open vraag van (criterium a) of laat je het vallen.
+Verzinnen is geen uitweg; deze twee zinnen uit ronde 3 kwamen uit sterk geschreven werk
+en leverden allebei een diskwalificatie op:
+
+> "Die 19 procent is tegelijk het zwakste cijfer van het programma: het berust op één
+> meting op de deelnemende scholen." — de bron zegt niets over hoe er is gemeten.
+> "Wij vinden de uitkomstenstructuur van deze bond toch te smal: één indicator bepaalde
+> de hele betaling." — het oordeel mag; deze grond staat nergens.
+
+Juist de menselijkste zinnen zijn de zinnen die de bron niet draagt.
+
+## De twaalf verboden
 
 Het gedachtestreepje is uitgeroeid; de machine verplaatst het nadrukmechanisme naar
-deze elf, gemeten in fase 4 en gecontroleerd in fase 5.
+deze twaalf, gemeten in fase 4 en gecontroleerd in fase 5.
 
 | # | Verbod | Grens | Waar |
 |---|---|---|---|
@@ -80,12 +95,13 @@ deze elf, gemeten in fase 4 en gecontroleerd in fase 5.
 | 3 | Spiegelparen en negatieparallellen ("Voor X stond € 1.850 klaar. Voor Y niets.") | 0 | X4 |
 | 4 | Gelijke alinealengtes | nooit 3 opeenvolgend binnen 10% | X3 |
 | 5 | Zinsopening-herhaling ("Wie …", "Wat … betreft", "Juist …") | geen constructie 2× | X5 |
-| 6 | Openlatingsmal ("is niet bekend", "staat er niet") als formule | ≤ 2, elk een andere zinsvorm, niet in de slotalinea | X6 |
-| 7 | Getalprop: alinea of zin die een tabel wordt | ≤ 3 per alinea, ≤ 3 per zin | X7 |
+| 6 | Openlatingsmal ("is niet bekend") of een voorbeeldzin van deze skill als formule | ≤ 2, elk een andere zinsvorm, niet in de slotalinea; skill-formule 0 | X6, X9 |
+| 7 | Getalprop: alinea of zin die een tabel wordt | richtlijn: ≤ 3 per alinea, ≤ 3 per zin, spreiden door herordenen | X7 |
 | 8 | Verzonnen causaliteit — het gevaarlijkst, vier van de vijf varianten deden het | 0 | 5.2 |
 | 9 | Afgeleide getallen zonder regel (gemengde noemers, totaal dat de delen verdringt) | 0 | 5.3 |
 | 10 | Correct maar dood: geen standpunt | criterium (c) | 3.5, fase 7 |
 | 11 | De cijferalinea zonder zaak | criterium (b) | 3.2 |
+| 12 | Gegevensdump: alinea van 90+ woorden met 5+ getallen | knippen op een beweringsgrens | X8 |
 
 ## Werkwijze: subagents, solo-fallback, scratchpads
 
@@ -256,11 +272,12 @@ rondes; solo-fallback in de tabel bovenaan.
 het kader. **De brontekst gaat niet mee** — niet samengevat, niet als "ter illustratie"
 geplakte zin. Zet in de briefing letterlijk: *"Er is geen brontekst en die krijg je ook
 niet. Wat niet in dit dossier staat, bestaat niet: schrijf `[GAT: …]` waar je iets
-mist. Verzin geen getal, naam, jaartal, citaat of vergelijking."* Solo: noteer `BRON
-GESLOTEN`, lees de bron niet terug tot fase 5. Schrijf in één doorloop van lede naar
-slot; stop niet om te vergelijken. De schrijver levert pas op als hij de zeven
-aanwezigheidscriteria kan **aanwijzen** — bij (a), (c), (e), (f) en (g) met de zin
-erbij. Kan hij (f) niet aanwijzen, dan heeft de tekst niets gekost en is hij niet af.
+mist. Verzin geen getal, naam, jaartal, citaat, mechanisme of vergelijking."* Solo:
+noteer `BRON GESLOTEN`, lees de bron niet terug tot fase 5. Schrijf in één doorloop van
+lede naar slot; stop niet om te vergelijken. De schrijver levert pas op als hij de vier
+criteria kan **aanwijzen** — bij (a) en (c) met de zin erbij — en bij het standpunt de
+dossierregels noemt die de grond leveren. Kan hij die niet noemen, dan is het oordeel
+niet af: verzwakken, openen of laten vallen.
 
 **3.1 De lede en de nutzin.** De eerste zin is een zaklamp, geen inleiding: hij toont
 wat er aan de hand is. Schrijf drie ledes en kies er één: de harde vergelijking (twee
@@ -271,42 +288,47 @@ de eerste zin schrappen zonder verlies, dan is het geen lede. Uiterlijk in aline
 (onder de 400 woorden: alinea twee) staat de nutzin: de ruggengraat, uitgeschreven.
 
 **3.2 Cijfers die ergens tegenaan worden gedrukt.** Eén nieuw getal per zin, hoogstens
-twee per alinea; drie is de harde grens die X7 afdwingt, per alinea én per zin. Bij
-overschrijding verplaats je een getal of laat je het vallen — melden in het logboek is
-geen oplossing, want de lezer leest het logboek niet. **Elk kerncijfer krijgt een
-tweede, kortere zin die het schaalt**, en die schaling rekent uitsluitend met getallen
-uit F: een verhouding, een bedrag per eenheid, het verschil met het doel. Een
-vergelijking met iets van buiten ("ongeveer een maand bijstand") is een nieuw feit en
-dus verboden, hoe mooi ook. Rond af tot twee significante cijfers, tenzij het verschil
-zelf daar ligt; procent en procentpunt zijn niet hetzelfde. De cijferalinea is geen
-grootboek: staat er geen zin in die iemand zou onderstrepen, dan is hij niet af.
+twee per alinea; drie per alinea en per zin is de **richtlijn** die X7 meet, geen cap.
+Spreiden doe je door te herordenen, nooit door te schrappen: een dragend `[D]`-feit
+vervalt niet voor een meting en een totaal vervangt nooit de samenstellende delen — dat
+kostte in ronde 3 vijf van de twaalf feiten. Splits alleen op een **beweringsgrens**,
+want een afgesplitste alinea zonder eigen bewering wordt een verwisselbare feittegel.
+Lukt herordenen niet, dan laat je X7 rood en meld je hem in regel 8 van het logboek.
+**Gegevensdump-guard:** elk kerngetal staat naast datgene waar het iets betekent (het
+doel, het totaal waarvan het een deel is, de partij die betaalde), en een alinea van 90
+woorden of meer met vijf of meer getallen wordt op een beweringsgrens geknipt (X8).
+**Elk kerncijfer krijgt een tweede, kortere zin die het schaalt**, en die schaling rekent
+uitsluitend met getallen uit F: een verhouding, een bedrag per eenheid, het verschil met
+het doel. Een vergelijking met iets van buiten ("ongeveer een maand bijstand") is een
+nieuw feit en dus verboden, hoe mooi ook. Rond af tot twee significante cijfers, tenzij
+het verschil zelf daar ligt; procent en procentpunt zijn niet hetzelfde. Staat er in de
+cijferalinea geen zin die iemand zou onderstrepen, dan is hij niet af.
 
-**3.3 Openlating en onzekerheid.** Waar het dossier vaststelt dát een gegeven
-ontbreekt, schrijf je dat op: "Wat het gat van € 120.000 met de uitvoering deed,
-meldt het projectdossier niet." Alleen op een `[GAT]` uit 1.4: een openlating
-verzinnen is even erg als een feit verzinnen. **Dosering:** één is verplicht, twee is
-het maximum, drie is een tic — dan leest de lezer een formule in plaats van een
-houding. Bij twee verschillen ze van vorm: de een een vooropgeplaatste vraagzin
-("Waarom de verzekeraar afhaakte, is niet bekend"), de ander een mededeling met een
-handelend onderwerp ("De evaluatie rekent die kosten nergens toe"). Nooit twee keer
-dezelfde staart en nooit in de slotalinea, want de slotzin draagt een oordeel of een
-gevolg, geen gemis (criterium g, meting X6). **Onzekerheid:** een claim die het
-dossier `onzeker` noemt, krijgt precies één slag om de arm, in eigen woorden en met de
-reden erbij ("De uitkomst is met één meting vastgesteld") — niet twee in dezelfde zin,
-niet dezelfde onzekerheid twee keer, nooit de constructie van de bron.
+**3.3 Openlating en onzekerheid.** Waar het dossier vaststelt dát een gegeven ontbreekt,
+schrijf je dat op. Alleen op een `[GAT]` uit 1.4: een openlating verzinnen is even erg
+als een feit verzinnen. **Dosering:** één is verplicht, twee is het maximum, drie is een
+tic — dan leest de lezer een formule in plaats van een houding. **Variatieplicht:**
+dezelfde epistemische mal komt binnen één tekst nooit twee keer terug, ook niet met een
+ander onderwerp; bij twee openlatingen is de een een vooropgeplaatste vraagzin en de
+ander een mededeling met een handelend onderwerp. Nooit in de slotalinea, want de
+slotzin draagt een oordeel of een gevolg, geen gemis (slotregel 3.4, meting X6).
+**Onzekerheid:** een claim die het dossier `onzeker` noemt, krijgt precies één slag om
+de arm, in eigen woorden en met de reden zoals het dossier die noteerde — nooit ruimer.
+Zegt het dossier niets over de meting, dan schrijf je daar ook niets over: "het berust
+op één meting" is dan een verzonnen feit, geen voorzichtige formulering. Niet twee
+slagen in dezelfde zin, niet dezelfde onzekerheid twee keer, nooit de bronconstructie.
 
-**3.4 Weglating, gevolg en slot.** Schrap de zin die uitlegt wat de vorige zin
-betekende, en de aankondiging en de samenvatting. Laat één ding weg dat een sjabloon
-wél had opgenomen en benoem het in het logboek; kun je niets noemen, dan heb je niet
-gekozen. **Geef de tegenslag een gevolg** (criterium e): het gemiste doel, de
-vertrokken partner en het weggevallen bedrag staan nergens alleen genoemd. **Het slot
-draagt een oordeel, een gevolg of een vooruitwijzing — nooit een kaal feit.** Het vat
-niet samen, maar laat de lezer wel weten wat hij hiermee moet: wat hij kan navolgen,
-wat hij opnieuw moet ontwerpen, waarop hij moet letten (criterium g). Een hoofdstuk dat
-eindigt op een verweesd gegeven ("Meander dekt 62 procent van diezelfde regionale
-markt") haalt zijn eigen conclusie onderuit; in de slotalinea staat dan ook geen
-verwijswoord zonder antecedent binnen diezelfde alinea. Toets: schrap de laatste
-alinea; verdwijnt er een oordeel of een gevolg? Zo nee, was hij er niet.
+**3.4 Weglating en slot.** Schrap de zin die uitlegt wat de vorige zin betekende, en
+de aankondiging en de samenvatting. Laat één ding weg dat een sjabloon wél had
+opgenomen en benoem het in het logboek; kun je niets noemen, dan heb je niet gekozen.
+**Het slot draagt een oordeel, een gevolg of een vooruitwijzing — nooit een kaal feit.**
+Het vat niet samen, en wat het draagt, draagt het op grond van het dossier: een hoofdstuk
+dat eindigt op een verweesd gegeven ("Meander dekt 62 procent van diezelfde regionale
+markt") haalt zijn eigen conclusie onderuit. In de slotalinea wijst elk verwijswoord
+("wel", "die", "dat", "dit", "daarmee", "het") terug naar iets in diezelfde of de vorige
+alinea; verder terug schrijf je het antecedent opnieuw uit, want de lezer van een slot
+bladert niet terug (controle 5.5). Toets: schrap de laatste alinea; verdwijnt er een
+oordeel of een gevolg? Zo nee, was hij er niet.
 
 **3.5 De huisstem.** Deze tien gaan mee in elke schrijversbriefing.
 
@@ -368,8 +390,8 @@ zin het schaalt.*
 
 **S5 · KANTTEKENING, het eigen instrument relativeren** — SFNL (2024). *Belang
 verklaren, belang relativeren, claim verkleind overeind zetten; de kanttekening
-verzwakt het betoog niet, ze koopt geloofwaardigheid. Dit is de beweging voor
-criterium (f).*
+verzwakt het betoog niet, ze koopt geloofwaardigheid. Dit is de beweging voor een
+ondertekend oordeel dat zichzelf begrenst.*
 > Social Finance NL is opgericht door de architecten van de eerste Social Impact
 > Bonds in Nederland. Dat wil niet zeggen dat dit middel daarom voor ons heilig
 > is. Maar het heeft ons wel geleerd hoe we resultaatgerichte samenwerkingsvormen
@@ -396,7 +418,12 @@ woord ook in de bron voorkomt. Deze mogen nooit in je output: *Kinzigtal, shared
 savings, 265.600, verviervoudiging, valtrainingen, Stevig Staan, heilig, Social Impact
 Bonds, WRR, aansprekend en solide*. **Pastichetoets:** beginnen jouw zin en de
 specimenzin met hetzelfde woord en dezelfde bouw, dan heb je nagedaan in plaats van
-geleend — schrijf hem opnieuw, dezelfde beweging, andere ingang.
+geleend — schrijf hem opnieuw, dezelfde beweging, andere ingang. **Anti-vingerafdruk:**
+besmetting geldt evengoed voor de voorbeeldzinnen van deze skill zelf ("Waarom de
+verzekeraar afhaakte, is niet bekend", "meldt het projectdossier niet", "Wie …
+overneemt, …"). Zij tonen de beweging, nooit de woorden; outputs uit verschillende rondes
+deelden zulke mallen bijna woordelijk, waarna de detective de terughoudendheid "eerder
+een sjabloon dan een keuze" noemde (meting X9).
 
 ## Fase 4 — Meten
 
@@ -404,7 +431,9 @@ Schrijf het script hieronder weg in `04-meting/meetlat.py` en draai het op de **
 (nulmeting) en na **elke** schrijfronde, op de tekst zónder logboek. Rood is rood; iets
 ertussenin bestaat niet. Elke rode meting leidt tot een **schrijfpas op de betrokken
 passage** — helemaal opnieuw vanaf de F-regels, want een gerepareerde zin erft de
-architectuur van de kapotte zin. Maximaal twee meetrondes (lichte route: één).
+architectuur van de kapotte zin. Maximaal twee meetrondes (lichte route: één). X7 en X8
+zijn **richtlijn** en drukken `LET` in plaats van `ROOD`: daar herorden je eerst, en
+lukt dat niet zonder feitverlies, dan blijft de meting staan en gaat zij mee in regel 8.
 
 **Voorrangsregel: leesbaarheid gaat vóór de ritmemetingen.** Dit staat boven R1 tot en
 met R5 en boven X1 tot en met X5. Een zin met vier of meer getallen wordt gesplitst of
@@ -428,6 +457,7 @@ def zin(t):
     return [z.strip() for z in re.split(r'(?<=[.!?])\s+(?=[«"\'(A-ZÀ-Þ0-9])', t) if len(z.strip()) > 1]
 Z = zin(B); L = [len(w(z)) for z in Z]; N = sum(L); low = B.lower()
 p = lambda ok, k, v: print(f"{'OK  ' if ok else 'ROOD'} {k:<22} {v}")
+g = lambda ok, k, v: print(f"{'OK  ' if ok else 'LET '} {k:<22} {v}")   # richtlijn, geen cap
 print(f"--- {N} woorden, {len(Z)} zinnen, {len(ALI)} alinea's, {len(KOP)} koppen")
 sd = st.pstdev(L) if len(L) > 1 else 0; gem = N / max(len(L), 1)
 p(sd >= 7 and sd/max(gem, 1) >= .45, "R1 spreiding", f"SD {sd:.1f} (>=7,0), burst {sd/max(gem,1):.2f} (>=0,45)")
@@ -464,7 +494,11 @@ p(1 <= len(hits) <= 2 and len({h[0] for h in hits}) == len(hits) and len({h[1] f
   "X6 openlatingen", f"{len(hits)} (>=1, <=2), vormen {[h[0]+':'+h[1] for h in hits]}, in slotalinea {slot}")
 GET = re.compile(r'\b\d[\d.,]*\b')
 ga = [len(GET.findall(a)) for a in ALI]; gz = [(i+1, len(GET.findall(z))) for i, z in enumerate(Z) if len(GET.findall(z)) >= 4]
-p(max(ga, default=0) <= 3 and not gz, "X7 getalspreiding", f"per alinea {ga} (<=3); zin met >=4 getallen: {gz[:3] or 'geen'}")
+g(max(ga, default=0) <= 3 and not gz, "X7 getalspreiding", f"per alinea {ga} (<=3); zin met >=4 getallen: {gz[:3] or 'geen'}")
+dump = [i+1 for i, a in enumerate(ALI) if len(w(a)) >= 90 and len(GET.findall(a)) >= 5]
+g(not dump, "X8 gegevensdump", f"alinea's van 90+ woorden met 5+ getallen: {dump or 'geen'}")
+SJAB = ["waarom de verzekeraar afhaakte", "meldt het projectdossier niet", "rekent die kosten nergens toe", "berust op één meting", "één indicator bepaalde", "wie dit overneemt", "diezelfde regionale markt"]
+sj = [s for s in SJAB if s in low]; p(not sj, "X9 skill-formules", sj or "geen voorbeeldzin van de skill")
 CON = {"wie", "wat", "waar", "juist", "niet", "wanneer", "zo", "daarmee", "hoewel", "terwijl", "pas", "ook"}
 dub = [f"'{k}' {v}x" for k, v in Counter(w(z)[0].lower() for z in Z if w(z)).items() if k in CON and v > 1]
 dub += [f"'{k}' {v}x" for k, v in Counter(' '.join(w(z)[:2]).lower() for z in Z if len(w(z)) > 1).items() if v > 2]
@@ -521,9 +555,13 @@ controleren, niet om eruit te putten.
 **5.1 Feitencontrole, beide kanten op.** *Heen:* loop F1 tot Fn af, met per feit één
 uitkomst — `staat er, exact` / `bewust weggelaten` / `afwijkend`. Elk `[D]`-feit dat
 ontbreekt komt er alsnog in; elk afwijkend cijfer is een fout, geen stijlkwestie.
-*Terug:* onderstreep in de output elk getal, bedrag, jaartal, percentage, eigennaam,
-citaat en voorbeeld; staat het niet in F, dan is het verzonnen en gaat het eruit, ook
-als het klopt. Elk getal dat twee keer voorkomt heeft beide keren dezelfde waarde.
+*Terug:* onderstreep in de output **elke bewering over de wereld** — elk getal, bedrag,
+jaartal, percentage, eigennaam, citaat en voorbeeld, én elke uitspraak over de
+bewijsbasis, de methode, het mechanisme of het motief van een partij ("de controlegroep
+ging op de deelnemersgroep lijken"). Staat zij niet in F, C of K, dan is zij verzonnen en
+gaat zij eruit, ook als zij klopt en ook als de zin eromheen een oordeel is: het oordeel
+mag van jou zijn, de grond eronder is een feit. Elk getal dat twee keer voorkomt heeft
+beide keren dezelfde waarde.
 *Verliescontrole:* lees de bron één keer op leessnelheid met één vraag — welke
 **betekenis** staat hier die niet in mijn tekst staat? Niet: welke formulering.
 Vergeten betekenis gaat alsnog de tekst in, uit het dossier geschreven.
@@ -545,7 +583,8 @@ alleen in de bron. (2) **Zelfde noemer**: nooit een breuk tussen grootheden met
 verschillende grondslagen — kosten per 460 bereikte huishoudens tegenover de
 gemiddelde schuld van 312 huishoudens mét schulden is geen verhouding maar een fout.
 (3) **Het afgeleide getal vervangt de delen niet**: laat de delen staan of het totaal
-weg. (4) **Exact, afgerond tot twee significante cijfers.** Meld het in regel 5.
+weg, ook niet om X7 groen te krijgen. (4) **Exact, afgerond tot twee significante
+cijfers.** Meld het in regel 5.
 
 **5.4 Hedge-quarantaine.** Zoek in de output elke slag om de arm op: *vooralsnog,
 lijkt erop, mogelijk, deels, niet met zekerheid, op basis van de beschikbare gegevens,
@@ -559,8 +598,10 @@ op beide lange teksten terug en werd beide keren als machinesignaal aangewezen.
 **5.5 Copy edit.** Herschrijft niets en verplaatst niets. Eén aanspreekvorm, één
 auteursperspectief, één notatie voor getallen, procenten, valuta en data door de hele
 tekst. Afkortingen: eerste keer voluit, daarna een gewoon woord; een afkorting die één
-keer voorkomt gaat eruit. Koppen in zinskapitalisatie, geen komma vóór "en", geen
-em-dash, geen vetdruk als nadruk, geen markdownresten. Elk verbindingswoord klopt met
+keer voorkomt gaat eruit. Elk verwijswoord in de slotalinea krijgt zijn antecedent
+aangewezen (3.4); reikt dat twee alinea's of verder terug, dan schrijf je het uit.
+Koppen in zinskapitalisatie, geen komma vóór "en", geen em-dash, geen vetdruk als
+nadruk, geen markdownresten. Elk verbindingswoord klopt met
 de relatie die het markeert: "daarom" waar geen oorzaak voorafging is een fout van
 deze ronde, en een signaal voor 5.2.
 
@@ -615,17 +656,21 @@ Niet schrappen, herschrijven. Meet daarna woorden bron, woorden output, percenta
 **Eindpoort.** Zeven vragen. Alle zeven "ja", anders lever je niet.
 
 1. Feitencontrole en causaliteitscontrole schoon, lengte binnen de afspraak.
-2. De zeven aanwezigheidscriteria staan op "ja" en je kunt de zin aanwijzen.
-3. De slotalinea draagt een oordeel, gevolg of vooruitwijzing, en er staat geen
-   verwijswoord in zonder antecedent binnen diezelfde alinea.
-4. Openlatingen: één of twee, verschillende zinsvorm, buiten de slotalinea (X6 groen).
-5. Geen hedge-constructie van drie of meer woorden die letterlijk in de bron staat.
-6. Per sectie een doorstuurzin, per alinea een eigen punt.
-7. Een kop, als het teksttype met een titel wordt gepubliceerd.
+2. De vier aanwezigheidscriteria staan op "ja" en je kunt de zin aanwijzen.
+3. Elk oordeel is ondertekend en bij elke grond eronder kun je de dossierregel noemen;
+   geen bewering over bewijs, methode of mechanisme buiten F, C of K.
+4. De slotalinea draagt een oordeel, gevolg of vooruitwijzing, en elk verwijswoord erin
+   heeft zijn antecedent in diezelfde of de vorige alinea.
+5. Openlatingen: één of twee, verschillende zinsvorm, buiten de slotalinea (X6 groen);
+   geen mal twee keer en geen voorbeeldzin van deze skill letterlijk (X9 groen).
+6. Geen hedge-constructie van drie of meer woorden die letterlijk in de bron staat.
+7. Per sectie een doorstuurzin, per alinea een eigen punt, en een kop als het teksttype
+   met een titel wordt gepubliceerd.
 
-Een rode aanwezigheidsmeting (X6, X7, of een criterium) lever je niet — die betekent
-dat een passage leeg of dichtgeslibd is; een rode vorm- of ritmemeting lever je wel,
-met vermelding in regel 8. Eerst de tekst, plakklaar, zonder inleiding, zonder
+Een rode aanwezigheidsmeting (X6, X9, of een criterium) lever je niet — die betekent dat
+een passage leeg of nagedaan is. Een `LET` op X7 of X8 lever je wel, net als een rode
+vorm- of ritmemeting, met vermelding in regel 8: een feit opofferen aan een meting is de
+duurdere fout. Eerst de tekst, plakklaar, zonder inleiding, zonder
 aanhalingstekens eromheen, zonder commentaar. Dan een regel `---`. Dan het logboek,
 **exact acht regels**:
 
@@ -637,7 +682,7 @@ aanhalingstekens eromheen, zonder commentaar. Dan een regel `---`. Dan het logbo
 5 Feiten       <n> van <n> terug; afwijkingen: <geen|welke>; afgeleid: <welke, hoe>
 6 Causaliteit  K <n> verbanden gedekt; herschreven tot nevenschikking: <welke|geen>
 7 Openlating   <1|2>: "<zin>"<, "<zin 2>", andere vorm>; gaten: <[GAT]|geen>
-8 Meting       rood <n> → <n>; koude lezer <uitkomst>; leesbaarheid vóór meting: <waar|n.v.t.>; openstaand: <geen|wat>
+8 Meting       rood <n> → <n>; koude lezer <uitkomst>; leesbaarheid vóór meting: <waar|n.v.t.>; openstaand: <geen|X7/X8 met reden>
 ```
 
 Regel 7 en 8 zijn nooit leeg. Geen negende regel, geen aanbod, geen samenvatting.
@@ -656,5 +701,6 @@ Regel 7 en 8 zijn nooit leeg. Geen negende regel, geen aanbod, geen samenvatting
   die je liet liggen en geef de sectie die haar draagt het gewicht dat je elders bespaarde.
 - **Feitendichte passage** (tabel in proza, reeks bedragen, contractuele formulering):
   schrijf die uit het dossier met de F-lijst letterlijk naast je, zin voor zin, en
-  controleer elk getal direct; meld de uitzondering in regel 5. Ook hier geldt X7:
-  liever een getal minder in de alinea dan een alinea die een tabel wordt.
+  controleer elk getal direct; meld de uitzondering in regel 5. X7 is hier een
+  richtlijn: herorden tot elk getal naast zijn betekenis staat, maar laat liever de
+  meting rood dan dat je een feit of een samenstellend deel opoffert.
