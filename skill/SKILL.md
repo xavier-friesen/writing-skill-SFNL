@@ -1,6 +1,6 @@
 ---
 name: sfnl-rapporttekst
-version: 3.1
+version: 3.2
 description: 'Zet een concepttekst, meestal door een model geschreven, om in publiceerbare Nederlandse rapporttekst voor Social Finance NL. Decompileert de bron tot een dossier, sluit de bron, schrijft vers, meet met een telscript, controleert feiten en causaliteit, en laat er een koude lezer overheen gaan. Gebruik deze skill wanneer een concept, AI-uitvoer, ruwe notitie of half afgemaakt stuk moet worden afgemaakt of omgezet naar tekst die naar buiten kan, zoals een rapporthoofdstuk, bestuurlijke samenvatting, casetekst, projectpagina, notitie of adviesparagraaf. Trigger ook op "maak dit af", "schrijf dit klaar voor de klant", "haal de AI eruit", "maak er een rapporttekst van" en "publiceerbaar maken".'
 ---
 
@@ -141,16 +141,55 @@ zijn eigen map, niets erbuiten.
 
 ## Lichte route (tekst onder ~350 woorden)
 
-Tel de bronwoorden vóór fase 0. Onder ongeveer 350 woorden: fase 2 licht (geen dot-dash, geen horizontale
-leestest, wél de gewichtskeuze en de keuze **geen tussenkoppen** — vier koppen boven 260 woorden is zelf een
-sjabloon), en fase 4 in één meting in plaats van een lus. Fase 6 blijft: de koude lezer is juist bij korte tekst
-goedkoop en beslissend. Alle invarianten, criteria, verboden en budgetten gelden onverkort, en de hardop-ronde
-(5.7) blijft verplicht.
+Tel de bronwoorden vóór fase 0. Onder ongeveer 350 woorden loopt de tekst een eigen route: dezelfde wetten, veel
+minder machinerie. **Een korte tekst wint bij minder apparaat: de wetten en de budgetten gelden, de bouwsteigers
+niet.** Waarom deze route bestaat: op de korte casetekst won in drie testrondes (r2, r4, r5) steeds de slanke
+versie, terwijl het volledige apparaat daar metronomische alinea's, elkaar tegensprekende oordelen en een
+gekroonde kop opleverde. Op de lange teksten wint dat apparaat juist wél; daar verandert niets.
+
+**De route, zes stappen.**
+
+1. **Fase 0 onverkort.** Eén check-in met de vier vragen; blijft het antwoord uit, dan de defaulttabel, gemeld in
+   logboekregel 1. Kader in `00-kader.md`, zes regels.
+2. **Lichte decompilatie.** Drie onderdelen, meer niet: de feitenlijst (1.1, teken voor teken, met `[D]` en
+   `[CONFLICT]`), de causaliteitskaart mét het blok NAAST ELKAAR (1.3), en de spanning plus de lezersvraag (1.4).
+   **Geen claimregister met sterkte-etiketten** (1.2). Wel noteer je bij een dragende bewering de bronmarkering
+   die eraan vastzit — beoogd, verwacht, deels, betwist — want die reist mee tot in het oordeel.
+3. **Bron sluiten** (fase 3): `BRON GESLOTEN` in je werknotitie, of een schrijver die alleen deze drie
+   onderdelen en het kader krijgt. Ook op een tekst van 300 woorden repareer je niet, je schrijft vers.
+4. **Vers schrijven met de kernwetten en alle budgetten.** De huisstem (3.5) voluit. De kop is een bevinding uit
+   deze tekst en keert nergens woordelijk terug (X11, nul). Elk kerncijfer staat naast datgene waar het iets
+   betekent: het doel, het totaal waarvan het een deel is, de partij die betaalde (criterium b). Het slot draagt
+   een oordeel, een gevolg of een vooruitwijzing, nooit een kaal feit (3.4). En de budgetten gelden onverkort: X1
+   ≤ 2, X4 ≤ 1, X6 ≤ 1, X10 ≤ 2, X11 = 0, met de getalspreiding (X7, X8) als richtlijn — herorden, en laat de
+   meting liever staan dan dat je een feit opoffert.
+5. **Eén meetronde** met het telscript van fase 4, op de tekst zonder logboek. Rood levert een schrijfpas op de
+   betrokken passage op, geen tweede lus.
+6. **Twee controles en één lezer.** De feitencontrole heen én terug (5.1, inclusief de verliescontrole) en de
+   hardop-ronde (5.7). Daarna de koude lezer (fase 6), met **hoogstens één** terugronde; faalt hij daarna nog,
+   dan lever je met het punt in regel 8.
+
+**Eén oordeel, en geen tweede stem.** De oordeel-grondregel geldt hier onverkort: ondertekend, gegrond in een
+F-regel of de kaart, met modaliteitsbehoud. Maar op deze lengte hoogstens **één** eigen oordeel, en oordelen
+spreken elkaar nooit tegen — staat het in de kop, dan is dat hét oordeel en weegt de tekst het verderop niet
+anders. Twee halve oordelen in driehonderd woorden lezen als weifelen.
+
+**Wat niet meegaat.** Geen dot-dash-storyline (2.2), geen so-what per dash (2.3), geen gewichtstabel (2.4), geen
+horizontale leestest (2.6) en geen tussenkoppen: vier koppen boven 260 woorden is zelf een sjabloon.
+Huisstemregel 5 (mechanismen in de vierslag van S3) is hier een aanbod en geen verplichting, en de
+schaalvertaling is een budget en geen eis — nul glossen is op deze lengte de normale uitkomst. Geen
+tussenconclusies. En van de zeven controles van fase 5 blijven alleen 5.1 en 5.7 staan: causaliteitscontrole,
+afgeleide getallen, hedge-quarantaine, copy edit en doseringscontrole doe je niet als aparte doorloop, want op
+deze lengte overzie je de tekst in één keer. De kaart doet haar werk tijdens het schrijven (criterium d), en de
+terugcontrole van 5.1 dekt élke bewering over de wereld, ook een causale.
 
 **Geen tussenkoppen is niet hetzelfde als geen titel.** Elk teksttype dat met een titel wordt gepubliceerd —
 projectpagina, casetekst, hoofdstuk — krijgt een kop, ook hier. Die kop is een bevinding uit deze tekst, geen
 etiket ("Wijkkracht Molenhoek: de resultaten") en geen promotie ("samen bouwen aan financiële veerkracht"), en
 hij keert nergens woordelijk terug (X11). Bij twijfel: wel een kop.
+
+De invarianten, de vier aanwezigheidscriteria, de veertien verboden en fase 7 (eindpoort en het logboek van acht
+regels) gelden op deze route zoals overal. Wat vervalt, zijn de steigers.
 
 ## Fase 0 — Kader en check-in
 
