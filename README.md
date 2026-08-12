@@ -77,12 +77,19 @@ p. 12 met een andere waarde).
 
 ## Welke versie je installeert
 
-Voor werk dat de deur uit gaat: **`varianten/v3.2/`**. Dat is na zeven rondes de
-best geteste versie. Het nieuwe ontwerp in `skill/` staat op nul winsten uit vier
-schone blinde vergelijkingen; het schrijft scherper en veel goedkoper, maar maakt
-de tekst nog steeds sterker dan het materiaal toestaat — steeds in de zin die de
-lezer het beste vindt. `dossier/analyse-ronde6.md` en `analyse-ronde7.md` leggen
-uit waar dat vandaan komt en wat eraan is gedaan.
+`skill/` bevat v6.0. Die versie repareert niet het volgende gat maar de
+structurele fout die de vier eerdere gaten veroorzaakte, en de verificatie
+daarvan loopt nog. Zolang die niet binnen is, is **`varianten/v3.2/`** de best
+geteste versie voor werk dat de deur uit gaat.
+
+De diagnose staat in `dossier/de-structurele-fout.md` en is in één regel samen te
+vatten: de skill vroeg de schrijver zich eerst vast te leggen op een bewering die
+op retorische kwaliteit was gekozen, en toetste pas daarna of het materiaal haar
+droeg — door dezelfde schrijver, die er belang bij had dat zij overleefde. Elke
+controle stond dus stroomafwaarts van het motief. v6.0 vervangt de controles door
+een vorm: de kernbewering is een spanning tussen twee gegevens die beide in de
+bron staan, opschrijfbaar als "X, terwijl Y". Daarmee is zij gedekt door
+constructie, en zijn de vier eerdere defecten niet verboden maar onmogelijk.
 
 ## Wat er in de repo staat
 
