@@ -1,263 +1,216 @@
 ---
 name: sfnl-rapporttekst
-version: 4.1
-description: 'Bouwt van een concepttekst een publiceerbare Nederlandse rapporttekst voor Social Finance NL: kiest een premisse, beantwoordt de sterkste tegenwerping, ordent het betoog opnieuw en schrijft vers in de huisstem uit een gesloten dossier. Gebruik deze skill wanneer een concept, AI-uitvoer, ruwe notitie of half afgemaakt stuk naar buiten moet, zoals een rapporthoofdstuk, bestuurlijke samenvatting, casetekst, projectpagina, notitie of adviesparagraaf. Trigger ook op "maak dit af", "schrijf dit klaar voor de klant", "haal de AI eruit", "maak er een rapporttekst van", "scherper", "publiceerbaar maken".'
+version: 5.0
+description: 'Distilleert uit een bestaande concepttekst wat er werkelijk gezegd moet worden, giet dat in een argumentvorm en schrijft het als publiceerbaar Nederlands proza in de huisstem van Social Finance NL. Gebruik deze skill wanneer een concept, AI-uitvoer, ruwe notitie of half afgemaakt stuk naar buiten moet, zoals een rapporthoofdstuk, bestuurlijke samenvatting, casetekst, projectpagina, notitie of adviesparagraaf. Trigger ook op "maak dit af", "schrijf dit klaar voor de klant", "haal de AI eruit", "maak er een rapporttekst van", "scherper", "wat willen we hier nou eigenlijk zeggen", "publiceerbaar maken".'
 ---
 
 # SFNL-rapporttekst
 
-Je krijgt een concept en levert een publiceerbare tekst. Je repareert het concept niet. Een
-gerepareerde zin erft de informatievolgorde, de bijzinbouw en de vlakheid van het origineel — en
-een gerepareerd betoog erft de gedachte die niemand koos.
+Drie stappen. **Wat wil deze tekst werkelijk zeggen** — dat staat er zelden, want een concept zegt
+zeven dingen half. **Welke vorm laat dat landen** bij de lezer die er iets mee moet. **En dan het
+proza**: nieuw geschreven, in de huisstem, niet gerepareerd.
 
-Daarom verandert deze skill twee dingen, in deze volgorde. **Eerst het betoog**: wat de tekst de
-lezer wil laten geloven, tegen welk bezwaar in, in welke volgorde, met welk oordeel. **Dan het
-proza**: vers geschreven uit een dossier, met de bron dicht, in de stem uit `stem.md`. De eerste
-verandering is goedkoop en beslist bijna alles; de tweede is duur en beslist de rest. Verdeel je
-aandacht in die verhouding.
+De verhouding: stap 1 is de helft van het werk en kost een tiende van de tijd. Stap 3 is waar het
+zichtbaar wordt. Wie stap 1 overslaat, schrijft het concept mooier op — en dat is precies wat je
+niet moet doen.
 
-## De waarheidsgrens
+## Twee regels die niet buigen
 
-Twee regels, en ze lopen niet door elkaar.
+**Je bewerkt geen bronzin.** Elke zin in je output is nieuw geschreven. Een gerepareerde zin erft de
+informatievolgorde, de bijzinbouw en de vlakheid van het origineel; je merkt het niet terwijl je het
+doet. Houd de bron er dus bij om te controleren, nooit om uit te poetsen. Kun je van een zin niet
+zeggen of je hem geschreven of aangepast hebt, dan is hij aangepast: opnieuw.
 
-**Feiten zijn van de bron.** Elk cijfer, bedrag, jaartal, percentage, eigennaam en plaats staat in
-de output precies zoals in de bron. Geen getal, voorbeeld, citaat, naam, mechanisme of vergelijking
-dat niet uit de bron of het gesprek komt, ook niet als het klopt. Geen oorzaakverband dat de bron
-niet legt. En een claim houdt de sterkte van de bron: een verwachting wordt geen bevinding,
-"overweegt" geen "besluit", "beoogd" geen "afgesproken". Dit geldt óók voor beweringen over de
-bewijsbasis, de methode of het motief van een partij — "het berust op één meting", "één indicator
-bepaalde de betaling" zijn feiten, geen stijlkeuzes, en de duurste fout in dit vak is dat ze in de
-mooiste zin staan.
+**Feiten zijn van de bron, het betoog is van jou.** Elk cijfer, bedrag, jaartal, percentage,
+eigennaam en oorzaakverband staat in je tekst zoals het in de bron staat, met dezelfde sterkte —
+"beoogd" wordt geen "afgesproken", "verwacht" geen "vastgesteld". De kernbewering, de ordening, de
+beantwoorde tegenwerping en het oordeel draag jij aan; dat is de opdracht.
 
-**Het betoog is van jou.** De premisse, de ordening, de beantwoorde tegenwerping, het gewicht en
-het ondertekende oordeel draag jij aan. Dat is nieuwe taal en nieuwe redenering over bekende
-feiten, en het is de hele opdracht. Bij elk deel van je redengeving kun je een dossierregel
-aanwijzen; kan dat niet, dan verzwak je het oordeel tot wat het dossier draagt, maak je er een open
-vraag van, of laat je het vallen. Verzinnen is geen uitweg.
+Drie dingen die daar in de tests steeds weer op stukliepen, alle drie omdat ze de tekst mooier
+maken:
 
-**Maar de argumentlaag draagt dezelfde dekkingsplicht als de tekst.** Dit is de duurste les uit
-ronde 6, waar een vrije betooglaag zonder eigen feitenpoort twee van de drie teksten
-diskwalificeerde. Het verzinnen verhuist dan van de zin naar de premisse, en het komt langs twee
-routes binnen. **De opgevoerde spreker:** een tegenwerping wordt levendig gemaakt door er een
-persoon bij te bedenken — "een fondsmanager vraagt dan…", een wethouder met een motief dat nergens
-staat. Verboden: geen directe rede van iemand die de bron niet citeert, geen partij met een motief
-dat de bron niet noemt, ook niet als de tegenwerping zelf klopt. Een tegenwerping is een redenering,
-geen personage. **Het verbogen cijfer:** een verhouding wordt afgerond in de richting die het betoog
-nodig heeft — een factor 1,6 die "bijna verdubbeld" heet. Elke schaalvertaling reken je terug uit de
-F-regels en noteer je met de F-nummers in het logboek; klopt zij niet exact, dan gaat de vertaling
-eruit en niet het cijfer erin.
+- **Geen opgevoerde spreker.** Geen "een fondsmanager vraagt dan", geen wethouder met een motief dat
+  de bron niet noemt, geen citaat in directe rede dat de bron niet levert. Een bezwaar is een
+  redenering, geen personage.
+- **Geen bewering over het bewijs die de bron niet doet.** "Het berust op één meting", "de daling is
+  nergens toegerekend", "er was geen controlegroep" — dat zijn feiten, geen voorzichtigheid. Zegt de
+  bron er niets over, dan zeg jij er niets over.
+- **Geen verhouding die naar het betoog toe buigt.** Reken elke breuk, elk veelvoud en elk "bijna",
+  "ruim" of "net geen" na met de getallen zoals ze in de bron staan. Een factor 1,6 heet niet "bijna
+  verdubbeld". Klopt de vertaling niet, dan laat je de vertaling vallen en niet het cijfer.
 
-Daarom noemen **B2 en B3 hun dekking**, net als B5. Een tegenwerping zonder F- of K-regel eronder,
-of zonder een gat uit A4, gaat de tekst niet in.
+Verder: 15 tot 35 procent korter, bij feitendichte tekst 10, nooit langer. En breek liever een regel
+dan dat je iets barbaars schrijft — betekenis eerst, dan de wens van de gebruiker, dan de huisstem.
 
-**Overige invarianten.** Korter: 15 tot 35 procent, bij feitendichte of contractuele tekst 10
-procent, gemeld in het logboek; nooit langer. De laatste handeling op de tekst is een schrijfpas,
-nooit een schrapronde of een meting — eindigen met wegstrepen garandeert vlakheid. Levering is de
-plakklare tekst, dan het logboek van zes regels, verder niets. En breek liever een regel dan dat je
-iets barbaars schrijft: betekenis gaat vóór de wens van de gebruiker, die vóór de huisstem, die
-vóór de metingen.
+## Stap 1 — De kern
 
-## Route en werkwijze
+Lees de bron één keer helemaal, zonder te verbeteren en zonder te noteren. Streep dan in de bron
+zelf twee dingen aan, want die twee heb je straks nodig en de rest niet: **elk getal en elke
+eigennaam**, en **elk signaalwoord van oorzaak** (doordat, waardoor, omdat, daardoor, dankzij, als
+gevolg van). Meer administratie dan dit is niet nodig.
 
-Tel de bronwoorden. **Onder ongeveer 350 woorden** loopt de tekst de korte route: fase B3 (gezag)
-en B4 (architectuur) vervallen, B5 is drie regels op papier, en in fase D blijven het script, de
-feitencontrole, de doseringscontrole en de hardop-ronde. Op deze lengte hoogstens één eigen oordeel,
-en oordelen spreken elkaar nooit tegen. **B3b vervalt nooit**, op geen enkele route: de korte tekst
-is juist de tekst waarin één verbogen verhouding het hele stuk kost. **Boven 350 woorden** de volle
-route.
+Schrijf dan vijf regels op. Dit is het hele voorwerk.
 
-Twee stappen kunnen een subagent gebruiken: de schrijver in fase C (die alleen het dossier en het
-betoogblad krijgt) en de koude lezer in fase D. Is er geen Agent-tool, dan werk je solo en ben je
-strenger: zet `BRON GESLOTEN` in je werknotitie en lees de bron niet terug tot fase D. Werk in
-`<scratchpad>/sfnl-<slug>/` met `dossier.md`, `betoog.md` en `meetlat.py`.
+1. **De kernbewering.** Eén zin waarmee een geïnformeerde lezer het oneens kan zijn, en waarachter
+   staat **wat de lezer moet opgeven als hij haar aanvaardt**. Die tweede helft is de toets: een
+   stelling die de lezer niets kost, beweert niets en is dus een onderwerp.
+2. **Het sterkste bezwaar** ertegen — wat je doellezer werkelijk zou tegenwerpen en wat hem gelijk
+   zou geven — plus in vier woorden je antwoord: *toegeven en inperken*, *weerleggen met dat ene
+   gegeven*, of *verplaatsen naar de echte weerstand*. Als bewering geformuleerd, zonder spreker.
+3. **Het oordeel.** Waarop kan de auteur over drie jaar worden afgerekend? Bij voorkeur zo dat de
+   feiten het oordeel zelf vellen; ondertekend ("wij vinden dit te mager, omdat…") waar dat niet
+   kan. Eén per tekst.
+4. **Het gat.** Wat heeft de lezer nodig dat de bron niet levert? Alleen als hij zonder dat gegeven
+   zijn besluit niet kan nemen. Anders: geen gat, en de tekst zwijgt zoals de bron zwijgt. Nooit
+   invullen.
+5. **Wat eruit gaat.** Noem minstens één ding dat het concept behandelt en dat de kernbewering niet
+   dient, inclusief één ding dat een sjabloon wél had opgenomen. Kun je niets noemen, dan heb je
+   niet gedistilleerd maar geparafraseerd.
 
-## Fase A — Materiaal (bron open, één doorloop)
+**Toets voordat je verder gaat.** Kan elk onderdeel van regel 1, 2 en 3 wijzen naar iets dat je in
+de bron hebt aangestreept? Zo nee, verzwak het tot wat de bron draagt, maak er een open vraag van,
+of laat het vallen. Dit is de enige feitenpoort die je vooraf nodig hebt, en zij vervangt een
+dossier: je bouwt geen afschrift van de bron, je legt vast waar je betoog aan hangt.
 
-Lees de bron één keer helemaal zonder te verbeteren. Bouw dan `dossier.md`. Dit wordt het enige
-kanaal tussen bron en tekst: wat er niet in staat, mag niet in de tekst staan; wat er wel in staat
-en niet in de tekst, verantwoord je in het logboek. Die twee regels vangen je twee risico's,
-verzinnen en feitverlies.
+**Eén vraag aan de gebruiker, en niet meer dan één.** Leg de kernbewering voor met twee echt andere
+kandidaten ernaast — niet drie formuleringen van dezelfde gedachte, maar drie stellingen die de
+lezer op drie manieren van gedachten laten veranderen — plus het teksttype en de doellezer zoals jij
+ze leest. Eén `AskUserQuestion`. Wacht niet op antwoord: blijft het uit, kies de kandidaat met de
+meeste harde gegevens aan beide kanten, en bij gelijke stand die welke het gegeven in beeld brengt
+dat de bron kort en neutraal houdt — dat staat er niet voor niets zo. Meld de keuze in het logboek.
 
-**A1 Feiten (F).** Elk hard gegeven één regel, teken voor teken overgenomen: getal, eenheid,
-valuta, jaartal, spelling van de naam. Dit is de enige plek waar letterlijk overnemen moet.
-Markeer `[D]` als het feit dragend is. Komt een gegeven twee keer voor met verschillende waarden,
-noteer beide met `[CONFLICT]` — je kiest niet zelf, je meldt het.
+Vindt de bron geen spanning en is de tekst werkelijk een opsomming, dan blijft dat zo: schrijf
+beschrijvend en chronologisch. Een verzonnen stelling is erger dan geen.
 
-**A2 Bronmarkeringen.** Noteer bij elke dragende bewering de markering die eraan vastzit: beoogd,
-verwacht, deels, betwist, volgens wie. Die reist mee tot in het oordeel. De **formulering** van de
-onzekerheid gaat het dossier niet in — noteer de sterkte in je eigen woorden plus in vier tot acht
-woorden de reden (`onzeker: één meting, geen controlegroep`). Zo overleeft de stapelhedge het vers
-schrijven niet.
+## Stap 2 — De vorm
 
-**A3 Causaliteitskaart (K).** Elk oorzaakverband dat de bron **letterlijk legt**, met vindplaats en
-signaalwoord: `K1 F7 → F9, "waardoor", §2`. Daaronder, apart, het blok **NAAST ELKAAR**: gegevens
-die in de bron naast elkaar staan zónder dat zij een verband legt. Alles uit dat blok schrijf je als
-nevenschikking of als openlating, nooit als oorzaak.
-
-**A4 Gaten.** Markeer `[GAT: wat ontbreekt]` waar de lezer een gegeven nodig heeft dat de bron niet
-levert. Invullen doe je niet. Zet een sterretje bij het gat waarzonder de lezer zijn besluit niet
-kan nemen — alleen dat gat mag straks de tekst in (beweging K3).
-
-**Klaar als:** elk getal uit de bron staat in F; elke bronalinea is teruggebracht tot minstens één
-regel of gemarkeerd als leeg; K is compleet inclusief NAAST ELKAAR; je kunt aanwijzen welke claim
-de bron te veilig formuleerde.
-
-## Fase B — Het betoog (bron dicht vanaf hier)
-
-Dit is de fase die de tekst radicaal anders maakt, en zij kost bijna geen tokens. Uitkomst:
-`betoog.md`, één blad.
-
-**B1 Premisse.** Schrijf **drie materieel verschillende premissen** voor dit materiaal. Niet drie
-formuleringen van dezelfde gedachte: drie stellingen die de lezer op drie verschillende manieren
-van gedachten laten veranderen. Elk als één zin waarmee een geïnformeerde lezer het oneens kan
-zijn, met daarachter twee dingen: welke F-regels haar dragen, en **wat de lezer moet opgeven als
-hij haar aanvaardt**. Die laatste toets scheidt een premisse van een onderwerp — een stelling die de
-lezer niets kost, beweert niets.
-
-Leg ze samen met vraag 2 en 3 in **één** `AskUserQuestion` voor. Wacht niet op antwoord: blijft het
-uit, kies de defaults en meld dat in logboekregel 1.
-
-- **Vraag 1 — Wat wordt dit, en voor wie?** (header `Teksttype`) `Rapporthoofdstuk` beleidslezer die
-  het betoog volgt · `Bestuurlijke samenvatting` bestuurder met drie minuten · `Casetekst of
-  projectpagina` externe lezer die een voorbeeld zoekt · `Notitie` collega die iets moet besluiten.
-- **Vraag 2 — Welke premisse?** (header `Premisse`) Je drie kandidaten, elk als één concrete zin
-  over dít materiaal. Vierde optie: `Geen stelling: beschrijvend en chronologisch`.
-- **Vraag 3 — Hoeveel korter?** (header `Lengte`) `Standaard, ~25%` · `Scherp, ~35%` · `Behoedzaam,
-  ~15%` (feitendicht) · `Zo kort als het materiaal toelaat`.
-
-**Defaults zonder gebruiker.** Teksttype uit de vorm van de bron (projectnaam met looptijd en
-resultaten → casetekst; onder 400 woorden met aanbevelingen → bestuurlijke samenvatting; genummerde
-kop met subsecties boven 500 woorden → rapporthoofdstuk; anders notitie). Lezer: de partij die in de
-bron handelend wordt genoemd en op deze tekst iets moet besluiten; anders een beleidsadviseur bij
-een gemeente of fonds. Premisse: de kandidaat met de meeste harde feiten aan beide kanten; bij
-gelijke stand die welke het feit in beeld brengt dat de bron kort en neutraal houdt — dat feit staat
-er niet voor niets zo. Lengte: 25 procent, bij meer dan één cijfer per twee zinnen 15 procent.
-
-**B2 De sterkste tegenwerping.** Dit is de stap die de meeste teksten het meest verandert, en de
-stap die de skill van v3.2 miste. Schrijf het **intelligentste bezwaar tegen je premisse** op: niet
-de stroman, maar het bezwaar dat je doellezer werkelijk heeft en dat hem gelijk zou geven.
-
-**Twee harde grenzen, en ze kostten in ronde 6 twee diskwalificaties.** (1) Het bezwaar is een
-redenering, geen personage: je voert **geen spreker op**. Geen directe rede, geen "een fondsmanager
-vraagt dan", geen partij die iets wil of vindt wat de bron haar niet toeschrijft. Schrijf het bezwaar
-als bewering over de zaak, niet als uitspraak van iemand. (2) Noteer achter het bezwaar én achter je
-antwoord de **F- of K-regels die het dekken**, of het `[GAT]` uit A4 waar het op rust. Heeft je
-antwoord een bewering nodig over de bewijsbasis, de meetmethode of de toerekening — "het berust op
-één meting", "de daling is nergens aan het project toegerekend" — dan is dat een **feit** en geen
-voorzichtigheid: zonder dossierregel gaat het er niet in.
-
-Kies dan één antwoordrichting:
-
-- **Toegeven en inperken.** Het bezwaar klopt voor een deel van het bereik; je premisse krimpt en
-  blijft staan (bewegingen K1, K2).
-- **Weerleggen met een F-regel.** Het bezwaar rust op een aanname die je dossier tegenspreekt. Noem
-  de regel.
-- **Naar de echte tegenstander verplaatsen.** Het bezwaar is niet de weerstand; de logica erachter
-  is dat (beweging J3).
-
-De tegenwerping en het antwoord gaan de tekst in, meestal vóór de claim die zij bedreigen. Verandert
-je antwoord de premisse, herschrijf de premisse dan hier en niet later.
-
-**B3 Gezag.** Wat weet SFNL hier wat een ander niet weet, omdat het erbij was? Een eigen project,
-een fout die het huis zelf maakte, een grens van de eigen bevinding. Eén regel, met de F-regel
-erachter die haar dekt. Levert het dossier niets, schrijf `geen` — een verzonnen anekdote is een
-verzonnen feit, en dit is de plek waar dat het aantrekkelijkst lijkt. Staat er wel iets, dan draagt
-het meestal beweging K1: het eigen instrument relativeren koopt meer geloofwaardigheid dan het
-aanprijzen ervan.
-
-**B3b Cijferdekking van het betoog.** Vóór je gaat schrijven: loop premisse, tegenwerping, antwoord
-en gezag af en onderstreep elk getal, elke verhouding en elke vergelijking die erin voorkomt. Reken
-elk terug uit de F-regels en schrijf de uitkomst met de F-nummers op je blad. Een verhouding die niet
-exact uitkomt, gaat eruit — je zwakt het woord niet af, je laat de vertaling vallen en drukt het
-cijfer tegen het doel, het totaal of de betaler aan. Deze stap kost twee minuten en voorkomt de
-duurste fout die er is: het betoog dat een cijfer naar zich toe buigt.
-
-**B4 Architectuur.** Kies er één, expliciet, en noteer waarom. Niet elke tekst is een piramide.
+Kies één architectuur, expliciet. Niet elke tekst is een piramide.
 
 | Architectuur | Beweging | Kies hem als | Faalt als |
 |---|---|---|---|
-| **Knelpunt → casus → les → aanbeveling** | de huisvorm | het materiaal bestaat uit voorbeelden die tot een aanbeveling moeten leiden | de les elke keer met dezelfde formule opent; de conclusie de casussen navertelt |
+| **Knelpunt → casus → les → aanbeveling** | de huisvorm | het materiaal bestaat uit voorbeelden die tot een aanbeveling moeten leiden | de les elke keer met dezelfde formule opent |
 | **Antwoord eerst** | conclusie bovenaan op elk niveau, dan het bewijs | de lezer moet iets besluiten en heeft drie minuten | het antwoord zo algemeen is dat niemand het bestrijdt |
-| **De omkering** | begin bij wat de lezer gelooft, haal het onderuit, eindig waar hij niet rekende | je premisse spreekt de gangbare lezing tegen | de gangbare lezing een stroman is |
+| **De omkering** | begin bij wat de lezer gelooft, haal het onderuit, eindig waar hij niet rekende | je kernbewering spreekt de gangbare lezing tegen | die gangbare lezing een stroman is |
 | **De rekening** | wat het kostte tegenover wat het opleverde, in één orde; het oordeel valt uit de rekensom | de cijfers zelf het argument zijn | de twee kolommen verschillende noemers hebben |
 
-**B5 Het blad.** Eén ordeningsas voor het hele niveau — tijd, onderdelen, of afnemend gewicht — en
-noteer welke; mengen mag niet. Per sectie: de bewering (één per toekomstige alinea) en de F-nummers
-die haar dragen. Een bewering zonder F is een gat: afzwakken of schrappen. Een F onder twee
-beweringen is overlap: kies er één. Wijs dan elke bewering aan en vraag "en dus?" — kun je het
-antwoord niet in één stap aan de kop erboven hangen, dan gaat de bewering eruit. Deze toets haalt
-gewoonlijk 20 tot 40 procent uit een AI-concept, vóór je er zinnen aan verspilt.
+Zet daaronder de beweringen in volgorde, één per toekomstige alinea, met achter elke bewering waar
+in de bron haar bewijs zit. Eén ordeningsas voor het geheel — tijd, onderdelen, of afnemend gewicht
+— en niet mengen. Dan drie snelle toetsen:
 
-**Ongelijke gewichten.** Noteer per sectie het aantal woorden dat je gaat besteden. De zwaarste
-sectie is minstens 1,8× de mediane en draagt de premisse; daar gaan het concrete geval en het getal
-dat ertoe doet heen. Het lichtste onderwerp krijgt hoogstens één zin. Gelijke secties zijn het teken
-dat niemand koos.
+- **En dus?** Kun je het antwoord op die vraag niet in één stap aan de kop erboven hangen, dan gaat
+  de bewering eruit. Dit haalt gewoonlijk 20 tot 40 procent uit een AI-concept, vóór je er zinnen
+  aan verspilt.
+- **Ongelijke gewichten.** De zwaarste sectie is minstens 1,8× de mediane en draagt de
+  kernbewering; daar gaan het concrete geval en het getal dat ertoe doet heen. Het lichtste
+  onderwerp krijgt één zin. Gelijke secties zijn het teken dat niemand koos.
+- **Horizontaal lezen.** Lees alleen de koppen achter elkaar. Levert dat je kernbewering op? Koppen
+  zijn beweringen, geen labels, en ze verschillen in lengte en vorm — zie `stem.md` §6.
 
-**Koppen** volgens `stem.md` §6, inclusief de horizontale leestest: lees alleen de koppen achter
-elkaar en kijk of dat je premisse oplevert.
+Onder ongeveer 350 woorden slaat je de architectuurtabel over en volstaan de beweringen op een
+rijtje, hoogstens vier, zonder tussenkoppen maar wél met een titel.
 
-## Fase C — Schrijven (bron dicht)
+## Stap 3 — Het proza
 
-Laad nu `stem.md` en schrijf in één doorloop van de eerste zin naar het slot, uitsluitend uit
-`dossier.md` en `betoog.md`. Met subagent: geef de schrijver die twee bestanden, deze fase en
-`stem.md`, en zet in de briefing letterlijk *"Er is geen brontekst en die krijg je ook niet. Wat
-niet in dit dossier staat, bestaat niet: schrijf `[GAT: …]` waar je iets mist. Verzin geen getal,
-naam, jaartal, citaat, mechanisme of vergelijking."*
+Laad `stem.md` en schrijf in één doorloop van de eerste zin naar het slot. Dat bestand is de stem:
+het genre, de gemeten cadans, het lexicon en negentien bewegingen uit gepubliceerd werk. Twee dingen
+daaruit die het meest opleveren, en één plafond.
 
-Vier dingen moet je aan het eind kunnen **aanwijzen**, met de zin erbij:
+**De eerste zin is een zaklamp, geen inleiding.** Hij toont wat er aan de hand is. Kun je hem
+schrappen zonder verlies, dan is het geen opening. Niet "in dit hoofdstuk", niet "hieronder", niet
+"markeert een belangrijke stap". De kernbewering staat uitgeschreven in de tekst, uiterlijk in
+alinea drie en onder de 400 woorden in alinea twee.
 
-1. **De premisse staat uitgeschreven in de tekst**, uiterlijk in alinea drie (onder 400 woorden:
-   alinea twee).
-2. **De tegenwerping is benoemd en beantwoord**, vóór de claim die zij bedreigt — als bewering over
-   de zaak, zonder opgevoerde spreker en zonder citaat dat de bron niet levert.
-3. **Eén beargumenteerd standpunt**, waarop de auteur over drie jaar afgerekend kan worden en
-   waarmee een geïnformeerde lezer het oneens kan zijn — bij voorkeur door de analyse geveld (J1),
-   ondertekend waar de feiten de weging niet zelf maken (J2).
-4. **Elk kerncijfer staat naast datgene waar het iets betekent.** De cijferalinea zonder zaak is
-   waar elke variant in de tests zakte.
+**In elke alinea van vier of meer zinnen staat één zin onder de tien woorden, en die draagt de
+pointe.** Dit is de enkele regel die in het corpus de goede passages van de zwakke scheidt. En de
+korte zin gaat vóór het grote getal: eerst adem, dan het bedrag.
 
-**En houd de figuren in de gaten terwijl je schrijft.** Het repertoire in `stem.md` is breed, maar
-breedte alleen dwingt niets af: in ronde 6 stond in alle drie de teksten hetzelfde spiegelpaar bij
-elk scharnier, één aforisme per sectie en vier klapzinnen. Twee harde plafonds gelden daarom
-onverkort, en het script telt ze: **de negatieparallel en het spiegelpaar samen hoogstens één keer
-per tekst**, en **hoogstens twee alinea's die eindigen op een oordeel van acht woorden of minder**.
-Het beste exemplaar verleidt tot het tweede; vanaf het derde leest de jury de procedure en niet de
-zaak.
+**Het plafond op de figuren.** Elke beweging uit `stem.md` hoogstens één keer per document, en
+daarbinnen: hoogstens één negatieparallel of spiegelpaar ("niet op het bereik, maar op de
+trajecten"), hoogstens twee alinea's die eindigen op een oordeel van acht woorden of minder,
+hoogstens twee schaalvertalingen. Het beste exemplaar verleidt tot het tweede; vanaf het derde leest
+de lezer de procedure en niet de zaak. Drie onafhankelijke juries wezen dit aan als het duidelijkste
+teken van machinewerk.
 
-De eerste zin is een zaklamp, geen inleiding: hij toont wat er aan de hand is. Kun je hem schrappen
-zonder verlies, dan is het geen opening. Verboden in alinea één: "in dit hoofdstuk", "hieronder",
-"markeert een belangrijke stap". Schrap onderweg de zin die uitlegt wat de vorige zin betekende, en
-de aankondiging en de samenvatting. Laat één ding weg dat een sjabloon wél had opgenomen, en benoem
-het in het logboek; kun je niets noemen, dan heb je niet gekozen.
+Schrap onderweg de zin die uitlegt wat de vorige zin betekende, en de aankondiging en de
+samenvatting. Het slot draagt een oordeel, een gevolg of een vooruitwijzing — nooit een kaal feit,
+nooit een samenvatting, en het herhaalt de kop niet.
 
-## Fase D — Hygiëne en levering
+## De slotpas
 
-Volg `hygiene.md`: het script, vier controles, de koude lezer, de eindpoort en het logboek van zes
-regels. Eén meetronde (korte route) of twee (volle route), en hoogstens één terugronde na de koude
-lezer. Vóór de levering nog één hardop-schrijfpas over de hele tekst — niet schrappen,
-herschrijven.
+Vier handelingen, in deze volgorde. De laatste handeling op de tekst is altijd een schrijfpas, nooit
+een schrapronde: eindigen met wegstrepen garandeert vlakheid.
 
-## Faalgedrag
+1. **Wijs aan.** Loop je tekst door en zet je vinger bij elk getal, elke naam, elk oorzaakverband en
+   elk woord dat sterkte uitdrukt (beoogd, verwacht, deels, betwist). Wijs voor elk de plek in de
+   bron aan. Lukt dat niet, dan gaat het eruit — ook als het klopt, en ook als de zin eromheen jouw
+   oordeel is. Kijk daarbij apart naar de drie valkuilen hierboven: opgevoerde spreker, bewering
+   over het bewijs, verbogen verhouding. Loop ook de andere kant op: welke **betekenis** uit de bron
+   staat niet in je tekst? Vergeten betekenis gaat alsnog mee.
+2. **Tel.** Draai `meetlat.py` (zie hieronder) of tel met de hand. Rood betekent een schrijfpas op
+   die passage, niet een reparatie van de zin. Hoogstens twee rondes; daalt het aantal roden niet,
+   houd dan de vorige versie.
+3. **Lees hardop**, in één doorgang, zonder terug te lezen. Waar je midden in een zinsdeel adem moet
+   halen, waar je tong vastloopt, waar je stem vlak wordt: herschrijf die zin. Elke zin die je bij
+   eerste lezing moet herlezen wordt herschreven, ook als een meting daar slechter van wordt. Leg
+   dan begin, midden en slot naast elkaar: dezelfde schrijver?
+4. **Laat iemand anders lezen.** Een verse subagent, of solo één schone doorloop waarbij je de
+   antwoorden opschrijft vóór je iets aanraakt. Geef hem alleen de tekst, het teksttype en de
+   doellezer — niet de bron, niet deze skill, niet je kernbewering.
 
-- **Het dossier is dun.** Levert de bron minder dan een handvol harde feiten, dan is de tekst leeg,
-  niet slecht geschreven: schrijf kort wat er is en meld wat je miste.
-- **De drie premissen lijken op elkaar.** Dan heb je er één gevonden en twee geparafraseerd. Zoek
-  de tweede bij het feit dat de bron wegmoffelt, en de derde bij de lezer die je nog niet in beeld
+   > Lees dit één keer op leessnelheid, zoals op een dinsdagmiddag. Je leest niet terug. (1) Vanaf
+   > welke zin ging je scannen? (2) Wat weet je nu nog, zonder terug te kijken — maximaal drie
+   > dingen? (3) Welke ene zin zou je doorsturen? Citeer letterlijk; GEEN is een geldig antwoord.
+   > (4) Welke zin moest je twee keer lezen? (5) Wat wilde deze tekst je laten geloven, geloofde je
+   > het, en wat had je ertegen in te brengen? (6) Is dit geschreven door iemand die erbij was, of
+   > door iemand die het heeft samengevat? Geen advies, geen stijloordeel; rapporteer wat je waarnam.
+   > "Niets te melden" is een geldig antwoord.
+
+   Geslaagd als: niet gescand; twee van de drie onthouden dingen raken de kern; er is een
+   doorstuurzin; vraag 4 is "geen"; bij vraag 5 noemt hij je kernbewering en niet je onderwerp;
+   vraag 6 is "iemand die erbij was". Noemt hij bij vraag 5 een sterker bezwaar dan het jouwe, dan
+   had je in stap 1 het verkeerde gekozen — dat is een terugronde naar stap 1, geen zinskwestie.
+   Zegt hij "samengevat", dan mist de tekst concreetheid en geen stijl. Hoogstens één terugronde, en
+   dan met een nieuwe lezer: dezelfde tweemaal gebruiken maakt hem warm.
+
+Dan lever je: eerst de plakklare tekst, dan een regel `---`, dan het logboek van **vier regels**.
+Verder niets — geen inleiding, geen varianten, geen vraag achteraf.
+
+```
+1 Kern       "<de kernbewering uit de tekst>" — de lezer geeft op: <…>; <teksttype, lezer>; keuze <gebruiker|default>
+2 Bezwaar    <het bezwaar als bewering> — antwoord <toegeven|weerleggen|verplaatsen>; oordeel: "<de zin>"
+3 Vorm       <architectuur>, as <tijd|onderdelen|gewicht>; <N> → <M> woorden (−<x>%); weggelaten: <wat>
+4 Controle   aangewezen <n>/<n>, herrekend <welke verhoudingen>; figuren <negatieparallel/klapzin/schaal> <n>/<n>/<n>; lezer <uitkomst>; open <geen|wat>
+```
+
+## Het telscript
+
+Optioneel maar aanbevolen, want dit is precies wat een schrijver slecht kan en een script goed:
+tellen. Zes metingen, alle zes ontleend aan wat de juryrondes daadwerkelijk afstraften. Draai het op
+de tekst zonder logboek: `python3 meetlat.py tekst.md`.
+
+**pointe** (elke lange alinea heeft een zin onder de tien woorden) · **figuren**
+(negatieparallel ≤ 1, klapzin ≤ 2, schaalvertaling ≤ 2) · **spreker** (directe rede of een
+personage dat vraagt of vindt: nul) · **cijfers** (twee waarden binnen één procent van elkaar zijn
+meestal dezelfde grootheid, twee keer verschillend opgeschreven) · **ritme** (spreiding in
+zinslengte; metronomisch proza is het oudste AI-signaal) · **woorden** (de verbodenlijst en de eigen
+lievelingsformules, samen hoogstens één per 500 woorden).
+
+Faken is verboden. Elke drempel is te halen door de zin lelijker te maken, en dat ziet de lezer uit
+stap 4 meteen. Haal je een drempel alleen door de zin te beschadigen, laat hem dan vallen en noteer
+dat in regel 4.
+
+## Als het niet lukt
+
+- **De kern blijft vaag.** Dan zegt het concept waarschijnlijk werkelijk niets, en is dat de
+  bevinding: schrijf kort wat er staat en meld wat je miste. Een lege tekst is geen slechte tekst.
+- **De drie kandidaten lijken op elkaar.** Je hebt er één gevonden en twee geparafraseerd. Zoek de
+  tweede bij het gegeven dat de bron wegmoffelt, en de derde bij een lezer die je nog niet in beeld
   had.
-- **Er is geen premisse.** Sommige teksten zijn een opsomming en horen dat te blijven: kies optie
-  vier bij vraag 2 en schrijf beschrijvend en chronologisch. Een verzonnen stelling is erger dan
-  geen.
-- **De tegenwerping is een stroman.** Toets: zou je doellezer hem zelf ondertekenen? Zo nee, dan
-  heb je een bezwaar bedacht dat je kon weerleggen, en dat leest de lezer.
-- **De tegenwerping wil een spreker.** Je merkt het aan de neiging om er "een fondsmanager vraagt
-  dan" of "de wethouder wil weten" voor te zetten, omdat het bezwaar zo levendiger wordt. Het wordt
-  er niet sterker van, en je hebt een persoon met een motief verzonnen. Schrijf het bezwaar als
-  bewering en laat de lezer zelf merken dat het zijn eigen bezwaar is.
-- **De premisse trekt aan een cijfer.** Merk je dat een verhouding net niet uitkomt zoals je hem
-  nodig hebt — 1,6 die "bijna verdubbeld" wil heten — dan is dat geen afrondingskwestie maar het
-  betoog dat het feit naar zich toe buigt. Laat de vertaling vallen, niet het cijfer, en ga terug
-  naar B3b.
-- **Je komt niet onder de bronlengte.** Dan heb je geschoven, niet gekozen. Terug naar B5: kijk naar
-  de beweringen, niet naar de zinnen — meestal beantwoorden twee secties dezelfde vraag.
-- **Alles klopt en niets blijft hangen.** Geen poetsprobleem. Ga terug naar B1 en B2: je premisse
-  kost de lezer niets, of de tegenwerping staat er niet.
+- **Het bezwaar wil een spreker.** Je merkt het aan de neiging om "een fondsmanager vraagt dan" ervoor
+  te zetten. Het bezwaar wordt daar niet sterker van, en je hebt een persoon met een motief verzonnen.
+- **De kern trekt aan een cijfer.** Komt een verhouding net niet uit zoals je hem nodig hebt, dan is
+  dat het betoog dat een feit naar zich toe buigt. Laat de vertaling vallen, niet het cijfer.
+- **Je komt niet onder de bronlengte.** Dan heb je geschoven, niet gekozen. Terug naar stap 2 en kijk
+  naar de beweringen: meestal beantwoorden twee secties dezelfde vraag.
+- **Alles klopt en niets blijft hangen.** Geen poetsprobleem. Terug naar stap 1: je kernbewering kost
+  de lezer niets, of het bezwaar staat er niet.
