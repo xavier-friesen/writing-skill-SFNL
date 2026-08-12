@@ -77,27 +77,34 @@ p. 12 met een andere waarde).
 
 ## Welke versie je installeert
 
-`skill/` bevat v6.0. Die versie repareert niet het volgende gat maar de
-structurele fout die de vier eerdere gaten veroorzaakte, en de verificatie
-daarvan loopt nog. Zolang die niet binnen is, is **`varianten/v3.2/`** de best
-geteste versie voor werk dat de deur uit gaat.
+`skill/` bevat v7.0. Voor werk dat de deur uit gaat is **`varianten/v3.2/`** nog
+steeds de best geteste versie: na negen rondes staat het nieuwe ontwerp op nul
+winsten uit zes schone blinde vergelijkingen.
 
-De diagnose staat in `dossier/de-structurele-fout.md` en is in één regel samen te
-vatten: de skill vroeg de schrijver zich eerst vast te leggen op een bewering die
-op retorische kwaliteit was gekozen, en toetste pas daarna of het materiaal haar
-droeg — door dezelfde schrijver, die er belang bij had dat zij overleefde. Elke
-controle stond dus stroomafwaarts van het motief. v6.0 vervangt de controles door
-een vorm: de kernbewering is een spanning tussen twee gegevens die beide in de
-bron staan, opschrijfbaar als "X, terwijl Y". Daarmee is zij gedekt door
-constructie, en zijn de vier eerdere defecten niet verboden maar onmogelijk.
+Wat v7.0 wél heeft opgelost is het waarheidsprobleem. Het is de eerste versie die
+zonder feitendiskwalificatie en zonder causaliteitsplafond doorkomt, en het
+verschil met de kampioen is teruggebracht van 2,4 en 3,3 punt naar 1,2 — bij een
+juryspreiding van ongeveer een punt op dezelfde tekst, dus één meting en geen
+trend. Wat er nu nog verliest is afwerking: een sectie zonder onderstreepbare zin,
+een lege topicsatzin, een bulletlijst die niet is omgeschreven.
 
-## Wat er in de repo staat
+Drie stukken dossier leggen uit hoe dat zo is gekomen:
+`de-structurele-fout.md` (waarom vier patches op vier symptomen niets oplosten),
+`analyse-ronde6.md` en `analyse-ronde8-9.md` (wat de twee mechanismen wel en niet
+dekken). De les die het vaakst terugkomt: **een regel die een neiging bestrijdt
+verliest van de neiging; een mechanisme dat haar onmogelijk maakt niet.** En de
+waarschuwing die daarbij hoort: elke vereenvoudiging die in dit traject op v3.2
+werd toegepast, haalde iets weg dat gewicht droeg — tweemaal aangetoond, en beide
+keren pas na een verloren ronde.
+
+## Wat er in de repo staat## Wat er in de repo staat
 
 | Map | Inhoud |
 |---|---|
 | `skill/` | De skill (v5.0) |
 | `varianten/v3.2/` | De best geteste eerdere versie, als referentie |
 | `varianten/v4.1/` | De betooglaag-architectuur die ronde 6 verloor |
+| `varianten/v6.0/` | De vormeis zonder sandbox, die ronde 8 verloor |
 | `varianten/V1..V5` | De vijf concurrerende ontwerpen uit ronde 1 |
 | `test/corpus/` | Drie vaste AI-bot-testteksten met feitenlijsten |
 | `test/rubriek.md` | Het blinde beoordelingskader (met addendum) |
@@ -105,6 +112,9 @@ constructie, en zijn de vier eerdere defecten niet verboden maar onmogelijk.
 | `test/rondes/r6/` | De blinde A/B van v4.0 tegen de kampioenen van v3.2 |
 | `test/rondes/r7/` | De verificatie van v5.0 (vervuilde set, zie de analyse) |
 | `test/rondes/r7b/` | Dezelfde verificatie op een schone set |
+| `test/rondes/r8/` | v6.0: de vormeis alleen |
+| `test/rondes/r9/` | v7.0: de vormeis plus de sandbox |
+| `test/strip.sh` | De enige route naar een blinde set |
 | `dossier/onderzoek/` | Best-practices-onderzoek (8 dossiers) |
 | `dossier/analyse-ronde*.md` | De analyse en het besluit per iteratie |
 | `dossier/eindverslag.md` | Het eindverslag van het traject tot v3.2 |
