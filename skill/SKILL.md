@@ -1,6 +1,6 @@
 ---
 name: sfnl-rapporttekst
-version: 7.0
+version: 7.1
 description: 'Distilleert uit een bestaande concepttekst de spanning die er werkelijk in zit, giet die in een argumentvorm en schrijft het als publiceerbaar Nederlands proza in de huisstem van Social Finance NL. Gebruik deze skill wanneer een concept, AI-uitvoer, ruwe notitie of half afgemaakt stuk naar buiten moet, zoals een rapporthoofdstuk, bestuurlijke samenvatting, casetekst, projectpagina, notitie of adviesparagraaf. Trigger ook op "maak dit af", "schrijf dit klaar voor de klant", "haal de AI eruit", "maak er een rapporttekst van", "scherper", "wat willen we hier nou eigenlijk zeggen", "publiceerbaar maken".'
 ---
 
@@ -188,6 +188,25 @@ daarbinnen: hoogstens één negatieparallel of spiegelpaar, hoogstens twee aline
 oordeel van acht woorden of minder, hoogstens twee schaalvertalingen. Het beste exemplaar verleidt
 tot het tweede; vanaf het derde leest de lezer de procedure en niet de zaak.
 
+### Twee poorten
+
+Deze twee zijn geen metingen maar leveringseisen, en het verschil is wezenlijk. **Een teller haal je
+door de zin lelijker te maken; een poort niet.** "Wijs de zin aan die iemand zou doorsturen" kun je
+niet faken. In ronde 9 zakte de tekst precies hier, op geen enkele meting.
+
+1. **Per sectie minstens één doorstuurbare zin:** een zin die zijn pointe houdt als je hem alleen
+   citeert, zonder de rest van de sectie erbij. Kun je hem niet aanwijzen, dan is die sectie niet af —
+   schrijfpas, geen melding in het logboek.
+2. **Per alinea één eigen punt dat nergens anders staat**, en de eerste zin van de alinea *is* dat
+   punt. Een label is geen punt: "De uitkomst week af van het plan" kondigt aan wat er komt en zegt
+   zelf niets. Kun je het punt van een alinea niet in één zin in de kantlijn schrijven, of schrijf je
+   er twee, dan moet die alinea samengevoegd of gesplitst — en zonder eigen punt gaat zij eruit.
+
+**En een opsomming uit de bron wordt proza.** Vier bullets die vier gelijkgevormde zinnen worden, is
+de bullet-lijst met een punt erachter: de lezer ziet de lijst nog. Kies er één als de bewering van de
+alinea, maak de andere ondergeschikt, of laat er twee weg. Dit was in ronde 9 het duidelijkste teken
+van machinewerk dat de jury noemde.
+
 Schrap onderweg de zin die uitlegt wat de vorige zin betekende, en de aankondiging en de
 samenvatting. Het slot draagt een oordeel, een gevolg of een vooruitwijzing — nooit een kaal feit,
 nooit een samenvatting, en het herhaalt de kop niet.
@@ -215,8 +234,12 @@ handeling op de tekst is altijd een schrijfpas, nooit een schrapronde.
    niet. Hoogstens twee rondes; daalt het aantal roden niet, houd de vorige versie.
 3. **Lees hardop**, in één doorgang, zonder terug te lezen. Waar je midden in een zinsdeel adem moet
    halen, waar je tong vastloopt, waar je stem vlak wordt: herschrijf die zin. Elke zin die je bij
-   eerste lezing moet herlezen wordt herschreven, ook als een meting daar slechter van wordt. Leg dan
-   begin, midden en slot naast elkaar: dezelfde schrijver?
+   eerste lezing moet herlezen wordt herschreven, ook als een meting daar slechter van wordt. Loop
+   daarna de twee poorten na en wijs ze aan: de doorstuurzin per sectie, het eigen punt per alinea.
+   Controleer ook of elke zin een vindbaar onderwerp heeft — een verwijswoord ("die", "dat",
+   "daarmee", "het") wijst terug naar iets in dezelfde of de vorige alinea, en reikt het verder, dan
+   schrijf je het antecedent uit. In ronde 9 verloor de sterkste zin van de tekst zijn onderwerp. Leg
+   tot slot begin, midden en slot naast elkaar: dezelfde schrijver?
 4. **Laat iemand anders lezen.** Een verse subagent, of solo één schone doorloop waarbij je de
    antwoorden opschrijft vóór je iets aanraakt. Geef hem alleen de tekst, het teksttype en de
    doellezer — niet de bron, niet deze skill, niet je spanning.
@@ -242,7 +265,7 @@ Verder niets — geen inleiding, geen varianten, geen vraag achteraf.
 1 Spanning   "<X, terwijl Y>" — X uit F<n>, Y uit F<n>; de lezer geeft op: <…>; keuze <gebruiker|zelf>
 2 Bezwaar    <het bezwaar als bewering, F<n>> — antwoord <toegeven|weerleggen F<n>|verplaatsen>; oordeel: "<de zin>"
 3 Vorm       <architectuur>, as <tijd|onderdelen|gewicht>; <N> → <M> woorden (−<x>%); weggelaten: <wat>
-4 Controle   F <n>/<n> terug, afwijkingen <geen|welke>; afgeleid <welke, uit welke twee>; N gerespecteerd <ja|welke herschreven>; lezer <uitkomst>; open <geen|wat>
+4 Controle   F <n>/<n> terug, afwijkingen <geen|welke>; afgeleid <welke, uit welke twee>; N gerespecteerd <ja|welke herschreven>; poorten <doorstuurzin per sectie, punt per alinea: ja|welke>; lezer <uitkomst>; open <geen|wat>
 ```
 
 ## Het telscript
