@@ -77,11 +77,17 @@ p. 12 met een andere waarde).
 
 ## Welke versie je installeert
 
-`skill/` bevat v7.1. Voor werk dat de deur uit gaat is **`varianten/v3.2/`** nog
-steeds de best geteste versie: na negen rondes staat het nieuwe ontwerp op nul
-winsten uit zes schone blinde vergelijkingen. **v7.1 is nog niet getest** — het is
-v7.0 plus de afwerkingslaag hieronder, en de eerstvolgende ronde moet uitwijzen
-of die iets doet.
+`skill/` bevat v7.1, en dat is de eerste versie die de v3.2-kampioen verslaat:
+**7,7 tegen 6,6** op T1 in ronde 10, tegen dezelfde kampioenoutput als in de
+rondes 7b, 8 en 9. Voor werk op drie teksten blijft **`varianten/v3.2/`** de best
+geteste versie — negen rondes op T1, T2 en T3 tegenover één gewonnen ronde op
+alleen T1.
+
+De maat die het meeste zegt is niet het verschil maar wat de uitdager zelf doet,
+want A is vier rondes lang hetzelfde bestand geweest en scoorde daarop 7,5 · 7,3
+· 6,9 · 6,6 — dat is 0,9 punt jury-ruis op één en dezelfde tekst. De uitdager
+ging in diezelfde vier rondes 5,1 · 4,0 · 5,7 · **7,7**: een sprong van 2,0 punt
+van v7.0 naar v7.1, ruim buiten die ruisband. Zie `dossier/analyse-ronde10.md`.
 
 Wat v7.0 wél heeft opgelost is het waarheidsprobleem. Het is de eerste versie die
 zonder feitendiskwalificatie en zonder causaliteitsplafond doorkomt, en het
@@ -128,6 +134,7 @@ keren pas na een verloren ronde.
 | `test/rondes/r7b/` | Dezelfde verificatie op een schone set |
 | `test/rondes/r8/` | v6.0: de vormeis alleen |
 | `test/rondes/r9/` | v7.0: de vormeis plus de sandbox |
+| `test/rondes/r10/` | v7.1: de afwerkingslaag — de eerste gewonnen ronde |
 | `test/strip.sh` | De enige route naar een blinde set |
 | `dossier/onderzoek/` | Best-practices-onderzoek (8 dossiers) |
 | `dossier/analyse-ronde*.md` | De analyse en het besluit per iteratie |
