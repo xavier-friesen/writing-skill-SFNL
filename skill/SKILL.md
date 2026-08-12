@@ -1,6 +1,6 @@
 ---
 name: sfnl-rapporttekst
-version: 5.0
+version: 5.1
 description: 'Distilleert uit een bestaande concepttekst wat er werkelijk gezegd moet worden, giet dat in een argumentvorm en schrijft het als publiceerbaar Nederlands proza in de huisstem van Social Finance NL. Gebruik deze skill wanneer een concept, AI-uitvoer, ruwe notitie of half afgemaakt stuk naar buiten moet, zoals een rapporthoofdstuk, bestuurlijke samenvatting, casetekst, projectpagina, notitie of adviesparagraaf. Trigger ook op "maak dit af", "schrijf dit klaar voor de klant", "haal de AI eruit", "maak er een rapporttekst van", "scherper", "wat willen we hier nou eigenlijk zeggen", "publiceerbaar maken".'
 ---
 
@@ -55,8 +55,8 @@ Schrijf dan vijf regels op. Dit is het hele voorwerk.
    staat **wat de lezer moet opgeven als hij haar aanvaardt**. Die tweede helft is de toets: een
    stelling die de lezer niets kost, beweert niets en is dus een onderwerp.
 2. **Het sterkste bezwaar** ertegen — wat je doellezer werkelijk zou tegenwerpen en wat hem gelijk
-   zou geven — plus in vier woorden je antwoord: *toegeven en inperken*, *weerleggen met dat ene
-   gegeven*, of *verplaatsen naar de echte weerstand*. Als bewering geformuleerd, zonder spreker.
+   zou geven — plus je antwoordrichting: *toegeven en inperken*, *weerleggen met dat ene gegeven*, of
+   *verplaatsen naar de echte weerstand*. Als bewering geformuleerd, zonder spreker.
 3. **Het oordeel.** Waarop kan de auteur over drie jaar worden afgerekend? Bij voorkeur zo dat de
    feiten het oordeel zelf vellen; ondertekend ("wij vinden dit te mager, omdat…") waar dat niet
    kan. Eén per tekst.
@@ -72,12 +72,19 @@ de bron hebt aangestreept? Zo nee, verzwak het tot wat de bron draagt, maak er e
 of laat het vallen. Dit is de enige feitenpoort die je vooraf nodig hebt, en zij vervangt een
 dossier: je bouwt geen afschrift van de bron, je legt vast waar je betoog aan hangt.
 
-**Eén vraag aan de gebruiker, en niet meer dan één.** Leg de kernbewering voor met twee echt andere
-kandidaten ernaast — niet drie formuleringen van dezelfde gedachte, maar drie stellingen die de
-lezer op drie manieren van gedachten laten veranderen — plus het teksttype en de doellezer zoals jij
-ze leest. Eén `AskUserQuestion`. Wacht niet op antwoord: blijft het uit, kies de kandidaat met de
-meeste harde gegevens aan beide kanten, en bij gelijke stand die welke het gegeven in beeld brengt
-dat de bron kort en neutraal houdt — dat staat er niet voor niets zo. Meld de keuze in het logboek.
+**Schrijf altijd drie kandidaat-kernbeweringen uit** — niet drie formuleringen van dezelfde
+gedachte, maar drie stellingen die de lezer op drie manieren van gedachten laten veranderen, elk met
+zijn eigen "wat de lezer opgeeft". Dat werk doe je ook als niemand meekijkt, want het is de
+distillatie zelf.
+
+**Is er een gebruiker in het gesprek**, leg ze dan voor in één `AskUserQuestion`, samen met het
+teksttype en de doellezer zoals jij ze leest. Eén vraagmoment, niet meer.
+
+**Is er geen gebruiker** — een onbeheerde run, een pijplijn, een subagent — dan sla je de vraag over
+en kies je zelf: de kandidaat met de meeste harde gegevens aan beide kanten, en bij gelijke stand die
+welke het gegeven in beeld brengt dat de bron kort en neutraal houdt, want dat staat er niet voor
+niets zo. Meld de keuze in het logboek. Vraag ook niet "voor de zekerheid" alsnog: een vraag die je
+zelf gaat beantwoorden is overhead.
 
 Vindt de bron geen spanning en is de tekst werkelijk een opsomming, dan blijft dat zo: schrijf
 beschrijvend en chronologisch. Een verzonnen stelling is erger dan geen.
@@ -122,7 +129,10 @@ alinea drie en onder de 400 woorden in alinea twee.
 
 **In elke alinea van vier of meer zinnen staat één zin onder de tien woorden, en die draagt de
 pointe.** Dit is de enkele regel die in het corpus de goede passages van de zwakke scheidt. En de
-korte zin gaat vóór het grote getal: eerst adem, dan het bedrag.
+korte zin gaat vóór het grote getal: eerst adem, dan het bedrag. **Zet hem niet aan het einde van de
+alinea** — een korte slotzin is een klapzin en die zijn gerantsoeneerd, een korte zin in het midden
+is een pointe en die is gratis. Dat is ook de uitweg als de pointe en het plafond hieronder met
+elkaar lijken te vechten.
 
 **Het plafond op de figuren.** Elke beweging uit `stem.md` hoogstens één keer per document, en
 daarbinnen: hoogstens één negatieparallel of spiegelpaar ("niet op het bereik, maar op de
@@ -146,9 +156,13 @@ een schrapronde: eindigen met wegstrepen garandeert vlakheid.
    oordeel is. Kijk daarbij apart naar de drie valkuilen hierboven: opgevoerde spreker, bewering
    over het bewijs, verbogen verhouding. Loop ook de andere kant op: welke **betekenis** uit de bron
    staat niet in je tekst? Vergeten betekenis gaat alsnog mee.
-2. **Tel.** Draai `meetlat.py` (zie hieronder) of tel met de hand. Rood betekent een schrijfpas op
-   die passage, niet een reparatie van de zin. Hoogstens twee rondes; daalt het aantal roden niet,
-   houd dan de vorige versie.
+2. **Tel.** Draai `meetlat.py` (zie hieronder) of tel met de hand. **Twee soorten uitkomst, en het
+   verschil is belangrijk.** `ROOD` op figuren, spreker, cijfers of woorden is hard: schrijfpas op die
+   passage, geen reparatie van de zin. `LET` op pointe of ritme wijst een passage aan om naar te
+   kijken en is verder richtinggevend — ritme is iets wat je hoort, niet iets wat je haalt, en je
+   laat die meting liever staan dan dat je een figuur toevoegt of een zin beschadigt om de teller te
+   halen. Voegt een reparatie op het ene punt een overtreding op het andere toe, dan repareerde je
+   niet. Hoogstens twee rondes; daalt het aantal roden niet, houd dan de vorige versie.
 3. **Lees hardop**, in één doorgang, zonder terug te lezen. Waar je midden in een zinsdeel adem moet
    halen, waar je tong vastloopt, waar je stem vlak wordt: herschrijf die zin. Elke zin die je bij
    eerste lezing moet herlezen wordt herschreven, ook als een meting daar slechter van wordt. Leg
@@ -179,7 +193,7 @@ Verder niets — geen inleiding, geen varianten, geen vraag achteraf.
 1 Kern       "<de kernbewering uit de tekst>" — de lezer geeft op: <…>; <teksttype, lezer>; keuze <gebruiker|default>
 2 Bezwaar    <het bezwaar als bewering> — antwoord <toegeven|weerleggen|verplaatsen>; oordeel: "<de zin>"
 3 Vorm       <architectuur>, as <tijd|onderdelen|gewicht>; <N> → <M> woorden (−<x>%); weggelaten: <wat>
-4 Controle   aangewezen <n>/<n>, herrekend <welke verhoudingen>; figuren <negatieparallel/klapzin/schaal> <n>/<n>/<n>; lezer <uitkomst>; open <geen|wat>
+4 Controle   feiten aangewezen <n>/<n>, herrekend <welke verhoudingen>; lezer <uitkomst>; open <geen|wat>
 ```
 
 ## Het telscript
@@ -188,12 +202,14 @@ Optioneel maar aanbevolen, want dit is precies wat een schrijver slecht kan en e
 tellen. Zes metingen, alle zes ontleend aan wat de juryrondes daadwerkelijk afstraften. Draai het op
 de tekst zonder logboek: `python3 meetlat.py tekst.md`.
 
-**pointe** (elke lange alinea heeft een zin onder de tien woorden) · **figuren**
-(negatieparallel ≤ 1, klapzin ≤ 2, schaalvertaling ≤ 2) · **spreker** (directe rede of een
-personage dat vraagt of vindt: nul) · **cijfers** (twee waarden binnen één procent van elkaar zijn
-meestal dezelfde grootheid, twee keer verschillend opgeschreven) · **ritme** (spreiding in
-zinslengte; metronomisch proza is het oudste AI-signaal) · **woorden** (de verbodenlijst en de eigen
-lievelingsformules, samen hoogstens één per 500 woorden).
+Hard (`ROOD`): **figuren** (negatieparallel ≤ 1, klapzin ≤ 2, schaalvertaling ≤ 2) · **spreker**
+(directe rede of een personage dat vraagt of vindt: nul) · **cijfers** (twee waarden binnen één
+procent van elkaar zijn meestal dezelfde grootheid, twee keer verschillend opgeschreven) ·
+**woorden** (de verbodenlijst, en de eigen lievelingsformules samen hoogstens één per 500 woorden).
+
+Richtinggevend (`LET`): **pointe** (elke lange alinea heeft een zin onder de tien woorden) ·
+**ritme** (spreiding in zinslengte; metronomisch proza is het oudste AI-signaal). Deze twee wijzen
+een passage aan, ze schrijven geen getal voor. Balanceren op een drempel is faken.
 
 Faken is verboden. Elke drempel is te halen door de zin lelijker te maken, en dat ziet de lezer uit
 stap 4 meteen. Haal je een drempel alleen door de zin te beschadigen, laat hem dan vallen en noteer

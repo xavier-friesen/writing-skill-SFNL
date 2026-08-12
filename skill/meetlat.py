@@ -3,9 +3,17 @@
 
     python3 meetlat.py tekst.md        (tekst zonder logboek)
 
-Elke meting komt uit iets wat een jury daadwerkelijk afstrafte. ROOD betekent een
-schrijfpas op die passage, niet een reparatie van de zin. LET is een richtlijn:
-herorden eerst, en laat de meting liever staan dan dat je een feit opoffert.
+Elke meting komt uit iets wat een jury daadwerkelijk afstrafte.
+
+ROOD is hard: figuren, spreker, cijfers en woorden. Die leidt tot een schrijfpas op
+de passage, niet tot een reparatie van de zin.
+
+LET is richtinggevend: pointe en ritme. Die wijzen een passage aan om naar te kijken,
+en je laat ze liever staan dan dat je een figuur toevoegt of een zin beschadigt om
+de teller te halen. Ritme is iets wat je hoort, niet iets wat je haalt.
+
+Botsen pointe en figuren, dan zet je de korte zin niet aan het einde van de alinea:
+een korte slotzin is een klapzin, een korte zin in het midden is een pointe.
 """
 import re
 import sys
@@ -29,7 +37,8 @@ print(f"--- {N} woorden, {len(Z)} zinnen, {len(ALI)} alinea's, {len(KOP)} koppen
 # 1. pointe -- elke alinea van 4+ zinnen heeft een zin onder de tien woorden.
 kaal = [f"alinea {i+1} (kortste {min(za)}w)" for i, a in enumerate(ALI)
         for za in [[len(w(z)) for z in zin(a)]] if len(za) >= 4 and min(za) >= 10]
-p(not kaal, "pointe", kaal[:3] or "elke lange alinea heeft een zin <10w")
+g(not kaal, "pointe", (f"{kaal[:3]} — zet de korte zin niet aan het alinea-eind"
+                       if kaal else "elke lange alinea heeft een zin <10w"))
 
 # 2. figuren -- negatieparallel <=1, klapzin <=2, schaalvertaling <=2.
 NEGP = re.compile(r'\b(?:niet|geen|nooit|nergens)\b[^.!?]{2,70}?\bmaar\b|\bniet zozeer\b|\bin plaats van\b'
@@ -37,9 +46,17 @@ NEGP = re.compile(r'\b(?:niet|geen|nooit|nergens)\b[^.!?]{2,70}?\bmaar\b|\bniet 
                   r'|\b(?:zwaarder|lichter|belangrijker|sterker|eerder|liever)\s+(?:\w+\s+){0,4}?dan\b', re.I)
 NEG = re.compile(r'\b(geen|niets|niet|nul|nergens|evenmin)\b', re.I)
 neg = [f"zin {i+1}: {z[:46]}" for i, z in enumerate(Z) if NEGP.search(z)]
-neg += [f"spiegelpaar zin {i+1}/{i+2}" for i in range(len(Z) - 1)
-        if w(Z[i]) and w(Z[i+1]) and w(Z[i])[0].lower() == w(Z[i+1])[0].lower()
-        and bool(NEG.search(Z[i])) != bool(NEG.search(Z[i+1]))]
+# Een spiegelpaar is een retorische parallel, niet elk tweetal zinnen dat met "De"
+# begint: eis dezelfde eerste twee woorden, of hetzelfde eerste woord en twee korte
+# zinnen. Zonder die eis treft de meting normaal feitendicht Nederlands.
+for i in range(len(Z) - 1):
+    a, b = w(Z[i]), w(Z[i + 1])
+    if not (a and b) or bool(NEG.search(Z[i])) == bool(NEG.search(Z[i + 1])):
+        continue
+    tweewoord = len(a) > 1 and len(b) > 1 and [x.lower() for x in a[:2]] == [x.lower() for x in b[:2]]
+    kortpaar = a[0].lower() == b[0].lower() and len(a) <= 14 and len(b) <= 14
+    if tweewoord or kortpaar:
+        neg.append(f"spiegelpaar zin {i+1}/{i+2}")
 klap = [z for z in (zin(a)[-1] for a in ALI if zin(a)) if len(w(z)) <= 8]
 BR = (r'(?:helft|derde|kwart|vijfde|zesde|zevende|achtste|negende|tiende|dubbele|drievoud\w*'
       r'|viervoud\w*|verdubbel\w*|verdrievoudig\w*|verviervoudig\w*)')
@@ -79,7 +96,7 @@ p(not near, "cijfers", (near[:3] if near else f"geen bijna-dubbele; 2x+: {herh[:
 sd = st.pstdev(L) if len(L) > 1 else 0
 gem = N / max(len(L), 1)
 drie = [f"zin {i+1}: {L[i:i+3]}" for i in range(len(L) - 2) if max(L[i:i+3]) - min(L[i:i+3]) <= 2]
-p(sd >= 7 and 13 <= gem <= 21 and not drie, "ritme",
+g(sd >= 7 and 13 <= gem <= 21 and not drie, "ritme",
   f"SD {sd:.1f} (>=7), gem {gem:.1f} (13-21), langste {max(L) if L else 0}" + (f", gelijk trio {drie[:2]}" if drie else ""))
 
 # 6. woorden -- de verbodenlijst, en het frequentieplafond op de eigen formules.
