@@ -1,0 +1,527 @@
+<title>Negen herschrijvingen</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{
+  --paper:#F1F0EA; --vel:#FBFAF6; --ink:#1B1D21; --zacht:#6A6E75; --lijn:#D9D6CD;
+  --stijl:#7B6224; --v33:#2B4A6F; --v71:#7C3A33; --proef:#B0341C;
+  --vlak:#E7E5DC;
+  --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --serif:Georgia,"Iowan Old Style","Palatino Linotype","Times New Roman",serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#15171A; --vel:#1C1F23; --ink:#E7E4DC; --zacht:#989DA4; --lijn:#31353A;
+    --stijl:#C6A552; --v33:#83ABD0; --v71:#D28D83; --proef:#E0705A; --vlak:#23272B;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#15171A; --vel:#1C1F23; --ink:#E7E4DC; --zacht:#989DA4; --lijn:#31353A;
+  --stijl:#C6A552; --v33:#83ABD0; --v71:#D28D83; --proef:#E0705A; --vlak:#23272B;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1560px;margin:0 auto;padding:0 clamp(16px,4vw,56px)}
+.smal{max-width:70ch}
+a{color:inherit}
+code{font-family:var(--mono);font-size:.88em;background:var(--vlak);padding:.1em .35em;border-radius:2px}
+
+/* --- kop van de pagina --- */
+.top{padding:clamp(40px,7vw,84px) 0 34px;border-bottom:1px solid var(--lijn)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--zacht);margin:0 0 18px}
+h1{font-size:clamp(34px,5.4vw,58px);line-height:1.04;letter-spacing:-.022em;margin:0 0 18px;
+  font-weight:700;text-wrap:balance}
+.lead{font-family:var(--serif);font-size:clamp(17px,1.5vw,20px);line-height:1.55;margin:0 0 26px;
+  color:var(--ink)}
+.lead b{font-weight:600}
+
+.legenda{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  margin:30px 0 0;padding:0;list-style:none}
+.legenda li{border-top:2px solid var(--l);padding-top:10px}
+.legenda .nm{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--l);display:block;margin-bottom:4px}
+.legenda .ds{font-size:13.5px;color:var(--zacht);line-height:1.45}
+li.stijl{--l:var(--stijl)} li.v33{--l:var(--v33)} li.v71{--l:var(--v71)}
+
+.hoe{padding:34px 0;border-bottom:1px solid var(--lijn)}
+.hoe h2{font-size:13px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--zacht);margin:0 0 12px;font-weight:500}
+.hoe p{margin:0 0 12px;font-size:15.5px}
+.hoe p:last-child{margin-bottom:0}
+
+/* --- tekstblok --- */
+.blok{padding:clamp(38px,6vw,68px) 0;border-bottom:1px solid var(--lijn)}
+.blokkop{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 14px;margin:0 0 22px}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--proef);
+  border:1px solid var(--proef);border-radius:2px;padding:2px 7px;line-height:1.2}
+.blokkop h2{font-size:clamp(22px,2.6vw,31px);letter-spacing:-.015em;margin:0;font-weight:700}
+.onder{flex:1 1 100%;margin:8px 0 0;color:var(--zacht);font-size:14.5px}
+
+details.klap{border:1px solid var(--lijn);border-radius:3px;background:var(--vel);margin:0 0 26px}
+details.klap.na{margin:26px 0 0}
+details.klap summary{cursor:pointer;padding:12px 16px;font-family:var(--mono);font-size:11.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--zacht);list-style:none}
+details.klap summary::-webkit-details-marker{display:none}
+details.klap summary::before{content:"+ ";color:var(--proef);font-weight:700}
+details.klap[open] summary::before{content:"– "}
+details.klap summary:hover{color:var(--ink)}
+details.klap summary:focus-visible{outline:2px solid var(--proef);outline-offset:2px}
+.klapin{padding:4px 16px 20px;border-top:1px solid var(--lijn)}
+.klapin>*+*{margin-top:18px}
+.brontekst,.feiten{font-family:var(--serif);font-size:15px;line-height:1.62;max-width:74ch}
+.feiten h4{font-family:var(--sans);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--zacht);margin:22px 0 8px;font-weight:600}
+.feiten ul,.feiten ol{padding-left:1.15em}
+
+/* --- drie kolommen --- */
+.drieluik{display:grid;gap:22px;grid-template-columns:1fr;align-items:start}
+@media (min-width:1180px){.drieluik{grid-template-columns:repeat(3,1fr);gap:26px}}
+.kaart{background:var(--vel);border:1px solid var(--lijn);border-radius:3px;
+  border-top:3px solid var(--l);padding:0 18px 22px}
+.kaart.stijl{--l:var(--stijl)} .kaart.v33{--l:var(--v33)} .kaart.v71{--l:var(--v71)}
+.kaartkop{position:sticky;top:0;z-index:2;background:var(--vel);
+  display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 12px;
+  padding:13px 0 9px;border-bottom:1px solid var(--lijn);margin:0 0 4px}
+.vlag{font-family:var(--mono);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--l);font-weight:600}
+.cijfers{font-family:var(--mono);font-size:11.5px;color:var(--zacht);font-variant-numeric:tabular-nums}
+.cijfers b{color:var(--ink);font-weight:600}
+.uitleg{font-size:13px;line-height:1.45;color:var(--zacht);margin:10px 0 16px;
+  padding-bottom:14px;border-bottom:1px dotted var(--lijn)}
+.tekst{font-family:var(--serif);font-size:15.3px;line-height:1.63}
+.tekst>*:first-child{margin-top:0}
+.tekst h3,.tekst h4,.tekst h5{font-family:var(--sans);letter-spacing:-.005em;line-height:1.25;
+  margin:24px 0 8px;text-wrap:balance}
+.tekst h3{font-size:17.5px} .tekst h4{font-size:15.5px} .tekst h5{font-size:14px}
+.tekst p{margin:0 0 13px}
+.tekst ul{padding-left:1.15em;margin:0 0 13px}
+.tekst li{margin:0 0 5px}
+.tekst blockquote{margin:0 0 13px;padding-left:14px;border-left:2px solid var(--l);color:var(--zacht)}
+
+/* --- tabellen --- */
+.tw{overflow-x:auto;margin:0 0 14px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13px;
+  font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 11px 7px 0;border-bottom:1px solid var(--lijn);vertical-align:top}
+thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--zacht);font-weight:500;white-space:nowrap}
+table.meta th{white-space:nowrap}
+.noot{font-size:13px;color:var(--zacht);line-height:1.5;max-width:78ch}
+.noot b{color:var(--ink)}
+
+/* --- slot --- */
+.slot{padding:clamp(40px,6vw,72px) 0 90px}
+.slot h2{font-size:clamp(22px,2.6vw,30px);letter-spacing:-.015em;margin:0 0 18px;font-weight:700;
+  text-wrap:balance}
+.slot h3{font-size:15px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--zacht);margin:34px 0 10px;font-weight:500}
+.slot p,.slot li{font-size:15.5px}
+.slot p{margin:0 0 14px}
+.slot ol{padding-left:1.3em}
+.wet{font-family:var(--serif);font-size:clamp(18px,1.9vw,23px);line-height:1.42;
+  border-left:3px solid var(--proef);padding:2px 0 2px 20px;margin:26px 0;max-width:60ch}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Social Finance NL &middot; sfnl-rapporttekst &middot; proefvergelijking</p>
+    <h1>Negen herschrijvingen</h1>
+    <div class="smal">
+      <p class="lead">Drie AI-concepttteksten, elk langs drie routes naar publiceerbaar Nederlands.
+      Eén route is alleen een stijlinstructie, één is de volledige machinerie van acht fasen, één is
+      de selectieve architectuur die tien testrondes lang is gebouwd. <b>De teksten staan hier zonder
+      oordeel erbij</b>, zodat je eerst leest en daarna pas ziet wat de metingen en de jury's ervan
+      vonden.</p>
+    </div>
+    <ul class="legenda">
+      <li class="stijl"><span class="nm">Alleen de stijl</span>
+        <span class="ds">De sfnl-consultant-stijlinstructie, verder niets. Kost ongeveer een minuut
+        per tekst.</span></li>
+      <li class="v33"><span class="nm">v3.3</span>
+        <span class="ds">Acht fasen: dossier bouwen, bron sluiten, vers schrijven uit
+        <code>stem.md</code>, meten, zeven controles, koude lezer. Ongeveer twintig minuten.</span></li>
+      <li class="v71"><span class="nm">v7.1</span>
+        <span class="ds">De spanning als vorm van de bewering, gesloten bron, vier handelingen in de
+        slotpas. Ongeveer vijftien minuten.</span></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hoe">
+  <div class="wrap smal">
+    <h2>Waar het om gaat</h2>
+    <p>Een rapporttekst moet twee dingen tegelijk doen: zeggen wat er werkelijk aan de hand is, en
+    de feiten dragen waarop dat rust. De drie routes wegen die twee verschillend. Bij het lezen zijn
+    dit de vragen die het onderscheid maken.</p>
+    <p><b>Welke tekst zou je doorsturen?</b> Wijs de zin aan die je zou citeren. Kun je er geen
+    aanwijzen, dan is dat het antwoord.</p>
+    <p><b>Wat mist er?</b> De brontekst staat erboven. Kijk wat er is weggevallen en of je dat mist
+    als lezer die een besluit moet nemen.</p>
+    <p><b>Wat staat er dat de bron niet zegt?</b> Let op oorzaken, motieven, rangordes ("de grootste",
+    "vooral") en termijnen. Dat is de plek waar alle drie de routes op verschillende manieren
+    struikelen.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <section class="blok" id="T1">
+    <header class="blokkop">
+      <span class="tag">T1</span>
+      <h2>Rapporthoofdstuk</h2>
+      <p class="onder">Hoofdstuk 4 over een programma voor preventieve jeugdzorg in drie gemeenten. Bron: <b>20</b> woorden.</p>
+    </header>
+
+    <details class="klap">
+      <summary>Brontekst en feitenlijst</summary>
+      <div class="klapin">
+        <div class="brontekst"><p>--- titel: Innovatieve financiering van preventieve jeugdzorg (hoofdstuk 4) teksttype: rapport-hoofdstuk doellezer: beleidsadviseurs en bestuurders bij gemeenten en zorgverzekeraars woorden: 674</p></div>
+        <div class="feiten"><h4>Feitenlijst</h4><p>Elke herschrijving moet deze feiten exact behouden. Cijfers mogen anders worden gepresenteerd, maar niet veranderen, verdwijnen of worden aangevuld.</p>
+<p>1. Het programma heet Vroeg Verbonden en liep van 2021 tot en met 2024. 2. Deelnemende gemeenten: Veldhorst (58.000 inwoners), Oostermeer (41.000 inwoners), Lindendaal (73.000 inwoners). 3. Totale investering: € 4,2 miljoen. 4. Gemeentelijke bijdrage: € 2,2 miljoen gezamenlijk, verdeeld naar inwoneraantal. 5. Zorgverzekeraar Meander droeg € 1,4 miljoen bij, verspreid over twee tranches; regionaal marktaandeel 62%. 6. Fonds Vooruit verstrekte een achtergestelde lening van € 600.000 tegen 2% rente. 7. Resultaatafhankelijke betaling: € 1.850 per voorkomen doorverwijzing naar specialistische jeugdhulp. 8. Deelname: 1.240 gezinnen; doelstelling was 1.500 gezinnen. 9. Instroom specialistische jeugdhulp daalde met 11%; businesscase ging uit van 22%. 10. Gemiddelde wachttijd eerste gesprek: van 14 weken naar 9 weken. 11. Uitvoeringskosten: 18% van het budget; begroot was 12%. 12. Terugverdientijd herberekend van 4,5 jaar naar 7,2 jaar. 13. Langdurig schoolverzuim op deelnemende scholen daalde met 19%; deze uitkomst zat niet in de financiële structuur, de baten landden bij onderwijs en leerplicht. 14. Meander nam niet deel aan de tweede tranche; hierdoor ontstond een financieringsgat van € 900.000, dat slechts gedeeltelijk kon worden opgevangen. 15. In 2026 volgt besluitvorming over opschaling naar negen gemeenten in de regio.</p></div>
+      </div>
+    </details>
+
+    <div class="drieluik">
+      <article class="kaart stijl">
+        <header class="kaartkop">
+          <span class="vlag">Alleen de stijl</span>
+          <span class="cijfers"><b>388</b> woorden &middot; +1840%</span>
+        </header>
+        <p class="uitleg">sfnl-consultant-style, verder niets: geen dossier, geen meetlat, geen controles.</p>
+        <div class="tekst">
+<h3>4. Innovatieve financiering van preventieve jeugdzorg</h3>
+<p>Vroeg Verbonden laat zien dat gemengde financiering de uitvoering van preventieve jeugdzorg op gang brengt, maar dat de businesscase alleen houdbaar is als commitment en batenverdeling vooraf zijn dichtgezet. Het programma liep van 2021 tot 2024 in Veldhorst (58.000 inwoners), Oostermeer (41.000 inwoners) en Lindendaal (73.000 inwoners), met een investering van € 4,2 miljoen. De operationele winst is echt: de wachttijd voor een eerste gesprek daalde van veertien naar negen weken. Het financiële rendement bleef achter, en op twee punten brak de constructie: de zorgverzekeraar stapte halverwege uit en de grootste meetbare baat viel buiten het arrangement.</p>
+<h4>4.1 De financiële structuur</h4>
+<p>De financiering combineerde publiek en privaat geld over vier componenten, met een resultaatafhankelijke staart die meebeweegt met de gerealiseerde waarde.</p>
+<div class="tw"><table><thead><tr><th>Component</th><th>Partij</th><th>Bedrag</th><th>Voorwaarden</th></tr></thead><tbody><tr><td>Gemeentelijke bijdrage</td><td>Veldhorst, Oostermeer, Lindendaal</td><td>€ 2,2 mln</td><td>Verdeeld naar inwoneraantal</td></tr><tr><td>Bijdrage zorgverzekeraar</td><td>Meander (62% regionaal marktaandeel)</td><td>€ 1,4 mln</td><td>Twee tranches</td></tr><tr><td>Achtergesteld kapitaal</td><td>Fonds Vooruit</td><td>€ 600.000</td><td>Lening, 2% rente, voorfinanciering aanloopkosten</td></tr><tr><td>Resultaatfinanciering</td><td>Alle betalende partijen</td><td>€ 1.850 per geval</td><td>Per voorkomen doorverwijzing naar specialistische jeugdhulp</td></tr></tbody></table></div>
+<p>De tranchestructuur bij Meander spreidde het risico, maar gaf de verzekeraar ook een exit halverwege de looptijd. Die exit kwam er: het wegvallen van de tweede tranche liet een gat van € 900.000 achter, dat in de resterende looptijd maar deels is opgevangen.</p>
+<h4>4.2 Wat de pilot opleverde</h4>
+<p>De prestaties bleven consequent onder de businesscase, zonder dat het programma faalde.</p>
+<div class="tw"><table><thead><tr><th>Indicator</th><th>Aanname businesscase</th><th>Realisatie</th></tr></thead><tbody><tr><td>Deelnemende gezinnen</td><td>1.500</td><td>1.240</td></tr><tr><td>Daling instroom specialistische jeugdhulp</td><td>22%</td><td>11%</td></tr><tr><td>Uitvoeringskosten</td><td>12% van budget</td><td>18% van budget</td></tr><tr><td>Terugverdientijd</td><td>4,5 jaar</td><td>7,2 jaar</td></tr></tbody></table></div>
+<p>De kostenoverschrijding verdient de aandacht, niet de volumeafwijking. Wij houden de kosten van gegevensuitwisseling tussen gemeenten, wijkteams en zorgverzekeraar aan als voorlopige verklaring en adviseren die post apart te administreren voordat een volgende ronde start. Zonder dat inzicht schuift de terugverdientijd bij opschaling opnieuw op.</p>
+<h4>4.3 De baat die buiten de structuur viel</h4>
+<p>Op de deelnemende scholen daalde het aandeel langdurig verzuimende leerlingen met 19%, en die baat zat niet in de uitkomstenstructuur.</p>
+<p><strong>Kans:</strong> verzuim is meetbaar, kent een vaste keten en laat zich prijzen, dus een tweede uitkomstindicator ligt binnen bereik.</p>
+<p><strong>Aandachtspunt:</strong> de baten landden bij het onderwijs en de leerplichtketen, terwijl gemeenten, Meander en Fonds Vooruit de investering droegen.</p>
+<p><strong>Implicatie:</strong> wie niet meebetaalt aan een baat die hij binnenhaalt, verzwakt de investeringsbereidheid van de partijen die het risico nemen.</p>
+<h4>4.4 Advies voor de opschaling</h4>
+<p>In 2026 valt het besluit over opschaling naar negen gemeenten. Wij adviseren schaalafhankelijk. Bij drie gemeenten volstaat de huidige opzet met twee correcties: één tranche in plaats van twee, en het onderwijs als medebetalende partij op de verzuimindicator. Vanaf negen gemeenten adviseren wij een fondsstructuur met één penvoerder en een vast uitvoeringskostenplafond, omdat de coördinatielast per deelnemer anders sneller stijgt dan de vermeden kosten.</p>
+<p>Volgende stap: leg voor 1 december een herijkte businesscase voor met de werkelijke uitvoeringskosten van 18%, een prijs per voorkomen verzuimgeval en een schriftelijke commitmentverklaring van Meander voor de volledige looptijd.</p>
+        </div>
+      </article>
+      <article class="kaart v33">
+        <header class="kaartkop">
+          <span class="vlag">v3.3</span>
+          <span class="cijfers"><b>568</b> woorden &middot; +2740%</span>
+        </header>
+        <p class="uitleg">Acht fasen, dossier met de bron dicht, stem.md, zeven controles, koude lezer.</p>
+        <div class="tekst">
+<h2>Halverwege stopte de zorgverzekeraar en het gat bleef</h2>
+<h3>Vier geldstromen, publiek en privaat</h3>
+<p>In 2021 begonnen drie gemeenten, zorgverzekeraar Meander en Fonds Vooruit aan Vroeg Verbonden: € 4,2 miljoen voor preventieve jeugdzorg in Veldhorst, Oostermeer en Lindendaal. Het programma liep tot 2024. Beoogd waren minder instroom in de specialistische jeugdhulp en een steviger verbinding tussen de wijkteams, het onderwijs en de eerstelijnszorg.</p>
+<p>De inleg liep uiteen. De drie gemeenten stelden € 2,2 miljoen beschikbaar, verdeeld naar inwoneraantal; Meander legde € 1,4 miljoen in, verspreid over twee tranches. Fonds Vooruit financierde bovendien de aanloopkosten voor, uit een achtergestelde lening van € 600.000 tegen 2 procent rente.</p>
+<p>Bleef een doorverwijzing naar de specialistische jeugdhulp uit, dan volgde een uitkering van € 1.850, afgeleid van de gemiddeld vermeden kosten per traject. Zo bond de opzet het geld aan voorkomen doorverwijzingen, maar de deelname hield het niet vol tot het eind: halverwege bleef Meander weg uit de tweede tranche en ontstond een gat van € 900.000.</p>
+<h3>De pilotfase week op vrijwel elk cijfer van de businesscase af</h3>
+<p>Het bereik bleef achter: 1.240 gezinnen deden mee, tegen een doel van 1.500. De wachttijd voor een eerste gesprek liep wel terug, van veertien naar negen weken.</p>
+<p>De instroom in de specialistische jeugdhulp daalde met 11 procent, waar de businesscase van 22 procent uitging. Aan de kostenkant ging het de andere richting op: de uitvoering kostte 18 procent van het totale budget, terwijl de begroting op 12 procent stond.</p>
+<p>Als gevolg daarvan is de terugverdientijd herberekend van 4,5 jaar naar 7,2 jaar. Bijna drie jaar erbij. De kosten van het uitwisselen van gegevens tussen de betrokken partijen zijn een mogelijke verklaring voor een deel van die bijstelling, al vraagt dat nog om onderzoek.</p>
+<h3>De winst landde buiten de structuur</h3>
+<p>Op de deelnemende scholen daalde het aandeel langdurig verzuimende leerlingen met 19 procent. Die uitkomst stond niet in de financiële structuur. De baat kwam daarmee terecht bij het onderwijs en de leerplichtketen, en niet bij de gemeenten, de verzekeraar en het fonds die de € 4,2 miljoen hadden ingelegd om de instroom terug te dringen. Baten en lasten landen bij dit type arrangementen nu eenmaal vaak niet bij dezelfde partij, en dat kan de bereidheid om te investeren onder druk zetten.</p>
+<h3>De toezegging liep korter dan het programma</h3>
+<p>Halverwege de looptijd besloot Meander niet deel te nemen aan de tweede tranche. Daardoor ontstond een financieringsgat van € 900.000, en dat gat kon in de resterende looptijd maar gedeeltelijk worden opgevangen. Waarom Meander wegbleef, staat er niet bij. Voor wie over opschaling moet beslissen, is juist dat het gegeven dat ontbreekt.</p>
+<p>De les uit deze breuk gaat over drie dingen: wie zich waarvoor vastlegt, een uitkomstenmaat die de partijen ook halen en een gedeeld beeld van de baten die eraan hangen. Aan het eerste punt hangt in dit programma een prijs van € 900.000. Het gedeelde beeld ontbrak op de scholen: daar viel een baat die buiten de financiële structuur was gebleven.</p>
+<p>Het tweede punt is de maat zelf. Een tarief van € 1.850 per voorkomen doorverwijzing keert uit op wat er werkelijk gebeurt, en de businesscase rekende met een daling van de instroom in de specialistische jeugdhulp die het programma vervolgens niet haalde.</p>
+<p>Wat een volgende ronde in de weg staat, is de vraag wie tot het eind meebetaalt en wie dat vastlegt. In 2026 moet er worden besloten over de stap naar negen gemeenten in de regio. Dat is drie keer het aantal van de pilot. Wij vinden dat te weinig grond voor een stap van die omvang: het programma betaalde voor resultaat, en toch bleef de looptijd afhankelijk van één deelnemer die bleef betalen. Vroeg Verbonden kocht resultaat in, geen deelname.</p>
+        </div>
+      </article>
+      <article class="kaart v71">
+        <header class="kaartkop">
+          <span class="vlag">v7.1</span>
+          <span class="cijfers"><b>441</b> woorden &middot; +2105%</span>
+        </header>
+        <p class="uitleg">Spanning als vorm (X, terwijl Y), gesloten bron, vier handelingen.</p>
+        <div class="tekst">
+<h3>4. Een structuur die haar tweede tranche niet vasthield</h3>
+<h4>4.1 Vroeg Verbonden kocht een uitkomst in, tegen € 1.850 per stuk</h4>
+<p>Tussen 2021 en 2024 liep in Veldhorst, Oostermeer en Lindendaal het programma Vroeg Verbonden: een investering van € 4,2 miljoen in preventieve jeugdzorg. Een deel van dat geld werd afgerekend op resultaat. Bleef een doorverwijzing naar specialistische jeugdhulp uit, dan volgde een uitkering van € 1.850, gebaseerd op de gemiddeld vermeden kosten per traject. Beoogd waren twee dingen: minder instroom in de specialistische jeugdhulp, en een sterkere verbinding tussen het onderwijs, de wijkteams en de eerstelijnszorg.</p>
+<h4>4.2 Halverwege bleef € 900.000 liggen, en de winst kwam bij wie niet betaalde</h4>
+<p>Het geld kwam uit publieke en private bron. Van de € 4,2 miljoen legden de drie gemeenten € 2,2 miljoen in, verdeeld naar inwoneraantal. Zorgverzekeraar Meander, met 62 procent van de regionale markt, droeg € 1,4 miljoen bij, verspreid over twee tranches. Fonds Vooruit schoot de aanloopkosten voor met een achtergestelde lening van € 600.000 tegen 2 procent rente.</p>
+<p>Halverwege de looptijd besloot Meander niet deel te nemen aan de tweede tranche. Daardoor ontstond een financieringsgat van € 900.000. In de resterende looptijd kon dat gat maar gedeeltelijk worden opgevangen, terwijl het programma inmiddels voorligt voor opschaling naar negen gemeenten in de regio. Dat besluit gaat over deze structuur.</p>
+<p>Op de deelnemende scholen daalde het aandeel langdurig verzuimende leerlingen met 19 procent. Die uitkomst was in de financiële structuur van het programma niet opgenomen. Er stond geen prijs op. De baten landden bij het onderwijs en de leerplichtketen, en niet bij de gemeenten, de verzekeraar en het fonds die het geld hadden ingelegd. Bij dit type arrangementen landen baten en lasten niet altijd bij dezelfde partij, en dat zet de bereidheid om te investeren onder druk.</p>
+<h4>4.3 De raming haalde het niet</h4>
+<p>Gedurende de looptijd bereikte Vroeg Verbonden 1.240 gezinnen, tegen een oorspronkelijke doelstelling van 1.500. De instroom in de specialistische jeugdhulp daalde met 11 procent, waar de businesscase was uitgegaan van een daling van 22 procent. De wachttijd liep tegelijk terug van veertien naar negen weken.</p>
+<p>Aan de kostenkant liepen de uitvoeringskosten op tot 18 procent van het budget, waar 12 procent was begroot. Daarmee is de terugverdientijd herberekend van 4,5 naar 7,2 jaar. Als mogelijke verklaring komen de kosten van gegevensuitwisseling tussen de betrokken organisaties in beeld, met nader onderzoek als voorbehoud.</p>
+<h4>4.4 Van drie gemeenten naar negen, met dezelfde structuur?</h4>
+<p>Het besluit dat in 2026 valt, gaat ook over de betaalstructuur. De resultaten van de pilotfase blijven staan. Maar ze zijn geboekt met een kas die halverwege kleiner werd, en met afspraken waarin de verzuimwinst niet meedeed. Leg daarom drie dingen vast voordat de negende gemeente meedoet: wie welk deel van het geld toezegt, welke uitkomsten een prijs krijgen, en wie de baten mag bijschrijven. Voor negen gemeenten vinden wij het nu te vroeg. Wie halverwege een van zijn drie financiers kwijtraakt, heeft nog geen model voor negen. Eerst de spelregels, dan de opschaling.</p>
+        </div>
+      </article>
+    </div>
+
+    <details class="klap na">
+      <summary>Metingen, ontbrekende brongetallen en jurycijfers</summary>
+      <div class="klapin">
+        <div class="tw"><table class="meta"><thead><tr>
+          <th>Versie</th><th>Lengte</th><th>Meetlat</th><th>Brongetallen niet in de tekst</th>
+        </tr></thead><tbody><tr><th>Alleen de stijl</th><td>388 (+1840%)</td>
+          <td>9&times; rood, 4&times; let</td>
+          <td>674</td></tr><tr><th>v3.3</th><td>568 (+2740%)</td>
+          <td>0&times; rood, 1&times; let</td>
+          <td>674</td></tr><tr><th>v7.1</th><td>441 (+2105%)</td>
+          <td>6&times; rood, 1&times; let</td>
+          <td>674</td></tr></tbody></table></div>
+        <p class="noot">De kolom brongetallen is indicatief en machinaal: een getal kan met opzet zijn
+          weggelaten. Zij zegt waar je moet kijken, niet wat er fout is.</p>
+        <p class="noot"><b>Let op bij de jurycijfers.</b> Die zijn gegeven aan
+      <i>v7.1</i> (6,0) en aan een eerdere output van de v3.2-familie (6,7),
+      niet aan de v3.3-tekst hierboven en niet aan de stijlversie. Die twee zijn nog door geen jury
+      gelezen. Het cijfer van 6,7 hoort dus bij een andere tekst dan die in de middelste
+      kolom staat.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="blok" id="T2">
+    <header class="blokkop">
+      <span class="tag">T2</span>
+      <h2>Bestuurlijke samenvatting</h2>
+      <p class="onder">Samenvatting over een afgelopen social impact bond bij een arbeidstoeleidingsprogramma. Bron: <b>27</b> woorden.</p>
+    </header>
+
+    <details class="klap">
+      <summary>Brontekst en feitenlijst</summary>
+      <div class="klapin">
+        <div class="brontekst"><p>--- titel: Evaluatie Health Impact Bond Stap Vooruit — bestuurlijke samenvatting teksttype: bestuurlijke-samenvatting doellezer: college van B&amp;W van Zwaanwijk, directie van zorgverzekeraar Bornholt, bestuur van de investeerdersfondsen woorden: 436</p></div>
+        <div class="feiten"><h4>Feitenlijst</h4><p>Elke herschrijving moet deze feiten exact behouden. Cijfers mogen anders worden gepresenteerd, maar niet veranderen, verdwijnen of worden aangevuld.</p>
+<p>1. Het arrangement heet Health Impact Bond Stap Vooruit en liep van 2020 tot en met 2025. 2. Doel: meer inwoners met diabetes type 2 die zonder medicatie kunnen functioneren. 3. Uitkomstfinanciers: gemeente Zwaanwijk (86.000 inwoners) en zorgverzekeraar Bornholt. 4. Uitvoerder: Coöperatie Beweegkracht. 5. Voorfinanciering € 1,55 miljoen: Stichting Kapitaal voor Morgen € 1,1 miljoen, Van Dalen Familiefonds € 450.000. 6. Deelnemers: 720 geworven; doelstelling 800. 7. Uitkomst na 24 maanden: 34% medicatievrij; uitkomstenstructuur ging uit van 45%. 8. Uitbetaling: 68% van het maximum, ofwel € 1,68 miljoen van maximaal € 2,47 miljoen. 9. Kapitaal volledig terugbetaald; rendement 2,1% per jaar tegenover verwacht 6,5%. 10. Uitval: 27%, ofwel 194 deelnemers; businesscase ging uit van 15%. 11. Kosten van meten en verantwoorden: € 210.000, ofwel 13,5% van het investeringsvolume. 12. In 2022 breidde de gemeente het reguliere aanbod uit; hierdoor kwam de vergelijkbaarheid met de controlegroep onder druk en raakte de toerekening van resultaten tussen partijen betwist. 13. Ervaren psychische klachten onder deelnemers daalden met 41%; dit effect zat niet in de uitkomstenstructuur en is niet beloond. 14. Per 2026 wordt de aanpak voortgezet als meerjarige subsidierelatie tussen gemeente en Coöperatie Beweegkracht, zonder bondstructuur.</p></div>
+      </div>
+    </details>
+
+    <div class="drieluik">
+      <article class="kaart stijl">
+        <header class="kaartkop">
+          <span class="vlag">Alleen de stijl</span>
+          <span class="cijfers"><b>373</b> woorden &middot; +1281%</span>
+        </header>
+        <p class="uitleg">sfnl-consultant-style, verder niets: geen dossier, geen meetlat, geen controles.</p>
+        <div class="tekst">
+<h3>Bestuurlijke samenvatting</h3>
+<p>De Health Impact Bond Stap Vooruit heeft gezondheidswinst opgeleverd, maar bleef onder de afgesproken ambitie: 34% van de deelnemers functioneerde na 24 maanden zonder medicatie, tegenover 45% in de uitkomstenstructuur. Daarmee kwam 68% van de maximale uitkomstbetaling tot uitkering, € 1,68 miljoen van maximaal € 2,47 miljoen. Wij zien een instrument dat financieel heeft gewerkt zoals bedoeld en inhoudelijk te smal was afgebakend. De uitkomstenstructuur beloonde één indicator, terwijl het programma op meer dimensies effect had.</p>
+<h4>Opzet en resultaat</h4>
+<p>Het arrangement liep van 2020 tot en met 2025 en moest het aantal inwoners met diabetes type 2 vergroten dat zonder medicatie functioneert. De gemeente Zwaanwijk (86.000 inwoners) en zorgverzekeraar Bornholt traden op als uitkomstfinanciers, Coöperatie Beweegkracht voerde uit. Stichting Kapitaal voor Morgen (€ 1,1 miljoen) en het Van Dalen Familiefonds (€ 450.000) verstrekten samen € 1,55 miljoen voorfinanciering.</p>
+<div class="tw"><table><thead><tr><th>Dimensie</th><th>Aanname businesscase</th><th>Realisatie</th></tr></thead><tbody><tr><td>Deelnemers</td><td>800</td><td>720</td></tr><tr><td>Zonder medicatie na 24 maanden</td><td>45%</td><td>34%</td></tr><tr><td>Uitval</td><td>15%</td><td>27% (194 deelnemers)</td></tr><tr><td>Rendement investeerders</td><td>6,5% per jaar</td><td>2,1% per jaar</td></tr></tbody></table></div>
+<p>Het ingelegde kapitaal is volledig terugbetaald. Het risico landde dus waar het was belegd, bij de investeerders.</p>
+<h4>Drie knelpunten</h4>
+<p><strong>Uitval.</strong> Met 27% liep de uitval bijna twee keer zo hoog op als de aanname van 15%. Dat drukt direct op de uitkomstbetaling.</p>
+<p><strong>Meetlast.</strong> Meten en verantwoorden kostte € 210.000, ofwel 13,5% van het investeringsvolume. <strong>Implicatie:</strong> onder ongeveer € 2 miljoen adviseren wij bestaande registraties en een lichter meetprotocol; pas bij een volume waarin die 13,5% terugloopt naar enkele procenten is een eigen meetlijn te verdedigen.</p>
+<p><strong>Betwiste toerekening.</strong> De uitbreiding van het reguliere gemeentelijke aanbod in 2022 zette de vergelijkbaarheid met de controlegroep onder druk, en partijen werden het daarna niet eens over de toerekening van de resultaten. Hoe groot die invloed was, valt met de beschikbare gegevens niet vast te stellen. <strong>Aandachtspunt:</strong> leg vooraf vast wat er gebeurt als een financier zijn eigen aanbod wijzigt.</p>
+<h4>Onbeloond effect</h4>
+<p>De ervaren psychische klachten namen met 41% af. Dit effect zat niet in de uitkomstenstructuur en is daarom niet beloond. <strong>Kans:</strong> neem een tweede indicator op, ook met beperkt gewicht, zodat effect buiten de hoofdindicator meeweegt.</p>
+<h4>Vervolg</h4>
+<p>Per 2026 zetten de gemeente en Coöperatie Beweegkracht de aanpak voort in een meerjarige subsidierelatie zonder bondstructuur. Wij vinden dat verdedigbaar: bij dit volume en een bewezen uitvoerder wegen de meetkosten van een bond niet op tegen de prikkel. Wij adviseren binnen drie maanden de indicatoren voor de subsidierelatie vast te leggen, inclusief de psychische component, en daarbij te bepalen welke bestaande registraties de verantwoording voeden.</p>
+        </div>
+      </article>
+      <article class="kaart v33">
+        <header class="kaartkop">
+          <span class="vlag">v3.3</span>
+          <span class="cijfers"><b>328</b> woorden &middot; +1115%</span>
+        </header>
+        <p class="uitleg">Acht fasen, dossier met de bron dicht, stem.md, zeven controles, koude lezer.</p>
+        <div class="tekst">
+<h3>Stap Vooruit keerde € 1,68 miljoen uit op een betwiste uitkomst</h3>
+<p>Na 24 maanden functioneerde 34 procent van de deelnemers aan de Health Impact Bond Stap Vooruit zonder medicatie. De uitkomstenstructuur ging uit van 45 procent. Deze bond laat de vraag na wat het meten en verantwoorden kostte en wat zijn structuur niet meenam.</p>
+<h4>Minder deelnemers, meer uitval</h4>
+<p>De bond liep van 2020 tot en met 2025 en moest meer inwoners met diabetes type 2 zonder medicatie laten functioneren. Coöperatie Beweegkracht voerde het uit.</p>
+<p>Stichting Kapitaal voor Morgen legde € 1,1 miljoen in en het Van Dalen Familiefonds € 450.000, samen € 1,55 miljoen privaat kapitaal voor een programma dat de gemeente Zwaanwijk en zorgverzekeraar Bornholt per resultaat zouden afrekenen.</p>
+<p>Van de 800 beoogde deelnemers werden er 720 geworven. Daarvan stopten 194 voortijdig, 27 procent, terwijl de businesscase op 15 procent uitval had gerekend.</p>
+<h4>Verantwoorden kostte € 210.000 en minder psychische klachten leverden niets op</h4>
+<p>De uitkomstbetaling kon oplopen tot € 2,47 miljoen. Op grond van het gemeten percentage kwam er € 1,68 miljoen tot uitkering, 68 procent van het maximum.</p>
+<p>Het ingelegde kapitaal ging wel volledig terug naar de twee fondsen, maar bij een rendement van 2,1 procent per jaar tegen de 6,5 procent waarop was gerekend.</p>
+<p>In 2022 breidde de gemeente haar reguliere aanbod uit, waardoor de controlegroep minder goed vergelijkbaar werd en de toerekening van de resultaten aan het programma tussen de betrokken partijen betwist is geraakt. Hoeveel dat de gemeten uitkomsten heeft beïnvloed, is uit de cijfers niet op te maken.</p>
+<p>Aan meten en verantwoorden ging € 210.000 op, 13,5 procent van het investeringsvolume, voor een uitkomst die betwist raakte. Dat vinden wij te veel geld.</p>
+<p>Bij de deelnemers zelf daalden de ervaren psychische klachten wel met 41 procent. Dat effect stond niet in de uitkomstenstructuur en is daarom niet beloond. Per 2026 loopt de bondstructuur af. Waarom die structuur niet terugkomt, meldt de evaluatie niet.</p>
+<h4>De aanpak blijft, de structuur niet</h4>
+<p>Vanaf dat jaar leggen de gemeente en Beweegkracht de aanpak toch vast in een meerjarige subsidierelatie. Reken de prijs van het verantwoorden voortaan mee in de businesscase en houd in de uitkomstenstructuur ruimte voor winst die vooraf niet is ingeboekt.</p>
+        </div>
+      </article>
+      <article class="kaart v71">
+        <header class="kaartkop">
+          <span class="vlag">v7.1</span>
+          <span class="cijfers"><b>304</b> woorden &middot; +1026%</span>
+        </header>
+        <p class="uitleg">Spanning als vorm (X, terwijl Y), gesloten bron, vier handelingen.</p>
+        <div class="tekst">
+<h2>Stap Vooruit: wat het kostte en wat ervan is toe te rekenen</h2>
+<h3>De aannames hielden niet</h3>
+<p>Stap Vooruit wierf 720 van de 800 beoogde deelnemers. Van die 720 vielen er 194 af, 27%, tegenover de 15% uit de businesscase. De Health Impact Bond liep van 2020 tot en met 2025 en moest meer inwoners met diabetes type 2 zonder medicatie laten functioneren. De gemeente Zwaanwijk en zorgverzekeraar Bornholt betaalden voor de uitkomsten, Coöperatie Beweegkracht voerde uit, private fondsen legden € 1,55 miljoen voor.</p>
+<h3>Er is € 1,68 miljoen afgerekend op een betwiste uitkomst</h3>
+<p>Er is € 1,68 miljoen aan uitkomstbetaling uitgekeerd, terwijl niet met zekerheid is vast te stellen welk deel van de gemeten uitkomsten aan het programma is toe te rekenen. Het geschil gaat over die toerekening. In 2022 breidde de gemeente het reguliere aanbod uit, waardoor de vergelijkbaarheid met de controlegroep onder druk kwam en de toerekening van de resultaten tussen partijen betwist raakte. De beschikbare gegevens laten niet zien in welke mate die uitbreiding de gemeten uitkomsten heeft beïnvloed.</p>
+<p>Contractueel is alles nagekomen. Na 24 maanden functioneerde 34% van de deelnemers zonder medicatie, waar de uitkomstenstructuur van 45% was uitgegaan. Op grond daarvan kwam 68% van de maximale uitkomstbetaling van € 2,47 miljoen tot uitkering. De fondsen liepen geen verlies. De voorfinanciering is volledig terugbetaald, tegen een rendement van 2,1% per jaar waar 6,5% was verwacht.</p>
+<p>Aan meten en verantwoorden ging € 210.000 op, 13,5% van het investeringsvolume. De meting kwam er; de toerekening raakte betwist. Uit de deelnemersmetingen kwam intussen een afname van de ervaren psychische klachten met 41% naar voren, een effect dat niet in de uitkomstenstructuur was opgenomen en dat daarom niet is beloond.</p>
+<h3>De aanpak gaat door, de bond niet</h3>
+<p>De evaluatie stelt meetbare gezondheidswinst vast, en een intensievere samenwerking tussen gemeente, verzekeraar en uitvoerder. Per 2026 gaat de aanpak door in een meerjarige subsidierelatie tussen de gemeente en Coöperatie Beweegkracht, zonder bondstructuur. Voor een uitkomst waarvan de toerekening betwist is, vinden wij € 1,68 miljoen te veel geld. Reken af op wat toerekenbaar is.</p>
+        </div>
+      </article>
+    </div>
+
+    <details class="klap na">
+      <summary>Metingen, ontbrekende brongetallen en jurycijfers</summary>
+      <div class="klapin">
+        <div class="tw"><table class="meta"><thead><tr>
+          <th>Versie</th><th>Lengte</th><th>Meetlat</th><th>Brongetallen niet in de tekst</th>
+        </tr></thead><tbody><tr><th>Alleen de stijl</th><td>373 (+1281%)</td>
+          <td>5&times; rood, 2&times; let</td>
+          <td>436</td></tr><tr><th>v3.3</th><td>328 (+1115%)</td>
+          <td>0&times; rood, 1&times; let</td>
+          <td>436</td></tr><tr><th>v7.1</th><td>304 (+1026%)</td>
+          <td>5&times; rood, 1&times; let</td>
+          <td>436</td></tr></tbody></table></div>
+        <p class="noot">De kolom brongetallen is indicatief en machinaal: een getal kan met opzet zijn
+          weggelaten. Zij zegt waar je moet kijken, niet wat er fout is.</p>
+        <p class="noot"><b>Let op bij de jurycijfers.</b> Die zijn gegeven aan
+      <i>v7.1</i> (5,3) en aan een eerdere output van de v3.2-familie (7,9),
+      niet aan de v3.3-tekst hierboven en niet aan de stijlversie. Die twee zijn nog door geen jury
+      gelezen. Het cijfer van 7,9 hoort dus bij een andere tekst dan die in de middelste
+      kolom staat.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="blok" id="T3">
+    <header class="blokkop">
+      <span class="tag">T3</span>
+      <h2>Casetekst</h2>
+      <p class="onder">Korte projectpagina over een wijkaanpak rond schulden, werk en welzijn. Bron: <b>28</b> woorden.</p>
+    </header>
+
+    <details class="klap">
+      <summary>Brontekst en feitenlijst</summary>
+      <div class="klapin">
+        <div class="brontekst"><p>--- titel: Wijkkracht Molenhoek — samen bouwen aan financiële veerkracht teksttype: case-tekst doellezer: bezoekers van de SFNL-website en de projectpagina&#x27;s; fondsen, gemeenten en corporaties die naar voorbeelden zoeken woorden: 305</p></div>
+        <div class="feiten"><h4>Feitenlijst</h4><p>Elke herschrijving moet deze feiten exact behouden. Cijfers mogen anders worden gepresenteerd, maar niet veranderen, verdwijnen of worden aangevuld.</p>
+<p>1. Het project heet Wijkkracht Molenhoek en speelde in de wijk Molenhoek in Havelsteijn (11.400 inwoners). 2. Looptijd: januari 2022 tot en met december 2024. 3. Totale investering: € 1,9 miljoen — gemeente Havelsteijn € 1,1 miljoen, Fonds Nabij € 500.000, woningcorporatie Steenhaven € 300.000. 4. Bereik: 460 huishoudens; doelstelling was 400. 5. 312 huishoudens hadden problematische schulden; 218 startten een traject; 147 rondden het traject af. 6. Gemiddelde schuld bij aanvang: € 24.700 per huishouden. 7. Huisuitzettingen in de wijk: 23 in 2021, 6 in 2024. 8. Kosten per bereikt huishouden: € 4.130. 9. Uitstroom naar werk: doel 25%, gerealiseerd 16% (74 personen). 10. Woningcorporatie Steenhaven trok zich in 2023 na een fusie terug; € 120.000 van de toezegging is niet uitgekeerd. 11. Elf bewoners werden opgeleid tot buurtbudgetmaatje; zij verzorgden 60% van de eerste contacten met huishoudens. 12. De gemeente Havelsteijn nam de aanpak per 2025 op in de reguliere begroting, met € 640.000 per jaar.</p></div>
+      </div>
+    </details>
+
+    <div class="drieluik">
+      <article class="kaart stijl">
+        <header class="kaartkop">
+          <span class="vlag">Alleen de stijl</span>
+          <span class="cijfers"><b>259</b> woorden &middot; +825%</span>
+        </header>
+        <p class="uitleg">sfnl-consultant-style, verder niets: geen dossier, geen meetlat, geen controles.</p>
+        <div class="tekst">
+<h3>Wijkkracht Molenhoek: samen bouwen aan financiële veerkracht</h3>
+<p>Wijkkracht Molenhoek bereikte 460 huishoudens en bracht het aantal huisuitzettingen in de wijk terug van 23 in 2021 naar 6 in 2024. Tussen januari 2022 en december 2024 pakten de gemeente Havelsteijn, Fonds Nabij, woningcorporatie Steenhaven, uitvoerders en bewoners schulden, werk en welzijn in samenhang aan in een wijk met 11.400 inwoners. De partijen legden samen € 1,9 miljoen in: € 1,1 miljoen van de gemeente, € 500.000 van Fonds Nabij en € 300.000 van Steenhaven. Het bereik lag daarmee 60 huishoudens boven de doelstelling van 400.</p>
+<h4>Wat het opleverde</h4>
+<p>Van de 312 huishoudens met problematische schulden startten 218 een traject en rondden 147 dat succesvol af. De gemiddelde schuld bij aanvang bedroeg € 24.700. De kosten kwamen uit op € 4.130 per bereikt huishouden.</p>
+<h4>Wat niet lukte</h4>
+<p>De uitstroom naar werk bleef met 16% (74 personen) achter bij de beoogde 25%. Steenhaven trok zich in 2023 na een fusie terug uit de samenwerking, waardoor € 120.000 van de toezegging niet tot uitkering kwam. <strong>Aandachtspunt:</strong> een toezegging van een corporatie is geen zekerheid zolang er een fusie speelt.</p>
+<h4>De verrassing: buurtbudgetmaatjes</h4>
+<p>Elf bewoners werden opgeleid tot buurtbudgetmaatje en namen 60% van de eerste contacten met huishoudens voor hun rekening. Dat verlaagde de drempel naar hulp en versterkte het eigenaarschap in de wijk. <strong>Kans:</strong> wij zien deze bewonersrol als het best overdraagbare onderdeel van de aanpak, ook los van de rest van het programma.</p>
+<p>De gemeente Havelsteijn nam de aanpak per 2025 op in de reguliere begroting, met € 640.000 per jaar. Overweegt u een vergelijkbaar programma in uw gemeente of wijk? Neem contact met ons op; wij lopen de opzet en de financieringsmix met u door.</p>
+        </div>
+      </article>
+      <article class="kaart v33">
+        <header class="kaartkop">
+          <span class="vlag">v3.3</span>
+          <span class="cijfers"><b>231</b> woorden &middot; +725%</span>
+        </header>
+        <p class="uitleg">Acht fasen, dossier met de bron dicht, stem.md, zeven controles, koude lezer.</p>
+        <div class="tekst">
+<h3>Molenhoek haalde zijn bereik en miste zijn werkdoel</h3>
+<p>Wijkkracht Molenhoek begon in januari 2022: de gemeente Havelsteijn, Fonds Nabij, woningcorporatie Steenhaven en bewoners van de wijk pakten drie jaar lang schulden, werk en welzijn samen aan. Aan het eind waren 460 huishoudens bereikt; het doel was 400.</p>
+<p>De gemeente Havelsteijn bracht € 1,1 miljoen in, Fonds Nabij € 500.000 en Steenhaven nog € 300.000. Bij elkaar kostte de aanpak € 1,9 miljoen, ofwel € 4.130 voor elk bereikt huishouden. Naast die kostprijs staat geen bedrag aan vermeden kosten.</p>
+<p>Problematische schulden speelden bij 312 huishoudens; 218 van hen begonnen aan een traject en 147 rondden dat succesvol af. Die schulden waren bij aanvang gemiddeld € 24.700.</p>
+<p>Het aantal huisuitzettingen in de wijk stond in 2021 op 23 en in 2024 op zes.</p>
+<p>De beoogde uitstroom naar werk van 25 procent kwam uit op 16 procent, ofwel 74 personen. In 2023 trok Steenhaven zich na een fusie terug uit het samenwerkingsverband van de gemeente Havelsteijn, de fondsen en de uitvoerders, waardoor € 120.000 van de toegezegde € 300.000 niet tot uitkering is gekomen.</p>
+<p>Eén ontwikkeling was vooraf niet voorzien. Elf bewoners lieten zich opleiden tot buurtbudgetmaatje en namen uiteindelijk zelfs 60 procent van de eerste contacten met de huishoudens in de wijk voor hun rekening.</p>
+<p>Sinds 2025 staat de aanpak in de reguliere begroting van Havelsteijn, met € 640.000 per jaar. Wij dragen Molenhoek toch voor als voorbeeld, maar dan voor de schuldenaanpak en niet voor de weg naar werk.</p>
+        </div>
+      </article>
+      <article class="kaart v71">
+        <header class="kaartkop">
+          <span class="vlag">v7.1</span>
+          <span class="cijfers"><b>219</b> woorden &middot; +682%</span>
+        </header>
+        <p class="uitleg">Spanning als vorm (X, terwijl Y), gesloten bron, vier handelingen.</p>
+        <div class="tekst">
+<h3>Wijkkracht Molenhoek: van € 1,9 miljoen bleef € 120.000 onuitgekeerd</h3>
+<p>De investering in Wijkkracht Molenhoek staat op € 1,9 miljoen, en € 120.000 daarvan is niet uitgekeerd. Het geld kwam van drie partijen: € 1,1 miljoen van de gemeente Havelsteijn, € 500.000 van Fonds Nabij en € 300.000 van woningcorporatie Steenhaven. Na een fusie trok Steenhaven zich in 2023 terug. De kosten per bereikt huishouden staan op € 4.130, oftewel de volle € 1,9 miljoen gedeeld door 460 huishoudens.</p>
+<p>Het project liep van januari 2022 tot december 2024 en bereikte 460 huishoudens, zestig meer dan de doelstelling van 400. De wijk Molenhoek telt 11.400 inwoners. Van de 312 huishoudens met problematische schulden begonnen 218 aan een traject. Afgerond werden er 147. Het aantal huisuitzettingen in de wijk lag in 2021 op 23 en in 2024 op 6.</p>
+<p>De uitstroom naar werk bleef ver achter bij het plan: 16 procent, ofwel 74 personen, tegen de beoogde 25 procent. Elf bewoners werden in dezelfde jaren opgeleid tot buurtbudgetmaatje. Vooraf was dat niet voorzien. De maatjes namen 60 procent van de eerste contacten met huishoudens voor hun rekening.</p>
+<p>Per 2025 staat de aanpak in de reguliere begroting van de gemeente Havelsteijn, met € 640.000 per jaar. Van de € 1,9 miljoen in het project kwam € 800.000 van Fonds Nabij en woningcorporatie Steenhaven. Wie deze aanpak overneemt, kan het kengetal van € 4.130 niet los zien van de € 120.000 die op papier bleef.</p>
+        </div>
+      </article>
+    </div>
+
+    <details class="klap na">
+      <summary>Metingen, ontbrekende brongetallen en jurycijfers</summary>
+      <div class="klapin">
+        <div class="tw"><table class="meta"><thead><tr>
+          <th>Versie</th><th>Lengte</th><th>Meetlat</th><th>Brongetallen niet in de tekst</th>
+        </tr></thead><tbody><tr><th>Alleen de stijl</th><td>259 (+825%)</td>
+          <td>8&times; rood, 2&times; let</td>
+          <td>305</td></tr><tr><th>v3.3</th><td>231 (+725%)</td>
+          <td>0&times; rood, 1&times; let</td>
+          <td>305</td></tr><tr><th>v7.1</th><td>219 (+682%)</td>
+          <td>5&times; rood, 2&times; let</td>
+          <td>305</td></tr></tbody></table></div>
+        <p class="noot">De kolom brongetallen is indicatief en machinaal: een getal kan met opzet zijn
+          weggelaten. Zij zegt waar je moet kijken, niet wat er fout is.</p>
+        <p class="noot"><b>Let op bij de jurycijfers.</b> Die zijn gegeven aan
+      <i>v7.1</i> (5,0) en aan een eerdere output van de v3.2-familie (7,9),
+      niet aan de v3.3-tekst hierboven en niet aan de stijlversie. Die twee zijn nog door geen jury
+      gelezen. Het cijfer van 7,9 hoort dus bij een andere tekst dan die in de middelste
+      kolom staat.</p>
+      </div>
+    </details>
+  </section>
+</div>
+
+<section class="slot">
+  <div class="wrap smal">
+    <h2>Wat tien rondes hebben opgeleverd</h2>
+    <p>De vergelijking hierboven is de eerste waarin alle drie de routes op alle drie de teksten
+    naast elkaar staan. Wat er in negen eerdere blinde vergelijkingen is gemeten, komt neer op één
+    zin.</p>
+
+    <p class="wet">Elke instructie die iets eist wat de bron misschien niet bevat, wordt vervuld door
+    verzinsel.</p>
+
+    <p>Een standpunt eisen leverde verzonnen gronden op. Een premisse eisen leverde verzonnen
+    motieven en rangordes op. En concreetheid eisen — "sluit af met een concrete volgende stap",
+    "denk schaalafhankelijk" — levert verzonnen termijnen en drempels op: de stijlroute deed dat op
+    twee van de drie teksten. Het maakt niet uit of de eis van het betoog, de stijl of de vorm komt.</p>
+
+    <p>Daar helpt geen extra verbod tegen, want een verbod bestrijdt een neiging en verliest daarvan.
+    Wat werkt is een mechanisme dat de neiging onmogelijk of zinloos maakt. Het scherpste bewijs
+    daarvan zit in twee versies die hetzelfde verbod hadden: op precies dezelfde plek in dezelfde
+    brontekst schreef de ene een motief onder het vertrek van een financier, en schreef de andere
+    "waarom dat besluit viel, is niet vastgesteld". Het verschil was niet de regel. Het verschil was
+    dat de tweede de bron niet bij zich had.</p>
+
+    <h3>De stand</h3>
+    <p>De selectieve architectuur (v7.1 en zijn voorgangers) verloor negen van de negen blinde
+    vergelijkingen. Zij schrijft scherper — juryleden noemden er "de beste losse zin van het veld" in
+    — en zij verliest telkens op hetzelfde: er vallen feiten weg, en de tekst wordt sterker gemaakt
+    dan het materiaal toestaat. De volledige machinerie is soms braver en steeds compleet.</p>
+    <p>De stijlroute is de verrassing van deze ronde. Zij leest goed, kost bijna niets, houdt de
+    feiten beter vast dan de selectieve architectuur, en verzint termijnen die nergens staan.</p>
+
+    <h3>Wat er in de skill blijft</h3>
+    <ol>
+      <li><b><code>stem.md</code></b> — de voice DNA uit de eigen rapporten, McKinsey en The
+      Economist: het genre, de gemeten cadans, het lexicon en negentien bewegingen uit gepubliceerd
+      werk. Het enige onderdeel dat in geen enkele verliesanalyse voorkomt.</li>
+      <li><b>Drie metingen</b> die het eigen corpus aantoonbaar faalt: elke lange alinea een zin
+      onder de tien woorden, getalconsistentie, en elke overtreffende trap narekenen.</li>
+      <li><b>De vijf vindplaatsen</b> waar een spanning zit — met de waarschuwing die deze ronde
+      opleverde: een gegeven dat de bron kort houdt is niet automatisch weggemoffeld. Soms staat het
+      er kort omdat het klein is.</li>
+      <li><b>Het dossier</b>: tien rondes juryrapporten over waarom Nederlandse rapporttekst
+      mislukt.</li>
+    </ol>
+  </div>
+</section>
