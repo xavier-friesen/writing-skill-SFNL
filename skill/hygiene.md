@@ -57,7 +57,7 @@ auteur buiten het ondertekende oordeel (één plek), en modaliteitsverschuivinge
 2. **So-what per alinea:** elke alinea heeft één eigen punt dat nergens anders staat, en zonder dat
    punt gaat zij eruit. Twee dode alinea's kostten in de tests een winst.
 
-## D3 — Drie controles
+## D3 — Vier controles
 
 Elk met één mandaat, in deze volgorde. Nu mag de bron weer open: om te controleren, niet om eruit
 te putten.
@@ -68,10 +68,17 @@ afwijkend cijfer is een fout, geen stijlkwestie. *Terug:* onderstreep in de outp
 over de wereld** — elk getal, bedrag, jaartal, percentage, eigennaam, citaat en voorbeeld, én elke
 uitspraak over de bewijsbasis, de methode, het mechanisme of het motief van een partij. Staat zij
 niet in het dossier, dan is zij verzonnen en gaat zij eruit, ook als zij klopt en ook als de zin
-eromheen een oordeel is: het oordeel mag van jou zijn, de grond eronder is een feit. *Afgeleide
-getallen:* een getal dat je zelf uitrekent mag alleen als beide componenten letterlijk in de
-geleverde tekst staan, met dezelfde noemer, zonder dat het afgeleide getal de delen verdringt, en
-afgerond tot twee significante cijfers. *Verliescontrole:* lees de bron één keer op leessnelheid met
+eromheen een oordeel is: het oordeel mag van jou zijn, de grond eronder is een feit. **Let bijzonder
+op de opgevoerde spreker:** elke partij die in je tekst iets vraagt, wil, vindt of vreest, moet dat
+volgens het dossier doen. Een citaat in directe rede van iemand die de bron niet citeert is een
+verzonnen feit, ook als de strekking klopt, en het is de fout die in ronde 6 twee teksten kostte.
+*Afgeleide getallen:* een getal dat je zelf uitrekent mag alleen als beide componenten letterlijk in
+de geleverde tekst staan, met dezelfde noemer, zonder dat het afgeleide getal de delen verdringt, en
+afgerond tot twee significante cijfers. **Reken elke schaalvertaling opnieuw uit** — elke breuk,
+elk veelvoud, elke per-eenheid, elk "bijna", "ruim" en "net geen" — met de F-nummers ernaast, en
+vergelijk de uitkomst met het woord dat er staat. Een factor 1,6 heet niet "bijna verdubbeld". Klopt
+de vertaling niet exact, dan gaat de vertaling eruit en blijft het cijfer staan, tegen het doel, het
+totaal of de betaler aan gedrukt. *Verliescontrole:* lees de bron één keer op leessnelheid met
 één vraag — welke **betekenis** staat hier die niet in mijn tekst staat? Niet: welke formulering.
 Vergeten betekenis gaat alsnog de tekst in, uit het dossier.
 
@@ -83,7 +90,21 @@ gevaarlijkste fout van het hele veld, vier van de vijf varianten maakten hem. Le
 causaliteit — een kop die een oorzaak belooft die de alinea niet levert, een motief dat aan een
 partij wordt toegeschreven, een volgorde die als gevolg leest.
 
-**D3.3 Hardop, register en copy edit.** Verplicht, ook op de korte route, en altijd als laatste.
+**D3.3 Dosering.** Eén doorloop met alleen de figuren, want die breken niet op de losse zin maar op
+de reeks — en dus pas als de tekst af is. Deze controle stond niet in v4.0 en dat kostte alle drie de
+teksten van ronde 6 hun geloofwaardigheid: drie juries noemden onafhankelijk hetzelfde spiegelpaar
+bij elk scharnier, één aforisme per sectie en vier klapzinnen. Tel en noteer als getal:
+negatieparallellen en spiegelparen (≤ 1), alinea's die eindigen op een oordeel van acht woorden of
+minder (≤ 2), schaalvertalingen (≤ 2), koppen in dezelfde mal (X2), kop-echo's van vijf woorden of
+meer (0), en het aantal bewegingen uit `stem.md` dat je meer dan één keer gebruikte (0).
+
+Boven het plafond schrap je het **zwakste** exemplaar, niet het laatste: de glos die alleen de
+rekensom van de vorige zin herhaalt, de tweede figuur die dezelfde twee polen tegen elkaar zet, het
+korte slotoordeel dat de alinea niet nodig had. Schrappen betekent de passage opnieuw schrijven; laat
+je de zin er kaal uit vallen, dan blijft de mal van de alinea staan. Het script telt de vorm; jij
+beslist welk exemplaar het plafond waard is.
+
+**D3.4 Hardop, register en copy edit.** Verplicht, ook op de korte route, en altijd als laatste.
 Lees de hele tekst hardop, in één doorgang, zonder terug te lezen. Waar je midden in een zinsdeel
 adem moet halen, waar je tong vastloopt, waar je stem vlak wordt: herschrijf die zin. Knip hem niet
 zomaar door — een korte zin met een tang leest slechter dan een lange zonder. Leg daarna drie zinnen
@@ -141,7 +162,7 @@ warm. Daarna lever je, met het punt in regel 6.
 Vóór de levering nog één hardop-schrijfpas over de hele tekst. Niet schrappen, herschrijven. Meet
 daarna woorden bron, woorden output, percentage.
 
-**Zes vragen. Alle zes "ja", anders lever je niet.**
+**Acht vragen. Alle acht "ja", anders lever je niet.**
 
 1. Feitencontrole en causaliteitscontrole schoon; elk getal dat twee keer voorkomt heeft beide keren
    dezelfde waarde; lengte binnen de afspraak.
@@ -153,11 +174,16 @@ daarna woorden bron, woorden output, percentage.
    er is geen hedge-constructie van drie of meer woorden die letterlijk uit de bron komt.
 5. Per sectie een doorstuurzin, per alinea een eigen punt, en het slot draagt een oordeel, gevolg of
    vooruitwijzing — geen kaal feit, geen samenvatting, geen kop die terugkeert.
-6. Geen beweging uit `stem.md` meer dan één keer gebruikt, en de koude lezer is geslaagd of zijn punt
-   staat in regel 6.
+6. Geen beweging uit `stem.md` meer dan één keer gebruikt, de doseringsplafonds groen (X1 ≤ 2, X4 ≤
+   1, X13 ≤ 2, X11 = 0), en de koude lezer is geslaagd of zijn punt staat in regel 6.
+7. **Geen opgevoerde spreker** (X12 = 0): elke partij die in de tekst iets vraagt, wil, vindt of
+   vreest doet dat volgens het dossier, en er staat geen citaat in directe rede dat de bron niet
+   levert.
+8. **Elke schaalvertaling is herrekend** uit de F-regels en het woord dekt de uitkomst: geen 1,6 die
+   "bijna verdubbeld" heet.
 
-Een rode P1, N1, X4 of X11 lever je niet: die betekent dat een passage samenvat, dat een cijfer
-zichzelf tegenspreekt, of dat een figuur tot procedure is geworden. Een `LET` op X7, X8 of X9 lever
+Een rode P1, N1, X1, X4, X11, X12 of X13 lever je niet: die betekent dat een passage samenvat, dat een
+cijfer zichzelf tegenspreekt, dat er iemand is opgevoerd, of dat een figuur tot procedure is geworden. Een `LET` op X7, X8 of X9 lever
 je wel, net als een rode ritmemeting, met vermelding in regel 6 — een feit opofferen aan een meting
 is de duurdere fout.
 
@@ -167,10 +193,10 @@ Dan het logboek, **exact zes regels**:
 ```
 1 Kader        <teksttype, lezer, register>; <N> → <M> woorden (−<x>%); defaults: <ja/nee, welke>
 2 Premisse     "<de zin uit de tekst>" — wat de lezer opgeeft: <…>; gedekt door F<…>
-3 Tegenwerping "<het bezwaar in de woorden van de lezer>" — antwoord: <toegeven|weerleggen F<n>|verplaatsen>
+3 Tegenwerping <het bezwaar als bewering, geen spreker>; gedekt door F/K<…>; antwoord <toegeven|weerleggen F<n>|verplaatsen>
 4 Betoog       architectuur <naam>, as <tijd|onderdelen|gewicht>, dragende sectie <naam> <k>× mediaan; weggelaten: <wat, incl. het ding dat een sjabloon wél had>
 5 Feiten       <n>/<n> terug; afwijkingen <geen|welke>; afgeleid <welke, hoe>; K <n> gedekt, <welke> tot nevenschikking; gaten <[GAT]|geen>
-6 Meting       rood <n> → <n>; koude lezer <uitkomst>; leesbaarheid vóór meting <waar|n.v.t.>; openstaand <geen|welke meting met reden>
+6 Meting       rood <n> → <n>; dosering X1/X4/X13/X11 <n>/<n>/<n>/<n>; schaalvertalingen herrekend <welke, uit F<…>>; koude lezer <uitkomst>; openstaand <geen|welke meting met reden>
 ```
 
 Geen zevende regel, geen aanbod, geen samenvatting.

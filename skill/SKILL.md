@@ -1,6 +1,6 @@
 ---
 name: sfnl-rapporttekst
-version: 4.0
+version: 4.1
 description: 'Bouwt van een concepttekst een publiceerbare Nederlandse rapporttekst voor Social Finance NL: kiest een premisse, beantwoordt de sterkste tegenwerping, ordent het betoog opnieuw en schrijft vers in de huisstem uit een gesloten dossier. Gebruik deze skill wanneer een concept, AI-uitvoer, ruwe notitie of half afgemaakt stuk naar buiten moet, zoals een rapporthoofdstuk, bestuurlijke samenvatting, casetekst, projectpagina, notitie of adviesparagraaf. Trigger ook op "maak dit af", "schrijf dit klaar voor de klant", "haal de AI eruit", "maak er een rapporttekst van", "scherper", "publiceerbaar maken".'
 ---
 
@@ -35,6 +35,21 @@ feiten, en het is de hele opdracht. Bij elk deel van je redengeving kun je een d
 aanwijzen; kan dat niet, dan verzwak je het oordeel tot wat het dossier draagt, maak je er een open
 vraag van, of laat je het vallen. Verzinnen is geen uitweg.
 
+**Maar de argumentlaag draagt dezelfde dekkingsplicht als de tekst.** Dit is de duurste les uit
+ronde 6, waar een vrije betooglaag zonder eigen feitenpoort twee van de drie teksten
+diskwalificeerde. Het verzinnen verhuist dan van de zin naar de premisse, en het komt langs twee
+routes binnen. **De opgevoerde spreker:** een tegenwerping wordt levendig gemaakt door er een
+persoon bij te bedenken — "een fondsmanager vraagt dan…", een wethouder met een motief dat nergens
+staat. Verboden: geen directe rede van iemand die de bron niet citeert, geen partij met een motief
+dat de bron niet noemt, ook niet als de tegenwerping zelf klopt. Een tegenwerping is een redenering,
+geen personage. **Het verbogen cijfer:** een verhouding wordt afgerond in de richting die het betoog
+nodig heeft — een factor 1,6 die "bijna verdubbeld" heet. Elke schaalvertaling reken je terug uit de
+F-regels en noteer je met de F-nummers in het logboek; klopt zij niet exact, dan gaat de vertaling
+eruit en niet het cijfer erin.
+
+Daarom noemen **B2 en B3 hun dekking**, net als B5. Een tegenwerping zonder F- of K-regel eronder,
+of zonder een gat uit A4, gaat de tekst niet in.
+
 **Overige invarianten.** Korter: 15 tot 35 procent, bij feitendichte of contractuele tekst 10
 procent, gemeld in het logboek; nooit langer. De laatste handeling op de tekst is een schrijfpas,
 nooit een schrapronde of een meting — eindigen met wegstrepen garandeert vlakheid. Levering is de
@@ -45,9 +60,11 @@ vóór de metingen.
 ## Route en werkwijze
 
 Tel de bronwoorden. **Onder ongeveer 350 woorden** loopt de tekst de korte route: fase B3 (gezag)
-en B4 (architectuur) vervallen, B5 is drie regels op papier, en in fase D blijven alleen het
-script, de feitencontrole en de hardop-ronde. Op deze lengte hoogstens één eigen oordeel, en
-oordelen spreken elkaar nooit tegen. **Boven 350 woorden** de volle route.
+en B4 (architectuur) vervallen, B5 is drie regels op papier, en in fase D blijven het script, de
+feitencontrole, de doseringscontrole en de hardop-ronde. Op deze lengte hoogstens één eigen oordeel,
+en oordelen spreken elkaar nooit tegen. **B3b vervalt nooit**, op geen enkele route: de korte tekst
+is juist de tekst waarin één verbogen verhouding het hele stuk kost. **Boven 350 woorden** de volle
+route.
 
 Twee stappen kunnen een subagent gebruiken: de schrijver in fase C (die alleen het dossier en het
 betoogblad krijgt) en de koude lezer in fase D. Is er geen Agent-tool, dan werk je solo en ben je
@@ -117,9 +134,19 @@ gelijke stand die welke het feit in beeld brengt dat de bron kort en neutraal ho
 er niet voor niets zo. Lengte: 25 procent, bij meer dan één cijfer per twee zinnen 15 procent.
 
 **B2 De sterkste tegenwerping.** Dit is de stap die de meeste teksten het meest verandert, en de
-stap die de skill van v3.2 miste. Schrijf de **intelligentste bezwaar tegen je premisse op, in de
-woorden van je doellezer** — niet de stroman, maar wat de wethouder of de fondsmanager werkelijk
-zou zeggen, en wat hem gelijk zou geven. Kies dan één antwoordrichting:
+stap die de skill van v3.2 miste. Schrijf het **intelligentste bezwaar tegen je premisse** op: niet
+de stroman, maar het bezwaar dat je doellezer werkelijk heeft en dat hem gelijk zou geven.
+
+**Twee harde grenzen, en ze kostten in ronde 6 twee diskwalificaties.** (1) Het bezwaar is een
+redenering, geen personage: je voert **geen spreker op**. Geen directe rede, geen "een fondsmanager
+vraagt dan", geen partij die iets wil of vindt wat de bron haar niet toeschrijft. Schrijf het bezwaar
+als bewering over de zaak, niet als uitspraak van iemand. (2) Noteer achter het bezwaar én achter je
+antwoord de **F- of K-regels die het dekken**, of het `[GAT]` uit A4 waar het op rust. Heeft je
+antwoord een bewering nodig over de bewijsbasis, de meetmethode of de toerekening — "het berust op
+één meting", "de daling is nergens aan het project toegerekend" — dan is dat een **feit** en geen
+voorzichtigheid: zonder dossierregel gaat het er niet in.
+
+Kies dan één antwoordrichting:
 
 - **Toegeven en inperken.** Het bezwaar klopt voor een deel van het bereik; je premisse krimpt en
   blijft staan (bewegingen K1, K2).
@@ -132,10 +159,18 @@ De tegenwerping en het antwoord gaan de tekst in, meestal vóór de claim die zi
 je antwoord de premisse, herschrijf de premisse dan hier en niet later.
 
 **B3 Gezag.** Wat weet SFNL hier wat een ander niet weet, omdat het erbij was? Een eigen project,
-een fout die het huis zelf maakte, een grens van de eigen bevinding. Eén regel, uit dossier of
-gesprek. Levert het niets, schrijf `geen` — een verzonnen anekdote is een verzonnen feit. Staat er
-wel iets, dan draagt het meestal beweging K1: het eigen instrument relativeren koopt meer
-geloofwaardigheid dan het aanprijzen ervan.
+een fout die het huis zelf maakte, een grens van de eigen bevinding. Eén regel, met de F-regel
+erachter die haar dekt. Levert het dossier niets, schrijf `geen` — een verzonnen anekdote is een
+verzonnen feit, en dit is de plek waar dat het aantrekkelijkst lijkt. Staat er wel iets, dan draagt
+het meestal beweging K1: het eigen instrument relativeren koopt meer geloofwaardigheid dan het
+aanprijzen ervan.
+
+**B3b Cijferdekking van het betoog.** Vóór je gaat schrijven: loop premisse, tegenwerping, antwoord
+en gezag af en onderstreep elk getal, elke verhouding en elke vergelijking die erin voorkomt. Reken
+elk terug uit de F-regels en schrijf de uitkomst met de F-nummers op je blad. Een verhouding die niet
+exact uitkomt, gaat eruit — je zwakt het woord niet af, je laat de vertaling vallen en drukt het
+cijfer tegen het doel, het totaal of de betaler aan. Deze stap kost twee minuten en voorkomt de
+duurste fout die er is: het betoog dat een cijfer naar zich toe buigt.
 
 **B4 Architectuur.** Kies er één, expliciet, en noteer waarom. Niet elke tekst is een piramide.
 
@@ -173,13 +208,21 @@ Vier dingen moet je aan het eind kunnen **aanwijzen**, met de zin erbij:
 
 1. **De premisse staat uitgeschreven in de tekst**, uiterlijk in alinea drie (onder 400 woorden:
    alinea twee).
-2. **De tegenwerping is benoemd en beantwoord**, in de woorden van de lezer, vóór de claim die zij
-   bedreigt.
+2. **De tegenwerping is benoemd en beantwoord**, vóór de claim die zij bedreigt — als bewering over
+   de zaak, zonder opgevoerde spreker en zonder citaat dat de bron niet levert.
 3. **Eén beargumenteerd standpunt**, waarop de auteur over drie jaar afgerekend kan worden en
    waarmee een geïnformeerde lezer het oneens kan zijn — bij voorkeur door de analyse geveld (J1),
    ondertekend waar de feiten de weging niet zelf maken (J2).
 4. **Elk kerncijfer staat naast datgene waar het iets betekent.** De cijferalinea zonder zaak is
    waar elke variant in de tests zakte.
+
+**En houd de figuren in de gaten terwijl je schrijft.** Het repertoire in `stem.md` is breed, maar
+breedte alleen dwingt niets af: in ronde 6 stond in alle drie de teksten hetzelfde spiegelpaar bij
+elk scharnier, één aforisme per sectie en vier klapzinnen. Twee harde plafonds gelden daarom
+onverkort, en het script telt ze: **de negatieparallel en het spiegelpaar samen hoogstens één keer
+per tekst**, en **hoogstens twee alinea's die eindigen op een oordeel van acht woorden of minder**.
+Het beste exemplaar verleidt tot het tweede; vanaf het derde leest de jury de procedure en niet de
+zaak.
 
 De eerste zin is een zaklamp, geen inleiding: hij toont wat er aan de hand is. Kun je hem schrappen
 zonder verlies, dan is het geen opening. Verboden in alinea één: "in dit hoofdstuk", "hieronder",
@@ -189,7 +232,7 @@ het in het logboek; kun je niets noemen, dan heb je niet gekozen.
 
 ## Fase D — Hygiëne en levering
 
-Volg `hygiene.md`: het script, drie controles, de koude lezer, de eindpoort en het logboek van zes
+Volg `hygiene.md`: het script, vier controles, de koude lezer, de eindpoort en het logboek van zes
 regels. Eén meetronde (korte route) of twee (volle route), en hoogstens één terugronde na de koude
 lezer. Vóór de levering nog één hardop-schrijfpas over de hele tekst — niet schrappen,
 herschrijven.
@@ -206,6 +249,14 @@ herschrijven.
   geen.
 - **De tegenwerping is een stroman.** Toets: zou je doellezer hem zelf ondertekenen? Zo nee, dan
   heb je een bezwaar bedacht dat je kon weerleggen, en dat leest de lezer.
+- **De tegenwerping wil een spreker.** Je merkt het aan de neiging om er "een fondsmanager vraagt
+  dan" of "de wethouder wil weten" voor te zetten, omdat het bezwaar zo levendiger wordt. Het wordt
+  er niet sterker van, en je hebt een persoon met een motief verzonnen. Schrijf het bezwaar als
+  bewering en laat de lezer zelf merken dat het zijn eigen bezwaar is.
+- **De premisse trekt aan een cijfer.** Merk je dat een verhouding net niet uitkomt zoals je hem
+  nodig hebt — 1,6 die "bijna verdubbeld" wil heten — dan is dat geen afrondingskwestie maar het
+  betoog dat het feit naar zich toe buigt. Laat de vertaling vallen, niet het cijfer, en ga terug
+  naar B3b.
 - **Je komt niet onder de bronlengte.** Dan heb je geschoven, niet gekozen. Terug naar B5: kijk naar
   de beweringen, niet naar de zinnen — meestal beantwoorden twee secties dezelfde vraag.
 - **Alles klopt en niets blijft hangen.** Geen poetsprobleem. Ga terug naar B1 en B2: je premisse

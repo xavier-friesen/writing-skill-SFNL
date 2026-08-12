@@ -124,7 +124,36 @@ sp = [f"spiegelpaar zin {i+1}/{i+2}" for i in range(len(Z) - 1)
       if w(Z[i]) and w(Z[i+1]) and w(Z[i])[0].lower() == w(Z[i+1])[0].lower()
       and bool(NEG.search(Z[i])) != bool(NEG.search(Z[i+1]))]
 npar = [f"zin {i+1}: {z[:44]}" for i, z in enumerate(Z) if NEGP.search(z)]
-p(len(sp) + len(npar) <= 1, "X4 negatieparallel", f"{len(sp)+len(npar)} (<=1) {(npar+sp)[:2] or 'geen'}")
+# "X wel, Y niet" en "voor X ..., voor Y niets": hetzelfde contrast, andere vorm.
+WELNIET = re.compile(r'\bwel\b[^.!?]{2,60}?\b(?:niet|geen|nooit)\b|\b(?:niet|geen)\b[^.!?]{2,60}?\bwel\b', re.I)
+wn = [f"zin {i+1}: {z[:44]}" for i, z in enumerate(Z) if WELNIET.search(z)]
+tot4 = len(sp) + len(npar) + len(wn)
+p(tot4 <= 1, "X4 negatieparallel", f"{tot4} (<=1) {(npar+wn+sp)[:3] or 'geen'}")
+
+# X1 -- de klapzin. Teruggezet na ronde 6: drie juries noemden onafhankelijk
+# het alineafinale oordeel van vier tot acht woorden als de tic die het meest
+# naar een procedure ruikt.
+klap = [z for z in (zin(a)[-1] for a in ALI if zin(a)) if len(w(z)) <= 8]
+p(len(klap) <= 2, "X1 kort slotoordeel", f"{len(klap)} (<=2, alineafinaal <=8w) {klap[:3]}")
+
+# X12 -- de opgevoerde spreker. Een partij die iets vraagt, wil of vreest, of
+# een citaat in directe rede: in ronde 6 twee keer een diskwalificatie.
+SPREEK = re.compile(r'\b(?:vraagt|vroeg|zegt|zei|stelt|wil weten|vreest|verzucht|antwoordt|reageert)\b\s*[:,]?\s*["“„‘]'
+                    r'|["“„]\s*[^"”“]{15,}?\s*["”]\s*,?\s*(?:vraagt|zegt|stelt|aldus)\b'
+                    r'|\b(?:een|de)\s+\w+(?:manager|houder|bestuurder|directeur|ambtenaar|wethouder|financier)\s+\w*\s*(?:vraagt|wil|vindt|vreest|zegt)\b', re.I)
+spr = [f"zin {i+1}: {z[:52]}" for i, z in enumerate(Z) if SPREEK.search(z)]
+p(not spr, "X12 opgevoerde spreker", spr[:3] or "geen directe rede, geen sprekend personage")
+
+# X13 -- schaalvertaling. Teruggezet: de breuk of het veelvoud achter een getal
+# is een dienst aan de lezer bij een of twee, en een procedure vanaf de derde.
+BR = (r'(?:helft|derde|kwart|vijfde|zesde|zevende|achtste|negende|tiende|dubbele|drievoud\w*|viervoud\w*'
+      r'|verdubbel\w*|verdrievoudig\w*|verviervoudig\w*)')
+SCH = [re.compile(r'\b(?:ruim|bijna|net geen|nog geen|goed|krap|iets (?:meer|minder) dan|meer dan|minder dan|een|het)\s+(?:een |de |het )?' + BR + r'\b', re.I),
+       re.compile(r'\b(?:dat|dit)\s+(?:is|was|komt|kwam|betekent|scheelt|maakt)\b[^.!?]{0,30}?(?:' + BR + r'|\d)', re.I),
+       re.compile(r'\b(?:\d+|een|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|twaalf)\s+procentpunt(?:en)?\b', re.I),
+       re.compile(r'\bper\s+\w+(?:\s+\w+)?\s+(?:was|is|komt|kwam)\s+dat\b|\bkomt\s+dat\s+neer\s+op\b', re.I)]
+sc = [i for i, z in enumerate(Z) if any(r.search(z) for r in SCH)]
+p(len(sc) <= 2, "X13 schaalvertaling", f"{len(sc)} (<=2; herreken elk uit F) {[Z[i][:44] for i in sc[:4]]}")
 STOP = {"ding", "dingen", "koning", "ring", "woning", "kring", "overheid", "gezondheid", "moment", "momenten"}
 nom = [x for x in re.findall(r"\b\w{4,}(?:ingen|ing|aties|atie|iteit|heden|heid|menten|ment)\b", low) if x not in STOP]
 p(len(nom) <= len(Z) / 2, "Z3 nominalisaties",
