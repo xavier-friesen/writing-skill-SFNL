@@ -1,8 +1,8 @@
 # De stem — voice DNA van Social Finance NL
 
-Dit bestand is generatief. Het zegt niet wat je moet vermijden (dat doen de plafonds en het
-telscript), het zegt hoe deze stem klinkt en welke bewegingen zij tot haar beschikking heeft. Laad
-het aan het begin van stap 3 en houd het open terwijl je schrijft.
+Dit bestand is generatief. Het zegt niet wat je moet vermijden (dat doet `hygiene.md`), het zegt
+hoe deze stem klinkt en welke bewegingen zij tot haar beschikking heeft. Laad het aan het begin
+van fase C en houd het open terwijl je schrijft.
 
 Drie bronnen. **De huisstem** komt uit de eigen rapporten: *Innovatieve financiering van
 preventie* (2025, 48 p.) en *De toekomst van resultaatfinanciering* (2024, 20 p.), integraal
@@ -53,11 +53,6 @@ korte ontkenning van elf, dan de klap van vijf woorden. De betekenis zit in de v
 **Alinea's van drie tot zes zinnen.** De eerste zin vat de alinea samen; je kunt de eerste zinnen
 van een hoofdstuk achter elkaar lezen en hebt het hoofdstuk. Eén-zins-alinea's hoogstens één per
 hoofdstukdeel, en alleen op een echte draai.
-
-**Samenvatten is niet aankondigen.** De eerste zin draagt de bewering van de alinea, en dan mag de
-rest hem bewijzen. Zegt hij alleen wat er komt — "De uitkomst week af van het plan", boven twee
-zinnen die precies dat met getallen laten zien — dan is hij leeg: schrap hem en begin bij het eerste
-getal. Vuistregel: staat er geen partij, geen gevolg en geen getal in, dan kondigt hij aan.
 
 **Secties sluiten op de kortste zin van de bladzijde, en die zin keert iets om.**
 

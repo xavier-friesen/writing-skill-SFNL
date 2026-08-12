@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Telscript voor sfnl-rapporttekst v7.1 — negen metingen, geen oordelen.
+"""Telscript voor sfnl-rapporttekst v5.0 — zes metingen, geen oordelen.
 
     python3 meetlat.py tekst.md        (tekst zonder logboek)
 
@@ -8,14 +8,9 @@ Elke meting komt uit iets wat een jury daadwerkelijk afstrafte.
 ROOD is hard: figuren, spreker, cijfers en woorden. Die leidt tot een schrijfpas op
 de passage, niet tot een reparatie van de zin.
 
-LET is richtinggevend: pointe, ritme, rangorde, donorreeks en topicsat. Die wijzen een
-passage aan om naar te kijken, en je laat ze liever staan dan dat je een figuur
-toevoegt of een zin beschadigt om de teller te halen. Ritme is iets wat je hoort,
-niet iets wat je haalt.
-
-Donorreeks en topicsat wijzen naar de twee poorten uit stap 3 -- per sectie een
-doorstuurbare zin, per alinea een eigen punt. Het script kan de poort niet toetsen,
-alleen de plek aanwijzen waar hij meestal niet houdt.
+LET is richtinggevend: pointe en ritme. Die wijzen een passage aan om naar te kijken,
+en je laat ze liever staan dan dat je een figuur toevoegt of een zin beschadigt om
+de teller te halen. Ritme is iets wat je hoort, niet iets wat je haalt.
 
 Botsen pointe en figuren, dan zet je de korte zin niet aan het einde van de alinea:
 een korte slotzin is een klapzin, een korte zin in het midden is een pointe.
@@ -107,37 +102,6 @@ gem = N / max(len(L), 1)
 drie = [f"zin {i+1}: {L[i:i+3]}" for i in range(len(L) - 2) if max(L[i:i+3]) - min(L[i:i+3]) <= 2]
 g(sd >= 7 and 13 <= gem <= 21 and not drie, "ritme",
   f"SD {sd:.1f} (>=7), gem {gem:.1f} (13-21), langste {max(L) if L else 0}" + (f", gelijk trio {drie[:2]}" if drie else ""))
-
-# 5b. donorreeks -- drie of meer zinnen achter elkaar in dezelfde alinea met bijna
-#     dezelfde lengte. Dat is de vingerafdruk van een bronopsomming waarvan alleen de
-#     bullets zijn weggehaald; in ronde 9 stond zo'n reeks van vier in de tekst en de
-#     jury noemde hem als eerste reden om de tekst voor modelwerk te houden.
-donor = []
-for i, a in enumerate(ALI):
-    za = [len(w(z)) for z in zin(a)]
-    for j in range(len(za) - 2):
-        v = za[j:j + 3]
-        if min(v) >= 8 and max(v) <= 1.25 * min(v):
-            donor.append(f"alinea {i+1}, zin {j+1}-{j+3}: {v}")
-            break
-g(not donor, "donorreeks", donor[:2] or "geen reeks van 3 zinnen van gelijke bouw")
-
-# 5c. topicsatzin -- een korte, abstracte openingszin boven twee zinnen die het met
-#     getallen zelf zeggen ("De uitkomst week af van het plan." boven 1.240/1.500 en
-#     11/22 procent). Geen getal, geen genoemde partij, en de alinea levert het bewijs
-#     eronder: dan kondigt de zin aan in plaats van te beweren. Schrap hem en begin bij
-#     het eerste getal. Richtinggevend, want een korte openingszin met een echt eigen
-#     punt bestaat ook -- die noemt alleen meestal een partij of een gevolg.
-kop_leeg = []
-for i, a in enumerate(ALI):
-    za = zin(a)
-    if len(za) < 3 or len(w(za[0])) > 10 or re.search(r'\d', za[0]):
-        continue
-    if re.search(r'(?<![.!?] )(?<!^)\b[A-ZÀ-Þ]\w+', za[0]):   # genoemde partij: geen tic
-        continue
-    if all(re.search(r'\d', z) for z in za[1:3]):
-        kop_leeg.append(f"alinea {i+1}: {za[0][:52]}")
-g(not kop_leeg, "topicsat", kop_leeg[:2] or "geen alinea die aankondigt wat zij daarna zelf laat zien")
 
 # 6. woorden -- de verbodenlijst, en het frequentieplafond op de eigen formules.
 VERB = ("cruciaal essentieel faciliteren navigeren landschap robuust naadloos toekomstbestendig holistisch "

@@ -77,16 +77,29 @@ p. 12 met een andere waarde).
 
 ## Welke versie je installeert
 
-`skill/` bevat v7.0. Voor werk dat de deur uit gaat is **`varianten/v3.2/`** nog
+`skill/` bevat v7.1. Voor werk dat de deur uit gaat is **`varianten/v3.2/`** nog
 steeds de best geteste versie: na negen rondes staat het nieuwe ontwerp op nul
-winsten uit zes schone blinde vergelijkingen.
+winsten uit zes schone blinde vergelijkingen. **v7.1 is nog niet getest** — het is
+v7.0 plus de afwerkingslaag hieronder, en de eerstvolgende ronde moet uitwijzen
+of die iets doet.
 
 Wat v7.0 wél heeft opgelost is het waarheidsprobleem. Het is de eerste versie die
 zonder feitendiskwalificatie en zonder causaliteitsplafond doorkomt, en het
 verschil met de kampioen is teruggebracht van 2,4 en 3,3 punt naar 1,2 — bij een
 juryspreiding van ongeveer een punt op dezelfde tekst, dus één meting en geen
-trend. Wat er nu nog verliest is afwerking: een sectie zonder onderstreepbare zin,
-een lege topicsatzin, een bulletlijst die niet is omgeschreven.
+trend. Wat er daarna nog verloor was afwerking: een sectie zonder onderstreepbare
+zin, een lege topicsatzin, een bulletlijst die niet is omgeschreven.
+
+**v7.1 pakt precies die drie aan, en niets anders.** Twee **poorten** komen terug
+uit v3.2 (per sectie een doorstuurbare zin, per alinea een eigen punt); daarnaast
+krijgt de sandbox drie hygiëneregels, omdat hij de waarheid dicht maar de vorm
+laat lekken: wat je in bronwoorden op je lijst zet, staat straks in bronwoorden in
+je tekst, en de volgorde van de lijst is de volgorde van de bron. Het telscript
+krijgt twee metingen die de plek aanwijzen waar een poort meestal niet houdt —
+`donorreeks` en `topicsat`, allebei stil op de r9-kampioen en allebei raak op de
+twee zinnen die de jury in r9 met name noemde. Geen extra agents, geen extra
+fasen: `SKILL.md` groeit van 285 naar 347 regels en blijft één bestand met drie
+stappen. De geteste v7.0 staat als referentie in `varianten/v7.0/`.
 
 Drie stukken dossier leggen uit hoe dat zo is gekomen:
 `de-structurele-fout.md` (waarom vier patches op vier symptomen niets oplosten),
@@ -97,14 +110,15 @@ waarschuwing die daarbij hoort: elke vereenvoudiging die in dit traject op v3.2
 werd toegepast, haalde iets weg dat gewicht droeg — tweemaal aangetoond, en beide
 keren pas na een verloren ronde.
 
-## Wat er in de repo staat## Wat er in de repo staat
+## Wat er in de repo staat
 
 | Map | Inhoud |
 |---|---|
-| `skill/` | De skill (v5.0) |
+| `skill/` | De skill (v7.1) |
 | `varianten/v3.2/` | De best geteste eerdere versie, als referentie |
 | `varianten/v4.1/` | De betooglaag-architectuur die ronde 6 verloor |
 | `varianten/v6.0/` | De vormeis zonder sandbox, die ronde 8 verloor |
+| `varianten/v7.0/` | De versie die ronde 9 draaide, vóór de afwerkingslaag |
 | `varianten/V1..V5` | De vijf concurrerende ontwerpen uit ronde 1 |
 | `test/corpus/` | Drie vaste AI-bot-testteksten met feitenlijsten |
 | `test/rubriek.md` | Het blinde beoordelingskader (met addendum) |

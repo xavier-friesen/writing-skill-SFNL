@@ -1,6 +1,6 @@
 ---
 name: sfnl-rapporttekst
-version: 7.1
+version: 7.0
 description: 'Distilleert uit een bestaande concepttekst de spanning die er werkelijk in zit, giet die in een argumentvorm en schrijft het als publiceerbaar Nederlands proza in de huisstem van Social Finance NL. Gebruik deze skill wanneer een concept, AI-uitvoer, ruwe notitie of half afgemaakt stuk naar buiten moet, zoals een rapporthoofdstuk, bestuurlijke samenvatting, casetekst, projectpagina, notitie of adviesparagraaf. Trigger ook op "maak dit af", "schrijf dit klaar voor de klant", "haal de AI eruit", "maak er een rapporttekst van", "scherper", "wat willen we hier nou eigenlijk zeggen", "publiceerbaar maken".'
 ---
 
@@ -43,13 +43,6 @@ feitenlijst is daarom geen administratie; zij is het enige wat je kunt aanraken.
 
 Beide mechanismen zijn nodig. De vorm dekt de bewering, de sandbox dekt de tekst.
 
-**Wat ze niet dekken, is de afwerking.** In ronde 9 kwam de tekst voor het eerst zonder één verzonnen
-feit door de jury, en verloor hij op iets anders: een sectie zonder een zin die iemand zou
-onderstrepen, een openingszin die alleen aankondigde wat de twee zinnen erna al lieten zien, en een
-bronopsomming die als vier gelijkgevormde zinnen was blijven staan. Daarvoor staan er twee **poorten**
-in stap 3. Het verschil met een teller is het hele punt: een teller haal je door de zin lelijker te
-maken, een poort niet. "Wijs de zin aan die iemand zou doorsturen" kun je niet faken.
-
 **Je bewerkt geen bronzin.** Elke zin in je output is nieuw geschreven — dat volgt uit de sandbox,
 want je hebt de bronzin niet bij je. Kun je van een zin niet zeggen of je hem geschreven of aangepast
 hebt, dan is hij aangepast: opnieuw.
@@ -76,23 +69,6 @@ dragende bewering de bronmarkering die eraan vastzit: beoogd, verwacht, deels, b
 verband legt. Dit blok is even belangrijk als K en wordt meestal vergeten. Alles hieruit schrijf je
 als nevenschikking — "en", "tegelijk", een puntkomma — nooit als oorzaak, ook niet met een dubbele
 punt, en nooit met een motief erbij.
-
-**De lijst draagt gegevens, geen formuleringen.** Letterlijk overnemen geldt het gegeven zelf: het
-getal, de eenheid, de valuta, het jaartal, de spelling van de naam. Al het andere noteer je in je
-eigen woorden, en zo kort dat er niets te kopiëren valt. Dat geldt in het bijzonder voor twee dingen.
-**Beleidstaal:** "kon de financiering meebewegen met de daadwerkelijk gerealiseerde maatschappelijke
-waarde" gaat de lijst in als *betaling volgt de gemeten uitkomst*. **Voorbehouden:** noteer de sterkte
-als etiket plus de reden in vier tot acht woorden — `onzeker: één meting, geen controlegroep` — en
-nooit de bronzin zelf ("het lijkt er vooralsnog op dat"). Reden: de lijst is je hele wereld, dus elke
-bronzin die erin staat, staat straks in je tekst. De sandbox houdt geen bronformulering tegen die je
-er zelf in hebt gezet.
-
-**Markeer een opsomming als `[LIJST]`.** Vier bullets uit de bron zijn vier gegevens, geen vorm die
-je overneemt: in ronde 9 werden ze vier zinnen van vergelijkbare bouw achter elkaar, en de jury zag
-de bullets er nog doorheen staan. Wat in `[LIJST]` staat, komt of samen in één zin die het punt
-maakt, of verspreid over de plekken in het betoog waar elk gegeven werk doet — nooit als reeks in de
-volgorde van de bron. Dezelfde regel geldt voor de drieslag: het derde lid is meestal het zwakste en
-staat er alleen omdat er drie waren.
 
 Klaar als elk getal uit de bron in F staat, K compleet is, en je van elke bronalinea kunt zeggen of
 zij iets aan de lijst heeft toegevoegd of leeg was.
@@ -166,10 +142,7 @@ snelle toetsen:
   gaan het concrete geval en het getal dat ertoe doet heen. Het lichtste onderwerp krijgt één zin.
   Gelijke secties zijn het teken dat niemand koos.
 - **Horizontaal lezen.** Lees alleen de koppen achter elkaar. Levert dat je spanning op? Koppen zijn
-  beweringen, geen labels, en ze verschillen in lengte en vorm — zie `stem.md` §6. Elke kop is de
-  bewering van zijn sectie, niet het onderwerp ervan: "Eén bijdrage liep in tranches" boven een
-  sectie over de hele financieringsstructuur belooft iets anders dan de sectie levert. De toets komt
-  later vanzelf — kop en doorstuurzin van dezelfde sectie moeten hetzelfde zeggen.
+  beweringen, geen labels, en ze verschillen in lengte en vorm — zie `stem.md` §6.
 
 Onder ongeveer 350 woorden sla je de tabel over: de beweringen op een rijtje, hoogstens vier, geen
 tussenkoppen maar wél een titel.
@@ -210,25 +183,6 @@ is gratis.
 deel is, de partij die betaalde, het jaar ervoor. De cijferalinea zonder zaak is waar elke variant in
 de tests zakte.
 
-**De twee poorten.** Geen tellingen maar eisen, en de enige twee in deze skill. Ze stonden in v3.2,
-zijn bij het opruimen verdwenen, en zijn precies waar ronde 9 op zakte.
-
-1. **Per sectie één doorstuurbare zin.** Eén zin die zijn pointe houdt als je hem alleen citeert —
-   zonder de alinea's eromheen, zonder de kop erboven. Kun je hem niet aanwijzen, dan is die sectie
-   niet af: schrijfpas, geen melding in het logboek. Let op wat er níet telt. Een opsomming van
-   bedragen telt niet, ook niet als de bedragen kloppen. Een zin met een verwijswoord waarvan het
-   antecedent een alinea terug staat, telt niet: de doorgestuurde zin reist alleen.
-2. **Per alinea één eigen punt.** Elke alinea zegt iets wat nergens anders in de tekst staat, en
-   zonder dat punt gaat zij eruit. Hieronder valt de openingszin die alleen aankondigt wat de rest
-   van de alinea laat zien — "De uitkomst week af van het plan", met daaronder de twee getallen die
-   dat zelf al zeggen. Zo'n zin is geen inleiding maar een dubbeling: schrap hem en begin bij het
-   eerste getal. Twee dode alinea's kostten in ronde 2 de winst.
-
-**Schrijf niet in de volgorde van je lijst.** De lijst staat in de volgorde van de bron; je betoog
-niet. Komen drie of vier zinnen achter elkaar met dezelfde bouw en ongeveer dezelfde lengte, dan
-schrijf je een bronopsomming over in plaats van een alinea: één zin maakt het punt, de rest gaat naar
-de plek waar het gegeven werk doet, of eruit.
-
 **Het plafond op de figuren.** Elke beweging uit `stem.md` hoogstens één keer per document, en
 daarbinnen: hoogstens één negatieparallel of spiegelpaar, hoogstens twee alinea's die eindigen op een
 oordeel van acht woorden of minder, hoogstens twee schaalvertalingen. Het beste exemplaar verleidt
@@ -260,17 +214,9 @@ handeling op de tekst is altijd een schrijfpas, nooit een schrapronde.
    haalt. Voegt een reparatie op het ene punt een overtreding op het andere toe, dan repareerde je
    niet. Hoogstens twee rondes; daalt het aantal roden niet, houd de vorige versie.
 3. **Lees hardop**, in één doorgang, zonder terug te lezen. Waar je midden in een zinsdeel adem moet
-   halen, waar je tong vastloopt, waar je stem vlak wordt: herschrijf die zin. Waar je terug moet om
-   te zoeken op wie of wat een "zij", "die", "dat", "daarmee" terugslaat, schrijf je het antecedent
-   uit — in ronde 9 was de scherpste zin van de tekst ("Zij betaalde dus alleen voor wat zij vooraf
-   had benoemd") ook de zin waarvan de jury het onderwerp niet kon vinden. Elke zin die je bij eerste
-   lezing moet herlezen wordt herschreven, ook als een meting daar slechter van wordt. Leg dan begin,
-   midden en slot naast elkaar: dezelfde schrijver?
-
-   **En wijs dan de poorten aan**, met de tekst erbij: per sectie de doorstuurbare zin, per alinea
-   het eigen punt. Dit is geen meting die je afvinkt maar een aanwijzing die je opschrijft; kun je
-   voor een sectie of een alinea niets aanwijzen, dan is dat een schrijfpas en niet een regel in het
-   logboek.
+   halen, waar je tong vastloopt, waar je stem vlak wordt: herschrijf die zin. Elke zin die je bij
+   eerste lezing moet herlezen wordt herschreven, ook als een meting daar slechter van wordt. Leg dan
+   begin, midden en slot naast elkaar: dezelfde schrijver?
 4. **Laat iemand anders lezen.** Een verse subagent, of solo één schone doorloop waarbij je de
    antwoorden opschrijft vóór je iets aanraakt. Geef hem alleen de tekst, het teksttype en de
    doellezer — niet de bron, niet deze skill, niet je spanning.
@@ -302,7 +248,7 @@ Verder niets — geen inleiding, geen varianten, geen vraag achteraf.
 ## Het telscript
 
 Optioneel maar aanbevolen, want tellen is precies wat een schrijver slecht kan en een script goed.
-Negen metingen, elk ontleend aan wat de juryrondes daadwerkelijk afstraften. Draai het op de tekst
+Zeven metingen, elk ontleend aan wat de juryrondes daadwerkelijk afstraften. Draai het op de tekst
 zonder logboek: `python3 meetlat.py tekst.md`.
 
 Hard: **figuren** (negatieparallel ≤ 1, klapzin ≤ 2, schaalvertaling ≤ 2) · **spreker** (directe rede
@@ -311,11 +257,7 @@ zijn meestal dezelfde grootheid, twee keer verschillend opgeschreven) · **woord
 verbodenlijst, en de eigen lievelingsformules samen hoogstens één per 500 woorden).
 
 Richtinggevend: **pointe** · **ritme** · **rangorde** (elke vergelijkende of overtreffende trap; het
-script wijst ze aan, jij rekent ze na tegen de andere getallen in dezelfde eenheid) · **donorreeks**
-(drie zinnen van gelijke bouw achter elkaar: een bronopsomming met de bullets eraf) · **topicsat**
-(een korte abstracte openingszin boven twee zinnen die het met getallen zelf zeggen). Die laatste
-twee wijzen een passage aan waar een poort waarschijnlijk niet houdt; de poort zelf blijft handwerk,
-want een script kan niet zien of een zin het doorsturen waard is.
+script wijst ze aan, jij rekent ze na tegen de andere getallen in dezelfde eenheid).
 
 Faken is verboden. Elke drempel is te halen door de zin lelijker te maken, en dat ziet de lezer uit
 handeling 4 meteen. Haal je een drempel alleen door de zin te beschadigen, laat hem dan vallen en
@@ -337,10 +279,6 @@ noteer dat in regel 4.
 - **Je wilt "grootste", "belangrijkste" of "vooral" gebruiken.** Dat is een bewering over alle
   alternatieven die je niet hebt bekeken. Reken hem na tegen elk ander getal in F in dezelfde eenheid,
   of laat de rangorde weg en noem het gegeven gewoon.
-- **Een sectie heeft geen doorstuurbare zin.** Meestal staat er wel een gedachte in, maar verdeeld
-  over drie zinnen die elk een stukje dragen. Zet de gedachte in één zin en laat de rest die zin
-  bedienen. Levert de sectie werkelijk geen zin op, dan draagt zij ook geen bewering: voeg haar samen
-  met de sectie ernaast, of laat haar vervallen.
 - **Je komt niet onder de bronlengte.** Dan heb je geschoven, niet gekozen. Terug naar stap 2 en kijk
   naar de beweringen: meestal beantwoorden twee secties dezelfde vraag.
 - **Alles klopt en niets blijft hangen.** Geen poetsprobleem. Terug naar stap 1: je spanning kost de
