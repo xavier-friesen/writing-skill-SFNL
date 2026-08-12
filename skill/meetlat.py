@@ -46,17 +46,21 @@ NEGP = re.compile(r'\b(?:niet|geen|nooit|nergens)\b[^.!?]{2,70}?\bmaar\b|\bniet 
                   r'|\b(?:zwaarder|lichter|belangrijker|sterker|eerder|liever)\s+(?:\w+\s+){0,4}?dan\b', re.I)
 NEG = re.compile(r'\b(geen|niets|niet|nul|nergens|evenmin)\b', re.I)
 neg = [f"zin {i+1}: {z[:46]}" for i, z in enumerate(Z) if NEGP.search(z)]
-# Een spiegelpaar is een retorische parallel, niet elk tweetal zinnen dat met "De"
-# begint: eis dezelfde eerste twee woorden, of hetzelfde eerste woord en twee korte
-# zinnen. Zonder die eis treft de meting normaal feitendicht Nederlands.
+# Een spiegelpaar: twee opeenvolgende zinnen met dezelfde ingang waarvan er één
+# ontkent. De valse positieven zaten in lange feitendichte zinnen die toevallig
+# met hetzelfde lidwoord beginnen, dus die sluit ik uit -- maar niet meer dan dat.
+# (In v5.1 stond deze eis te streng en zag een jury drie spiegelparen die het
+# script groen liet. Een meting versoepel je niet op gezag van wie eraan
+# gehouden wordt.)
 for i in range(len(Z) - 1):
     a, b = w(Z[i]), w(Z[i + 1])
     if not (a and b) or bool(NEG.search(Z[i])) == bool(NEG.search(Z[i + 1])):
         continue
-    tweewoord = len(a) > 1 and len(b) > 1 and [x.lower() for x in a[:2]] == [x.lower() for x in b[:2]]
-    kortpaar = a[0].lower() == b[0].lower() and len(a) <= 14 and len(b) <= 14
-    if tweewoord or kortpaar:
-        neg.append(f"spiegelpaar zin {i+1}/{i+2}")
+    if a[0].lower() != b[0].lower():
+        continue
+    if len(a) > 18 and len(b) > 18:      # twee lange zinnen: toeval, geen figuur
+        continue
+    neg.append(f"spiegelpaar zin {i+1}/{i+2}")
 klap = [z for z in (zin(a)[-1] for a in ALI if zin(a)) if len(w(z)) <= 8]
 BR = (r'(?:helft|derde|kwart|vijfde|zesde|zevende|achtste|negende|tiende|dubbele|drievoud\w*'
       r'|viervoud\w*|verdubbel\w*|verdrievoudig\w*|verviervoudig\w*)')
@@ -114,3 +118,13 @@ tel = {"em-streepje": len(re.findall(r'[—–]', B)), "vet": len(re.findall(r'\
        "drieslag": len(re.findall(r'\b\w+, \w+ en \w+\b', B))}
 p(not vh and sum(ff.values()) <= max(1, round(N / 500)) and tel["em-streepje"] == 0 and tel["vet"] == 0
   and tel["drieslag"] <= 1, "woorden", f"verboden {vh or 'geen'}; formules {sum(ff.values())} (<= {max(1, round(N/500))}) {ff or ''}; {tel}")
+
+# 7. rangorde -- elke vergelijkende of overtreffende trap is een bewering over alle
+#    alternatieven. Het script kan hem niet narekenen, alleen aanwijzen: doe dat zelf,
+#    tegen elk ander getal in dezelfde eenheid. Zo zakte in ronde 7 een hele tekst.
+RANG = re.compile(r'\b(?:grootste|kleinste|hoogste|laagste|zwaarste|belangrijkste|meeste|minste|sterkste'
+                  r'|beste|slechtste|snelste|duurste|goedkoopste|enige|eerste)\b'
+                  r'|\b(?:vooral|met name|juist)\b|\b\w+er\s+dan\b', re.I)
+rang = [f"zin {i+1}: {z[:56]}" for i, z in enumerate(Z) if RANG.search(z)]
+g(not rang, "rangorde", (f"{len(rang)}x — reken elk na tegen de andere getallen: {rang[:3]}"
+                         if rang else "geen vergelijkende of overtreffende trap"))

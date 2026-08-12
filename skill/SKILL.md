@@ -1,6 +1,6 @@
 ---
 name: sfnl-rapporttekst
-version: 5.2
+version: 5.3
 description: 'Distilleert uit een bestaande concepttekst wat er werkelijk gezegd moet worden, giet dat in een argumentvorm en schrijft het als publiceerbaar Nederlands proza in de huisstem van Social Finance NL. Gebruik deze skill wanneer een concept, AI-uitvoer, ruwe notitie of half afgemaakt stuk naar buiten moet, zoals een rapporthoofdstuk, bestuurlijke samenvatting, casetekst, projectpagina, notitie of adviesparagraaf. Trigger ook op "maak dit af", "schrijf dit klaar voor de klant", "haal de AI eruit", "maak er een rapporttekst van", "scherper", "wat willen we hier nou eigenlijk zeggen", "publiceerbaar maken".'
 ---
 
@@ -77,6 +77,19 @@ Schrijf dan vijf regels op. Dit is het hele voorwerk.
 de bron hebt aangestreept? Zo nee, verzwak het tot wat de bron draagt, maak er een open vraag van,
 of laat het vallen. Dit is de enige feitenpoort die je vooraf nodig hebt, en zij vervangt een
 dossier: je bouwt geen afschrift van de bron, je legt vast waar je betoog aan hangt.
+
+**En dan de rangordetoets, die je niet mag overslaan.** Elke vergelijkende of overtreffende trap in
+je kernbewering is een bewering over **alle** alternatieven, ook die je niet hebt bekeken: *de
+grootste, het belangrijkste, de zwaarste, het meest, vooral, met name, juist dit*. Loop voor elk zo'n
+woord alle andere aangestreepte getallen langs die in dezelfde eenheid meetbaar zijn, en reken het na.
+Kun je niet uitsluiten dat een ander gegeven jouw kandidaat verslaat, dan is de trap niet gedekt:
+noem het gegeven zonder rangorde, of maak van de trap een gewone bewering.
+
+Dit is de gevaarlijkste fout in de hele skill, want hij is onzichtbaar voor de feitencontrole — elk
+getal is correct, alleen de rangschikking eromheen is verzonnen. En hij plant zich voort: een
+premisse staat in de kop, de tussenkoppen en het slot, dus een ondeugdelijke rangorde besmet de hele
+tekst. In ronde 7 zette een output zijn hoofdstuk op "de grootste daling" (19 procent verzuim)
+terwijl een ander cijfer in zijn eigen tekst ruim 35 procent bedroeg. Eén rekensom had het voorkomen.
 
 **Schrijf altijd drie kandidaat-kernbeweringen uit** — niet drie formuleringen van dezelfde
 gedachte, maar drie stellingen die de lezer op drie manieren van gedachten laten veranderen, elk met

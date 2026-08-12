@@ -75,6 +75,15 @@ van hoofdstuk 4 in het rapport 2025 meet 23–25–35 en zakt weg) en **cijfers*
 twee keer verschillend opgeschreven — de zorguitgaven 2024 staan op p. 9 en
 p. 12 met een andere waarde).
 
+## Welke versie je installeert
+
+Voor werk dat de deur uit gaat: **`varianten/v3.2/`**. Dat is na zeven rondes de
+best geteste versie. Het nieuwe ontwerp in `skill/` staat op nul winsten uit vier
+schone blinde vergelijkingen; het schrijft scherper en veel goedkoper, maar maakt
+de tekst nog steeds sterker dan het materiaal toestaat — steeds in de zin die de
+lezer het beste vindt. `dossier/analyse-ronde6.md` en `analyse-ronde7.md` leggen
+uit waar dat vandaan komt en wat eraan is gedaan.
+
 ## Wat er in de repo staat
 
 | Map | Inhoud |
@@ -87,7 +96,8 @@ p. 12 met een andere waarde).
 | `test/rubriek.md` | Het blinde beoordelingskader (met addendum) |
 | `test/rondes/r1..r5/` | Alle outputs en juryrapporten per ronde (v1 t/m v3.2) |
 | `test/rondes/r6/` | De blinde A/B van v4.0 tegen de kampioenen van v3.2 |
-| `test/rondes/r7/` | De verificatie van v5.0 |
+| `test/rondes/r7/` | De verificatie van v5.0 (vervuilde set, zie de analyse) |
+| `test/rondes/r7b/` | Dezelfde verificatie op een schone set |
 | `dossier/onderzoek/` | Best-practices-onderzoek (8 dossiers) |
 | `dossier/analyse-ronde*.md` | De analyse en het besluit per iteratie |
 | `dossier/eindverslag.md` | Het eindverslag van het traject tot v3.2 |
