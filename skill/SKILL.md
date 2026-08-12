@@ -1,6 +1,6 @@
 ---
 name: sfnl-rapporttekst
-version: 5.1
+version: 5.2
 description: 'Distilleert uit een bestaande concepttekst wat er werkelijk gezegd moet worden, giet dat in een argumentvorm en schrijft het als publiceerbaar Nederlands proza in de huisstem van Social Finance NL. Gebruik deze skill wanneer een concept, AI-uitvoer, ruwe notitie of half afgemaakt stuk naar buiten moet, zoals een rapporthoofdstuk, bestuurlijke samenvatting, casetekst, projectpagina, notitie of adviesparagraaf. Trigger ook op "maak dit af", "schrijf dit klaar voor de klant", "haal de AI eruit", "maak er een rapporttekst van", "scherper", "wat willen we hier nou eigenlijk zeggen", "publiceerbaar maken".'
 ---
 
@@ -46,8 +46,14 @@ dan dat je iets barbaars schrijft — betekenis eerst, dan de wens van de gebrui
 
 Lees de bron één keer helemaal, zonder te verbeteren en zonder te noteren. Streep dan in de bron
 zelf twee dingen aan, want die twee heb je straks nodig en de rest niet: **elk getal en elke
-eigennaam**, en **elk signaalwoord van oorzaak** (doordat, waardoor, omdat, daardoor, dankzij, als
-gevolg van). Meer administratie dan dit is niet nodig.
+eigennaam**, en **elk oorzaakverband dat de bron werkelijk legt** — meestal met een signaalwoord
+(doordat, waardoor, omdat, daardoor, dankzij, als gevolg van), soms zonder. Meer administratie dan
+dit is niet nodig.
+
+Zet er één regel bij die je straks terugvindt: **welke twee gegevens staan in de bron náást elkaar
+zonder dat zij een verband legt?** Dat is de plek waar je zelf een oorzaak gaat verzinnen zonder het
+te merken, want de verklaring dringt zich op zodra je de twee in één alinea zet. Wat de bron
+naast elkaar zet, zet jij naast elkaar.
 
 Schrijf dan vijf regels op. Dit is het hele voorwerk.
 
@@ -154,8 +160,19 @@ een schrapronde: eindigen met wegstrepen garandeert vlakheid.
    elk woord dat sterkte uitdrukt (beoogd, verwacht, deels, betwist). Wijs voor elk de plek in de
    bron aan. Lukt dat niet, dan gaat het eruit — ook als het klopt, en ook als de zin eromheen jouw
    oordeel is. Kijk daarbij apart naar de drie valkuilen hierboven: opgevoerde spreker, bewering
-   over het bewijs, verbogen verhouding. Loop ook de andere kant op: welke **betekenis** uit de bron
-   staat niet in je tekst? Vergeten betekenis gaat alsnog mee.
+   over het bewijs, verbogen verhouding.
+
+   **En zoek de oorzaak zonder signaalwoord**, want dat is de fout die door elke controle glipt: de
+   dubbele punt die een verklaring belooft ("Beide feiten komen uit dezelfde constructie: die rekende
+   af op één soort uitkomst"), het "beide", "daarmee" of "dus" dat twee gegevens aan elkaar knoopt,
+   de volgorde die als gevolg leest, de kop die een oorzaak aankondigt die de alinea niet levert, en
+   het motief dat je een partij toeschrijft. Legt de bron die twee gegevens alleen náást elkaar, dan
+   doe jij dat ook: "en", "tegelijk", een puntkomma. Deze fout kostte in ronde 7 een plafond, en zij
+   is gevaarlijker dan een verzonnen getal omdat er niets in de zin naar wijst.
+
+   Loop ook de andere kant op: welke **betekenis** uit de bron staat niet in je tekst? Vergeten
+   betekenis gaat alsnog mee — in ronde 7 vielen drie gegevens stil weg omdat ze in geen enkele
+   bewering pasten.
 2. **Tel.** Draai `meetlat.py` (zie hieronder) of tel met de hand. **Twee soorten uitkomst, en het
    verschil is belangrijk.** `ROOD` op figuren, spreker, cijfers of woorden is hard: schrijfpas op die
    passage, geen reparatie van de zin. `LET` op pointe of ritme wijst een passage aan om naar te
@@ -230,3 +247,7 @@ dat in regel 4.
   naar de beweringen: meestal beantwoorden twee secties dezelfde vraag.
 - **Alles klopt en niets blijft hangen.** Geen poetsprobleem. Terug naar stap 1: je kernbewering kost
   de lezer niets, of het bezwaar staat er niet.
+- **De twee gegevens vragen om een verklaring.** Je hebt ze in één alinea gezet en nu dringt zich een
+  reden op — een dubbele punt, een "beide komen uit". Als de bron die reden niet geeft, is dit het
+  moment waarop je hem gaat verzinnen. Zet ze naast elkaar en laat de lezer zelf denken; dat is
+  sterker dan een verklaring waarvoor je niet kunt tekenen.
