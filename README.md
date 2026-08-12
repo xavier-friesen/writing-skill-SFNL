@@ -10,75 +10,92 @@ juryrondes; het verhaal tot en met v3.2 staat in `dossier/eindverslag.md`.
 cp -r skill ~/.claude/skills/sfnl-rapporttekst
 ```
 
-De skill start met één vragenmoment (teksttype, premisse, lengte) en heeft
-defaults voor onbeheerd draaien. Het telscript draait via Bash; de
-koude-lezerstap gebruikt een subagent als die beschikbaar is en heeft anders
-een solo-fallback.
+De skill start met één vragenmoment — welke kernbewering, plus teksttype en
+lezer — en heeft defaults voor onbeheerd draaien. Het telscript is optioneel en
+draait via Bash; de laatste leesstap gebruikt een subagent als die beschikbaar
+is en heeft anders een solo-fallback.
 
-## De architectuur van v4.0
+## De architectuur van v5.0
 
-Drie bestanden met een strikte taakverdeling. Alleen `SKILL.md` wordt bij het
-triggeren geladen; de andere twee komen pas in de fase waarin ze nodig zijn.
+Drie stappen, twee bestanden en een klein telscript. Alleen `SKILL.md` wordt bij
+het triggeren geladen.
 
-| Bestand | Rol | Wanneer geladen |
-|---|---|---|
-| `SKILL.md` | het betoog: materiaal, premisse, tegenwerping, gezag, architectuur | bij triggeren |
-| `stem.md` | de voice DNA: genre, cadans, lexicon, negentien bewegingen | fase C, schrijven |
-| `hygiene.md` + `meetlat.py` | één hygiënepas: script, drie controles, koude lezer, levering | fase D |
+| | Rol |
+|---|---|
+| **Stap 1 — de kern** | vijf regels: kernbewering met wat de lezer opgeeft, het sterkste bezwaar met de antwoordrichting, het oordeel, het gat, en wat eruit gaat |
+| **Stap 2 — de vorm** | één van vier architecturen, de beweringen in volgorde, en drie toetsen: en dus?, ongelijke gewichten, horizontaal lezen |
+| **Stap 3 — het proza** | `stem.md`: de voice DNA — genre, gemeten cadans, lexicon, negentien bewegingen uit gepubliceerd werk |
+| **De slotpas** | aanwijzen, tellen (`meetlat.py`), hardop lezen, en iemand anders laten lezen |
 
-## Waarom v4.0 anders is dan v3.2
+## Waarom v5.0 anders is dan wat eraan voorafging
 
-v3.2 was aftrekkend: veertien verboden, vijf budgetten, vijfentwintig
+**v3.2 was aftrekkend.** Veertien verboden, vijf budgetten, vijfentwintig
 metingen en zeven controles tegenover een halve pagina generatief materiaal.
 Wie een model vijftien keer vertelt wat het moet vermijden en één keer wat het
 moet doen, krijgt een tekst die dingen vermijdt. Het plafond daarvan is
 "concept min fouten": correct, en klein.
 
-Drie dingen zijn omgekeerd.
+**v4.0 zette de betooglaag vooraan en ging te ver de andere kant op.** In een
+blinde A/B tegen de best geteste v3.2-outputs verloor v4.0 op alle drie de
+testteksten, met twee diskwalificaties op feiten. De oorzaken zaten in het
+ontwerp: de instructie om het bezwaar "in de woorden van de doellezer" op te
+schrijven leverde verzonnen personages met verzonnen motieven, de vroeg
+vastgelegde premisse zette druk op de cijfers (een factor 1,6 die "bijna
+verdubbeld" heette), en een breed repertoire zonder tellers gaf de tic van v3.1
+terug. Daaruit volgde de wet die het traject nog niet had: **een betooglaag
+zonder eigen feitenpoort verplaatst het verzinnen van de zin naar de premisse.**
+Zie `dossier/analyse-ronde6.md`.
 
-**De betooglaag staat vooraan en is echt een fase.** In v3.2 zat alles wat een
-tekst radicaal anders maakt in één vraag ("welke spanning?") en een
-hoofdboodschap van dertig woorden. Nu: drie materieel verschillende premissen
-met de vraag wat de lezer moet opgeven als hij ze aanvaardt, de sterkste
-intelligente tegenwerping in de woorden van de doellezer met een
-antwoordrichting, het gezag uit eigen ervaring, en een keuze uit vier benoemde
-architecturen. Die fase kost bijna geen tokens en beslist bijna alles.
+**v5.0 houdt de winst en gooit de machinerie weg.** De opdracht is een
+bestaande tekst distilleren tot wat er werkelijk gezegd moet worden, dat in een
+argumentvorm gieten, en het als proza opschrijven — niet een dossier bouwen. Het
+volledige fase-A-apparaat (feitenlijst, claimregister, causaliteitskaart) is
+vervangen door twee handelingen: streep in de bron de getallen en de
+oorzaaksignalen aan, en wijs aan het eind elk feit terug aan. De reden dat het
+dossier bestond — de bron sluiten om reparatie te voorkomen — staat nu als
+regel: **je bewerkt geen bronzin, elke zin is nieuw geschreven.**
 
-**Breedte vervangt budgetten.** v3.1 zette quota op de eigen stijlmiddelen
-omdat elk middel bij het derde gebruik als procedure ging lezen. Dat is een
-symptoom van een te smal repertoire. `stem.md` bevat negentien bewegingen uit
-gepubliceerd werk, elk hoogstens één keer per document — het antwoord op
-"dezelfde drie bewegingen keren terug" is vijftien bewegingen, geen quotum van
-twee.
+De drie lessen van ronde 6 blijven staan, maar als drie regels in plaats van als
+fasen: geen opgevoerde spreker, geen bewering over het bewijs die de bron niet
+doet, geen verhouding die naar het betoog toe buigt.
 
-**Hygiëne is één pas aan het eind.** Zeven controles werden drie. Twee nieuwe
-metingen zijn erbij gekomen, en dat zijn precies de twee die het eigen corpus
-faalt: **P1**, elke alinea van vier of meer zinnen heeft een zin onder de tien
-woorden die de pointe draagt, en **N1**, getalconsistentie — in de rapporten
-van 2025 staan de zorguitgaven op twee pagina's met een verschillende waarde.
+**Wat er per versie mee gebeurde:**
 
-**De waarheidsgrens staat expliciet.** Feiten zijn van de bron: geen getal,
-naam, mechanisme, causaliteit of modaliteit die er niet staat. Het betoog is
-van de schrijver: premisse, ordening, tegenwerping en oordeel draagt de skill
-zelf aan, en verantwoordt ze in het logboek.
+| | `SKILL.md` | bestanden | script | logboek |
+|---|---|---|---|---|
+| v3.2 | 755 regels | 1 | 96 regels, ingebed | 8 regels |
+| v4.1 | 263 regels | 3 | 207 regels | 6 regels |
+| v5.0 | 216 regels | 2 | 99 regels | 4 regels |
+
+Twee metingen in het script bestonden in geen enkele eerdere versie, en het zijn
+precies de twee die het eigen corpus faalt: **pointe** (elke alinea van vier of
+meer zinnen heeft een zin onder de tien woorden die de pointe draagt — het slot
+van hoofdstuk 4 in het rapport 2025 meet 23–25–35 en zakt weg) en **cijfers**
+(twee waarden binnen één procent van elkaar zijn meestal dezelfde grootheid,
+twee keer verschillend opgeschreven — de zorguitgaven 2024 staan op p. 9 en
+p. 12 met een andere waarde).
 
 ## Wat er in de repo staat
 
 | Map | Inhoud |
 |---|---|
-| `skill/` | De skill (v4.0) |
-| `varianten/v3.2/` | De vorige architectuur, als referentie |
+| `skill/` | De skill (v5.0) |
+| `varianten/v3.2/` | De best geteste eerdere versie, als referentie |
+| `varianten/v4.1/` | De betooglaag-architectuur die ronde 6 verloor |
 | `varianten/V1..V5` | De vijf concurrerende ontwerpen uit ronde 1 |
 | `test/corpus/` | Drie vaste AI-bot-testteksten met feitenlijsten |
 | `test/rubriek.md` | Het blinde beoordelingskader (met addendum) |
 | `test/rondes/r1..r5/` | Alle outputs en juryrapporten per ronde (v1 t/m v3.2) |
 | `test/rondes/r6/` | De blinde A/B van v4.0 tegen de kampioenen van v3.2 |
+| `test/rondes/r7/` | De verificatie van v5.0 |
 | `dossier/onderzoek/` | Best-practices-onderzoek (8 dossiers) |
 | `dossier/analyse-ronde*.md` | De analyse en het besluit per iteratie |
 | `dossier/eindverslag.md` | Het eindverslag van het traject tot v3.2 |
 
-## De kern in twee regels
+## De kern in drie regels
 
-Een zwakke tekst repareer je niet en poets je niet: je kiest een andere
-stelling, beantwoordt het bezwaar dat de lezer werkelijk heeft, en schrijft
-vers uit een gesloten dossier. Feiten zijn van de bron, het betoog is van jou.
+Haal eruit wat de tekst werkelijk wil zeggen, zet dat in een vorm die bij de
+lezer landt, en schrijf het opnieuw op — geen zin van de bron bewerkt. Feiten
+zijn van de bron, het betoog is van jou. En de argumentlaag draagt dezelfde
+dekkingsplicht als de tekst, want anders verhuist het verzinnen van de zin naar
+de premisse.
