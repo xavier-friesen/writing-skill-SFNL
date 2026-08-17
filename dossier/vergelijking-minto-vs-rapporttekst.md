@@ -147,3 +147,43 @@ geen vondst.
 **Wat open blijft.** Nog steeds zelfgescoord en niet blind, en nog steeds met mijzelf als
 gebruiker in de keuzes. De ledger is niet getest op T1, de tekst waar hij zou moeten renderen.
 En de skill heeft geen meting: D3 hangt nu op mijn eigen hardop-oordeel, niet op een telling.
+
+---
+
+# Addendum 2: v1.2 — stijlregisters, en feiten op bronniveau
+
+Twee verschuivingen. De fact ledger met natelling is weg; daarvoor in de plaats staat één
+broncheck vóór beat 1: welke claims draagt dit artikel, kloppen die exact, en wat beweert de
+pile zonder dekking. **Selectie is vrij, precisie niet.** Weglaten is het normale geval; wat
+blijft staan moet kloppen. De natelling aan het eind is geschrapt — die dwong het artikel de
+hele feitenlijst binnen te trekken en maakte elke tekst een inventaris.
+
+Wat daarvoor terugkomt, is een stijlcheck per beat. Vier registers in `skill-minto/STYLES.md`,
+gedestilleerd uit `dossier/onderzoek/`: **A McKinsey** (action titles, answer first op elk
+niveau, horizontale leestest), **B Economist** (geen keelschrapen, elke zin gemist als je hem
+weghaalt, scherpe zinslengtevariatie, dubbele punt als scharnier), **C proza** (opening als
+zaklamp, nut graf op plek twee, de abstractieladder, slot dat draait), **D feitelijk kort** (de
+huidige default). Elke kaart eindigt op drie ja/nee-toetsen die per beat draaien, naast de link
+check. De kaarten staan in een apart bestand omdat één run er precies één van gebruikt.
+
+De uitvraag stelt nu twee vragen in één widget: register, en lengte met een expliciete optie
+"geen voorkeur" — waarop de skill zelf een getal voorstelt en zegt wat het kost (lager betekent
+takken laten vallen, hoger betekent beats die meer uit de pile dragen).
+
+## Demonstratie: T3 in register C
+
+`test/rondes/minto/T3-minto-v12-proza.md`, 232 woorden. Bewust níét meegenomen: de gemiddelde
+schuld van € 24.700, de reeks 312/218/147, de € 4.130 per huishouden, de verdeling van de € 1,9
+miljoen over drie financiers, en het terugtreden van Steenhaven met € 120.000. Vijf van de
+twaalf feiten uit de lijst, weg — en onder de oude regel zou dat een fout zijn geweest.
+
+Dezelfde piramide, dezelfde apex, ander register: het opent op één waarneembaar detail in plaats
+van op de begroting, de nut graf staat op plek twee, en het slot draait in plaats van samen te
+vatten ("De gemeente koopt daarmee vooral het deel dat zij niet had bedacht"). Eén zin
+("Schulden laten zich benaderen via de buren, een arbeidsmarkt niet") is een klim naar boven op
+de ladder die register D nooit zou toestaan.
+
+Op `test/rubriek.md` zou deze versie op D7 en D8 slechter scoren dan de v1.1-tekst — de rubriek
+is gebouwd voor feitentrouwe rapporttekst en straft weglating in D7/D8 af. Dat is geen fout in
+de tekst maar een mismatch tussen rubriek en register: wie register C kiest, moet niet op D7
+willen winnen. Voor de andere drie registers blijft de rubriek bruikbaar.

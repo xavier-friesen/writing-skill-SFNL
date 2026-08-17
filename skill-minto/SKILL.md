@@ -1,7 +1,7 @@
 ---
 name: minto-journey
-version: 1.1
-description: 'Shape a pile of raw material into an article on a Minto pyramid, beat by beat. Fixes one governing answer, grounds every concept before a beat leans on it, and link-checks each sentence before it lands. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a structured article. Trigger on "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "beat by beat".'
+version: 1.2
+description: 'Shape a pile of raw material into an article on a Minto pyramid, beat by beat, in a chosen register (McKinsey, Economist, prose, factual brief). Fixes one governing answer, grounds every concept before a beat leans on it, and link-checks each sentence before it lands. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a structured article. Trigger on "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "beat by beat".'
 ---
 
 # Minto journey
@@ -18,32 +18,71 @@ Ask once where to save the article, then remember the path.
 ## The loop
 
 1. **Read the pile end-to-end.** Before anything else.
-2. **Build the ledger.** Write the sidecar file (see [The sidecar](#the-sidecar)) and fill its fact
-   ledger: every number, amount, date, name, place and quote in the pile, one per line. This is the
-   only material you may state as fact.
-3. **Fix the apex.** Settle the one-sentence answer the whole article delivers, and the reader's
+2. **Intake.** Settle register and length in one exchange. See [Intake](#intake).
+3. **Check the source.** One pass over the pile, before any writing. See
+   [Checking the source](#checking-the-source).
+4. **Fix the apex.** Settle the one-sentence answer the whole article delivers, and the reader's
    question it answers. See [The pyramid](#the-pyramid). Nothing gets written until it is agreed.
-4. **Establish the prerequisites.** Settle what the audience already knows walking in. Everything else
+5. **Establish the prerequisites.** Settle what the audience already knows walking in. Everything else
    must be grounded by a beat before a later beat can lean on it. See [Grounding](#grounding).
-5. **Offer 2-3 candidate opening beats**, drawn from the pile. Each is a different entry point to the
+6. **Offer 2-3 candidate opening beats**, drawn from the pile. Each is a different entry point to the
    same apex. Show them before writing anything to the article file. Say what each one grounds, and
    preview which beats that pick unlocks — the user should see a little way down the path.
-6. **Write the picked beat, and only that beat.** Re-read the article file from disk first. Run the
-   [link check](#the-link-check) and the [budgets](#budgets) on its sentences before it lands. Update
-   the sidecar. Then stop.
-7. **Offer 2-3 candidate next beats.** Each must be reachable from the current grounded set, must serve
-   a live branch of the pyramid, and must say what it grounds. Then loop from step 6.
+7. **Write the picked beat, and only that beat.** Re-read the article file from disk first. Run the
+   three checks — [link](#the-link-check), [budgets](#budgets), and the style card's three tests —
+   before it lands. Update the sidecar. Then stop.
+8. **Offer 2-3 candidate next beats.** Each must be reachable from the current grounded set, must serve
+   a live branch of the pyramid, and must say what it grounds. Then loop from step 7.
 
-**The light route.** Under roughly 400 words of target article, run steps 3-5 as one exchange: fix the
-apex and the whole beat list together, then write the beats straight through, showing each as it lands.
-Six round trips for 250 words is more apparatus than a short piece can carry. The branching loop is for
+**The light route.** For a target under roughly 400 words, run steps 4-6 as one exchange: fix the apex
+and the whole beat list together, then write the beats straight through, showing each as it lands. Six
+round trips for 250 words is more apparatus than a short piece can carry. The branching loop is for
 longer pieces, where the choice of next beat genuinely changes the article.
+
+## Intake
+
+Ask both questions at once, as a single widget, and skip whichever the user has already answered.
+
+**Register** — read the chosen card in `STYLES.md` before writing, and keep its three tests in the
+per-beat check:
+
+- **A. McKinsey** — action titles, answer first at every level, the horizontal read. For a reader who
+  has to decide.
+- **B. Economist** — no throat-clearing, every sentence earns its place, sharp length variation. For a
+  piece read straight through.
+- **C. Prose** — a torch of an opening, up and down the ladder of abstraction, an ending that turns
+  rather than summarises. For a piece that has to be felt.
+- **D. Factual brief** — apex in the heading, one move per beat, no ornament. The default when nobody
+  chooses.
+
+**Length** — offer a short/medium/long band and an explicit *no preference*. On no preference, read the
+pile, propose a target in one line, and say what it costs: a lower target means branches get dropped,
+a higher one means beats carry more from the pile. Record whichever number is agreed in the sidecar and
+hold it; a piece drifting past its target is a pyramid with a branch nobody chose.
+
+## Checking the source
+
+One pass, before beat 1, on the pile as a whole. Three questions:
+
+- **What would this article commit to?** List the load-bearing claims — the ones the apex and the
+  branches will rest on. That list is short. It is not an inventory of the pile.
+- **Are they exactly as the pile has them?** For each committed claim, check the number, name, date and
+  the strength of the wording. An expectation stays an expectation; a correlation stays a correlation.
+  Whatever you state as fact must match the pile exactly.
+- **What does the pile assert without support?** Flag those now, while you can still see them: a figure
+  called proportionate with nothing to compare it to, a benefit no observation backs. Flagged claims may
+  be quoted as the source's claim, never restated as yours.
+
+**Selection is free; accuracy is not.** Leaving material out is the normal case — most piles hold more
+than the article needs, and a beat crammed with everything true is the failure the pyramid exists to
+prevent. What survives has to be right. Record the committed claims and the flags in the sidecar; there
+is no completeness recount at the end.
 
 ## Ending
 
 The article is done when both hold:
 
-- Every branch the apex needs has landed. Name them at step 3 and tick them off; a branch that never
+- Every branch the apex needs has landed. Name them at step 4 and tick them off; a branch that never
   landed is either written or dropped out loud.
 - Nothing on the grounded list was introduced and then left unused. A concept a beat grounded and no
   later beat leaned on is a beat that was doing something other than its job.
@@ -57,8 +96,8 @@ The last beat lands one **signed judgment**: a claim the pile supports, that the
 in three years, and that an informed reader could disagree with. Descriptive closes — a summary, a
 comparison, a restatement of the apex — end the pyramid without ending the argument.
 
-One per article. A second signed judgment turns the move into a mannerism, and the reader stops trusting
-either.
+One per article. How explicit it gets is the register's call: stated outright in A and D, carried by the
+analysis or the ending's turn in B and C.
 
 ## The pyramid
 
@@ -67,8 +106,8 @@ The article is a pyramid, not a list.
 - **Apex.** One sentence: the answer. Every beat below exists to support it, and you can say for any
   beat which parent it supports. If you cannot, the beat is decoration — cut it or move it.
 - **Answer first.** State the apex early, then support it; on a page that carries a heading, the heading
-  is where it goes. Withhold it only when the user wants a discovery structure, and then say out loud
-  that you are withholding and where it lands.
+  is where it goes. Withhold it only when the user wants a discovery structure — which card C often does
+  — and then say out loud that you are withholding and where it lands.
 - **Groups.** The beats supporting one parent answer the single question that parent raises in the
   reader's head ("why?", "how?", "so what?"). Same kind of thing, no overlap, and together enough to
   carry the parent. Three or four per parent; more than five means the grouping is wrong.
@@ -96,7 +135,7 @@ that was waiting on X.
 
 The big lever is what you make a prerequisite versus what you ground inside the piece. Demand too much up
 front and you shut readers out; ground too much inside and the early beats drown in definitions. Settle
-it at step 4, and revisit it whenever a tempting beat needs a concept nothing has grounded — the fix is
+it at step 5, and revisit it whenever a tempting beat needs a concept nothing has grounded — the fix is
 either a grounding beat before it, or promoting the concept to a prerequisite.
 
 ## What is a beat
@@ -138,30 +177,26 @@ Every presence rule without a number becomes a tic, including the ones this skil
   in the pile. Check the arithmetic on the reading a reader takes at speed, not only on the one you
   meant.
 
-Two rules on numbers, checked as each beat lands: a sentence never opens with a numeral, and no sentence
-carries more than three numbers. Both are what makes a fact-dense beat unreadable aloud.
+Two rules on numbers, baseline in every register and loosened only where the card says: a sentence never
+opens with a numeral, and no sentence carries more than three numbers. Both are what makes a fact-dense
+beat unreadable aloud.
 
 ## Pulling from the pile
 
 The pile is a quarry, not a script. Paraphrase, split, recombine, quote — whatever makes the beat read as
-one voice. A fragment may be split across beats or merged with another. The article takes the pile's
-language unless the user says otherwise.
+one voice in the chosen register. A fragment may be split across beats or merged with another. The
+article takes the pile's language unless the user says otherwise.
 
-Everything you state as fact comes from the ledger, at the strength the pile gives it: an expectation
-stays an expectation, a correlation stays a correlation. When the pile lacks something a beat needs, name
-the gap out loud — "this beat needs an example and the pile has none — give me one, or we route around
-it" — and route around it or drop the beat.
-
-Recount before the last beat: walk the ledger line by line against the article. Report which entries
-landed, which you left out, and any figure you presented in a different form.
+When the pile lacks something a beat needs, name the gap out loud — "this beat needs an example and the
+pile has none — give me one, or we route around it" — and route around it or drop the beat.
 
 ## The sidecar
 
-The pyramid, the grounded set and the ledger are working state, and a session that compacts or restarts
-loses whatever lives only in the conversation. Keep them in `<article-name>.beats.md` beside the article,
-rewritten after every beat, holding: the apex and the reader's question; the branches with a tick for
-each one landed; prerequisites; grounded-so-far; the fact ledger; the beats written so far, one line
-each. A resumed session reads the article and the sidecar and carries on.
+The pyramid, the grounded set and the intake decisions are working state, and a session that compacts or
+restarts loses whatever lives only in the conversation. Keep them in `<article-name>.beats.md` beside the
+article, rewritten after every beat, holding: register and length target; the apex and the reader's
+question; the branches with a tick for each one landed; prerequisites; grounded-so-far; the committed
+claims and the flagged source claims; the beats written so far, one line each.
 
 Show the user the apex and the open branches after each beat — two lines, from the sidecar.
 
