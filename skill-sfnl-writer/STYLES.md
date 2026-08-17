@@ -9,7 +9,7 @@ worded, where the evidence sits, how a number is introduced, how loud the verdic
 
 Pulling the spine out settles the question of how many registers we need. A consultancy deck and
 an SFNL chapter looked like two philosophies while both cards restated the pyramid; with the
-pyramid gone, the difference is a handful of texture settings. So this file has **five presets**
+pyramid gone, the difference is a handful of texture settings. So this file has **six presets**
 over **eleven knobs**, plus two procedures (R and E) that are not registers at all.
 
 ## The knobs
@@ -22,7 +22,7 @@ moved. Change one knob and you have a variant; change six and you should have pi
 
 | Knob | Question it answers | Values |
 |---|---|---|
-| `kop` | What does a heading look like? | `conclusie` (a heading that states the finding) · `kapitaal` (the same, in capitals — house form) · `label` ("Resultaten") · `geen` |
+| `kop` | What does a heading look like? | `conclusie` (a heading that states the finding — the house form) · `kapitaal` (the same, set in capitals; a typographic choice from the printed report, not a writing rule) · `label` ("Resultaten") · `geen` |
 | `kern` | Where does the main message land? | `kop` · `eerste-alinea` · `later` (tension first) |
 | `alinea-start` | Does each paragraph open on its own conclusion? | `ja` · `nee` |
 | `bewijs` | Where do the facts sit? | `proza` · `lijsten` · `kader` (factbox plus a results list) |
@@ -49,22 +49,22 @@ carries more than three numbers. `cijfers` only tightens them.
 
 ## Preset defaults at a glance
 
-| Knob | SFNL-rapport | McKinsey-notitie | Economist-essay | Reportage | Feitelijke notitie |
-|---|---|---|---|---|---|
-| kop | kapitaal | conclusie | geen | conclusie | conclusie |
-| kern | kop | kop | eerste-alinea | later | kop |
-| alinea-start | ja | ja | nee | nee | ja |
-| bewijs | kader | lijsten | proza | proza | proza |
-| cijfers | uit-proza | geschaald | geschaald | geschaald | geschaald |
-| vet | ja | ja | nee | nee | nee |
-| woorden | vak-uitgelegd | vak-bekend | alledaags | alledaags | alledaags |
-| ritme | gemiddeld | gelijkmatig | wisselend | wisselend | gemiddeld |
-| stem | wij | onpersoonlijk | onpersoonlijk | onpersoonlijk | onpersoonlijk |
-| oordeel | aanbeveling | aanbeveling | impliciet | impliciet | ondertekend |
-| beeldspraak | 1 | 0 | 2 | 2 | 0 |
+| Knob | SFNL-rapport | McKinsey-notitie | Economist-essay | Reportage | Feitelijke notitie | Bulletnotitie |
+|---|---|---|---|---|---|---|
+| kop | conclusie | conclusie | geen | conclusie | conclusie | conclusie |
+| kern | kop | kop | eerste-alinea | later | kop | kop |
+| alinea-start | ja | ja | nee | nee | ja | ja |
+| bewijs | kader | lijsten | proza | proza | proza | lijsten |
+| cijfers | uit-proza | geschaald | geschaald | geschaald | geschaald | geschaald |
+| vet | ja | ja | nee | nee | nee | ja |
+| woorden | vak-uitgelegd | vak-bekend | alledaags | alledaags | alledaags | vak-bekend |
+| ritme | gemiddeld | gelijkmatig | wisselend | wisselend | gemiddeld | gelijkmatig |
+| stem | wij | onpersoonlijk | onpersoonlijk | onpersoonlijk | onpersoonlijk | onpersoonlijk |
+| oordeel | aanbeveling | aanbeveling | impliciet | impliciet | ondertekend | aanbeveling |
+| beeldspraak | 1 | 0 | 2 | 2 | 0 | 0 |
 
 Codes for the emitted line: `sfnl` · `mckinsey` · `economist` · `reportage` · `feitelijk` ·
-`referentie` · `supermodus`.
+`bullets` · `referentie` · `supermodus`.
 
 ---
 
@@ -89,6 +89,9 @@ a factsheet.
   voor handelingen, niet voor resultaten."* Once per piece. No "u".
 - **Chapter shape: knelpunt → casussen → les → aanbeveling.** The opening states the bottleneck
   flat out, with no run-up.
+- **Headings are assertions**, never labels: a heading states the finding. Whether it is then set in
+  capitals is the printed report's typography, not a writing rule — leave it in sentence case unless
+  the piece is being laid out for the report itself.
 - **A number never stands alone.** Source then rescale, translation to a ratio, return per euro, a
   comparison anchor, or the figure as a paragraph's closing punch. Running prose carries at most
   two numbers per paragraph; result figures go to a list.
@@ -202,6 +205,44 @@ ornament that survives cutting? Is the close a judgment rather than a summary?
 
 ---
 
+## Bulletnotitie `bullets` — the list that still argues
+
+**Pick this when** the reader will scan rather than read: a one-pager, an action list, speaker
+notes under a deck, a checklist against tender requirements, the summary at the top of a mail.
+
+A list is not an escape from writing. In the pyramid a list is a **group**: it sits under a claim
+and answers the question that claim raises. That is what separates a bulleted argument from an
+inventory, and it is the whole card. Research and sources in `dossier/onderzoek/bullets.md`.
+
+- **Every list has a lead-in that it completes.** A full sentence introducing it ends in a colon; a
+  fragment does not, and the bullets run on inside the sentence. No list without the sentence that
+  says what these things are.
+- **Every list has a payoff.** One sentence after it saying what the group adds up to. A list that
+  ends and moves straight on has handed the reader the assembly job, and the reader will not do it.
+- **A bullet carries a conclusion, not a topic.** "Bereik: 460 huishoudens tegen een doel van 400",
+  never "Bereikcijfers".
+- **Parallel grammar.** Same part of speech at the start, same order of length, same kind of
+  promise. All complete sentences or all fragments, never mixed; sentences take a capital and a
+  full stop, fragments take neither.
+- **Three to five per group, seven at the very most, and never one.** One bullet is a sentence.
+  Beyond seven the grouping is wrong, not the list too long.
+- **MECE within a group.** Overlap reads as repetition, a gap reads as a weak claim.
+- **One idea per bullet, two lines at most.** A bullet running longer is two bullets or a paragraph.
+- **One level of sub-bullets, and only when the sub-items are genuinely parts of the parent.**
+
+**The hard limit, and it overrides the preset.** Tufte's line is the test: *as analysis becomes
+more causal, comparative and evidence-based, the more damaging the bullet list becomes.* Bullets
+show items sitting side by side, all of equal weight — which is exactly wrong when the point is
+that this follows from that, or that one thing outweighs another. So: **the items may be bullets,
+the reasoning between them stays prose.** A section made only of bullets has thrown its argument
+away, and the fix is to write the connective sentences, not to indent harder.
+
+**Tests.** Does every list have a lead-in sentence and a payoff sentence? Is every bullet a
+conclusion rather than a topic, in the same grammatical shape as its neighbours? Is any causal or
+comparative reasoning sitting inside the list instead of in prose around it?
+
+---
+
 ## Text type and audience decide the starting point
 
 Purpose and reader are settled at intake, and they propose the preset and the knob deltas. This
@@ -209,15 +250,16 @@ table is the proposal; the user overrules it in the widget. Deltas are written a
 
 | Text type | Preset | Knob deltas |
 |---|---|---|
-| Rapporthoofdstuk | H | — |
-| Casusspread, casusbeschrijving | H | `oordeel:aanbeveling` `bewijs:factbox` |
-| Bestuurlijke samenvatting | Bd | `bewijs:lijsten` `ritme:vlak` |
-| Projectpagina, website | V | `kop:bewering` `apex:eerste-alinea` `vet:uit` |
-| Tender, inschrijftekst | Bd | `woorden:vak-bekend` `apex:kop` `beeldspraak:0` |
-| Notitie, mail, memo | K | `kop:geen` |
-| Opiniestuk, blog | E | `oordeel:ondertekend` |
-| Pitch, one-pager | Bd | `ritme:hoog` `beeldspraak:1` |
-| Nieuwsbrief, LinkedIn | V | `woorden:alledaags` `ritme:hoog` |
+| Rapporthoofdstuk | SFNL-rapport | — |
+| Casusspread, casusbeschrijving | SFNL-rapport | `bewijs:kader` |
+| Bestuurlijke samenvatting | McKinsey-notitie | `bewijs:lijsten` |
+| Projectpagina, website | Reportage | `kern:eerste-alinea` |
+| Tender, inschrijftekst | McKinsey-notitie | `woorden:vak-bekend` `beeldspraak:0` |
+| Notitie, mail, memo | Feitelijke notitie | `kop:geen` |
+| Actielijst, checklist, sprekersnotities | Bulletnotitie | — |
+| One-pager, pitch | Bulletnotitie | `ritme:wisselend` `beeldspraak:1` |
+| Opiniestuk, blog | Economist-essay | `oordeel:ondertekend` |
+| Nieuwsbrief, LinkedIn | Reportage | `woorden:alledaags` `ritme:wisselend` |
 
 Audience shifts the same three knobs, and little else: a specialist reader takes
 `woorden:vak-bekend`, a mixed or public reader takes `woorden:alledaags` and often
@@ -265,7 +307,8 @@ in the card? Is anything on it a fact or phrase rather than a technique?
 **Pick this when** the register is genuinely undecided, or the piece matters enough to be worth
 several times the writing. Not a register: a procedure that ends in one.
 
-1. **One rendering per preset — H, Bd, E, V, K, plus R when a reference was attached** — of the same
+1. **One rendering per preset — SFNL-rapport, McKinsey-notitie, Economist-essay, Reportage,
+   Feitelijke notitie, Bulletnotitie, plus the reference card when one was attached** — of the same
    apex and the same committed claims. Same facts, five or six different pieces of writing, not
    paraphrases. Dropping a preset is allowed when it is plainly wrong for the piece; say which and
    why, and never run fewer than three.
@@ -273,9 +316,10 @@ several times the writing. Not a register: a procedure that ends in one.
 3. **Pick a spine.** One preset carries the structure of the final version. A version that averages
    the presets reads like none of them.
 4. **Graft, and name each graft.** Anything you cannot point at is not a graft, it is drift.
-5. **Resolve the conflicts explicitly.** H, Bd and K put the answer in the heading; V withholds it.
-   E lets the analysis deliver the verdict; the others state it. H sends result figures to a list;
-   Bd wants them in the assertion.
+5. **Resolve the conflicts explicitly.** Most presets put the answer in the heading; reportage
+   withholds it. The essay lets the analysis deliver the verdict; the others state it. SFNL sends
+   result figures to a list; McKinsey wants them inside the assertion; the bulletnotitie wants the
+   reasoning back out of the list.
 
 Only the final version goes into the article file; the renderings go in the sidecar so a later beat
 can graft from one the user liked. **In cadence W or O** run it on the whole article at once. **In
@@ -292,7 +336,9 @@ an average? Is every graft traceable to a version?
 - **The number rules** (three per sentence, no numeral-initial) hold in every preset. `cijfers`
   only tightens them.
 - **Length discipline** is K's default; elsewhere the intake target wins.
+- **Bullets keep their reasoning in prose** in every preset, not only the bulletnotitie. The
+  `bewijs:lijsten` knob moves the items, never the argument.
 - **The humanizer pass** (`HUMANIZE.md`) runs in every preset and cadence, per unit and once over
   the finished text. Where it collides with a preset, the preset wins only on the devices it names
-  and budgets — H's capitalised headings and conditional inversion, E's colon hinge, V's withheld
+  and budgets — SFNL's conditional inversion, the essay's colon hinge, the reportage's withheld
   opening — and everywhere else the pass wins.

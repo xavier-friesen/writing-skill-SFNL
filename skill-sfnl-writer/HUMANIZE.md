@@ -47,8 +47,8 @@ exactly why a per-beat pass misses them:
 - **Facts stay.** The pass rewrites language. It never adds, drops or alters a committed claim,
   and it never softens or strengthens the wording of one.
 - **The preset wins on its own house forms.** Where a preset names and budgets a device, that
-  device survives this pass: H's capitalised assertive headings, H's conditional inversion, H's
-  single niet-X-maar-Y, E's colon hinge, V's withheld opening. The humanizer wins everywhere the
+  device survives this pass: SFNL's conditional inversion and its single niet-X-maar-Y, the essay's
+  colon hinge, the reportage's withheld opening, the bulletnotitie's lists. The humanizer wins everywhere the
   preset is silent.
 - **No echo, no trailer.** A rewrite that re-adds a restatement or an announcement sentence has
   failed the link check, whatever it did for the rhythm.

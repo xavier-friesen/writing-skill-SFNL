@@ -1,7 +1,7 @@
 ---
 name: sfnl-writer
 version: 3.0
-description: 'Shape a pile of raw material into an article on a Minto pyramid, in a chosen style (SFNL-rapport, McKinsey-notitie, Economist-essay, reportage, feitelijke notitie, or the style of a reference text the user attaches) tuned by eleven named knobs, and a chosen cadence (paragraph by paragraph, section by section, outline first, or write at once), with a humanizer pass throughout. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a finished piece. Trigger on "schrijf hier een artikel van", "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "schrijf in de stijl van deze tekst", "in onze huisstijl schrijven".'
+description: 'Shape a pile of raw material into an article on a Minto pyramid, in a chosen style (SFNL-rapport, McKinsey-notitie, Economist-essay, reportage, feitelijke notitie, bulletnotitie, or the style of a reference text the user attaches) tuned by eleven named knobs, and a chosen cadence (paragraph by paragraph, section by section, outline first, or write at once), with a humanizer pass throughout. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a finished piece. Trigger on "schrijf hier een artikel van", "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "schrijf in de stijl van deze tekst", "in onze huisstijl schrijven".'
 ---
 
 # SFNL writer
@@ -46,7 +46,7 @@ opened anywhere else: **purpose**,
 from the pile rather than ask about; the rest arrives pre-set on that proposal, so agreeing costs one
 click. `INTAKE.md` carries the placeholders, the paste-back format, and the defaults.
 
-**Style** — five named presets over eleven knobs, plus two procedures. Read the chosen card in
+**Style** — six named presets over eleven knobs, plus two procedures. Read the chosen card in
 `STYLES.md` before writing and keep its three tests in the per-unit check.
 
 - **SFNL-rapport** `sfnl` — the house register: knelpunt, cases, lesson, recommendation; we-as-authors;
@@ -59,6 +59,9 @@ click. `INTAKE.md` carries the placeholders, the paste-back format, and the defa
   that turns rather than summarises.
 - **Feitelijke notitie** `feitelijk` — kern in the heading, one move per beat, no ornament, signed
   close. The neutral default.
+- **Bulletnotitie** `bullets` — every list gets a lead-in sentence and a payoff sentence, bullets carry
+  conclusions in parallel grammar, and the reasoning between them stays prose. For one-pagers, action
+  lists and speaker notes.
 - **Als mijn referentietekst** `referentie` — measure the attached text against the knobs, write a
   card, show it, write to it. Requires a reference document.
 - **Supermodus** `supermodus` — every style written out, what each won, then one version with a single

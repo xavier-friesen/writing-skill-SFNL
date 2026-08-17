@@ -51,8 +51,7 @@
   .knobs { padding: 0 1.15rem 1.1rem; }
   .knob { padding: .7rem 0; border-top: 1px solid var(--line); }
   .knob:first-of-type { border-top: 0; }
-  .knob .q { font-weight: 620; font-size: .93rem; display: block; margin-bottom: .1rem; }
-  .knob .why { color: var(--muted); font-size: .86rem; display: block; margin-bottom: .45rem; }
+  .knob .q { font-weight: 620; font-size: .93rem; display: block; margin-bottom: .4rem; }
   .knob select { max-width: 34rem; }
   .knob select.changed { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
   .knobhead { font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
@@ -105,27 +104,29 @@
   <fieldset>
     <legend>Stijl <span>— hoe het klinkt</span></legend>
     <label class="opt"><input type="radio" name="reg" value="sfnl"><b>SFNL-rapport</b>
-      <em>Onze huisstijl uit de rapporten van 2024 en 2025: knelpunt, casussen, les, aanbeveling.
-          "Wij" zijn de auteurs, elk cijfer krijgt iets om zich aan te meten, het slot keert iets om.</em></label>
+      <em>Rapporthoofdstuk, casusbeschrijving, bestuurlijke samenvatting. Onze huisstijl: knelpunt,
+          casussen, les, aanbeveling — "wij" zijn de auteurs en het slot keert iets om.</em></label>
     <label class="opt"><input type="radio" name="reg" value="mckinsey"><b>McKinsey-notitie</b>
-      <em>Voor wie moet besluiten. Koppen zijn conclusies, en wie alleen de koppen leest heeft het
-          hele betoog. Het getal staat in de bewering, de aanbeveling begint met een werkwoord.</em></label>
+      <em>Bestuursstuk, adviesnotitie, inschrijftekst, sprekerstekst bij een deck. Koppen zijn
+          conclusies: wie alleen de koppen leest, heeft het hele betoog.</em></label>
     <label class="opt"><input type="radio" name="reg" value="economist"><b>Economist-essay</b>
-      <em>Om in één ruk uit te lezen. Geen aanloop, geen zin die je zou kunnen missen, lange en
-          korte zinnen tegen elkaar aan, en het oordeel volgt uit de feiten in plaats van te worden
-          uitgesproken.</em></label>
+      <em>Opiniestuk, blog, essay bij een rapport. Om in één ruk uit te lezen: geen aanloop, geen
+          overbodige zin, en het oordeel volgt uit de feiten.</em></label>
     <label class="opt"><input type="radio" name="reg" value="reportage"><b>Reportage</b>
-      <em>Verhalend. Begint klein en concreet, klimt naar betekenis en weer terug, en eindigt op een
-          draai in plaats van een samenvatting. Voor een casus met mensen erin.</em></label>
+      <em>Projectpagina, casusverhaal, nieuwsbrief, LinkedIn. Verhalend, begint klein en concreet en
+          eindigt op een draai in plaats van een samenvatting.</em></label>
     <label class="opt"><input type="radio" name="reg" value="feitelijk"><b>Feitelijke notitie</b>
-      <em>Kort en zakelijk. Kern in de titel, één beweging per alinea, geen versiering, en een slot
-          waarin je zelf een standpunt inneemt.</em></label>
+      <em>Mail, interne notitie, memo, korte toelichting. Kort en zakelijk, kern in de titel, geen
+          versiering, met een standpunt aan het eind.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="bullets"><b>Bulletnotitie</b>
+      <em>One-pager, actielijst, checklist, sprekersnotities. Elke lijst heeft een zin erboven en
+          een zin eronder; de redenering blijft proza, alleen de items worden bullets.</em></label>
     <label class="opt"><input type="radio" name="reg" value="referentie"><b>Als mijn referentietekst</b>
-      <em>Vereist de bijgevoegde referentie. We meten die tekst eerst door en leggen de stijlkaart
-          aan je voor; pas daarna schrijven we.</em></label>
+      <em>Voor als er al een tekst is waar dit op moet lijken. We meten die eerst door en leggen de
+          stijlkaart aan je voor; pas daarna schrijven we.</em></label>
     <label class="opt"><input type="radio" name="reg" value="supermodus"><b>Supermodus</b>
-      <em>Alle stijlen schrijven, per stijl zeggen wat die wint, dan één versie met één ruggengraat.
-          Kost een veelvoud aan tijd.</em></label>
+      <em>Voor als de stijl echt nog open ligt. Alle stijlen schrijven, per stijl zeggen wat die
+          wint, dan één versie met één ruggengraat. Kost een veelvoud.</em></label>
   </fieldset>
 
   <fieldset>
@@ -160,18 +161,14 @@
       <div class="knobhead">Opbouw</div>
 
       <div class="knob"><span class="q">Hoe ziet een kop eruit?</span>
-        <span class="why">Een kop die de conclusie geeft, laat iemand die alleen de koppen leest tóch
-          de zaak meekrijgen.</span>
         <select data-k="kop">
           <option value="conclusie">Kop is een conclusie — "Havelsteijn betaalt Molenhoek sinds 2025 zelf"</option>
-          <option value="kapitaal">Hetzelfde, maar in kapitalen — "DE BUURT ALS EERSTE INGANG" (huisvorm)</option>
+          <option value="kapitaal">Hetzelfde, gezet in kapitalen — alleen voor het gedrukte rapport</option>
           <option value="label">Kort label — "Resultaten", "Aanpak"</option>
           <option value="geen">Geen koppen, doorlopende tekst</option>
         </select></div>
 
       <div class="knob"><span class="q">Waar staat de kernboodschap?</span>
-        <span class="why">Vooraan is duidelijker; uitgesteld bouwt spanning op en vraagt een lezer
-          die blijft zitten.</span>
         <select data-k="kern">
           <option value="kop">In de titel, meteen</option>
           <option value="eerste-alinea">In de eerste alinea</option>
@@ -179,15 +176,12 @@
         </select></div>
 
       <div class="knob"><span class="q">Begint elke alinea met haar eigen conclusie?</span>
-        <span class="why">Zo ja, dan kun je de eerste zinnen achter elkaar lezen en heb je het stuk.</span>
         <select data-k="alinea-start">
           <option value="ja">Ja — eerste zin vat de alinea samen</option>
           <option value="nee">Nee — de alinea mag ergens anders beginnen</option>
         </select></div>
 
       <div class="knob"><span class="q">Waar staan de feiten en cijfers?</span>
-        <span class="why">Uit de lopende tekst halen maakt het betoog lichter leesbaar, maar de tekst
-          zelf schraler.</span>
         <select data-k="bewijs">
           <option value="proza">In de lopende tekst</option>
           <option value="lijsten">In opsommingen</option>
@@ -197,8 +191,6 @@
       <div class="knobhead">Cijfers</div>
 
       <div class="knob"><span class="q">Hoe presenteren we een getal?</span>
-        <span class="why">Een kaal getal zegt weinig: 265.600 landt pas als er "een verviervoudiging"
-          achteraan komt.</span>
         <select data-k="cijfers">
           <option value="geschaald">Altijd met iets ernaast om zich aan te meten</option>
           <option value="kaal-mag">Een kaal getal mag ook</option>
@@ -206,7 +198,6 @@
         </select></div>
 
       <div class="knob"><span class="q">Vetgedrukte inzet midden in de tekst?</span>
-        <span class="why">Handig om te scannen, maar het maakt van een betoog al snel een folder.</span>
         <select data-k="vet">
           <option value="nee">Nee</option>
           <option value="ja">Ja — <b>vette inzet</b> aan het begin van een alinea</option>
@@ -215,7 +206,6 @@
       <div class="knobhead">Toon en taal</div>
 
       <div class="knob"><span class="q">Hoe technisch mag de taal zijn?</span>
-        <span class="why">Vaktaal bespaart woorden bij wie hem kent, en kost lezers die hem niet kennen.</span>
         <select data-k="woorden">
           <option value="alledaags">Alledaags — vaktermen vermijden</option>
           <option value="vak-uitgelegd">Vaktaal mag, mits in dezelfde zin afgelost</option>
@@ -223,8 +213,6 @@
         </select></div>
 
       <div class="knob"><span class="q">Zinslengte</span>
-        <span class="why">Zinnen van gelijke lengte dreunen; een korte zin na een lange is waar de
-          klap valt.</span>
         <select data-k="ritme">
           <option value="wisselend">Sterk wisselend — een zin van vier woorden naast een van dertig</option>
           <option value="gemiddeld">Wisselend, maar rustig</option>
@@ -232,7 +220,6 @@
         </select></div>
 
       <div class="knob"><span class="q">Wie is er aan het woord?</span>
-        <span class="why">"Wij" maakt de auteur aanspreekbaar; onpersoonlijk houdt afstand.</span>
         <select data-k="stem">
           <option value="wij">Wij, de auteurs — "wij zagen", "wij vinden"</option>
           <option value="onpersoonlijk">Niemand zichtbaar — onpersoonlijk</option>
@@ -240,7 +227,6 @@
         </select></div>
 
       <div class="knob"><span class="q">Hoe hard is het slot?</span>
-        <span class="why">Er komt altijd één standpunt; dit bepaalt alleen hoe luid het klinkt.</span>
         <select data-k="oordeel">
           <option value="ondertekend">In eigen naam — "wij zouden hierop sturen"</option>
           <option value="impliciet">Impliciet — de feiten vellen het oordeel</option>
@@ -248,7 +234,6 @@
         </select></div>
 
       <div class="knob"><span class="q">Beeldspraak en stijlfiguren</span>
-        <span class="why">Eén raak beeld blijft hangen; drie maken van een rapport een column.</span>
         <select data-k="beeldspraak">
           <option value="0">Geen</option>
           <option value="1">Eén per stuk</option>
@@ -269,7 +254,7 @@
   const $ = s => document.querySelector(s);
   const KNOBS = ['kop','kern','alinea-start','bewijs','cijfers','vet','woorden','ritme','stem','oordeel','beeldspraak'];
   const PRESET = {
-    sfnl:      {kop:'kapitaal',  kern:'kop',           'alinea-start':'ja',  bewijs:'kader',   cijfers:'uit-proza',  vet:'ja',
+    sfnl:      {kop:'conclusie', kern:'kop',           'alinea-start':'ja',  bewijs:'kader',   cijfers:'uit-proza',  vet:'ja',
                 woorden:'vak-uitgelegd', ritme:'gemiddeld',   stem:'wij',           oordeel:'aanbeveling', beeldspraak:'1'},
     mckinsey:  {kop:'conclusie', kern:'kop',           'alinea-start':'ja',  bewijs:'lijsten', cijfers:'geschaald',  vet:'ja',
                 woorden:'vak-bekend',    ritme:'gelijkmatig', stem:'onpersoonlijk', oordeel:'aanbeveling', beeldspraak:'0'},
@@ -278,7 +263,9 @@
     reportage: {kop:'conclusie', kern:'later',         'alinea-start':'nee', bewijs:'proza',   cijfers:'geschaald',  vet:'nee',
                 woorden:'alledaags',     ritme:'wisselend',   stem:'onpersoonlijk', oordeel:'impliciet',   beeldspraak:'2'},
     feitelijk: {kop:'conclusie', kern:'kop',           'alinea-start':'ja',  bewijs:'proza',   cijfers:'geschaald',  vet:'nee',
-                woorden:'alledaags',     ritme:'gemiddeld',   stem:'onpersoonlijk', oordeel:'ondertekend', beeldspraak:'0'}
+                woorden:'alledaags',     ritme:'gemiddeld',   stem:'onpersoonlijk', oordeel:'ondertekend', beeldspraak:'0'},
+    bullets:   {kop:'conclusie', kern:'kop',           'alinea-start':'ja',  bewijs:'lijsten', cijfers:'geschaald',  vet:'ja',
+                woorden:'vak-bekend',    ritme:'gelijkmatig', stem:'onpersoonlijk', oordeel:'aanbeveling', beeldspraak:'0'}
   };
   const PROPOSAL = { reg: '{{REG}}', cad: '{{CAD}}', knobs: {{KNOBS_JSON}} };
   const touched = new Set();

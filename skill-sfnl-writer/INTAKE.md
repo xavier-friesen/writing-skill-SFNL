@@ -19,7 +19,7 @@ the user fills it in where they already are and pastes the line back into the sa
 | `{{DOEL}}` | your reading of what this becomes: "casusspread voor het jaarrapport" |
 | `{{DOELGROEP}}` | who reads it and what they must be able to do with it |
 | `{{REF_CHECKED}}` | `checked` when a reference document has already been attached, else empty |
-| `{{REG}}` | proposed style: `sfnl` `mckinsey` `economist` `reportage` `feitelijk` `referentie` `supermodus` |
+| `{{REG}}` | proposed style: `sfnl` `mckinsey` `economist` `reportage` `feitelijk` `bullets` `referentie` `supermodus` |
 | `{{CAD}}` | proposed cadence: `P` `S` `O` `W` |
 | `{{LEN}}` | proposed target in words, or empty for no preference |
 | `{{KNOBS_JSON}}` | the knob deltas you propose, as JSON: `{"bewijs":"kader"}` — `{}` for none |
@@ -28,10 +28,10 @@ Derive the proposal from purpose and audience with the table in `STYLES.md` ("Te
 audience decide the starting point"). Say in one line why you proposed what you did; a proposal the
 user cannot see the reasoning of is a decision taken away from them.
 
-The widget does the rest. All seven styles are visible under their own names with what each buys, the
+The widget does the rest. All eight styles are visible under their own names, each with the kinds of document it is for, the
 four working methods carry their cost in turns, and the fine-tuning panel holds the eleven knobs —
-closed by default, each written as a plain question with its options as examples, inheriting from the
-chosen style and colouring whatever the user moves. Switching style re-inherits every knob except the
+closed by default, each a plain question whose options are examples, inheriting from the chosen style
+and colouring whatever the user moves. Switching style re-inherits every knob except the
 ones they touched.
 
 It emits one line, carrying only what differs from the preset:
