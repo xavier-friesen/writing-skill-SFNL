@@ -14,15 +14,17 @@ cp -r skill-sfnl-writer ~/.claude/skills/sfnl-writer
 
 Beide mappen zijn volledig zelfstandig: kopieer de map, herstart Claude Code (of
 open een nieuwe sessie) en de skill staat in de lijst. Ze hebben elkaar niet
-nodig en niets uit deze repo. `sfnl-writer` bestaat uit `SKILL.md` plus vijf
-bestanden die ermee mee moeten: `INTAKE.md` en `INTAKE-WIDGET.html` (de vier
-openingskeuzes), `STYLES.md` (de registers en de supermodus), `HUMANIZE.md` (de
-humanizer-pas) en `SFNL-SPECIMENS.md` (veertien passages uit de SFNL-rapporten
-voor het huisregister). Voor projectgebruik in
+nodig en niets uit deze repo. `sfnl-writer` bestaat uit `SKILL.md` plus vier
+bestanden die ermee mee moeten: `INTAKE.md` (de vier openingskeuzes),
+`STYLES.md` (de registers en de supermodus), `HUMANIZE.md` (de humanizer-pas) en
+`SFNL-SPECIMENS.md` (veertien passages uit de SFNL-rapporten voor het
+huisregister). Voor projectgebruik in
 plaats van globaal: kopieer naar `<project>/.claude/skills/`.
 
-Aanroepen gaat via `/sfnl-writer`, of gewoon door te vragen om een map met ruw
-materiaal tot artikel te vormen.
+Aanroepen gaat via `/sfnl-writer`, of gewoon door te vragen om ruw materiaal tot
+artikel te vormen. De skill stelt dan in één keer drie vragen in de chat
+(register, cadans, lengte); een referentietekst waarvan de stijl moet worden
+overgenomen, hang je gewoon aan het gesprek.
 
 De skill start met één vragenmoment (teksttype, lezer, invalshoek, register,
 lengte) en heeft defaults voor onbeheerd draaien. Het ingebedde telscript
