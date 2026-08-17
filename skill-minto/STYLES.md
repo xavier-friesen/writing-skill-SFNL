@@ -113,6 +113,43 @@ ornament that survives cutting? Is the close a judgment rather than a summary?
 
 ---
 
+## E. Supermode — all four, then a fifth
+
+**Pick this when** the register is genuinely undecided, or the piece matters enough to be worth
+five times the writing. It is not a register of its own: it is a procedure that ends in one.
+
+Write the same material four times, once per card, then land a fifth version that is the one
+that goes in the file.
+
+1. **Four renderings, labelled A to D**, of the same apex and the same committed claims. Same
+   facts, four different pieces of writing — not four paraphrases. Each obeys its own card,
+   including where the cards contradict each other.
+2. **Say what each one won.** One line per version, naming the move, not the vibe: A's heading
+   asserts, B's second paragraph varies length where the others drone, C's close turns, D's
+   figures beat is the only readable one.
+3. **Pick a spine.** One register carries the structure of the fifth version — its order, its
+   opening strategy, its relationship to the apex. A fifth version that averages four registers
+   reads like none of them.
+4. **Graft, and name each graft.** Take specific moves from the other three into the spine: a
+   heading, a sentence, an ordering, a close. Anything you cannot point at is not a graft, it is
+   drift.
+5. **Resolve the conflicts explicitly.** The cards disagree, and the spine wins each time. A and
+   D put the answer in the heading; C withholds it. B lets the analysis deliver the verdict; A
+   and D state it. Note which conflicts came up and how the spine settled them.
+
+Only the fifth version goes into the article file. The four go in the sidecar, so a later beat
+can graft from a version the user liked.
+
+**On the light route** (under ~400 words) run the supermode on the whole article at once — four
+short pieces are cheap and compare better whole. On the long route run it on the opening beat
+only, then lock the spine and continue in that register; four renderings of every beat in a
+2,000-word piece buys less each time and costs the same.
+
+**Tests.** Can you name what each of the four won? Does the fifth have one spine rather than an
+average? Is every graft traceable to a version?
+
+---
+
 ## Where the cards override the base rules
 
 - The **signed close** is required in every register. Card B and C make it implicit — carried
