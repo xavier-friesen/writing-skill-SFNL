@@ -108,3 +108,42 @@ Naar `sfnl-rapporttekst`, als er iets terug mag:
    fout in output D hebben gevangen.
 2. Beat-grenzen als rem op de inventarisalinea: de 95-woordenalinea van E is de
    enige plek waar de jury het sjabloon zag.
+
+---
+
+# Addendum: v1.1, dezelfde tekst opnieuw
+
+Zes wijzigingen in de skill (`skill-minto/SKILL.md` v1.1): ondertekend slot, fact ledger met
+natelling, budgetten plus twee cijferregels, lichte route onder 400 woorden, sidecar met
+aanscherpte eindconditie, en de link check die zijn twee doelwitten nu bij naam noemt (echo,
+trailer). Herrun op T3 via de lichte route: `test/rondes/minto/T3-minto-v11.md`, met sidecar.
+
+| | v1.0 | v1.1 | E = v3.1 (jury) |
+|---|---|---|---|
+| D1 opening | 8 | 8 | 8 |
+| D2 helderheid | 7 | 8 | 7 |
+| D3 ritme | 6 (plafond bij 3+) | 7 | 6 (plafond) |
+| D4 menselijkheid | 7 | 8 | 8 |
+| D5 scherpte | 6 | 8 | 8 |
+| D6 structuur | 8 | 8 | 7 |
+| D7 feitentrouw | 8 | 8 | 8 |
+| D8 lengte | 8 (−16%) | 8 (−19%) | 7 (−14,5%) |
+| **E** | **≈ 7,2** | **≈ 7,9-8,2** | **7,9** |
+
+De bandbreedte is de Turingpoort: R = 7,90 en een doorstuurbonus van +0,3 geven 8,2, maar een
+achtste boven de 8,0 vraagt een "ja" op de poortvraag, en die geef ik mezelf niet blind. Lees
+het als: gelijk aan de incumbent, met een marge van een halve punt die alleen een blinde jury
+kan wegnemen.
+
+**Wat de fixes deden.** D5 sprong twee punten door één zin — "Van alle cijfers uit Molenhoek
+zouden wij op dat ene sturen dat niemand had gepland: 60 procent van de eerste gesprekken
+gevoerd door een buurtgenoot." Dat is het effect dat het eindverslag ook bij v1 tot v3 zag: een
+ondertekende uitspraak koopt scherpte én de doorstuurbonus. D2 en D3 kwamen van de twee
+cijferregels: drie zinnen die met een cijfer begonnen of vier getallen droegen, zijn geknipt.
+D4 won bij het gatbudget — v1.0 sloot twee alinea's op dezelfde epistemische vorm af, v1.1 doet
+het één keer. De ledger bevestigde 12 van 12 en ving niets; op deze tekst is hij verzekering,
+geen vondst.
+
+**Wat open blijft.** Nog steeds zelfgescoord en niet blind, en nog steeds met mijzelf als
+gebruiker in de keuzes. De ledger is niet getest op T1, de tekst waar hij zou moeten renderen.
+En de skill heeft geen meting: D3 hangt nu op mijn eigen hardop-oordeel, niet op een telling.
