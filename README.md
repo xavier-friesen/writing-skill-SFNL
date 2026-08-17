@@ -8,8 +8,19 @@ getest in vijf blinde juryrondes; het volledige verhaal staat in
 ## Installatie
 
 ```
-cp -r skill ~/.claude/skills/sfnl-rapporttekst
+cp -r skill        ~/.claude/skills/sfnl-rapporttekst
+cp -r skill-minto  ~/.claude/skills/minto-journey
 ```
+
+Beide mappen zijn zelfstandig: kopieer de map, herstart Claude Code (of open een
+nieuwe sessie) en de skill staat in de lijst. `minto-journey` bestaat uit
+`SKILL.md` plus twee bestanden die het bij de hand houdt, `STYLES.md` (de vijf
+registers en de supermodus) en `HUMANIZE.md` (de humanizer-pas); die moeten dus
+mee. Voor projectgebruik in plaats van globaal: kopieer naar
+`<project>/.claude/skills/` in plaats van naar `~/.claude/skills/`.
+
+Aanroepen gaat via `/minto-journey`, of gewoon door te vragen om een pile
+markdown tot artikel te vormen.
 
 De skill start met één vragenmoment (teksttype, lezer, invalshoek, register,
 lengte) en heeft defaults voor onbeheerd draaien. Het ingebedde telscript

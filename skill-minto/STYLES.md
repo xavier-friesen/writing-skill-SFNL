@@ -5,9 +5,11 @@ intake and holds for the whole article; read that card and keep it beside you wh
 Each card ends in three yes/no tests — run them on every beat before it lands, alongside the
 link check.
 
-The cards are distilled from the research in `dossier/onderzoek/` (`mckinsey.md`,
-`economist.md`, `narratief.md`, `sfnl-stem.md`). Dutch examples are from that research or built
-on its mechanics.
+The cards are distilled from the research dossiers in the repo they came from
+(`writing-skill-SFNL`, under `dossier/onderzoek/`: `mckinsey.md`, `economist.md`, `narratief.md`,
+`sfnl-stem.md`). Everything needed to write is on the cards themselves; the dossiers are there if
+you want the sources behind a rule. Dutch examples come from that research or are built on its
+mechanics.
 
 ---
 
@@ -119,8 +121,8 @@ ornament that survives cutting? Is the close a judgment rather than a summary?
 **Pick this when** the piece belongs in a Social Finance NL report, or has to sound as if it
 could: a chapter, a case, a management summary, a recommendation. Distilled from *Innovatieve
 financiering van preventie* (2025) and *De toekomst van resultaatfinanciering* (2024), and from
-the full house-voice analysis in `dossier/onderzoek/sfnl-stem.md`, which holds fourteen specimen
-passages to write against.
+the house-voice analysis of both (`dossier/onderzoek/sfnl-stem.md` in the source repo), which
+holds fourteen specimen passages to write against if you have it to hand.
 
 The genre is the **pleidooi met bewijslast**: an organisation with a position lines up practice
 and derives recommendations from it. That gives the register two tempos, and mixing them up is
