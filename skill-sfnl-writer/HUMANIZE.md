@@ -1,6 +1,6 @@
 # The humanizer pass
 
-Every register gets it. A style card decides how the piece sounds; this pass decides whether it
+Every preset gets it. A preset decides how the piece sounds; this pass decides whether it
 sounds like a person wrote it. They are different jobs, and a beat can pass its card and still
 read as machine output.
 
@@ -46,10 +46,10 @@ exactly why a per-beat pass misses them:
 
 - **Facts stay.** The pass rewrites language. It never adds, drops or alters a committed claim,
   and it never softens or strengthens the wording of one.
-- **The card wins on its own house forms.** Where a register names and budgets a device, that
-  device survives this pass: F's capitalised assertive headings, F's conditional inversion, F's
-  single niet-X-maar-Y, B's colon hinge, C's withheld opening. The humanizer wins everywhere the
-  card is silent.
+- **The preset wins on its own house forms.** Where a preset names and budgets a device, that
+  device survives this pass: H's capitalised assertive headings, H's conditional inversion, H's
+  single niet-X-maar-Y, E's colon hinge, V's withheld opening. The humanizer wins everywhere the
+  preset is silent.
 - **No echo, no trailer.** A rewrite that re-adds a restatement or an announcement sentence has
   failed the link check, whatever it did for the rhythm.
 - **Log what changed** in one line per fix, in the sidecar. A pass with nothing to report is

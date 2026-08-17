@@ -1,181 +1,99 @@
 # Style cards
 
-Five writing registers (A, B, C, D, F), a register derived from a text the user supplies (R), and
-a supermode (E) that runs them all. One is chosen at
-intake and holds for the whole article; read that card and keep it beside you while writing.
-Each card ends in three yes/no tests — run them on every beat before it lands, alongside the
-link check.
+## The spine is not a style
 
-Everything needed to write is on the cards themselves. They distil research into the McKinsey and
-consultancy tradition, The Economist style guide, narrative journalism, and a full house-voice
-analysis of the two Social Finance NL reports; the Dutch examples come from that research or are
-built on its mechanics. Card F has a companion file, `SFNL-SPECIMENS.md`, with fourteen passages
-from the reports themselves.
+Every register in this file sits on the same structure: one apex, groups that answer the question
+their parent raises, answer first unless the user asked otherwise. That is the skill, not a
+choice — it lives in `SKILL.md` and it does not vary. What varies is **texture**: how a heading is
+worded, where the evidence sits, how a number is introduced, how loud the verdict is.
 
----
+Pulling the spine out settles the question of how many registers we need. A consultancy deck and
+an SFNL chapter looked like two philosophies while both cards restated the pyramid; with the
+pyramid gone, the difference is a handful of texture settings. So this file has **five presets**
+over **eleven knobs**, plus two procedures (R and E) that are not registers at all.
 
-## A. McKinsey — the structured argument
+## The knobs
 
-**Pick this when** the reader has to decide something: a board, a client, a funder. The
-document will be skimmed by heading before it is read.
+Every preset is a set of values on these. The advanced panel in the intake widget exposes them;
+the emitted line carries only the ones the user changed. Change one knob and you get a variant;
+change six and you should have picked a different preset.
 
-- **Action titles.** Every heading is a full assertion with a subject, a verb and an outcome.
-  Never a label. Max 15 words. "Omzet per regio" fails; "De omzet groeide 14% in Q3, gedreven
-  door expansie in APAC" passes.
-- **Answer first at every level.** Heading, opening sentence, and each beat's first sentence
-  carry the conclusion; the support follows. Recursively, not just at the top.
-- **The horizontal read.** Read only the headings and the beats' first sentences, in order.
-  They must form a complete, self-supporting argument. If they don't, the pyramid is wrong.
-- **The number goes in the assertion.** Not in a subclause. "Efficiëntiemaatregelen besparen
-  7,4 mln per jaar", not "Door implementatie van efficiëntiemaatregelen is jaarlijks 7,4 mln
-  besparing mogelijk."
-- **Outcome, not process.** What was found, not how you looked. "Acht kostendrijvers, samen 60%
-  van de besparing", not "We hebben experts geïnterviewd om kostendrijvers te identificeren."
-- **So what.** Point at any beat and ask it. A beat that answers only "this is also true" goes.
-- **Groups of two to four**, covering the parent without overlap.
+| # | Knob | Values |
+|---|---|---|
+| 1 | **kop** — heading | `bewering` · `kapitaal-bewering` · `label` · `geen` |
+| 2 | **apex** — where the answer lands | `kop` · `eerste-alinea` · `uitgesteld` |
+| 3 | **alineakop** — first sentence carries the paragraph's claim | `aan` · `uit` |
+| 4 | **bewijs** — how evidence is displayed | `proza` · `lijsten` · `factbox` |
+| 5 | **cijfers** — figures | `geschaald` (never bare) · `kaal-mag` · `uit-proza` (results to lists) |
+| 6 | **vet** — bold lead-ins in running text | `uit` · `aan` |
+| 7 | **woorden** — lexical level | `alledaags` · `vak-afgelost` · `vak-bekend` |
+| 8 | **ritme** — sentence-length variance | `hoog` · `gemiddeld` · `vlak` |
+| 9 | **aanspreekvorm** | `wij-auteurs` · `onpersoonlijk` · `je-lezer` |
+| 10 | **oordeel** — the verdict | `ondertekend` · `impliciet` · `aanbeveling` (opens on a verb) |
+| 11 | **beeldspraak** — imagery and ornament, per piece | `0` · `1` · `2` |
 
-**Tests.** Does the heading assert rather than label? Do the first sentences alone carry the
-argument? Does every number sit in a main clause?
+Two rules are not knobs and never move: a sentence never opens with a numeral, and no sentence
+carries more than three numbers. They are what keeps a fact-dense paragraph readable aloud, and
+`cijfers=uit-proza` tightens them further rather than loosening them.
 
----
+## Preset defaults at a glance
 
-## B. Economist — the essay
-
-**Pick this when** the piece must be read straight through by a smart non-specialist, and the
-pleasure of reading it is part of the point.
-
-- **No throat-clearing.** The first fact is in the first sentence. Cut every sentence that sets
-  a scene before the piece begins.
-- **Every sentence would be missed.** The guide's own test: remove a sentence; if nothing is
-  lost, it was not a sentence. Apply it to the whole piece before you call it done.
-- **Active, and name the actor.** "De gemeente draagt de indicatiestelling over aan het
-  wijkteam", not "Er is besloten dat de indicatiestelling wordt overgedragen."
-- **Short, ordinary words.** over/met betrekking tot, na/na afloop van, maar/echter,
-  genoeg/toereikend, laten zien/aantonen, gebruiken/aanwenden, nu/op dit moment.
-- **Cut the intensifier.** zeer, heel, uiterst, aanzienlijk, nadrukkelijk, duidelijk, echt.
-  Adjectives may make a meaning more precise, never more emphatic.
-- **A paragraph is a unit of thought.** One margin note per paragraph. Two notes, two
-  paragraphs; no note, cut it.
-- **Vary sentence length sharply** — a 30-word sentence beside a 4-word one. Equal lengths
-  drone.
-- **The colon as hinge.** It replaces "Dit komt doordat…", "Dit betekent dat…". "De wachtlijst
-  had één oorzaak: er waren te weinig gedragswetenschappers."
-- **Let the analysis deliver the verdict.** The signed close is a claim the facts force, not an
-  announcement that you hold an opinion. Not dusty, not preachy, not pleased with itself.
-
-**Tests.** Can any sentence be cut without loss? Is there an intensifier left? Do two adjacent
-sentences have the same length and shape?
+| Knob | H huis | Bd beslisstuk | E essay | V verhaal | K kort |
+|---|---|---|---|---|---|
+| kop | kapitaal-bewering | bewering | geen | bewering | bewering |
+| apex | kop | kop | eerste-alinea | uitgesteld | kop |
+| alineakop | aan | aan | uit | uit | aan |
+| bewijs | factbox | lijsten | proza | proza | proza |
+| cijfers | uit-proza | geschaald | geschaald | geschaald | geschaald |
+| vet | aan | aan | uit | uit | uit |
+| woorden | vak-afgelost | vak-bekend | alledaags | alledaags | alledaags |
+| ritme | gemiddeld | vlak | hoog | hoog | gemiddeld |
+| aanspreekvorm | wij-auteurs | onpersoonlijk | onpersoonlijk | onpersoonlijk | onpersoonlijk |
+| oordeel | aanbeveling | aanbeveling | impliciet | impliciet | ondertekend |
+| beeldspraak | 1 | 0 | 2 | 2 | 0 |
 
 ---
 
-## C. Prose — the narrative
+## H. Huis — the SFNL report
 
-**Pick this when** the piece has to be felt: a case story, a portrait, an essay that carries a
-person or a place.
-
-- **The opening is a torch, not an introduction.** Begin in something concrete and small. The
-  *nut graf* — one paragraph saying what this is about and why you keep reading — lands second
-  to fifth, not first.
-- **Climb the ladder of abstraction.** At the bottom: names, amounts, dates, actions. At the
-  top: meaning. Alternate. Two consecutive beats with nothing concrete in them is the failure.
-- **Ban the bureaucratic middle** — language too vague to picture and too concrete to move.
-  Test: can you draw the sentence, or check its arithmetic? Neither means rewrite it downward
-  ("Zevenendertig deelnemers tekenden een contract van minstens een jaar") or upward ("Het doel
-  is werk dat blijft").
-- **Subject and verb early**, the rest fanning out to the right. Strong words at the start and
-  the end of a sentence.
-- **Gold coins in the middle.** A concrete reward — a scene, a quote, a detail — placed where
-  attention normally sags.
-- **One structural decision**, chronology or theme, made out loud and held.
-- **The ending does not summarise.** It surprises slightly and still feels right; the reader
-  falls forward into the conclusion. A summarising final paragraph is the most recognisable
-  tell in Dutch report prose.
-
-**Tests.** Does each beat carry one concrete element? Can you picture or check every sentence?
-Does the close summarise?
-
----
-
-## D. Factual brief — the default
-
-**Pick this when** the reader wants the case and nothing else: a project page, a memo, a
-one-pager. This is the register the skill writes in when nobody chooses.
-
-- **Apex in the heading**, and the first sentence carries a fact, not a frame.
-- **One move per beat**, and the beat stops when the move is done.
-- **Three numbers to a sentence, at most**, and no sentence opens with a numeral.
-- **No ornament.** No em-dash asides, no rule of three, no "niet alleen X maar ook Y", no
-  generic uplift at the end.
-- **Name the gap once** where the reader would otherwise infer something the pile does not
-  support.
-- **Signed close**, explicit: a judgment in the author's own voice.
-- **Shorter than the pile suggests.** For a rewrite-shaped job, aim 15 to 25 per cent under the
-  source.
-
-**Tests.** Does any sentence open with a numeral or carry more than three numbers? Is there an
-ornament that survives cutting? Is the close a judgment rather than a summary?
-
----
-
-## F. SFNL report — the case with a verdict
-
-**Pick this when** the piece belongs in a Social Finance NL report, or has to sound as if it
-could: a chapter, a case, a management summary, a recommendation. Distilled from *Innovatieve
-financiering van preventie* (2025) and *De toekomst van resultaatfinanciering* (2024) and from a
+**Pick this when** the piece belongs in a Social Finance NL report or has to sound as if it could:
+a chapter, a case, a management summary, a recommendation. Distilled from *Innovatieve
+financiering van preventie* (2025) and *De toekomst van resultaatfinanciering* (2024) and a
 house-voice analysis of both. Fourteen passages from those reports, quoted with a note on what
-each one does technically, sit in `SFNL-SPECIMENS.md` — read the ones matching the move you are
-about to write.
+each does technically, sit in `SFNL-SPECIMENS.md` — read the ones matching the move you are about
+to write.
 
-The genre is the **pleidooi met bewijslast**: an organisation with a position lines up practice
-and derives recommendations from it. That gives the register two tempos, and mixing them up is
-the classic failure — a case that sounds like a manifesto is as wrong as a conclusion that
-sounds like a factsheet.
+The genre is the **pleidooi met bewijslast**: an organisation with a position lines up practice and
+derives recommendations from it. That gives the register two tempos, and mixing them up is the
+classic failure — a case that sounds like a manifesto is as wrong as a conclusion that sounds like
+a factsheet.
 
 - **Two tempos.** Argumentative passages (opening, conclusion, recommendation) are assertive and
-  compact. Case passages are descriptive and factual, and hold their judgment until the lesson.
-- **"We" is the authors**, never the false inclusive we of the policy memo: *"In dit rapport
-  zetten we pioniers op een voetstuk"*. One exception, and it is the moment the piece takes
-  sides: in a normative passage "we" becomes national — *"We betalen voor handelingen, niet voor
-  resultaten."* Once per piece. No "u".
+  compact. Case passages are descriptive and factual, holding their judgment until the lesson.
+- **"We" is the authors**, never the false inclusive we of the policy memo. One exception, and it
+  is the moment the piece takes sides: in a normative passage "we" becomes national — *"We betalen
+  voor handelingen, niet voor resultaten."* Once per piece. No "u".
 - **Chapter shape: knelpunt → casussen → les → aanbeveling.** The opening states the bottleneck
-  flat out, with no run-up: *"Partijen vinden investeren in preventie vaak onaantrekkelijk. De
-  kosten zijn direct, terwijl de opbrengsten pas later komen."*
-- **Headings are assertions in capitals**, never labels: `PREVENTIE KAN DE ZORGVRAAG STRUCTUREEL
-  VERMINDEREN`, `VAN LOSSE UITGAVEN NAAR EEN INVESTERINGSSYSTEEM`. The van-X-naar-Y form is
-  house.
-- **Paragraphs of three to six sentences**, first sentence summarising the paragraph. Read the
-  first sentences in sequence and you have the chapter.
-- **Rhythm: 14 to 20 words on average, and every paragraph of four or more sentences carries one
-  sentence under ten words** — that sentence holds the point. The short sentence comes *before*
-  the big number, not after: the reader gets breath, then the € 200 miljard.
-- **A number never stands alone.** Five house forms: source then rescale (*"…tot maar liefst
-  265.600. Dat is een verviervoudiging"*), translation to a ratio (*"één op de twintig euro"*),
-  return per euro (*"Voor iedere euro … bijna 4 euro"*), a comparison anchor (*"Ter vergelijking:
-  …"*), or the number as the closing punch of a paragraph. Running prose carries at most two
-  numbers per paragraph; result figures belong in a `RESULTATEN EN IMPACT` list, not in the
-  argument.
-- **Mechanism in four steps** — the most copyable move in the house. Name the thing and pay off
-  the jargon inside the same sentence (*"een zogenaamde top-up betaling: een extra bijdrage van
-  de overheid boven op hun lokale budget"*), then the money flow, then the conditional inversion
-  (*"Blijven de kosten daaronder, dan wordt de besparing gedeeld"* / *"Zijn de resultaten niet
-  toereikend, dan zijn de investeerders hun geld kwijt"*), then what it makes people do.
+  flat out, with no run-up.
+- **A number never stands alone.** Source then rescale, translation to a ratio, return per euro, a
+  comparison anchor, or the figure as a paragraph's closing punch. Running prose carries at most
+  two numbers per paragraph; result figures go to a list.
+- **Mechanism in four steps** — the most copyable move in the house. Name the thing and pay off the
+  jargon inside the same sentence, then the money flow, then the conditional inversion (*"Blijven
+  de kosten daaronder, dan wordt de besparing gedeeld"*), then what it makes people do.
 - **Caveats before the claim**, never trailing after it.
 - **Imagery from the domain only**: schotten, potjes, hefboom, spelregels.
-- **Close on the shortest sentence on the page, and make it turn something over**: *"Gezondheid,
-  niet productie, bepaalt het rendement."* A recommendation opens with a verb that is an action
-  — *"Zet in op één regionaal zorg-en-verzekeringsbudget"*.
+- **One sentence under ten words per paragraph** of four or more, and it comes *before* the big
+  number, not after.
+- **Close on the shortest sentence on the page, and make it turn something over.** A recommendation
+  opens with a verb that is an action.
 
-**Three things the reports do that this card does not copy** — the house voice at its weakest
-(specimens 13 and 14 quote them):
-
-- The summarising paragraph that is more abstract than the material it summarises (three
-  sentences of 23, 25 and 35 words, "samen" three times, not one amount or name in sight).
-- The dead closing line: *"Preventie kan maatschappelijke waarde opleveren."* Turn it or cut it.
-- The hedge that guts the recommendation: *"Het is zinvol om te verkennen hoe…"*, three times in
-  the three recommendations the whole report rests on. Verkennen is not an action.
-
-The niet-X-maar-Y inversion is house and it works, 25 times in one report is a tic: **budget it
-at one per piece.**
+**Three things the reports do that this preset does not copy** (specimens 13 and 14 quote them):
+the summarising paragraph more abstract than the material it summarises; the dead closing line
+(*"Preventie kan maatschappelijke waarde opleveren"*); and the hedge that guts the recommendation
+(*"Het is zinvol om te verkennen hoe…"*, three times in the three recommendations the whole report
+rests on). The niet-X-maar-Y inversion is house and it works, and 25 times in one report is a tic:
+budget it at one.
 
 **Tests.** Does every paragraph's first sentence summarise it? Does every absolute number get
 scaled by the sentence after it? Does the section close on its shortest sentence, and does that
@@ -183,98 +101,184 @@ sentence turn something over?
 
 ---
 
+## Bd. Beslisstuk — the decision document
+
+**Pick this when** the reader has to decide and will skim the headings before reading a word: a
+board paper, a management summary, a tender answer, a deck's speaker text. This is the old
+McKinsey card with the pyramid taken out, because the pyramid is now everyone's.
+
+- **Action titles.** Every heading is a full assertion with subject, verb and outcome. Never a
+  label, never over fifteen words. "Omzet per regio" fails; "De omzet groeide 14% in Q3, gedreven
+  door expansie in APAC" passes.
+- **The horizontal read.** Read only the headings and each section's first sentence, in order.
+  They must form a complete argument on their own. If they do not, the structure is wrong, not the
+  prose.
+- **The number goes in the assertion**, not in a subclause: "Efficiëntiemaatregelen besparen 7,4
+  mln per jaar", not "Door implementatie van efficiëntiemaatregelen is jaarlijks 7,4 mln besparing
+  mogelijk."
+- **Outcome, not process.** What was found, not how you looked.
+- **So what.** Point at any beat and ask it. A beat that answers only "this is also true" goes.
+- **The recommendation opens on a verb** and names who acts.
+
+**Tests.** Does every heading assert rather than label? Do the headings alone carry the argument?
+Does every number sit in a main clause?
+
+---
+
+## E. Essay
+
+**Pick this when** the piece must be read straight through by a smart non-specialist, and the
+pleasure of reading it is part of the point.
+
+- **No throat-clearing.** The first fact is in the first sentence. Cut every sentence that sets a
+  scene before the piece begins.
+- **Every sentence would be missed.** Remove one; if nothing is lost, it was not a sentence. Run it
+  over the whole piece before calling it done.
+- **Active, and name the actor.**
+- **Short, ordinary words**: over/met betrekking tot, na/na afloop van, maar/echter,
+  genoeg/toereikend, laten zien/aantonen, gebruiken/aanwenden, nu/op dit moment.
+- **Cut the intensifier**: zeer, heel, uiterst, aanzienlijk, nadrukkelijk, duidelijk, echt.
+  Adjectives may make a meaning more precise, never more emphatic.
+- **A paragraph is a unit of thought.** One margin note per paragraph; two notes, two paragraphs.
+- **Vary sentence length sharply** — a 30-word sentence beside a 4-word one.
+- **The colon as hinge**, replacing "Dit komt doordat…" and "Dit betekent dat…".
+- **Let the analysis deliver the verdict.** Not dusty, not preachy, not pleased with itself.
+
+**Tests.** Can any sentence be cut without loss? Is there an intensifier left? Do two adjacent
+sentences have the same length and shape?
+
+---
+
+## V. Verhaal — the narrative
+
+**Pick this when** the piece has to be felt: a case story, a portrait, a project page that carries
+a person or a place.
+
+- **The opening is a torch, not an introduction.** Begin in something concrete and small. The *nut
+  graf* — one paragraph saying what this is about and why you keep reading — lands second to fifth.
+- **Climb the ladder of abstraction.** Names, amounts, dates and actions at the bottom; meaning at
+  the top; alternate. Two consecutive beats with nothing concrete is the failure.
+- **Ban the bureaucratic middle** — too vague to picture, too concrete to move. Can you draw the
+  sentence or check its arithmetic? Neither means rewrite it downward or upward.
+- **Subject and verb early**, the rest fanning right. Strong words at the start and the end.
+- **Gold coins in the middle** — a scene, a quote, a detail where attention normally sags.
+- **One structural decision**, chronology or theme, made out loud and held.
+- **The ending does not summarise.** It surprises slightly and still feels right.
+
+**Tests.** Does each beat carry one concrete element? Can you picture or check every sentence? Does
+the close summarise?
+
+---
+
+## K. Kort — the factual brief
+
+**Pick this when** the reader wants the case and nothing else: a memo, a one-pager, a mail, a note.
+The neutral default when the piece is not obviously SFNL work.
+
+- **Apex in the heading**, and the first sentence carries a fact, not a frame.
+- **One move per beat**, and the beat stops when the move is done.
+- **No ornament.** No em-dash asides, no rule of three, no "niet alleen X maar ook Y", no generic
+  uplift at the end.
+- **Name the gap once** where the reader would otherwise infer something the pile does not support.
+- **Signed close**, explicit: a judgment in the author's own voice.
+- **Shorter than the material suggests.** On a rewrite-shaped job, 15 to 25 per cent under.
+
+**Tests.** Does any sentence open with a numeral or carry more than three numbers? Is there an
+ornament that survives cutting? Is the close a judgment rather than a summary?
+
+---
+
+## Text type and audience decide the starting point
+
+Purpose and reader are settled at intake, and they propose the preset and the knob deltas. This
+table is the proposal; the user overrules it in the widget. Deltas are written as knob:value.
+
+| Text type | Preset | Knob deltas |
+|---|---|---|
+| Rapporthoofdstuk | H | — |
+| Casusspread, casusbeschrijving | H | `oordeel:aanbeveling` `bewijs:factbox` |
+| Bestuurlijke samenvatting | Bd | `bewijs:lijsten` `ritme:vlak` |
+| Projectpagina, website | V | `kop:bewering` `apex:eerste-alinea` `vet:uit` |
+| Tender, inschrijftekst | Bd | `woorden:vak-bekend` `apex:kop` `beeldspraak:0` |
+| Notitie, mail, memo | K | `kop:geen` |
+| Opiniestuk, blog | E | `oordeel:ondertekend` |
+| Pitch, one-pager | Bd | `ritme:hoog` `beeldspraak:1` |
+| Nieuwsbrief, LinkedIn | V | `woorden:alledaags` `ritme:hoog` |
+
+Audience shifts the same three knobs, and little else: a specialist reader takes
+`woorden:vak-bekend`, a mixed or public reader takes `woorden:alledaags` and often
+`beeldspraak:2`, a reader who has to decide takes `oordeel:aanbeveling` whatever the preset.
+
+---
+
 ## R. Reference text — derive the register
 
-**Pick this when** the user hands over a piece of writing and wants the article to sound like it:
-an earlier report of their own, a competitor's page, a colleague's chapter, something they
-admire. The reference replaces the card; everything else in the skill is unchanged.
+**Pick this when** the user attaches a piece of writing and wants the article to sound like it: an
+earlier report of their own, a colleague's chapter, something they admire.
 
-Read the reference in full, then **measure before you describe.** Impressions of a voice are
-worthless; counts are reproducible. Work through this list and write the numbers down:
+Read it in full, then **measure before you describe.** Impressions of a voice are worthless; counts
+are reproducible. Work through the eleven knobs first — they are a measuring instrument as much as
+a control panel — and write down where the reference sits on each. Then add what the knobs do not
+capture:
 
-1. **Sentence length** — mean, shortest, longest, and whether the length actually varies or the
-   text ticks in one meter.
-2. **Paragraphs** — sentences per paragraph, and whether the first sentence summarises the rest.
-3. **Person** — who is "we", is the reader addressed, does the author appear at all.
-4. **Headings** — assertions or labels, sentence case or capitals, and how often.
-5. **Numbers** — how a figure is introduced, how many per paragraph, scaled or left bare.
-6. **Openings and closings** — what move the first sentence makes, and what the last one does.
-7. **Signature devices** — the recurring constructions, up to three, each with a count.
-8. **Vocabulary** — jargon paid off or assumed, formality, and which domain the imagery comes
-   from.
-9. **What it never does** — the moves conspicuously absent.
+1. **Sentence length** — mean, shortest, longest, and whether length actually varies.
+2. **Paragraphs** — sentences per paragraph, and whether the first summarises the rest.
+3. **Openings and closings** — what move the first sentence makes, what the last one does.
+4. **Signature devices** — the recurring constructions, up to three, each with a count.
+5. **What it never does** — the moves conspicuously absent.
 
-Then write the card into the sidecar: six to eight rules in the shape of the cards above, three
-yes/no tests, and a budget on the two most frequent devices set at the sample's own rate per 500
-words. Show it to the user before beat 1 — a derived card is a reading of their text, and they
-are the one who can say it is wrong.
+Then write the card into the sidecar: the eleven knob values, four to six rules the knobs cannot
+express, three yes/no tests, and a budget on the two most frequent devices at the sample's own rate
+per 500 words. Show it to the user before beat 1 — a derived card is a reading of their text, and
+they are the one who can say it is wrong.
 
 **Three guardrails.**
 
-- **Structure and voice, never content.** Phrases, examples, framings and facts from the
-  reference stay in the reference. What transfers is how sentences are built, not what they say.
-- **Thin samples give thin cards.** Under roughly 300 words, say so, name the built-in card the
-  reference sits closest to, and run that card with the two or three derived rules laid over it.
-- **Do not copy the weaknesses.** Every real text has them. Name what you are refusing to
-  reproduce, the way card F refuses three things its own source reports do.
+- **Structure and voice, never content.** Phrases, examples, framings and facts from the reference
+  stay in the reference.
+- **Thin samples give thin cards.** Under roughly 300 words, say so, name the preset the reference
+  sits closest to, and run that preset with the two or three derived rules laid over it.
+- **Do not copy the weaknesses.** Name what you are refusing to reproduce, the way H refuses three
+  things its own source reports do.
 
-**Tests.** Are the rules on the card numbers rather than impressions? Would the author of the
-reference recognise their own text in the card? Is anything on it a fact or phrase rather than a
-technique?
+**Tests.** Are the rules numbers rather than impressions? Would the author recognise their own text
+in the card? Is anything on it a fact or phrase rather than a technique?
 
 ---
 
-## E. Supermode — all four, then a fifth
+## S. Supermodus — all of them, then one
 
 **Pick this when** the register is genuinely undecided, or the piece matters enough to be worth
-several times the writing. It is not a register of its own: it is a procedure that ends in one.
+several times the writing. Not a register: a procedure that ends in one.
 
-Write the same material once per writing card, then land a final version that is the one that
-goes in the file.
+1. **One rendering per preset — H, Bd, E, V, K, plus R when a reference was attached** — of the same
+   apex and the same committed claims. Same facts, five or six different pieces of writing, not
+   paraphrases. Dropping a preset is allowed when it is plainly wrong for the piece; say which and
+   why, and never run fewer than three.
+2. **Say what each one won.** One line per version, naming the move, not the vibe.
+3. **Pick a spine.** One preset carries the structure of the final version. A version that averages
+   the presets reads like none of them.
+4. **Graft, and name each graft.** Anything you cannot point at is not a graft, it is drift.
+5. **Resolve the conflicts explicitly.** H, Bd and K put the answer in the heading; V withholds it.
+   E lets the analysis deliver the verdict; the others state it. H sends result figures to a list;
+   Bd wants them in the assertion.
 
-1. **One rendering per card — A, B, C, D and F, plus R when a reference was supplied** — of the
-   same apex and the same committed claims. Same facts, five different pieces of writing, not five paraphrases. Each obeys its own
-   card, including where the cards contradict each other. Dropping a card is allowed when it is
-   plainly wrong for the piece (F outside SFNL work, A for a portrait), but say which you dropped
-   and why, and never run fewer than three.
-2. **Say what each one won.** One line per version, naming the move, not the vibe: A's heading
-   asserts, B's second paragraph varies length where the others drone, C's close turns, D's
-   figures beat is the only readable one, F's mechanism sentence is the only one that explains
-   how the thing actually pays.
-3. **Pick a spine.** One register carries the structure of the final version — its order, its
-   opening strategy, its relationship to the apex. A version that averages the registers reads
-   like none of them.
-4. **Graft, and name each graft.** Take specific moves from the other versions into the spine: a
-   heading, a sentence, an ordering, a close. Anything you cannot point at is not a graft, it is
-   drift.
-5. **Resolve the conflicts explicitly.** The cards disagree, and the spine wins each time. A, D
-   and F put the answer in the heading; C withholds it. B lets the analysis deliver the verdict;
-   A, D and F state it. F sends result figures to a list; A wants them in the assertion. Note which conflicts came up and how the spine settled them.
+Only the final version goes into the article file; the renderings go in the sidecar so a later beat
+can graft from one the user liked. **In cadence W or O** run it on the whole article at once. **In
+S or P** run it on the opening section only, then lock the spine.
 
-Only the final version goes into the article file. The renderings go in the sidecar, so a later
-beat can graft from a version the user liked.
-
-**In cadence W or O** run the supermode on the whole article at once — short pieces are cheap and
-compare better whole, and an outline is a single object to render several ways. **In S or P** run
-it on the opening section or beat only, then lock the spine and continue in that register;
-rendering every beat five ways buys less each time and costs the same.
-
-**Tests.** Can you name what each rendering won? Does the final version have one spine rather
-than an average? Is every graft traceable to a version?
+**Tests.** Can you name what each rendering won? Does the final version have one spine rather than
+an average? Is every graft traceable to a version?
 
 ---
 
-## Where the cards override the base rules
+## Where a preset overrides the base rules
 
-- The **signed close** is required in every register. Card B and C make it implicit — carried by
-  the analysis or by the ending's turn — where A, D and F state it outright. In F it is the
-  national-we moment, and F spends it on a recommendation that opens with a verb.
-- The **number rules** (three per sentence, no numeral-initial) are card D's, applied as a
-  baseline everywhere. Card A loosens the first where a beat is genuinely a figures beat; card C
-  keeps both, because prose reads aloud hardest; card F is stricter than all of them — two
-  numbers per paragraph in running prose, the rest to a results list.
-- **Length discipline** is card D's default. In A, B and C the length target from intake wins; F
-  follows the section it is written for.
-- **The humanizer pass** (`HUMANIZE.md`) runs in every register, per beat and once over the
-  finished text. Where it collides with a card, the card wins only on the devices it names and
-  budgets; everywhere else the pass wins.
+- **The signed close** is required everywhere; the `oordeel` knob decides how loud it is.
+- **The number rules** (three per sentence, no numeral-initial) hold in every preset. `cijfers`
+  only tightens them.
+- **Length discipline** is K's default; elsewhere the intake target wins.
+- **The humanizer pass** (`HUMANIZE.md`) runs in every preset and cadence, per unit and once over
+  the finished text. Where it collides with a preset, the preset wins only on the devices it names
+  and budgets — H's capitalised headings and conditional inversion, E's colon hinge, V's withheld
+  opening — and everywhere else the pass wins.

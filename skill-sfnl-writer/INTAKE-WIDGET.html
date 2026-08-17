@@ -4,7 +4,6 @@
     --bg: #faf9f7; --panel: #ffffff; --ink: #1a1a1a; --muted: #6b6862;
     --line: #e3e0da; --accent: #1f5f4e; --accent-soft: #eaf2ef; --code: #f3f1ec;
   }
-  :root:not([data-theme="light"]) { }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg: #17181a; --panel: #1f2124; --ink: #ececec; --muted: #a2a09b;
@@ -20,77 +19,107 @@
     margin: 0; padding: 2rem 1.25rem 4rem; background: var(--bg); color: var(--ink);
     font: 16px/1.55 ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
   }
-  main { max-width: 46rem; margin: 0 auto; }
+  main { max-width: 47rem; margin: 0 auto; }
   h1 { font-size: 1.5rem; margin: 0 0 .35rem; letter-spacing: -.01em; }
-  .sub { color: var(--muted); margin: 0 0 2rem; }
+  .sub { color: var(--muted); margin: 0 0 1.75rem; }
   fieldset {
     border: 1px solid var(--line); border-radius: 10px; background: var(--panel);
-    padding: 1.1rem 1.2rem 1.3rem; margin: 0 0 1.1rem;
+    padding: 1rem 1.15rem 1.2rem; margin: 0 0 1rem;
   }
   legend { font-weight: 650; padding: 0 .4rem; font-size: .95rem; }
   legend span { font-weight: 400; color: var(--muted); }
   label.opt {
     display: grid; grid-template-columns: 1.4rem 1fr; gap: .1rem .5rem;
-    padding: .5rem .6rem; border-radius: 8px; cursor: pointer; align-items: start;
+    padding: .45rem .55rem; border-radius: 8px; cursor: pointer; align-items: start;
   }
   label.opt:hover { background: var(--accent-soft); }
   label.opt input { margin-top: .3rem; accent-color: var(--accent); }
   label.opt b { font-weight: 620; }
   label.opt em { grid-column: 2; font-style: normal; color: var(--muted); font-size: .88rem; }
-  input[type=text], input[type=number] {
+  input[type=text], input[type=number], select {
     width: 100%; padding: .5rem .6rem; border: 1px solid var(--line); border-radius: 8px;
     background: var(--bg); color: var(--ink); font: inherit; font-size: .95rem;
   }
+  .field { margin-bottom: .8rem; }
+  .field label { display: block; font-size: .88rem; color: var(--muted); margin-bottom: .25rem; }
   .row { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; }
   .row > * { flex: 1 1 12rem; }
   .hint { color: var(--muted); font-size: .88rem; margin: .5rem 0 0; }
+  details { border: 1px solid var(--line); border-radius: 10px; background: var(--panel); margin-bottom: 1rem; }
+  summary { padding: .85rem 1.15rem; cursor: pointer; font-weight: 650; font-size: .95rem; }
+  summary span { font-weight: 400; color: var(--muted); }
+  .knobs { padding: 0 1.15rem 1.1rem; }
+  .knobgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: .7rem 1rem; }
+  .knob label { display: block; font-size: .85rem; margin-bottom: .2rem; }
+  .knob label b { font-weight: 620; }
+  .knob label i { font-style: normal; color: var(--muted); }
+  .knob select.changed { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .knobhead { font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+              margin: 1rem 0 .5rem; }
+  .knobhead:first-child { margin-top: .25rem; }
   .out {
-    position: sticky; bottom: 0; margin-top: 1.5rem; border: 1px solid var(--accent);
+    position: sticky; bottom: 0; margin-top: 1.4rem; border: 1px solid var(--accent);
     border-radius: 10px; background: var(--panel); padding: 1rem 1.1rem;
   }
   .out h2 { font-size: .95rem; margin: 0 0 .6rem; }
   code#line {
-    display: block; overflow-x: auto; white-space: pre; background: var(--code);
+    display: block; overflow-x: auto; white-space: pre-wrap; background: var(--code);
     border-radius: 8px; padding: .7rem .8rem; font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
   }
   button {
     margin-top: .75rem; padding: .55rem 1rem; border: 0; border-radius: 8px;
     background: var(--accent); color: var(--bg); font: inherit; font-weight: 600; cursor: pointer;
   }
-  button:active { transform: translateY(1px); }
+  button.ghost { background: transparent; color: var(--muted); border: 1px solid var(--line); margin-left: .5rem; }
   .ok { color: var(--accent); font-size: .88rem; margin-left: .6rem; }
 </style>
 
 <main>
   <h1>sfnl-writer — intake</h1>
-  <p class="sub">Vier keuzes, allemaal met een default: klik alleen aan wat je anders wilt.
-     Onderaan staat één regel — kopieer die en plak hem terug in het gesprek.</p>
+  <p class="sub">Alles staat al op een voorstel. Klik alleen aan wat je anders wilt en kopieer
+     onderaan één regel terug het gesprek in.</p>
+
+  <fieldset>
+    <legend>Doel en doelgroep <span>— ons voorstel, corrigeer het</span></legend>
+    <div class="field">
+      <label for="doel">Wat wordt dit, en waarvoor</label>
+      <input type="text" id="doel" value="{{DOEL}}" placeholder="bijv. casusspread voor het jaarrapport">
+    </div>
+    <div class="field" style="margin-bottom:0">
+      <label for="pub">Wie leest het, en wat moet die ermee kunnen</label>
+      <input type="text" id="pub" value="{{DOELGROEP}}" placeholder="bijv. fondsen en gemeenten die een voorbeeld zoeken">
+    </div>
+    <p class="hint">Deze twee sturen het voorstel hieronder. Verander je ze, zeg dan even of het
+       voorstel mee moet veranderen.</p>
+  </fieldset>
 
   <fieldset>
     <legend>Referentietekst <span>— optioneel</span></legend>
-    <label class="opt" style="grid-template-columns:1.4rem 1fr"><input type="checkbox" id="ref">
+    <label class="opt" style="grid-template-columns:1.4rem 1fr"><input type="checkbox" id="ref" {{REF_CHECKED}}>
       <b>Ik heb een referentietekst bijgevoegd</b>
-      <em>Hang het document gewoon aan het gesprek. Alleen de <strong>stijl</strong> wordt
-          overgenomen: feiten, voorbeelden en formuleringen komen altijd uit je ruwe materiaal,
-          nooit uit de referentie.</em></label>
+      <em>Hang het document aan het gesprek. Alleen de <strong>stijl</strong> wordt overgenomen:
+          feiten, voorbeelden en formuleringen komen altijd uit je ruwe materiaal.</em></label>
   </fieldset>
 
   <fieldset>
     <legend>Register <span>— hoe het klinkt</span></legend>
-    <label class="opt"><input type="radio" name="reg" value="F"><b>F — SFNL-rapport</b>
-      <em>Knelpunt, casussen, les, aanbeveling. Huisstem uit de rapporten van 2024 en 2025.</em></label>
-    <label class="opt"><input type="radio" name="reg" value="A"><b>A — McKinsey</b>
-      <em>Action titles, antwoord eerst op elk niveau, koppen die samen het betoog dragen.</em></label>
-    <label class="opt"><input type="radio" name="reg" value="B"><b>B — Economist</b>
-      <em>Geen aanloop, elke zin gemist als je hem weghaalt, scherpe zinslengtevariatie.</em></label>
-    <label class="opt"><input type="radio" name="reg" value="C"><b>C — proza</b>
+    <label class="opt"><input type="radio" name="reg" value="H"><b>H — huis (SFNL-rapport)</b>
+      <em>Knelpunt, casussen, les, aanbeveling. Wij-als-auteurs, cijfers altijd geschaald,
+          slot dat omkeert.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="Bd"><b>Bd — beslisstuk</b>
+      <em>Koppen die het betoog alleen al dragen, getal in de bewering, aanbeveling met een
+          werkwoord. Voor wie moet besluiten.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="E"><b>E — essay</b>
+      <em>Geen aanloop, elke zin gemist als je hem weghaalt, scherpe zinslengtevariatie, oordeel
+          uit de analyse.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="V"><b>V — verhaal</b>
       <em>Opening als zaklamp, de abstractieladder op en af, een slot dat draait.</em></label>
-    <label class="opt"><input type="radio" name="reg" value="D" checked><b>D — feitelijk kort</b>
-      <em>Apex in de kop, één beweging per alinea, geen versiering. De default.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="K"><b>K — kort en feitelijk</b>
+      <em>Apex in de kop, één beweging per alinea, geen versiering, ondertekend slot.</em></label>
     <label class="opt"><input type="radio" name="reg" value="R"><b>R — als de referentietekst</b>
       <em>Vereist de bijgevoegde referentie. De stijl wordt eerst gemeten en als kaart aan je
-          voorgelegd, dan pas geschreven.</em></label>
-    <label class="opt"><input type="radio" name="reg" value="E"><b>E — supermodus</b>
+          voorgelegd.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="S"><b>S — supermodus</b>
       <em>Alle registers schrijven, zeggen wat elk wint, dan één versie met één ruggengraat.
           Kost een veelvoud.</em></label>
   </fieldset>
@@ -98,49 +127,188 @@
   <fieldset>
     <legend>Cadans <span>— hoe we werken</span></legend>
     <label class="opt"><input type="radio" name="cad" value="P"><b>P — alinea voor alinea</b>
-      <em>Per alinea 2–3 richtingen, jij kiest. Meeste grip, meeste beurten. Voor korte teksten
-          die er echt toe doen of een omstreden betoog.</em></label>
+      <em>Per alinea 2–3 richtingen, jij kiest. Meeste grip, meeste beurten.</em></label>
     <label class="opt"><input type="radio" name="cad" value="S"><b>S — sectie voor sectie</b>
-      <em>Een sectie in één keer, daarna 2–3 richtingen voor de volgende. De middenversnelling.</em></label>
-    <label class="opt"><input type="radio" name="cad" value="O" checked><b>O — eerst de outline</b>
-      <em>Apex, takken en alle beats vooraf vastgelegd; daarna doorschrijven zonder aftakkingen.
-          Voor als de structuur het risico is en het proza routine.</em></label>
+      <em>Een sectie in één keer, daarna richtingen voor de volgende. De middenversnelling.</em></label>
+    <label class="opt"><input type="radio" name="cad" value="O"><b>O — eerst de outline</b>
+      <em>Alles vooraf vastgelegd, daarna doorschrijven zonder aftakkingen.</em></label>
     <label class="opt"><input type="radio" name="cad" value="W"><b>W — in één keer</b>
-      <em>Eén doorloop, hele tekst, daarna herzien op jouw opmerkingen. Goedkoopst, en het snelst
-          iets om op te reageren.</em></label>
+      <em>Eén doorloop, daarna herzien op jouw opmerkingen. Goedkoopst.</em></label>
   </fieldset>
 
   <fieldset>
     <legend>Lengte <span>— doel in woorden</span></legend>
     <div class="row">
-      <input type="number" id="len" min="50" step="50" placeholder="bijv. 800">
-      <label class="opt" style="grid-template-columns:1.4rem auto"><input type="checkbox" id="nolen" checked>
+      <input type="number" id="len" min="50" step="50" value="{{LEN}}" placeholder="bijv. 800">
+      <label class="opt" style="grid-template-columns:1.4rem auto"><input type="checkbox" id="nolen">
         <b>geen voorkeur</b></label>
     </div>
-    <p class="hint">Zonder voorkeur stelt de skill zelf een getal voor en zegt wat het kost: lager
-       betekent takken laten vallen, hoger betekent alinea's die meer materiaal dragen.</p>
   </fieldset>
+
+  <details id="adv">
+    <summary>Geavanceerd <span>— elf knoppen, alleen wat je verzet telt mee</span></summary>
+    <div class="knobs">
+      <p class="hint" style="margin-top:0">Elke knop staat op de waarde van het gekozen register.
+         Verzet er een en hij kleurt; wissel je van register, dan volgen de knoppen mee behalve wat
+         je zelf hebt verzet.</p>
+
+      <div class="knobhead">Structuur</div>
+      <div class="knobgrid">
+        <div class="knob"><label for="k_kop"><b>Kop</b> <i>— bewering of label</i></label>
+          <select id="k_kop" data-k="kop">
+            <option value="bewering">bewering</option>
+            <option value="kapitaal-bewering">bewering in kapitalen</option>
+            <option value="label">label</option>
+            <option value="geen">geen kop</option>
+          </select></div>
+        <div class="knob"><label for="k_apex"><b>Antwoord</b> <i>— waar de kern landt</i></label>
+          <select id="k_apex" data-k="apex">
+            <option value="kop">in de kop</option>
+            <option value="eerste-alinea">in de eerste alinea</option>
+            <option value="uitgesteld">uitgesteld</option>
+          </select></div>
+        <div class="knob"><label for="k_alineakop"><b>Alineakop</b> <i>— eerste zin vat de alinea</i></label>
+          <select id="k_alineakop" data-k="alineakop">
+            <option value="aan">aan</option>
+            <option value="uit">uit</option>
+          </select></div>
+        <div class="knob"><label for="k_bewijs"><b>Bewijs</b> <i>— waar de feiten staan</i></label>
+          <select id="k_bewijs" data-k="bewijs">
+            <option value="proza">in proza</option>
+            <option value="lijsten">in lijsten</option>
+            <option value="factbox">factbox plus resultatenlijst</option>
+          </select></div>
+      </div>
+
+      <div class="knobhead">Taal</div>
+      <div class="knobgrid">
+        <div class="knob"><label for="k_woorden"><b>Woorden</b> <i>— hoe technisch</i></label>
+          <select id="k_woorden" data-k="woorden">
+            <option value="alledaags">alledaags</option>
+            <option value="vak-afgelost">vaktaal, meteen afgelost</option>
+            <option value="vak-bekend">vaktaal, bekend verondersteld</option>
+          </select></div>
+        <div class="knob"><label for="k_ritme"><b>Ritme</b> <i>— zinslengtevariatie</i></label>
+          <select id="k_ritme" data-k="ritme">
+            <option value="hoog">hoog</option>
+            <option value="gemiddeld">gemiddeld</option>
+            <option value="vlak">vlak</option>
+          </select></div>
+        <div class="knob"><label for="k_aanspreekvorm"><b>Aanspreekvorm</b></label>
+          <select id="k_aanspreekvorm" data-k="aanspreekvorm">
+            <option value="wij-auteurs">wij, de auteurs</option>
+            <option value="onpersoonlijk">onpersoonlijk</option>
+            <option value="je-lezer">je, de lezer</option>
+          </select></div>
+        <div class="knob"><label for="k_beeldspraak"><b>Beeldspraak</b> <i>— per stuk</i></label>
+          <select id="k_beeldspraak" data-k="beeldspraak">
+            <option value="0">geen</option>
+            <option value="1">één</option>
+            <option value="2">twee</option>
+          </select></div>
+      </div>
+
+      <div class="knobhead">Cijfers en oordeel</div>
+      <div class="knobgrid">
+        <div class="knob"><label for="k_cijfers"><b>Cijfers</b></label>
+          <select id="k_cijfers" data-k="cijfers">
+            <option value="geschaald">altijd geschaald</option>
+            <option value="kaal-mag">kaal getal mag</option>
+            <option value="uit-proza">resultaten uit het proza, naar een lijst</option>
+          </select></div>
+        <div class="knob"><label for="k_vet"><b>Vet</b> <i>— vette inzet in lopende tekst</i></label>
+          <select id="k_vet" data-k="vet">
+            <option value="uit">uit</option>
+            <option value="aan">aan</option>
+          </select></div>
+        <div class="knob"><label for="k_oordeel"><b>Oordeel</b> <i>— hoe hard het slot is</i></label>
+          <select id="k_oordeel" data-k="oordeel">
+            <option value="ondertekend">ondertekend, in eigen naam</option>
+            <option value="impliciet">impliciet, uit de analyse</option>
+            <option value="aanbeveling">aanbeveling met een werkwoord</option>
+          </select></div>
+      </div>
+    </div>
+  </details>
 
   <div class="out">
     <h2>Plak deze regel terug in het gesprek<span id="ok" class="ok"></span></h2>
-    <code id="line">INTAKE ref=- reg=D cad=O len=-</code>
+    <code id="line"></code>
     <button id="copy">Kopieer</button>
+    <button id="reset" class="ghost">Terug naar het voorstel</button>
   </div>
 </main>
 
 <script>
   const $ = s => document.querySelector(s);
-  const build = () => {
-    const ref = $('#ref').checked ? 'bijgevoegd' : '-';
+  const KNOBS = ['kop','apex','alineakop','bewijs','cijfers','vet','woorden','ritme','aanspreekvorm','oordeel','beeldspraak'];
+  const PRESET = {
+    H:  {kop:'kapitaal-bewering', apex:'kop', alineakop:'aan', bewijs:'factbox', cijfers:'uit-proza', vet:'aan',
+         woorden:'vak-afgelost', ritme:'gemiddeld', aanspreekvorm:'wij-auteurs', oordeel:'aanbeveling', beeldspraak:'1'},
+    Bd: {kop:'bewering', apex:'kop', alineakop:'aan', bewijs:'lijsten', cijfers:'geschaald', vet:'aan',
+         woorden:'vak-bekend', ritme:'vlak', aanspreekvorm:'onpersoonlijk', oordeel:'aanbeveling', beeldspraak:'0'},
+    E:  {kop:'geen', apex:'eerste-alinea', alineakop:'uit', bewijs:'proza', cijfers:'geschaald', vet:'uit',
+         woorden:'alledaags', ritme:'hoog', aanspreekvorm:'onpersoonlijk', oordeel:'impliciet', beeldspraak:'2'},
+    V:  {kop:'bewering', apex:'uitgesteld', alineakop:'uit', bewijs:'proza', cijfers:'geschaald', vet:'uit',
+         woorden:'alledaags', ritme:'hoog', aanspreekvorm:'onpersoonlijk', oordeel:'impliciet', beeldspraak:'2'},
+    K:  {kop:'bewering', apex:'kop', alineakop:'aan', bewijs:'proza', cijfers:'geschaald', vet:'uit',
+         woorden:'alledaags', ritme:'gemiddeld', aanspreekvorm:'onpersoonlijk', oordeel:'ondertekend', beeldspraak:'0'}
+  };
+  const PROPOSAL = { reg: '{{REG}}', cad: '{{CAD}}', knobs: {{KNOBS_JSON}} };
+  const touched = new Set();
+
+  const base = () => PRESET[document.querySelector('input[name=reg]:checked').value] || PRESET.K;
+
+  function applyPreset() {
+    const b = base();
+    KNOBS.forEach(k => {
+      const el = $('#k_' + k);
+      if (!touched.has(k)) el.value = (PROPOSAL.knobs[k] && !touched.size ? PROPOSAL.knobs[k] : b[k]);
+      el.classList.toggle('changed', el.value !== b[k]);
+    });
+  }
+
+  function build() {
+    const b = base();
     const reg = document.querySelector('input[name=reg]:checked').value;
     const cad = document.querySelector('input[name=cad]:checked').value;
     const len = $('#nolen').checked || !$('#len').value ? '-' : $('#len').value;
-    $('#line').textContent = `INTAKE ref=${ref} reg=${reg} cad=${cad} len=${len}`;
-  };
+    const ref = $('#ref').checked ? 'bijgevoegd' : '-';
+    const deltas = KNOBS.filter(k => $('#k_' + k).value !== b[k]).map(k => k + ':' + $('#k_' + k).value);
+    const parts = [
+      'INTAKE',
+      'doel=' + (($('#doel').value || '-').trim().replace(/\s+/g, '_')),
+      'pub=' + (($('#pub').value || '-').trim().replace(/\s+/g, '_')),
+      'ref=' + ref, 'reg=' + reg, 'cad=' + cad, 'len=' + len
+    ];
+    if (deltas.length) parts.push('knobs=' + deltas.join(','));
+    $('#line').textContent = parts.join(' ');
+    KNOBS.forEach(k => $('#k_' + k).classList.toggle('changed', $('#k_' + k).value !== b[k]));
+  }
+
+  function setProposal() {
+    touched.clear();
+    (document.querySelector(`input[name=reg][value="${PROPOSAL.reg}"]`) || $('input[name=reg]')).checked = true;
+    (document.querySelector(`input[name=cad][value="${PROPOSAL.cad}"]`) || $('input[name=cad][value=O]')).checked = true;
+    $('#nolen').checked = !$('#len').value;
+    const b = base();
+    KNOBS.forEach(k => $('#k_' + k).value = PROPOSAL.knobs[k] || b[k]);
+    build();
+  }
+
+  document.addEventListener('change', e => {
+    if (e.target.dataset && e.target.dataset.k) touched.add(e.target.dataset.k);
+    if (e.target.name === 'reg') {
+      const b = base();
+      KNOBS.forEach(k => { if (!touched.has(k)) $('#k_' + k).value = b[k]; });
+    }
+    build();
+  });
   document.addEventListener('input', () => {
     if ($('#len').value) $('#nolen').checked = false;
     build();
   });
+  $('#reset').addEventListener('click', setProposal);
   $('#copy').addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText($('#line').textContent);
@@ -149,10 +317,9 @@
     } catch (e) {
       const r = document.createRange();
       r.selectNode($('#line'));
-      getSelection().removeAllRanges();
-      getSelection().addRange(r);
+      getSelection().removeAllRanges(); getSelection().addRange(r);
       $('#ok').textContent = 'geselecteerd — kopieer met ctrl/cmd-C';
     }
   });
-  build();
+  setProposal();
 </script>

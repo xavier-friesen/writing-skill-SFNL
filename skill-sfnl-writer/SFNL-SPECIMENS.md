@@ -2,8 +2,8 @@
 
 Fourteen passages from the two Social Finance NL reports — *Innovatieve financiering van
 preventie* (december 2025) and *De toekomst van resultaatfinanciering* (september 2024) — quoted
-literally, each with a note on what it does technically. They are the worked examples behind card
-F in `STYLES.md`: read the card for the rules, read these when you want to see a rule in the
+literally, each with a note on what it does technically. They are the worked examples behind preset
+H in `STYLES.md`: read the card for the rules, read these when you want to see a rule in the
 house's own words before writing a chapter opening, a figures paragraph, a mechanism, a caveat,
 a transition or a close.
 

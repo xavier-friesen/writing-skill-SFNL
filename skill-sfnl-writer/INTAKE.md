@@ -1,71 +1,85 @@
 # Intake
 
-Four things to settle before beat 1: **reference**, **register**, **cadence**, **length**. One
-widget, rendered in the chat, one exchange. Skip anything the user has already decided in
-conversation, and never ask again for something they have said.
+Six things to settle before beat 1: **purpose**, **audience**, **reference**, **register**,
+**cadence**, **length**. One widget, rendered in the chat, one exchange.
 
-## Render the widget inline
+The first two are not questions — they are a **proposal**. Read the pile, decide what this text is
+for and who reads it, fill your answer into the widget, and let the user correct it. Asking "wat is
+je doel?" of someone who just handed you their material is a question you can answer yourself.
 
-`INTAKE-WIDGET.html` ships with this skill. Render it **in the conversation** — send it with the
-file tool set to render, so it opens as a page the user can click, not as a path they have to go
-and find. Never tell them to open a file.
+## Fill the widget, then render it inline
 
-The widget carries all four decisions at once, with what each option costs:
+`INTAKE-WIDGET.html` is a template with placeholders. Copy it next to the article, substitute, and
+render the copy **in the conversation** — send it with the file tool set to render, never as a path
+the user has to go and find.
 
-- **Reference** — a checkbox: *I have attached a reference text*.
-- **Register** — all seven, no shortlisting: F (SFNL-rapport), A (McKinsey), B (Economist),
-  C (proza), D (feitelijk kort), R (as the reference text), E (supermode). This is why the widget
-  beats a question block: seven options fit a page and do not fit four slots, and each one gets a
-  line saying what it buys.
-- **Cadence** — P (paragraph), S (section), O (outline first), W (write at once), each with its
-  cost in turns against control.
-- **Length** — a number, or *no preference*.
+| Placeholder | What you put there |
+|---|---|
+| `{{DOEL}}` | your reading of what this becomes: "casusspread voor het jaarrapport" |
+| `{{DOELGROEP}}` | who reads it and what they must be able to do with it |
+| `{{REF_CHECKED}}` | `checked` when a reference document has already been attached, else empty |
+| `{{REG}}` | proposed preset: `H` `Bd` `E` `V` `K` `R` `S` |
+| `{{CAD}}` | proposed cadence: `P` `S` `O` `W` |
+| `{{LEN}}` | proposed target in words, or empty for no preference |
+| `{{KNOBS_JSON}}` | the knob deltas you propose, as JSON: `{"bewijs":"factbox"}` — `{}` for none |
 
-Everything is pre-selected at its default, so a user who agrees clicks copy and nothing else. The
-widget emits one line:
+Derive the proposal from purpose and audience with the table in `STYLES.md` ("Text type and
+audience decide the starting point"). Say in one line why you proposed what you did; a proposal the
+user cannot see the reasoning of is a decision taken away from them.
+
+The widget then does the rest. All seven registers are visible with what each buys, the cadences
+carry their cost in turns, and the advanced panel holds the eleven knobs — closed by default,
+inheriting from the chosen preset, highlighting whatever the user moves. Switching preset re-inherits
+every knob except the ones they touched, so exploring is cheap and nothing gets silently lost.
+
+It emits one line, carrying only what differs from the preset:
 
 ```
-INTAKE ref=<bijgevoegd|-> reg=<A|B|C|D|F|R|E> cad=<P|S|O|W> len=<number|->
+INTAKE doel=casusspread_jaarrapport pub=fondsen_en_gemeenten ref=- reg=H cad=S len=700 knobs=bewijs:factbox,oordeel:aanbeveling
 ```
 
-Parse it and write all four values into the sidecar. `-` on length means propose a target in one
-line and say what it costs; `-` on reference means register R is unavailable.
+Parse it, write all of it into the sidecar, and treat `knobs=` as overrides on top of the preset
+defaults. `-` on length means propose a number and say what it costs; `-` on reference means R is
+unavailable. Underscores in `doel=` and `pub=` are spaces.
 
 **If the widget does not render** in this surface, or the user would rather type: put the same
-four decisions in one chat message as a short list with the defaults marked, and take a one-line
-answer. Do not fall back to asking four questions in four messages.
+decisions in one chat message as a short list with your proposal marked, and take a one-line answer.
+Never four questions in four messages.
 
 ## The reference document
 
-The user attaches it in the chat, like any other file. Never ask for a path, and never ask them to
-save it somewhere first.
+The user attaches it in the chat, like any other file. Never ask for a path.
 
-Two documents can arrive, and they do different jobs, so keep them apart:
+Two documents can arrive, and they do different jobs:
 
 - **The pile** is the content. Everything the article states comes from here.
 - **The reference** is the style. Its facts, phrases and examples never enter the article, even
   when it covers the same subject.
 
-Default reading: the first document is the pile. A second one, or one introduced with something
-like "in deze stijl" or "zoals dit stuk", is the reference. When that is genuinely unclear, ask in
-one line while the widget is up.
+Default reading: the first document is the pile. A second one, or one introduced with "in deze
+stijl" or "zoals dit stuk", is the reference. When that is genuinely unclear, ask in one line while
+the widget is up.
 
-A reference makes register **R** available: measure the text, write the card, show it, then write
-to it (`STYLES.md`). A reference alongside some other register means the user wants that register
-with the reference as a tiebreaker; say so out loud, and use the reference only where the card is
+A reference makes register **R** available: measure the text against the eleven knobs, write the
+card, show it, then write to it (`STYLES.md`). A reference alongside another register means the user
+wants that register with the reference as a tiebreaker; say so, and use it only where the preset is
 silent.
 
 ## Defaults
 
-Nobody has to choose anything. Register defaults to **D**, or **F** for obvious SFNL work. Cadence
-defaults by target length:
-
-| Target | Default cadence |
+| | Default |
 |---|---|
-| under 400 words | **W** write at once |
-| 400 to 1,200 | **O** outline first |
-| 1,200 to 3,000 | **S** section by section |
-| over 3,000, or a contested argument at any length | **S**, offering **P** |
+| Register | **H** for SFNL work, **K** otherwise |
+| Knobs | whatever the preset says; deltas only from the text-type table or the user |
+| Cadence | by length: under 400 words **W**, to 1,200 **O**, to 3,000 **S**, above that **S** offering **P** |
+| Length | your proposal, stated with what it costs |
 
-If the user ignores the widget entirely, state the defaults you are taking in one line and start
-writing. Record all four decisions, and the save path, in the sidecar.
+If the user ignores the widget, state the proposal you are running with in one line and start
+writing. Record everything, including the save path, in the sidecar.
+
+## Changing your mind later
+
+Any of it can move mid-article: "korter", "geen vet meer", "toch maar zonder kopjes", "dit leest te
+technisch". Treat that as a knob change, not a complaint — name the knob you are moving and what it
+does to the text from here, apply it to what comes next, and offer to sweep back over what is
+already written. Record the change and the beat it took effect in the sidecar.

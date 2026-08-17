@@ -1,7 +1,7 @@
 ---
 name: sfnl-writer
-version: 2.1
-description: 'Shape a pile of raw material into an article on a Minto pyramid, in a chosen register (SFNL house style, McKinsey, Economist, prose, factual brief, or the style of a reference text the user supplies) and a chosen cadence (paragraph by paragraph, section by section, outline first, or write at once), with a humanizer pass throughout. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a finished piece. Trigger on "schrijf hier een artikel van", "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "schrijf in de stijl van deze tekst", "in onze huisstijl schrijven".'
+version: 3.0
+description: 'Shape a pile of raw material into an article on a Minto pyramid, in a chosen register (SFNL house style, decision document, essay, narrative, factual brief, or the style of a reference text the user attaches) tuned by eleven style knobs, and a chosen cadence (paragraph by paragraph, section by section, outline first, or write at once), with a humanizer pass throughout. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a finished piece. Trigger on "schrijf hier een artikel van", "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "schrijf in de stijl van deze tekst", "in onze huisstijl schrijven".'
 ---
 
 # SFNL writer
@@ -13,8 +13,8 @@ mine it, you never edit it.
 This is exploit. The exploring is done and the pile is fixed. Commit to one governing answer, then walk
 the reader down the pyramid, mining the pile to fill each beat, at whatever pace the cadence sets.
 
-Five files travel with this one and are all it needs: `INTAKE.md` and `INTAKE-WIDGET.html` (the four
-opening decisions), `STYLES.md` (the registers), `HUMANIZE.md` (the humanizer pass) and
+Five files travel with this one and are all it needs: `INTAKE.md` and `INTAKE-WIDGET.html` (the
+opening decisions), `STYLES.md` (the presets and knobs), `HUMANIZE.md` (the humanizer pass) and
 `SFNL-SPECIMENS.md` (worked passages for the house register).
 
 ## The loop
@@ -22,8 +22,8 @@ opening decisions), `STYLES.md` (the registers), `HUMANIZE.md` (the humanizer pa
 Steps 1 to 5 run in every cadence. Step 6 is where the cadences part.
 
 1. **Read the pile end-to-end.** Before anything else.
-2. **Intake.** Reference, register, cadence, length — one widget, rendered in the chat. See
-   `INTAKE.md`.
+2. **Intake.** Propose purpose and audience, then settle reference, register, cadence and length in
+   one widget, rendered in the chat. See `INTAKE.md`.
 3. **Check the source.** One pass over the pile, before any writing. See
    [Checking the source](#checking-the-source).
 4. **Fix the apex.** Settle the one-sentence answer the whole article delivers, and the reader's
@@ -35,49 +35,45 @@ Steps 1 to 5 run in every cadence. Step 6 is where the cadences part.
    [Ending](#ending).
 
 Whatever the cadence, every unit of text passes the four checks before it lands — [link](#the-link-check),
-[budgets](#budgets), the style card's three tests, and the per-beat [humanizer pass](#the-humanizer-pass)
+[budgets](#budgets), the preset's three tests, and the per-beat [humanizer pass](#the-humanizer-pass)
 — the sidecar is updated as it lands, and the article file is re-read from disk before every write.
 
 ## Intake
 
-Four decisions in one widget, `INTAKE-WIDGET.html`, rendered inline in the conversation rather than
-handed over as a path: **reference**, **register**, **cadence**, **length**. It shows all seven registers
-with what each buys, which no four-option question can, and everything starts on its default so agreeing
-costs one click. `INTAKE.md` carries the paste-back format, how to tell an attached reference from an
-attached pile, and the defaults.
+Six decisions in one widget, `INTAKE-WIDGET.html`, rendered inline in the conversation: **purpose**,
+**audience**, **reference**, **register**, **cadence**, **length**. Purpose and audience you propose
+from the pile rather than ask about; the rest arrives pre-set on that proposal, so agreeing costs one
+click. `INTAKE.md` carries the placeholders, the paste-back format, and the defaults.
 
-**Register** — read the chosen card in `STYLES.md` before writing, and keep its three tests in the
-per-beat check:
+**Register** — five presets over eleven knobs, plus two procedures. Read the chosen card in
+`STYLES.md` before writing and keep its three tests in the per-unit check.
 
-- **A. McKinsey** — action titles, answer first at every level, the horizontal read. For a reader who
-  has to decide.
-- **B. Economist** — no throat-clearing, every sentence earns its place, sharp length variation. For a
-  piece read straight through.
-- **C. Prose** — a torch of an opening, up and down the ladder of abstraction, an ending that turns
-  rather than summarises. For a piece that has to be felt.
-- **D. Factual brief** — apex in the heading, one move per beat, no ornament. The default when nobody
-  chooses.
-- **F. SFNL report** — the pleidooi met bewijslast: knelpunt, cases, lesson, recommendation; assertive
-  headings; a number never alone; mechanisms in four steps; a close that turns. For anything that
-  belongs in a Social Finance NL report. Fourteen worked passages sit in `SFNL-SPECIMENS.md`.
-- **R. Reference text** — measure the attached text, write a card from the measurements, show it to the
-  user, then write to it. Requires a reference document.
-- **E. Supermode** — write it once per card, say what each won, then land a final version with one
-  register as its spine and named grafts from the rest. Costs several times the writing; offer it when
-  the register is undecided or the piece matters that much.
+- **H. Huis** — the SFNL report: knelpunt, cases, lesson, recommendation; we-as-authors; a number
+  never alone; mechanisms in four steps; a close that turns. Worked passages in `SFNL-SPECIMENS.md`.
+- **Bd. Beslisstuk** — for a reader who has to decide: action titles, the horizontal read, the number
+  in the assertion, a recommendation that opens on a verb.
+- **E. Essay** — read straight through: no throat-clearing, every sentence earning its place, sharp
+  length variation, the verdict left to the analysis.
+- **V. Verhaal** — a torch of an opening, up and down the ladder of abstraction, an ending that turns.
+- **K. Kort** — apex in the heading, one move per beat, no ornament, signed close. The neutral default.
+- **R. Reference text** — measure the attached text against the knobs, write a card, show it, write to
+  it. Requires a reference document.
+- **S. Supermodus** — every preset written out, what each won, then one version with a single spine
+  and named grafts. Costs a multiple.
 
-**Reference** — the user attaches the document in the chat; never ask for a path. It is a style source,
-never a pile: its facts, phrases and examples stay where they are, and only the pile supplies content.
-That line is the whole safety of the feature, and it holds even when the reference covers the same
-subject as the article.
+**The knobs** are the fine adjustment: kop, apex, alineakop, bewijs, cijfers, vet, woorden, ritme,
+aanspreekvorm, oordeel, beeldspraak. Each preset sets all eleven; the widget's advanced panel exposes
+them; only deltas travel. A knob moved mid-article is a normal instruction, not a complaint — name it,
+apply it forward, offer to sweep back.
 
-**Length** — a target in words, or no preference. On no preference, read the pile, propose a number in
-one line, and say what it costs: lower means branches get dropped, higher means beats carry more from
-the pile. Record whatever is agreed in the sidecar and hold it; a piece drifting past its target is a
-pyramid with a branch nobody chose.
+**Reference** — attached in the chat, never a path. A style source, never a pile: its facts, phrases
+and examples stay where they are, and only the pile supplies content. That line holds even when the
+reference covers the same subject.
 
-**Where it is saved** — ask once, in the same breath as the rest, then remember the path for the whole
-session.
+**Length** — a target in words, or a proposal from you with what it costs: lower means branches get
+dropped, higher means beats carry more from the pile.
+
+**Where it is saved** — ask once, in the same breath, then remember the path for the session.
 
 ## Checking the source
 
@@ -104,8 +100,8 @@ The article is a pyramid, not a list.
 - **Apex.** One sentence: the answer. Every beat below exists to support it, and you can say for any
   beat which parent it supports. If you cannot, the beat is decoration — cut it or move it.
 - **Answer first.** State the apex early, then support it; on a page that carries a heading, the heading
-  is where it goes. Withhold it only when the user wants a discovery structure — which card C often does
-  — and then say out loud that you are withholding and where it lands.
+  is where it goes. Withhold it only when the `apex` knob says `uitgesteld`, which preset V sets by
+  default, and then say out loud that you are withholding and where it lands.
 - **Groups.** The beats supporting one parent answer the single question that parent raises in the
   reader's head ("why?", "how?", "so what?"). Same kind of thing, no overlap, and together enough to
   carry the parent. Three or four per parent; more than five means the grouping is wrong.
@@ -172,7 +168,7 @@ together. Split it.
 ## Pulling from the pile
 
 The pile is a quarry, not a script. Paraphrase, split, recombine, quote — whatever makes the beat read as
-one voice in the chosen register. A fragment may be split across beats or merged with another. The
+one voice in the chosen preset. A fragment may be split across beats or merged with another. The
 article takes the pile's language unless the user says otherwise.
 
 When the pile lacks something a beat needs, name the gap out loud — "this beat needs an example and the
@@ -207,8 +203,8 @@ Every presence rule without a number becomes a tic, including the ones this skil
   in the pile. Check the arithmetic on the reading a reader takes at speed, not only on the one you
   meant.
 
-Two rules on numbers, baseline in every register and loosened only where the card says: a sentence never
-opens with a numeral, and no sentence carries more than three numbers. Both are what makes a fact-dense
+Two rules on numbers that no preset and no knob relaxes: a sentence never opens with a numeral, and no
+sentence carries more than three numbers. Both are what makes a fact-dense
 beat unreadable aloud.
 
 ## The humanizer pass
@@ -222,7 +218,7 @@ independently — but this skill never depends on it.
 Two rules keep the pass from doing damage. Facts stay: it rewrites language, never a committed claim or
 its strength. And the card wins on the house forms it names and budgets — F's capitalised headings and
 conditional inversion, B's colon hinge, C's withheld opening — while the humanizer wins everywhere the
-card is silent.
+preset is silent.
 
 ## The close
 
@@ -230,8 +226,8 @@ The last beat lands one **signed judgment**: a claim the pile supports, that the
 in three years, and that an informed reader could disagree with. Descriptive closes — a summary, a
 comparison, a restatement of the apex — end the pyramid without ending the argument.
 
-One per article. How explicit it gets is the register's call: stated outright in A, D and F, carried by
-the analysis or the ending's turn in B and C.
+One per article. How explicit it gets is the `oordeel` knob's call: signed in the author's own name,
+carried implicitly by the analysis, or shaped as a recommendation that opens on a verb.
 
 ## Ending
 
@@ -252,8 +248,8 @@ more material than you need.
 
 The pyramid, the grounded set and the intake decisions are working state, and a session that compacts or
 restarts loses whatever lives only in the conversation. Keep them in `<article-name>.beats.md` beside the
-article, rewritten after every beat, holding: reference, register, cadence and length target, plus any
-mid-article gear change; the apex and the reader's
+article, rewritten after every beat, holding: purpose, audience, reference, preset, knob deltas,
+cadence and length target, plus any mid-article change to those; the apex and the reader's
 question; the branches with a tick for each one landed; prerequisites; grounded-so-far; the committed
 claims and the flagged source claims; the beats written so far, one line each.
 

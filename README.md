@@ -22,9 +22,9 @@ voor het huisregister). Voor projectgebruik in
 plaats van globaal: kopieer naar `<project>/.claude/skills/`.
 
 Aanroepen gaat via `/sfnl-writer`, of gewoon door te vragen om ruw materiaal tot
-artikel te vormen. De skill rendert dan één widget in het gesprek
-(referentie, register, cadans, lengte), waarin je alleen aanklikt wat je anders
-wilt; een referentietekst waarvan de stijl moet worden overgenomen, hang je
+artikel te vormen. De skill doet eerst een voorstel voor doel en doelgroep, en rendert dan één
+widget in het gesprek (register, cadans, lengte, plus een geavanceerd paneel met
+elf stijlknoppen) waarin je alleen aanklikt wat je anders wilt; een referentietekst waarvan de stijl moet worden overgenomen, hang je
 gewoon aan het gesprek.
 
 De skill start met één vragenmoment (teksttype, lezer, invalshoek, register,
@@ -37,7 +37,7 @@ is en heeft anders een solo-fallback.
 | Map | Inhoud |
 |---|---|
 | `skill/` | De definitieve skill (v3.2) |
-| `skill-sfnl-writer/` | `sfnl-writer`: ruw materiaal tot artikel vormen op een Minto-piramide, met zes registers (waaronder de stijl van een meegegeven referentietekst) en vier cadansen |
+| `skill-sfnl-writer/` | `sfnl-writer`: ruw materiaal tot artikel vormen op een Minto-piramide, met vijf stijlpresets over elf knoppen, een referentietekst-register, en vier cadansen |
 | `varianten/` | De vijf concurrerende ontwerpen uit ronde 1 |
 | `test/corpus/` | Drie vaste AI-bot-testteksten met feitenlijsten |
 | `test/rubriek.md` | Het blinde beoordelingskader (met addendum) |
