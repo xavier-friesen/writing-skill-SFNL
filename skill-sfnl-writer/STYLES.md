@@ -14,47 +14,61 @@ over **eleven knobs**, plus two procedures (R and E) that are not registers at a
 
 ## The knobs
 
-Every preset is a set of values on these. The advanced panel in the intake widget exposes them;
-the emitted line carries only the ones the user changed. Change one knob and you get a variant;
-change six and you should have picked a different preset.
+Every preset is a set of values on these eleven. The widget's advanced panel exposes them in plain
+Dutch, with each option written as its own example; the emitted line carries only what the user
+moved. Change one knob and you have a variant; change six and you should have picked another preset.
 
-| # | Knob | Values |
+**Opbouw**
+
+| Knob | Question it answers | Values |
 |---|---|---|
-| 1 | **kop** — heading | `bewering` · `kapitaal-bewering` · `label` · `geen` |
-| 2 | **apex** — where the answer lands | `kop` · `eerste-alinea` · `uitgesteld` |
-| 3 | **alineakop** — first sentence carries the paragraph's claim | `aan` · `uit` |
-| 4 | **bewijs** — how evidence is displayed | `proza` · `lijsten` · `factbox` |
-| 5 | **cijfers** — figures | `geschaald` (never bare) · `kaal-mag` · `uit-proza` (results to lists) |
-| 6 | **vet** — bold lead-ins in running text | `uit` · `aan` |
-| 7 | **woorden** — lexical level | `alledaags` · `vak-afgelost` · `vak-bekend` |
-| 8 | **ritme** — sentence-length variance | `hoog` · `gemiddeld` · `vlak` |
-| 9 | **aanspreekvorm** | `wij-auteurs` · `onpersoonlijk` · `je-lezer` |
-| 10 | **oordeel** — the verdict | `ondertekend` · `impliciet` · `aanbeveling` (opens on a verb) |
-| 11 | **beeldspraak** — imagery and ornament, per piece | `0` · `1` · `2` |
+| `kop` | What does a heading look like? | `conclusie` (a heading that states the finding) · `kapitaal` (the same, in capitals — house form) · `label` ("Resultaten") · `geen` |
+| `kern` | Where does the main message land? | `kop` · `eerste-alinea` · `later` (tension first) |
+| `alinea-start` | Does each paragraph open on its own conclusion? | `ja` · `nee` |
+| `bewijs` | Where do the facts sit? | `proza` · `lijsten` · `kader` (factbox plus a results list) |
+
+**Cijfers**
+
+| Knob | Question it answers | Values |
+|---|---|---|
+| `cijfers` | How is a figure presented? | `geschaald` (always with something to measure it against) · `kaal-mag` · `uit-proza` (result figures leave the prose for a list) |
+| `vet` | Bold lead-ins inside running text? | `nee` · `ja` |
+
+**Toon en taal**
+
+| Knob | Question it answers | Values |
+|---|---|---|
+| `woorden` | How technical may the language be? | `alledaags` · `vak-uitgelegd` · `vak-bekend` |
+| `ritme` | Sentence length | `wisselend` (a short punch after a long sentence) · `gemiddeld` · `gelijkmatig` |
+| `stem` | Who is speaking? | `wij` (the authors) · `onpersoonlijk` · `je` (the reader addressed) |
+| `oordeel` | How hard is the close? | `ondertekend` ("wij vinden…") · `impliciet` (the facts deliver it) · `aanbeveling` (opens on a verb) |
+| `beeldspraak` | Imagery and figures of speech, per piece | `0` · `1` · `2` |
 
 Two rules are not knobs and never move: a sentence never opens with a numeral, and no sentence
-carries more than three numbers. They are what keeps a fact-dense paragraph readable aloud, and
-`cijfers=uit-proza` tightens them further rather than loosening them.
+carries more than three numbers. `cijfers` only tightens them.
 
 ## Preset defaults at a glance
 
-| Knob | H huis | Bd beslisstuk | E essay | V verhaal | K kort |
+| Knob | SFNL-rapport | McKinsey-notitie | Economist-essay | Reportage | Feitelijke notitie |
 |---|---|---|---|---|---|
-| kop | kapitaal-bewering | bewering | geen | bewering | bewering |
-| apex | kop | kop | eerste-alinea | uitgesteld | kop |
-| alineakop | aan | aan | uit | uit | aan |
-| bewijs | factbox | lijsten | proza | proza | proza |
+| kop | kapitaal | conclusie | geen | conclusie | conclusie |
+| kern | kop | kop | eerste-alinea | later | kop |
+| alinea-start | ja | ja | nee | nee | ja |
+| bewijs | kader | lijsten | proza | proza | proza |
 | cijfers | uit-proza | geschaald | geschaald | geschaald | geschaald |
-| vet | aan | aan | uit | uit | uit |
-| woorden | vak-afgelost | vak-bekend | alledaags | alledaags | alledaags |
-| ritme | gemiddeld | vlak | hoog | hoog | gemiddeld |
-| aanspreekvorm | wij-auteurs | onpersoonlijk | onpersoonlijk | onpersoonlijk | onpersoonlijk |
+| vet | ja | ja | nee | nee | nee |
+| woorden | vak-uitgelegd | vak-bekend | alledaags | alledaags | alledaags |
+| ritme | gemiddeld | gelijkmatig | wisselend | wisselend | gemiddeld |
+| stem | wij | onpersoonlijk | onpersoonlijk | onpersoonlijk | onpersoonlijk |
 | oordeel | aanbeveling | aanbeveling | impliciet | impliciet | ondertekend |
 | beeldspraak | 1 | 0 | 2 | 2 | 0 |
 
+Codes for the emitted line: `sfnl` · `mckinsey` · `economist` · `reportage` · `feitelijk` ·
+`referentie` · `supermodus`.
+
 ---
 
-## H. Huis — the SFNL report
+## SFNL-rapport `sfnl` — the house register
 
 **Pick this when** the piece belongs in a Social Finance NL report or has to sound as if it could:
 a chapter, a case, a management summary, a recommendation. Distilled from *Innovatieve
@@ -101,7 +115,7 @@ sentence turn something over?
 
 ---
 
-## Bd. Beslisstuk — the decision document
+## McKinsey-notitie `mckinsey` — the decision document
 
 **Pick this when** the reader has to decide and will skim the headings before reading a word: a
 board paper, a management summary, a tender answer, a deck's speaker text. This is the old
@@ -125,7 +139,7 @@ Does every number sit in a main clause?
 
 ---
 
-## E. Essay
+## Economist-essay `economist`
 
 **Pick this when** the piece must be read straight through by a smart non-specialist, and the
 pleasure of reading it is part of the point.
@@ -149,7 +163,7 @@ sentences have the same length and shape?
 
 ---
 
-## V. Verhaal — the narrative
+## Reportage `reportage` — the narrative
 
 **Pick this when** the piece has to be felt: a case story, a portrait, a project page that carries
 a person or a place.
@@ -170,7 +184,7 @@ the close summarise?
 
 ---
 
-## K. Kort — the factual brief
+## Feitelijke notitie `feitelijk` — the brief
 
 **Pick this when** the reader wants the case and nothing else: a memo, a one-pager, a mail, a note.
 The neutral default when the piece is not obviously SFNL work.
@@ -211,7 +225,7 @@ Audience shifts the same three knobs, and little else: a specialist reader takes
 
 ---
 
-## R. Reference text — derive the register
+## Referentietekst `referentie` — derive the register
 
 **Pick this when** the user attaches a piece of writing and wants the article to sound like it: an
 earlier report of their own, a colleague's chapter, something they admire.
@@ -246,7 +260,7 @@ in the card? Is anything on it a fact or phrase rather than a technique?
 
 ---
 
-## S. Supermodus — all of them, then one
+## Supermodus `supermodus` — all of them, then one
 
 **Pick this when** the register is genuinely undecided, or the piece matters enough to be worth
 several times the writing. Not a register: a procedure that ends in one.

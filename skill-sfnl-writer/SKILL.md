@@ -1,7 +1,7 @@
 ---
 name: sfnl-writer
 version: 3.0
-description: 'Shape a pile of raw material into an article on a Minto pyramid, in a chosen register (SFNL house style, decision document, essay, narrative, factual brief, or the style of a reference text the user attaches) tuned by eleven style knobs, and a chosen cadence (paragraph by paragraph, section by section, outline first, or write at once), with a humanizer pass throughout. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a finished piece. Trigger on "schrijf hier een artikel van", "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "schrijf in de stijl van deze tekst", "in onze huisstijl schrijven".'
+description: 'Shape a pile of raw material into an article on a Minto pyramid, in a chosen style (SFNL-rapport, McKinsey-notitie, Economist-essay, reportage, feitelijke notitie, or the style of a reference text the user attaches) tuned by eleven named knobs, and a chosen cadence (paragraph by paragraph, section by section, outline first, or write at once), with a humanizer pass throughout. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a finished piece. Trigger on "schrijf hier een artikel van", "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "schrijf in de stijl van deze tekst", "in onze huisstijl schrijven".'
 ---
 
 # SFNL writer
@@ -40,29 +40,32 @@ Whatever the cadence, every unit of text passes the four checks before it lands 
 
 ## Intake
 
-Six decisions in one widget, `INTAKE-WIDGET.html`, rendered inline in the conversation: **purpose**,
+Six decisions in one widget, `INTAKE-WIDGET.html`, rendered inside this Claude session rather than
+opened anywhere else: **purpose**,
 **audience**, **reference**, **register**, **cadence**, **length**. Purpose and audience you propose
 from the pile rather than ask about; the rest arrives pre-set on that proposal, so agreeing costs one
 click. `INTAKE.md` carries the placeholders, the paste-back format, and the defaults.
 
-**Register** — five presets over eleven knobs, plus two procedures. Read the chosen card in
+**Style** — five named presets over eleven knobs, plus two procedures. Read the chosen card in
 `STYLES.md` before writing and keep its three tests in the per-unit check.
 
-- **H. Huis** — the SFNL report: knelpunt, cases, lesson, recommendation; we-as-authors; a number
-  never alone; mechanisms in four steps; a close that turns. Worked passages in `SFNL-SPECIMENS.md`.
-- **Bd. Beslisstuk** — for a reader who has to decide: action titles, the horizontal read, the number
-  in the assertion, a recommendation that opens on a verb.
-- **E. Essay** — read straight through: no throat-clearing, every sentence earning its place, sharp
-  length variation, the verdict left to the analysis.
-- **V. Verhaal** — a torch of an opening, up and down the ladder of abstraction, an ending that turns.
-- **K. Kort** — apex in the heading, one move per beat, no ornament, signed close. The neutral default.
-- **R. Reference text** — measure the attached text against the knobs, write a card, show it, write to
-  it. Requires a reference document.
-- **S. Supermodus** — every preset written out, what each won, then one version with a single spine
-  and named grafts. Costs a multiple.
+- **SFNL-rapport** `sfnl` — the house register: knelpunt, cases, lesson, recommendation; we-as-authors;
+  a number never alone; mechanisms in four steps; a close that turns. Passages in `SFNL-SPECIMENS.md`.
+- **McKinsey-notitie** `mckinsey` — for a reader who has to decide: headings that are conclusions, the
+  horizontal read, the number in the assertion, a recommendation that opens on a verb.
+- **Economist-essay** `economist` — read straight through: no throat-clearing, every sentence earning
+  its place, sharp length variation, the verdict left to the analysis.
+- **Reportage** `reportage` — a torch of an opening, up and down the ladder of abstraction, an ending
+  that turns rather than summarises.
+- **Feitelijke notitie** `feitelijk` — kern in the heading, one move per beat, no ornament, signed
+  close. The neutral default.
+- **Als mijn referentietekst** `referentie` — measure the attached text against the knobs, write a
+  card, show it, write to it. Requires a reference document.
+- **Supermodus** `supermodus` — every style written out, what each won, then one version with a single
+  spine and named grafts. Costs a multiple.
 
-**The knobs** are the fine adjustment: kop, apex, alineakop, bewijs, cijfers, vet, woorden, ritme,
-aanspreekvorm, oordeel, beeldspraak. Each preset sets all eleven; the widget's advanced panel exposes
+**The knobs** are the fine adjustment: kop, kern, alinea-start, bewijs, cijfers, vet, woorden, ritme,
+stem, oordeel, beeldspraak. Each preset sets all eleven; the widget's advanced panel exposes
 them; only deltas travel. A knob moved mid-article is a normal instruction, not a complaint — name it,
 apply it forward, offer to sweep back.
 
@@ -100,8 +103,8 @@ The article is a pyramid, not a list.
 - **Apex.** One sentence: the answer. Every beat below exists to support it, and you can say for any
   beat which parent it supports. If you cannot, the beat is decoration — cut it or move it.
 - **Answer first.** State the apex early, then support it; on a page that carries a heading, the heading
-  is where it goes. Withhold it only when the `apex` knob says `uitgesteld`, which preset V sets by
-  default, and then say out loud that you are withholding and where it lands.
+  is where it goes. Withhold it only when the `kern` knob says `later`, which the reportage preset sets
+  by default, and then say out loud that you are withholding and where it lands.
 - **Groups.** The beats supporting one parent answer the single question that parent raises in the
   reader's head ("why?", "how?", "so what?"). Same kind of thing, no overlap, and together enough to
   carry the parent. Three or four per parent; more than five means the grouping is wrong.

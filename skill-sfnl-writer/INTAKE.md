@@ -7,38 +7,40 @@ The first two are not questions — they are a **proposal**. Read the pile, deci
 for and who reads it, fill your answer into the widget, and let the user correct it. Asking "wat is
 je doel?" of someone who just handed you their material is a question you can answer yourself.
 
-## Fill the widget, then render it inline
+## Fill the widget, then render it inside this session
 
 `INTAKE-WIDGET.html` is a template with placeholders. Copy it next to the article, substitute, and
-render the copy **in the conversation** — send it with the file tool set to render, never as a path
-the user has to go and find.
+render the copy **inside this Claude session** — send it with the file tool set to render so it opens
+in the conversation itself. Never a path to open elsewhere, never a browser tab, never a hosted page:
+the user fills it in where they already are and pastes the line back into the same chat.
 
 | Placeholder | What you put there |
 |---|---|
 | `{{DOEL}}` | your reading of what this becomes: "casusspread voor het jaarrapport" |
 | `{{DOELGROEP}}` | who reads it and what they must be able to do with it |
 | `{{REF_CHECKED}}` | `checked` when a reference document has already been attached, else empty |
-| `{{REG}}` | proposed preset: `H` `Bd` `E` `V` `K` `R` `S` |
+| `{{REG}}` | proposed style: `sfnl` `mckinsey` `economist` `reportage` `feitelijk` `referentie` `supermodus` |
 | `{{CAD}}` | proposed cadence: `P` `S` `O` `W` |
 | `{{LEN}}` | proposed target in words, or empty for no preference |
-| `{{KNOBS_JSON}}` | the knob deltas you propose, as JSON: `{"bewijs":"factbox"}` — `{}` for none |
+| `{{KNOBS_JSON}}` | the knob deltas you propose, as JSON: `{"bewijs":"kader"}` — `{}` for none |
 
 Derive the proposal from purpose and audience with the table in `STYLES.md` ("Text type and
 audience decide the starting point"). Say in one line why you proposed what you did; a proposal the
 user cannot see the reasoning of is a decision taken away from them.
 
-The widget then does the rest. All seven registers are visible with what each buys, the cadences
-carry their cost in turns, and the advanced panel holds the eleven knobs — closed by default,
-inheriting from the chosen preset, highlighting whatever the user moves. Switching preset re-inherits
-every knob except the ones they touched, so exploring is cheap and nothing gets silently lost.
+The widget does the rest. All seven styles are visible under their own names with what each buys, the
+four working methods carry their cost in turns, and the fine-tuning panel holds the eleven knobs —
+closed by default, each written as a plain question with its options as examples, inheriting from the
+chosen style and colouring whatever the user moves. Switching style re-inherits every knob except the
+ones they touched.
 
 It emits one line, carrying only what differs from the preset:
 
 ```
-INTAKE doel=casusspread_jaarrapport pub=fondsen_en_gemeenten ref=- reg=H cad=S len=700 knobs=bewijs:factbox,oordeel:aanbeveling
+INTAKE doel=casusspread_jaarrapport pub=fondsen_en_gemeenten ref=- stijl=sfnl werkwijze=S len=700 fijn=bewijs:kader,ritme:wisselend
 ```
 
-Parse it, write all of it into the sidecar, and treat `knobs=` as overrides on top of the preset
+Parse it, write all of it into the sidecar, and treat `fijn=` as overrides on top of the style's
 defaults. `-` on length means propose a number and say what it costs; `-` on reference means R is
 unavailable. Underscores in `doel=` and `pub=` are spaces.
 
@@ -60,7 +62,7 @@ Default reading: the first document is the pile. A second one, or one introduced
 stijl" or "zoals dit stuk", is the reference. When that is genuinely unclear, ask in one line while
 the widget is up.
 
-A reference makes register **R** available: measure the text against the eleven knobs, write the
+A reference makes the style **Als mijn referentietekst** available: measure the text against the eleven knobs, write the
 card, show it, then write to it (`STYLES.md`). A reference alongside another register means the user
 wants that register with the reference as a tiebreaker; say so, and use it only where the preset is
 silent.
@@ -69,9 +71,9 @@ silent.
 
 | | Default |
 |---|---|
-| Register | **H** for SFNL work, **K** otherwise |
-| Knobs | whatever the preset says; deltas only from the text-type table or the user |
-| Cadence | by length: under 400 words **W**, to 1,200 **O**, to 3,000 **S**, above that **S** offering **P** |
+| Style | **SFNL-rapport** for SFNL work, **Feitelijke notitie** otherwise |
+| Knobs | whatever the style says; deltas only from the text-type table or the user |
+| Working method | by length: under 400 words **in één keer**, to 1,200 **outline eerst**, to 3,000 **sectie voor sectie**, above that section by section offering paragraph by paragraph |
 | Length | your proposal, stated with what it costs |
 
 If the user ignores the widget, state the proposal you are running with in one line and start

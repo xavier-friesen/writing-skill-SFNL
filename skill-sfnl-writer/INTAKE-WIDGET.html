@@ -49,14 +49,15 @@
   summary { padding: .85rem 1.15rem; cursor: pointer; font-weight: 650; font-size: .95rem; }
   summary span { font-weight: 400; color: var(--muted); }
   .knobs { padding: 0 1.15rem 1.1rem; }
-  .knobgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: .7rem 1rem; }
-  .knob label { display: block; font-size: .85rem; margin-bottom: .2rem; }
-  .knob label b { font-weight: 620; }
-  .knob label i { font-style: normal; color: var(--muted); }
+  .knob { padding: .7rem 0; border-top: 1px solid var(--line); }
+  .knob:first-of-type { border-top: 0; }
+  .knob .q { font-weight: 620; font-size: .93rem; display: block; margin-bottom: .1rem; }
+  .knob .why { color: var(--muted); font-size: .86rem; display: block; margin-bottom: .45rem; }
+  .knob select { max-width: 34rem; }
   .knob select.changed { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
   .knobhead { font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
-              margin: 1rem 0 .5rem; }
-  .knobhead:first-child { margin-top: .25rem; }
+              margin: 1.2rem 0 .3rem; font-weight: 650; }
+  .knobhead:first-child { margin-top: .4rem; }
   .out {
     position: sticky; bottom: 0; margin-top: 1.4rem; border: 1px solid var(--accent);
     border-radius: 10px; background: var(--panel); padding: 1rem 1.1rem;
@@ -76,8 +77,8 @@
 
 <main>
   <h1>sfnl-writer — intake</h1>
-  <p class="sub">Alles staat al op een voorstel. Klik alleen aan wat je anders wilt en kopieer
-     onderaan één regel terug het gesprek in.</p>
+  <p class="sub">Alles staat al op een voorstel. Klik alleen aan wat je anders wilt, kopieer
+     onderaan de regel en plak die terug in dit gesprek.</p>
 
   <fieldset>
     <legend>Doel en doelgroep <span>— ons voorstel, corrigeer het</span></legend>
@@ -89,51 +90,55 @@
       <label for="pub">Wie leest het, en wat moet die ermee kunnen</label>
       <input type="text" id="pub" value="{{DOELGROEP}}" placeholder="bijv. fondsen en gemeenten die een voorbeeld zoeken">
     </div>
-    <p class="hint">Deze twee sturen het voorstel hieronder. Verander je ze, zeg dan even of het
-       voorstel mee moet veranderen.</p>
+    <p class="hint">Deze twee bepalen het voorstel hieronder. Verander je ze ingrijpend, zeg dat er
+       dan bij — dan stellen we een ander register voor.</p>
   </fieldset>
 
   <fieldset>
     <legend>Referentietekst <span>— optioneel</span></legend>
     <label class="opt" style="grid-template-columns:1.4rem 1fr"><input type="checkbox" id="ref" {{REF_CHECKED}}>
       <b>Ik heb een referentietekst bijgevoegd</b>
-      <em>Hang het document aan het gesprek. Alleen de <strong>stijl</strong> wordt overgenomen:
-          feiten, voorbeelden en formuleringen komen altijd uit je ruwe materiaal.</em></label>
+      <em>Hang het document aan dit gesprek. Alleen de <strong>stijl</strong> wordt overgenomen:
+          feiten, voorbeelden en formuleringen komen altijd uit je eigen materiaal.</em></label>
   </fieldset>
 
   <fieldset>
-    <legend>Register <span>— hoe het klinkt</span></legend>
-    <label class="opt"><input type="radio" name="reg" value="H"><b>H — huis (SFNL-rapport)</b>
-      <em>Knelpunt, casussen, les, aanbeveling. Wij-als-auteurs, cijfers altijd geschaald,
-          slot dat omkeert.</em></label>
-    <label class="opt"><input type="radio" name="reg" value="Bd"><b>Bd — beslisstuk</b>
-      <em>Koppen die het betoog alleen al dragen, getal in de bewering, aanbeveling met een
-          werkwoord. Voor wie moet besluiten.</em></label>
-    <label class="opt"><input type="radio" name="reg" value="E"><b>E — essay</b>
-      <em>Geen aanloop, elke zin gemist als je hem weghaalt, scherpe zinslengtevariatie, oordeel
-          uit de analyse.</em></label>
-    <label class="opt"><input type="radio" name="reg" value="V"><b>V — verhaal</b>
-      <em>Opening als zaklamp, de abstractieladder op en af, een slot dat draait.</em></label>
-    <label class="opt"><input type="radio" name="reg" value="K"><b>K — kort en feitelijk</b>
-      <em>Apex in de kop, één beweging per alinea, geen versiering, ondertekend slot.</em></label>
-    <label class="opt"><input type="radio" name="reg" value="R"><b>R — als de referentietekst</b>
-      <em>Vereist de bijgevoegde referentie. De stijl wordt eerst gemeten en als kaart aan je
-          voorgelegd.</em></label>
-    <label class="opt"><input type="radio" name="reg" value="S"><b>S — supermodus</b>
-      <em>Alle registers schrijven, zeggen wat elk wint, dan één versie met één ruggengraat.
-          Kost een veelvoud.</em></label>
+    <legend>Stijl <span>— hoe het klinkt</span></legend>
+    <label class="opt"><input type="radio" name="reg" value="sfnl"><b>SFNL-rapport</b>
+      <em>Onze huisstijl uit de rapporten van 2024 en 2025: knelpunt, casussen, les, aanbeveling.
+          "Wij" zijn de auteurs, elk cijfer krijgt iets om zich aan te meten, het slot keert iets om.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="mckinsey"><b>McKinsey-notitie</b>
+      <em>Voor wie moet besluiten. Koppen zijn conclusies, en wie alleen de koppen leest heeft het
+          hele betoog. Het getal staat in de bewering, de aanbeveling begint met een werkwoord.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="economist"><b>Economist-essay</b>
+      <em>Om in één ruk uit te lezen. Geen aanloop, geen zin die je zou kunnen missen, lange en
+          korte zinnen tegen elkaar aan, en het oordeel volgt uit de feiten in plaats van te worden
+          uitgesproken.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="reportage"><b>Reportage</b>
+      <em>Verhalend. Begint klein en concreet, klimt naar betekenis en weer terug, en eindigt op een
+          draai in plaats van een samenvatting. Voor een casus met mensen erin.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="feitelijk"><b>Feitelijke notitie</b>
+      <em>Kort en zakelijk. Kern in de titel, één beweging per alinea, geen versiering, en een slot
+          waarin je zelf een standpunt inneemt.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="referentie"><b>Als mijn referentietekst</b>
+      <em>Vereist de bijgevoegde referentie. We meten die tekst eerst door en leggen de stijlkaart
+          aan je voor; pas daarna schrijven we.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="supermodus"><b>Supermodus</b>
+      <em>Alle stijlen schrijven, per stijl zeggen wat die wint, dan één versie met één ruggengraat.
+          Kost een veelvoud aan tijd.</em></label>
   </fieldset>
 
   <fieldset>
-    <legend>Cadans <span>— hoe we werken</span></legend>
-    <label class="opt"><input type="radio" name="cad" value="P"><b>P — alinea voor alinea</b>
-      <em>Per alinea 2–3 richtingen, jij kiest. Meeste grip, meeste beurten.</em></label>
-    <label class="opt"><input type="radio" name="cad" value="S"><b>S — sectie voor sectie</b>
-      <em>Een sectie in één keer, daarna richtingen voor de volgende. De middenversnelling.</em></label>
-    <label class="opt"><input type="radio" name="cad" value="O"><b>O — eerst de outline</b>
-      <em>Alles vooraf vastgelegd, daarna doorschrijven zonder aftakkingen.</em></label>
-    <label class="opt"><input type="radio" name="cad" value="W"><b>W — in één keer</b>
-      <em>Eén doorloop, daarna herzien op jouw opmerkingen. Goedkoopst.</em></label>
+    <legend>Werkwijze <span>— hoeveel tekst tussen twee keuzemomenten</span></legend>
+    <label class="opt"><input type="radio" name="cad" value="P"><b>Alinea voor alinea</b>
+      <em>Per alinea leggen we 2–3 richtingen voor en jij kiest. Meeste grip, meeste beurten.</em></label>
+    <label class="opt"><input type="radio" name="cad" value="S"><b>Sectie voor sectie</b>
+      <em>Een hele sectie in één keer, daarna richtingen voor de volgende. De middenversnelling.</em></label>
+    <label class="opt"><input type="radio" name="cad" value="O"><b>Eerst de outline</b>
+      <em>We leggen eerst de hele opbouw vast, daarna schrijven we door zonder tussenkeuzes.</em></label>
+    <label class="opt"><input type="radio" name="cad" value="W"><b>In één keer</b>
+      <em>Eén doorloop, hele tekst, daarna herzien op jouw opmerkingen. Het snelst iets om op te
+          reageren.</em></label>
   </fieldset>
 
   <fieldset>
@@ -146,88 +151,109 @@
   </fieldset>
 
   <details id="adv">
-    <summary>Geavanceerd <span>— elf knoppen, alleen wat je verzet telt mee</span></summary>
+    <summary>Fijnafstelling <span>— elf knoppen, alleen wat je verzet telt mee</span></summary>
     <div class="knobs">
-      <p class="hint" style="margin-top:0">Elke knop staat op de waarde van het gekozen register.
-         Verzet er een en hij kleurt; wissel je van register, dan volgen de knoppen mee behalve wat
-         je zelf hebt verzet.</p>
+      <p class="hint" style="margin-top:.6rem">Elke knop staat op de waarde van de gekozen stijl.
+         Wat je verzet, kleurt groen. Kies je een andere stijl, dan volgen de knoppen mee, behalve
+         die je zelf hebt aangeraakt.</p>
 
-      <div class="knobhead">Structuur</div>
-      <div class="knobgrid">
-        <div class="knob"><label for="k_kop"><b>Kop</b> <i>— bewering of label</i></label>
-          <select id="k_kop" data-k="kop">
-            <option value="bewering">bewering</option>
-            <option value="kapitaal-bewering">bewering in kapitalen</option>
-            <option value="label">label</option>
-            <option value="geen">geen kop</option>
-          </select></div>
-        <div class="knob"><label for="k_apex"><b>Antwoord</b> <i>— waar de kern landt</i></label>
-          <select id="k_apex" data-k="apex">
-            <option value="kop">in de kop</option>
-            <option value="eerste-alinea">in de eerste alinea</option>
-            <option value="uitgesteld">uitgesteld</option>
-          </select></div>
-        <div class="knob"><label for="k_alineakop"><b>Alineakop</b> <i>— eerste zin vat de alinea</i></label>
-          <select id="k_alineakop" data-k="alineakop">
-            <option value="aan">aan</option>
-            <option value="uit">uit</option>
-          </select></div>
-        <div class="knob"><label for="k_bewijs"><b>Bewijs</b> <i>— waar de feiten staan</i></label>
-          <select id="k_bewijs" data-k="bewijs">
-            <option value="proza">in proza</option>
-            <option value="lijsten">in lijsten</option>
-            <option value="factbox">factbox plus resultatenlijst</option>
-          </select></div>
-      </div>
+      <div class="knobhead">Opbouw</div>
 
-      <div class="knobhead">Taal</div>
-      <div class="knobgrid">
-        <div class="knob"><label for="k_woorden"><b>Woorden</b> <i>— hoe technisch</i></label>
-          <select id="k_woorden" data-k="woorden">
-            <option value="alledaags">alledaags</option>
-            <option value="vak-afgelost">vaktaal, meteen afgelost</option>
-            <option value="vak-bekend">vaktaal, bekend verondersteld</option>
-          </select></div>
-        <div class="knob"><label for="k_ritme"><b>Ritme</b> <i>— zinslengtevariatie</i></label>
-          <select id="k_ritme" data-k="ritme">
-            <option value="hoog">hoog</option>
-            <option value="gemiddeld">gemiddeld</option>
-            <option value="vlak">vlak</option>
-          </select></div>
-        <div class="knob"><label for="k_aanspreekvorm"><b>Aanspreekvorm</b></label>
-          <select id="k_aanspreekvorm" data-k="aanspreekvorm">
-            <option value="wij-auteurs">wij, de auteurs</option>
-            <option value="onpersoonlijk">onpersoonlijk</option>
-            <option value="je-lezer">je, de lezer</option>
-          </select></div>
-        <div class="knob"><label for="k_beeldspraak"><b>Beeldspraak</b> <i>— per stuk</i></label>
-          <select id="k_beeldspraak" data-k="beeldspraak">
-            <option value="0">geen</option>
-            <option value="1">één</option>
-            <option value="2">twee</option>
-          </select></div>
-      </div>
+      <div class="knob"><span class="q">Hoe ziet een kop eruit?</span>
+        <span class="why">Een kop die de conclusie geeft, laat iemand die alleen de koppen leest tóch
+          de zaak meekrijgen.</span>
+        <select data-k="kop">
+          <option value="conclusie">Kop is een conclusie — "Havelsteijn betaalt Molenhoek sinds 2025 zelf"</option>
+          <option value="kapitaal">Hetzelfde, maar in kapitalen — "DE BUURT ALS EERSTE INGANG" (huisvorm)</option>
+          <option value="label">Kort label — "Resultaten", "Aanpak"</option>
+          <option value="geen">Geen koppen, doorlopende tekst</option>
+        </select></div>
 
-      <div class="knobhead">Cijfers en oordeel</div>
-      <div class="knobgrid">
-        <div class="knob"><label for="k_cijfers"><b>Cijfers</b></label>
-          <select id="k_cijfers" data-k="cijfers">
-            <option value="geschaald">altijd geschaald</option>
-            <option value="kaal-mag">kaal getal mag</option>
-            <option value="uit-proza">resultaten uit het proza, naar een lijst</option>
-          </select></div>
-        <div class="knob"><label for="k_vet"><b>Vet</b> <i>— vette inzet in lopende tekst</i></label>
-          <select id="k_vet" data-k="vet">
-            <option value="uit">uit</option>
-            <option value="aan">aan</option>
-          </select></div>
-        <div class="knob"><label for="k_oordeel"><b>Oordeel</b> <i>— hoe hard het slot is</i></label>
-          <select id="k_oordeel" data-k="oordeel">
-            <option value="ondertekend">ondertekend, in eigen naam</option>
-            <option value="impliciet">impliciet, uit de analyse</option>
-            <option value="aanbeveling">aanbeveling met een werkwoord</option>
-          </select></div>
-      </div>
+      <div class="knob"><span class="q">Waar staat de kernboodschap?</span>
+        <span class="why">Vooraan is duidelijker; uitgesteld bouwt spanning op en vraagt een lezer
+          die blijft zitten.</span>
+        <select data-k="kern">
+          <option value="kop">In de titel, meteen</option>
+          <option value="eerste-alinea">In de eerste alinea</option>
+          <option value="later">Pas verderop — eerst het beeld, dan de kern</option>
+        </select></div>
+
+      <div class="knob"><span class="q">Begint elke alinea met haar eigen conclusie?</span>
+        <span class="why">Zo ja, dan kun je de eerste zinnen achter elkaar lezen en heb je het stuk.</span>
+        <select data-k="alinea-start">
+          <option value="ja">Ja — eerste zin vat de alinea samen</option>
+          <option value="nee">Nee — de alinea mag ergens anders beginnen</option>
+        </select></div>
+
+      <div class="knob"><span class="q">Waar staan de feiten en cijfers?</span>
+        <span class="why">Uit de lopende tekst halen maakt het betoog lichter leesbaar, maar de tekst
+          zelf schraler.</span>
+        <select data-k="bewijs">
+          <option value="proza">In de lopende tekst</option>
+          <option value="lijsten">In opsommingen</option>
+          <option value="kader">In een kader plus een resultatenlijst (casusvorm)</option>
+        </select></div>
+
+      <div class="knobhead">Cijfers</div>
+
+      <div class="knob"><span class="q">Hoe presenteren we een getal?</span>
+        <span class="why">Een kaal getal zegt weinig: 265.600 landt pas als er "een verviervoudiging"
+          achteraan komt.</span>
+        <select data-k="cijfers">
+          <option value="geschaald">Altijd met iets ernaast om zich aan te meten</option>
+          <option value="kaal-mag">Een kaal getal mag ook</option>
+          <option value="uit-proza">Resultaatcijfers naar een lijst, de tekst houdt er hooguit twee per alinea</option>
+        </select></div>
+
+      <div class="knob"><span class="q">Vetgedrukte inzet midden in de tekst?</span>
+        <span class="why">Handig om te scannen, maar het maakt van een betoog al snel een folder.</span>
+        <select data-k="vet">
+          <option value="nee">Nee</option>
+          <option value="ja">Ja — <b>vette inzet</b> aan het begin van een alinea</option>
+        </select></div>
+
+      <div class="knobhead">Toon en taal</div>
+
+      <div class="knob"><span class="q">Hoe technisch mag de taal zijn?</span>
+        <span class="why">Vaktaal bespaart woorden bij wie hem kent, en kost lezers die hem niet kennen.</span>
+        <select data-k="woorden">
+          <option value="alledaags">Alledaags — vaktermen vermijden</option>
+          <option value="vak-uitgelegd">Vaktaal mag, mits in dezelfde zin afgelost</option>
+          <option value="vak-bekend">Vaktaal, de lezer kent het vak</option>
+        </select></div>
+
+      <div class="knob"><span class="q">Zinslengte</span>
+        <span class="why">Zinnen van gelijke lengte dreunen; een korte zin na een lange is waar de
+          klap valt.</span>
+        <select data-k="ritme">
+          <option value="wisselend">Sterk wisselend — een zin van vier woorden naast een van dertig</option>
+          <option value="gemiddeld">Wisselend, maar rustig</option>
+          <option value="gelijkmatig">Gelijkmatig, zakelijk tempo</option>
+        </select></div>
+
+      <div class="knob"><span class="q">Wie is er aan het woord?</span>
+        <span class="why">"Wij" maakt de auteur aanspreekbaar; onpersoonlijk houdt afstand.</span>
+        <select data-k="stem">
+          <option value="wij">Wij, de auteurs — "wij zagen", "wij vinden"</option>
+          <option value="onpersoonlijk">Niemand zichtbaar — onpersoonlijk</option>
+          <option value="je">Je, de lezer aangesproken — "je ziet hier"</option>
+        </select></div>
+
+      <div class="knob"><span class="q">Hoe hard is het slot?</span>
+        <span class="why">Er komt altijd één standpunt; dit bepaalt alleen hoe luid het klinkt.</span>
+        <select data-k="oordeel">
+          <option value="ondertekend">In eigen naam — "wij zouden hierop sturen"</option>
+          <option value="impliciet">Impliciet — de feiten vellen het oordeel</option>
+          <option value="aanbeveling">Als aanbeveling — "Organiseer het eerste gesprek in de wijk"</option>
+        </select></div>
+
+      <div class="knob"><span class="q">Beeldspraak en stijlfiguren</span>
+        <span class="why">Eén raak beeld blijft hangen; drie maken van een rapport een column.</span>
+        <select data-k="beeldspraak">
+          <option value="0">Geen</option>
+          <option value="1">Eén per stuk</option>
+          <option value="2">Twee per stuk</option>
+        </select></div>
     </div>
   </details>
 
@@ -241,32 +267,23 @@
 
 <script>
   const $ = s => document.querySelector(s);
-  const KNOBS = ['kop','apex','alineakop','bewijs','cijfers','vet','woorden','ritme','aanspreekvorm','oordeel','beeldspraak'];
+  const KNOBS = ['kop','kern','alinea-start','bewijs','cijfers','vet','woorden','ritme','stem','oordeel','beeldspraak'];
   const PRESET = {
-    H:  {kop:'kapitaal-bewering', apex:'kop', alineakop:'aan', bewijs:'factbox', cijfers:'uit-proza', vet:'aan',
-         woorden:'vak-afgelost', ritme:'gemiddeld', aanspreekvorm:'wij-auteurs', oordeel:'aanbeveling', beeldspraak:'1'},
-    Bd: {kop:'bewering', apex:'kop', alineakop:'aan', bewijs:'lijsten', cijfers:'geschaald', vet:'aan',
-         woorden:'vak-bekend', ritme:'vlak', aanspreekvorm:'onpersoonlijk', oordeel:'aanbeveling', beeldspraak:'0'},
-    E:  {kop:'geen', apex:'eerste-alinea', alineakop:'uit', bewijs:'proza', cijfers:'geschaald', vet:'uit',
-         woorden:'alledaags', ritme:'hoog', aanspreekvorm:'onpersoonlijk', oordeel:'impliciet', beeldspraak:'2'},
-    V:  {kop:'bewering', apex:'uitgesteld', alineakop:'uit', bewijs:'proza', cijfers:'geschaald', vet:'uit',
-         woorden:'alledaags', ritme:'hoog', aanspreekvorm:'onpersoonlijk', oordeel:'impliciet', beeldspraak:'2'},
-    K:  {kop:'bewering', apex:'kop', alineakop:'aan', bewijs:'proza', cijfers:'geschaald', vet:'uit',
-         woorden:'alledaags', ritme:'gemiddeld', aanspreekvorm:'onpersoonlijk', oordeel:'ondertekend', beeldspraak:'0'}
+    sfnl:      {kop:'kapitaal',  kern:'kop',           'alinea-start':'ja',  bewijs:'kader',   cijfers:'uit-proza',  vet:'ja',
+                woorden:'vak-uitgelegd', ritme:'gemiddeld',   stem:'wij',           oordeel:'aanbeveling', beeldspraak:'1'},
+    mckinsey:  {kop:'conclusie', kern:'kop',           'alinea-start':'ja',  bewijs:'lijsten', cijfers:'geschaald',  vet:'ja',
+                woorden:'vak-bekend',    ritme:'gelijkmatig', stem:'onpersoonlijk', oordeel:'aanbeveling', beeldspraak:'0'},
+    economist: {kop:'geen',      kern:'eerste-alinea', 'alinea-start':'nee', bewijs:'proza',   cijfers:'geschaald',  vet:'nee',
+                woorden:'alledaags',     ritme:'wisselend',   stem:'onpersoonlijk', oordeel:'impliciet',   beeldspraak:'2'},
+    reportage: {kop:'conclusie', kern:'later',         'alinea-start':'nee', bewijs:'proza',   cijfers:'geschaald',  vet:'nee',
+                woorden:'alledaags',     ritme:'wisselend',   stem:'onpersoonlijk', oordeel:'impliciet',   beeldspraak:'2'},
+    feitelijk: {kop:'conclusie', kern:'kop',           'alinea-start':'ja',  bewijs:'proza',   cijfers:'geschaald',  vet:'nee',
+                woorden:'alledaags',     ritme:'gemiddeld',   stem:'onpersoonlijk', oordeel:'ondertekend', beeldspraak:'0'}
   };
   const PROPOSAL = { reg: '{{REG}}', cad: '{{CAD}}', knobs: {{KNOBS_JSON}} };
   const touched = new Set();
-
-  const base = () => PRESET[document.querySelector('input[name=reg]:checked').value] || PRESET.K;
-
-  function applyPreset() {
-    const b = base();
-    KNOBS.forEach(k => {
-      const el = $('#k_' + k);
-      if (!touched.has(k)) el.value = (PROPOSAL.knobs[k] && !touched.size ? PROPOSAL.knobs[k] : b[k]);
-      el.classList.toggle('changed', el.value !== b[k]);
-    });
-  }
+  const sel = k => document.querySelector(`select[data-k="${k}"]`);
+  const base = () => PRESET[document.querySelector('input[name=reg]:checked').value] || PRESET.feitelijk;
 
   function build() {
     const b = base();
@@ -274,25 +291,23 @@
     const cad = document.querySelector('input[name=cad]:checked').value;
     const len = $('#nolen').checked || !$('#len').value ? '-' : $('#len').value;
     const ref = $('#ref').checked ? 'bijgevoegd' : '-';
-    const deltas = KNOBS.filter(k => $('#k_' + k).value !== b[k]).map(k => k + ':' + $('#k_' + k).value);
-    const parts = [
-      'INTAKE',
+    const deltas = KNOBS.filter(k => sel(k).value !== b[k]).map(k => k + ':' + sel(k).value);
+    const parts = ['INTAKE',
       'doel=' + (($('#doel').value || '-').trim().replace(/\s+/g, '_')),
       'pub=' + (($('#pub').value || '-').trim().replace(/\s+/g, '_')),
-      'ref=' + ref, 'reg=' + reg, 'cad=' + cad, 'len=' + len
-    ];
-    if (deltas.length) parts.push('knobs=' + deltas.join(','));
+      'ref=' + ref, 'stijl=' + reg, 'werkwijze=' + cad, 'len=' + len];
+    if (deltas.length) parts.push('fijn=' + deltas.join(','));
     $('#line').textContent = parts.join(' ');
-    KNOBS.forEach(k => $('#k_' + k).classList.toggle('changed', $('#k_' + k).value !== b[k]));
+    KNOBS.forEach(k => sel(k).classList.toggle('changed', sel(k).value !== b[k]));
   }
 
   function setProposal() {
     touched.clear();
-    (document.querySelector(`input[name=reg][value="${PROPOSAL.reg}"]`) || $('input[name=reg]')).checked = true;
-    (document.querySelector(`input[name=cad][value="${PROPOSAL.cad}"]`) || $('input[name=cad][value=O]')).checked = true;
+    (document.querySelector(`input[name=reg][value="${PROPOSAL.reg}"]`) || document.querySelector('input[name=reg][value=feitelijk]')).checked = true;
+    (document.querySelector(`input[name=cad][value="${PROPOSAL.cad}"]`) || document.querySelector('input[name=cad][value=O]')).checked = true;
     $('#nolen').checked = !$('#len').value;
     const b = base();
-    KNOBS.forEach(k => $('#k_' + k).value = PROPOSAL.knobs[k] || b[k]);
+    KNOBS.forEach(k => { sel(k).value = PROPOSAL.knobs[k] || b[k]; if (PROPOSAL.knobs[k]) touched.add(k); });
     build();
   }
 
@@ -300,7 +315,7 @@
     if (e.target.dataset && e.target.dataset.k) touched.add(e.target.dataset.k);
     if (e.target.name === 'reg') {
       const b = base();
-      KNOBS.forEach(k => { if (!touched.has(k)) $('#k_' + k).value = b[k]; });
+      KNOBS.forEach(k => { if (!touched.has(k)) sel(k).value = b[k]; });
     }
     build();
   });
