@@ -113,6 +113,10 @@ The article is a pyramid, not a list.
   carry the parent. Three or four per parent; more than five means the grouping is wrong.
 - **Order within a group** is one of: deductive (premise → premise → therefore), chronological,
   structural (part by part), or ranked by importance. Pick one per group and hold it.
+- **The shape of the whole piece** is chosen too, and separately from the style: examples-and-lesson,
+  question-analysis-answer, situation-action-result, state-of-play-and-next-step. A preset may suggest
+  one, but material that does not fit it takes another shape without changing register. Name the shape
+  you are using before the first beat and record it beside the apex.
 - **Openings** work as situation → complication → question, with the apex as the answer. Useful for
   generating candidate openings that differ in which complication they lead with.
 

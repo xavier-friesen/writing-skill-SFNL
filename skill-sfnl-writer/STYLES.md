@@ -7,6 +7,11 @@ their parent raises, answer first unless the user asked otherwise. That is the s
 choice — it lives in `SKILL.md` and it does not vary. What varies is **texture**: how a heading is
 worded, where the evidence sits, how a number is introduced, how loud the verdict is.
 
+A third thing is separate from both, and worth keeping distinct: the **shape** — the order a
+particular piece runs in. A preset may suggest a shape (SFNL's chapters are usually
+knelpunt → casussen → les), but material that does not fit that order takes another one without
+changing register. Style is how it sounds; shape is what comes after what.
+
 Pulling the spine out settles the question of how many registers we need. A consultancy deck and
 an SFNL chapter looked like two philosophies while both cards restated the pyramid; with the
 pyramid gone, the difference is a handful of texture settings. So this file has **six presets**
@@ -87,8 +92,7 @@ a factsheet.
 - **"We" is the authors**, never the false inclusive we of the policy memo. One exception, and it
   is the moment the piece takes sides: in a normative passage "we" becomes national — *"We betalen
   voor handelingen, niet voor resultaten."* Once per piece. No "u".
-- **Chapter shape: knelpunt → casussen → les → aanbeveling.** The opening states the bottleneck
-  flat out, with no run-up.
+- **The opening states its subject flat out, with no run-up** — whichever shape the piece takes.
 - **Headings are assertions**, never labels: a heading states the finding. Whether it is then set in
   capitals is the printed report's typography, not a writing rule — leave it in sentence case unless
   the piece is being laid out for the report itself.
@@ -104,6 +108,22 @@ a factsheet.
   number, not after.
 - **Close on the shortest sentence on the page, and make it turn something over.** A recommendation
   opens with a verb that is an action.
+
+**The shape is not the style.** `knelpunt → casussen → les → aanbeveling` is the report's chapter
+form, and it fits a piece built on examples. Plenty of SFNL work is not: a methodology, a financial
+analysis, a process description, a progress note, a position on someone else's proposal. The voice
+above holds in all of them; the shape is chosen per piece. Four that recur:
+
+| Shape | Fits |
+|---|---|
+| knelpunt → casussen → les → aanbeveling | a chapter carried by examples |
+| vraag → analyse → antwoord | a methodology, a calculation, an assessment |
+| situatie → wat we deden → wat het opleverde | a project or case description |
+| stand van zaken → wat opvalt → wat er nu moet | a progress note, a steering document |
+
+None of them fitting is a normal outcome, not a failure. Say which shape you are using and why,
+before the first beat, and put it in the sidecar next to the apex. What never moves is the pyramid
+underneath: one answer, groups that support it, evidence below that.
 
 **Three things the reports do that this preset does not copy** (specimens 13 and 14 quote them):
 the summarising paragraph more abstract than the material it summarises; the dead closing line
