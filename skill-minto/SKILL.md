@@ -1,7 +1,7 @@
 ---
 name: minto-journey
 version: 1.2
-description: 'Shape a pile of raw material into an article on a Minto pyramid, beat by beat, in a chosen register (McKinsey, Economist, prose, factual brief, or all four then a synthesis). Fixes one governing answer, grounds every concept before a beat leans on it, and link-checks each sentence before it lands. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a structured article. Trigger on "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "beat by beat".'
+description: 'Shape a pile of raw material into an article on a Minto pyramid, beat by beat, in a chosen register (McKinsey, Economist, prose, factual brief, SFNL report, or all of them then a synthesis). Fixes one governing answer, grounds every concept before a beat leans on it, and link-checks each sentence before it lands. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a structured article. Trigger on "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "beat by beat".'
 ---
 
 # Minto journey
@@ -54,9 +54,12 @@ per-beat check:
   rather than summarises. For a piece that has to be felt.
 - **D. Factual brief** — apex in the heading, one move per beat, no ornament. The default when nobody
   chooses.
-- **E. Supermode** — write it four times, one per card, say what each won, then land a fifth with one
-  register as its spine and named grafts from the rest. Costs five times the writing; offer it when the
-  register is undecided or the piece matters that much.
+- **F. SFNL report** — the pleidooi met bewijslast: knelpunt, cases, lesson, recommendation; assertive
+  headings; a number never alone; mechanisms in four steps; a close that turns. For anything that
+  belongs in a Social Finance NL report.
+- **E. Supermode** — write it once per card, say what each won, then land a final version with one
+  register as its spine and named grafts from the rest. Costs several times the writing; offer it when
+  the register is undecided or the piece matters that much.
 
 **Length** — offer a short/medium/long band and an explicit *no preference*. On no preference, read the
 pile, propose a target in one line, and say what it costs: a lower target means branches get dropped,

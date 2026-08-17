@@ -187,3 +187,39 @@ Op `test/rubriek.md` zou deze versie op D7 en D8 slechter scoren dan de v1.1-tek
 is gebouwd voor feitentrouwe rapporttekst en straft weglating in D7/D8 af. Dat is geen fout in
 de tekst maar een mismatch tussen rubriek en register: wie register C kiest, moet niet op D7
 willen winnen. Voor de andere drie registers blijft de rubriek bruikbaar.
+
+---
+
+# Addendum 3: register F — SFNL-rapportstijl
+
+Vijfde kaart in `skill-minto/STYLES.md`, gedestilleerd uit de twee rapporten zelf
+(*Innovatieve financiering van preventie*, 2025, 48 p.; *De toekomst van resultaatfinanciering*,
+2024, 20 p.) en uit de bestaande huisstem-analyse in `dossier/onderzoek/sfnl-stem.md`, die
+veertien specimenpassages bevat om tegenaan te schrijven.
+
+Wat de kaart vastlegt: het genre (pleidooi met bewijslast) en de twee tempo's daarin — een casus
+die klinkt als een manifest is even fout als een conclusie die klinkt als een factsheet. Verder
+"we" als de auteurs met één nationaal-normatieve uitzondering per stuk, het stramien knelpunt →
+casussen → les → aanbeveling, koppen als bewering in kapitalen, alinea's van drie tot zes zinnen
+met een samenvattende eerste zin, minstens één zin onder de tien woorden per alinea en die zin
+vóór het grote getal, de vijf introductievormen voor een cijfer, de mechanisme-uitleg in vier
+stappen met de conditionele inversie, kanttekeningen vóór de claim, beeldspraak alleen uit het
+eigen domein, en een slot op de kortste zin van de bladzijde die iets omkeert.
+
+Drie dingen doen de rapporten die de kaart expliciet níét overneemt, alle drie uit §1.12 van de
+huisstem-analyse: de samenvattende alinea die abstracter is dan het materiaal dat hij samenvat,
+de dooddoener als slotzin ("Preventie kan maatschappelijke waarde opleveren"), en de hedge die
+de aanbeveling ontkracht ("Het is zinvol om te verkennen hoe…", drie keer in de drie
+aanbevelingen die het rapport moeten dragen). De niet-X-maar-Y-omkering is huisstem én een tic
+bij 25 keer in één rapport; de kaart budgetteert hem op één per stuk.
+
+**Demonstratie.** `test/rondes/minto/T3-minto-register-F.md` zet T3 in de casusanatomie van het
+huis: factbox, casebeschrijving, `RESULTATEN EN IMPACT` als lijst, kanttekeningen, `LES VOOR
+NEDERLAND`. De cijferregel van F is strenger dan de basisregel — hoogstens twee getallen per
+alinea in lopende tekst, de rest naar de resultatenlijst — en dat lost precies het probleem op
+waar zowel de v1.0-tekst als jurylid-uitvoer E op struikelde: de cijferalinea. De les opent op
+een gebiedende wijs en het slot staat op de twee kortste zinnen: "We betalen meestal voor het
+traject. Havelsteijn betaalt nu voor de ingang."
+
+Supermodus draait nu over vijf kaarten in plaats van vier; een kaart overslaan mag, mits benoemd
+en met minimaal drie over.
