@@ -1,45 +1,62 @@
 # Intake
 
-Four decisions, settled once, before beat 1: **reference**, **register**, **cadence**, **length**.
-Skip any the user has already made in conversation, and never ask a question the answer to which
-is already on the table.
+Four things to settle before beat 1: **reference**, **register**, **cadence**, **length**. All of
+it happens in the chat, in one exchange. Skip anything the user has already decided in
+conversation, and never ask again for something they have said.
 
-Do not ask them as four chat questions in a row. Use the widget.
+## One question block, in chat
 
-## The widget
-
-`INTAKE-WIDGET.html` ships with this skill. Copy it next to the article file, open it for the
-user (send it, or tell them the path), and let them fill it in. It renders the four decisions with
-what each option costs, and produces one line to paste back:
-
-```
-INTAKE ref=<path or -> reg=<A|B|C|D|F|R|E> cad=<P|S|O|W> len=<number or ->
-```
-
-Parse that line and write the four values into the sidecar. `-` means no preference: on `len=-`
-propose a target in one line and say what it costs; on `ref=-` there is no reference text and
-register R is unavailable.
-
-**When the widget is not practical** — a terminal-only session, a user who would rather type —
-write the same four decisions as a checklist into `<article-name>.intake.md`, ask them to tick and
-save, then read it back. Same four fields, same defaults, no HTML:
-
-```markdown
-- [ ] Referentietekst: <pad>            (leeg = geen)
-- [ ] Register:  [ ] A McKinsey  [ ] B Economist  [ ] C proza  [ ] D feitelijk kort
-                 [ ] F SFNL-rapport  [ ] R referentietekst  [ ] E supermodus
-- [ ] Cadans:    [ ] P alinea  [ ] S sectie  [ ] O outline eerst  [ ] W in één keer
-- [ ] Lengte: ____ woorden   [ ] geen voorkeur
-```
-
-Third fallback, if both are refused: ask register and cadence in one message, take D and the
-length-appropriate cadence as defaults, and get on with it. An intake that costs three exchanges
+Ask register, cadence and length together in a single `AskUserQuestion` call — three questions,
+four options each, one screen. Not three messages in a row: an intake that costs three exchanges
 has already cost more than it saves.
+
+**Question 1 — Register.** Four options fit; there are seven registers. Show the four that fit
+this piece, recommended one first, and name the rest in the question text so the user can type one
+into "Other": *"Register? A (McKinsey) en E (supermodus) kun je als eigen antwoord typen."*
+
+- Lead with **F — SFNL-rapport** whenever the piece is Social Finance NL work, otherwise with
+  **D — feitelijk kort**.
+- When a reference document has been attached, **R — zoals mijn referentietekst** takes the first
+  slot instead.
+- Fill the remaining slots from B (Economist), C (proza), and whichever of D/F is not leading.
+- Each option gets a one-line description of what it buys, not what it is called.
+
+**Question 2 — Cadans.** All four fit: O (outline eerst), S (sectie voor sectie), P (alinea voor
+alinea), W (in één keer). Lead with the default for the length in question, and put the cost in
+the description — turns against control.
+
+**Question 3 — Lengte.** Kort (~300 woorden), middel (~800), lang (~1500 en meer), geen voorkeur.
+Anyone with an exact number types it. On *geen voorkeur*, read the pile, propose a number in one
+line, and say what it costs: lower means branches get dropped, higher means beats carry more from
+the pile.
+
+**A fourth question, only when it is live:** if two documents have arrived and it is unclear which
+is which, ask which one is the reference. Otherwise leave it out.
+
+## The reference document
+
+The user attaches it in the chat, like any other file. Never ask for a path, and never ask them to
+put it somewhere first.
+
+Two documents can arrive, and they do different jobs, so keep them apart:
+
+- **The pile** is the content. Everything the article states comes from here.
+- **The reference** is the style. Its facts, phrases and examples never enter the article, even
+  when it covers the same subject.
+
+Default reading: the first document is the pile. A second one, or one introduced with something
+like "in deze stijl" or "zoals dit stuk", is the reference. When that is genuinely unclear, ask —
+one question, in the same block as the rest.
+
+A reference makes register **R** available: measure the text, write the card, show it, then write
+to it (`STYLES.md`). A reference alongside some other register means the user wants that register
+with the reference as a tiebreaker; say so out loud, and use the reference only where the card is
+silent.
 
 ## Defaults
 
-Nobody has to choose. Register defaults to **D**, or to **F** when the piece is plainly SFNL work.
-Cadence defaults by target length:
+Nobody has to choose anything. Register defaults to **D**, or **F** for obvious SFNL work. Cadence
+defaults by target length:
 
 | Target | Default cadence |
 |---|---|
@@ -48,15 +65,5 @@ Cadence defaults by target length:
 | 1,200 to 3,000 | **S** section by section |
 | over 3,000, or a contested argument at any length | **S**, offering **P** |
 
-State the default you took in one line and move on. A user who wants a different gear will say so.
-
-## The reference file
-
-When `ref=` names a file, read it in full before the source check, and derive card R from it as
-`STYLES.md` describes. Two rules that matter more than they look:
-
-- **The reference is a style source, not a pile.** Its facts, examples and phrases never enter the
-  article. Only the pile supplies content.
-- **A reference plus a register that is not R** means the user wants that register with the
-  reference as a tiebreaker — say so out loud, and use the reference only where the card is
-  silent.
+If the user declines the block, or answers only part of it, state the defaults you are taking in
+one line and start writing. Record all four decisions in the sidecar.

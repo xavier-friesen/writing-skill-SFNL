@@ -6,26 +6,23 @@ description: 'Shape a pile of raw material into an article on a Minto pyramid, i
 
 # SFNL writer
 
-The user has (or will pass) a markdown file of raw material — tidy fragments, a wall of prose, a
-transcript. Format does not matter. That file is the **pile**, and it is read-only: you mine it, you
-never edit it.
+The user hands over raw material — tidy fragments, a wall of prose, a transcript — attached in the chat
+or sitting in a file. Format does not matter. That material is the **pile**, and it is read-only: you
+mine it, you never edit it.
 
 This is exploit. The exploring is done and the pile is fixed. Commit to one governing answer, then walk
-the reader down the pyramid one beat at a time, mining the pile to fill each beat.
+the reader down the pyramid, mining the pile to fill each beat, at whatever pace the cadence sets.
 
-Ask once where to save the article, then remember the path.
-
-Five files travel with this one and are all it needs: `INTAKE.md` and `INTAKE-WIDGET.html` (the four
-opening decisions), `STYLES.md` (the registers), `HUMANIZE.md` (the humanizer pass) and
-`SFNL-SPECIMENS.md` (worked passages for the house register).
+Four files travel with this one and are all it needs: `INTAKE.md` (the four opening decisions),
+`STYLES.md` (the registers), `HUMANIZE.md` (the humanizer pass) and `SFNL-SPECIMENS.md` (worked passages
+for the house register).
 
 ## The loop
 
 Steps 1 to 5 run in every cadence. Step 6 is where the cadences part.
 
 1. **Read the pile end-to-end.** Before anything else.
-2. **Intake.** Reference, register, cadence, length — through the widget, in one exchange. See
-   `INTAKE.md`.
+2. **Intake.** Reference, register, cadence, length — one question block in the chat. See `INTAKE.md`.
 3. **Check the source.** One pass over the pile, before any writing. See
    [Checking the source](#checking-the-source).
 4. **Fix the apex.** Settle the one-sentence answer the whole article delivers, and the reader's
@@ -40,34 +37,11 @@ Whatever the cadence, every unit of text passes the four checks before it lands 
 [budgets](#budgets), the style card's three tests, and the per-beat [humanizer pass](#the-humanizer-pass)
 — the sidecar is updated as it lands, and the article file is re-read from disk before every write.
 
-## Cadence
-
-Four gears. They differ in one thing only: how much text goes by between the user's decisions.
-
-- **P — paragraph by paragraph.** Offer 2-3 candidate next beats, each reachable from the current
-  grounded set and each serving a live branch, saying what it grounds and what picking it unlocks.
-  Write the picked beat, and only that beat. Stop. Most control, most round trips; for a contested
-  argument, or a short piece that has to be right.
-- **S — section by section.** Settle the beats of one section together, write the section straight
-  through, then offer 2-3 candidate directions for the section after it. The middle gear, and the one
-  that suits most reports.
-- **O — outline first, then write.** Agree the apex, the branches and every beat up front, as a list
-  the user can edit. Then write straight through in order, showing each section as it lands, without
-  offering branches — the branching happened in the outline. For when the structure is the risk and
-  the prose is routine.
-- **W — write at once.** One pass over the whole piece, delivered complete, then revised on the user's
-  notes. The checks still run, all of them, before delivery rather than beat by beat. Cheapest, and the
-  fastest way to give someone something to react to.
-
-Two things hold in every gear. The user can change gear mid-article — "just write the rest" drops from
-P to W, "slow down here" lifts W to P for one section — and the sidecar records the switch. And a
-cadence never removes a check; it only changes when the check runs.
-
 ## Intake
 
-Four decisions, one exchange, through `INTAKE-WIDGET.html`: **reference**, **register**, **cadence**,
-**length**. `INTAKE.md` carries the widget procedure, the paste-back format, the checklist fallback for
-terminal-only sessions, and the defaults — nobody is required to choose anything.
+Four decisions, one question block in the chat: **reference**, **register**, **cadence**, **length**.
+`INTAKE.md` carries how to fit seven registers into a four-option question, how to tell an attached
+reference from an attached pile, and the defaults — nobody is required to choose anything.
 
 **Register** — read the chosen card in `STYLES.md` before writing, and keep its three tests in the
 per-beat check:
@@ -83,20 +57,24 @@ per-beat check:
 - **F. SFNL report** — the pleidooi met bewijslast: knelpunt, cases, lesson, recommendation; assertive
   headings; a number never alone; mechanisms in four steps; a close that turns. For anything that
   belongs in a Social Finance NL report. Fourteen worked passages sit in `SFNL-SPECIMENS.md`.
-- **R. Reference text** — measure the supplied text, write a card from the measurements, show it to the
-  user, then write to it. Requires a reference file.
+- **R. Reference text** — measure the attached text, write a card from the measurements, show it to the
+  user, then write to it. Requires a reference document.
 - **E. Supermode** — write it once per card, say what each won, then land a final version with one
   register as its spine and named grafts from the rest. Costs several times the writing; offer it when
   the register is undecided or the piece matters that much.
 
-**Reference** — a style source, never a pile. Its facts, phrases and examples stay where they are; only
-the pile supplies content. That line is the whole safety of the feature, and it holds even when the
-reference is about the same subject as the article.
+**Reference** — the user attaches the document in the chat; never ask for a path. It is a style source,
+never a pile: its facts, phrases and examples stay where they are, and only the pile supplies content.
+That line is the whole safety of the feature, and it holds even when the reference covers the same
+subject as the article.
 
 **Length** — a target in words, or no preference. On no preference, read the pile, propose a number in
 one line, and say what it costs: lower means branches get dropped, higher means beats carry more from
 the pile. Record whatever is agreed in the sidecar and hold it; a piece drifting past its target is a
 pyramid with a branch nobody chose.
+
+**Where it is saved** — ask once, in the same breath as the rest, then remember the path for the whole
+session.
 
 ## Checking the source
 
@@ -115,43 +93,6 @@ One pass, before beat 1, on the pile as a whole. Three questions:
 than the article needs, and a beat crammed with everything true is the failure the pyramid exists to
 prevent. What survives has to be right. Record the committed claims and the flags in the sidecar; there
 is no completeness recount at the end.
-
-## Ending
-
-The article is done when all three hold:
-
-- Every branch the apex needs has landed. Name them at step 4 and tick them off; a branch that never
-  landed is either written or dropped out loud.
-- Nothing on the grounded list was introduced and then left unused. A concept a beat grounded and no
-  later beat leaned on is a beat that was doing something other than its job.
-- The whole-text humanizer pass has run on the finished article and its fixes are logged. The
-  cross-beat tells — repeated closing shapes, uniform sentence length, three parallel blocks — exist
-  only at this level, so no per-beat pass can stand in for it.
-
-The pile being empty is not a criterion. Most piles keep leftover fragments; that is the point of having
-more material than you need.
-
-## The close
-
-The last beat lands one **signed judgment**: a claim the pile supports, that the author could be held to
-in three years, and that an informed reader could disagree with. Descriptive closes — a summary, a
-comparison, a restatement of the apex — end the pyramid without ending the argument.
-
-One per article. How explicit it gets is the register's call: stated outright in A, D and F, carried by
-the analysis or the ending's turn in B and C.
-
-## The humanizer pass
-
-Every register and every cadence gets it, per unit of text and once over the finished article: `HUMANIZE.md`, which carries the
-full checklists and needs nothing else. The style card decides how the piece sounds; this pass decides
-whether a person could have written it, and a beat can pass its card and still read as machine output.
-If the separate `sfnl-humanizer` skill happens to be installed, run it as well — it is maintained
-independently — but this skill never depends on it.
-
-Two rules keep the pass from doing damage. Facts stay: it rewrites language, never a committed claim or
-its strength. And the card wins on the house forms it names and budgets — F's capitalised headings and
-conditional inversion, B's colon hinge, C's withheld opening — while the humanizer wins everywhere the
-card is silent.
 
 ## The pyramid
 
@@ -189,8 +130,31 @@ that was waiting on X.
 
 The big lever is what you make a prerequisite versus what you ground inside the piece. Demand too much up
 front and you shut readers out; ground too much inside and the early beats drown in definitions. Settle
-it at step 5, and revisit it whenever a tempting beat needs a concept nothing has grounded — the fix is
+it before the first beat, and revisit it whenever a tempting beat needs a concept nothing has grounded — the fix is
 either a grounding beat before it, or promoting the concept to a prerequisite.
+
+## Cadence
+
+Four gears. They differ in one thing only: how much text goes by between the user's decisions.
+
+- **P — paragraph by paragraph.** Offer 2-3 candidate next beats, each reachable from the current
+  grounded set and each serving a live branch, saying what it grounds and what picking it unlocks.
+  Write the picked beat, and only that beat. Stop. Most control, most round trips; for a contested
+  argument, or a short piece that has to be right.
+- **S — section by section.** Settle the beats of one section together, write the section straight
+  through, then offer 2-3 candidate directions for the section after it. The middle gear, and the one
+  that suits most reports.
+- **O — outline first, then write.** Agree the apex, the branches and every beat up front, as a list
+  the user can edit. Then write straight through in order, showing each section as it lands, without
+  offering branches — the branching happened in the outline. For when the structure is the risk and
+  the prose is routine.
+- **W — write at once.** One pass over the whole piece, delivered complete, then revised on the user's
+  notes. The checks still run, all of them, before delivery rather than beat by beat. Cheapest, and the
+  fastest way to give someone something to react to.
+
+Two things hold in every gear. The user can change gear mid-article — "just write the rest" drops from
+P to W, "slow down here" lifts W to P for one section — and the sidecar records the switch. And a
+cadence never removes a check; it only changes when the check runs.
 
 ## What is a beat
 
@@ -201,6 +165,15 @@ Sized by what the move needs: a single sentence ("And then nothing happened for 
 paragraph when the move needs setup, several paragraphs when the beat is a self-contained vignette,
 argument, or example. If a beat needs five paragraphs and three subheadings, it is two beats glued
 together. Split it.
+
+## Pulling from the pile
+
+The pile is a quarry, not a script. Paraphrase, split, recombine, quote — whatever makes the beat read as
+one voice in the chosen register. A fragment may be split across beats or merged with another. The
+article takes the pile's language unless the user says otherwise.
+
+When the pile lacks something a beat needs, name the gap out loud — "this beat needs an example and the
+pile has none — give me one, or we route around it" — and route around it or drop the beat.
 
 ## The link check
 
@@ -235,14 +208,42 @@ Two rules on numbers, baseline in every register and loosened only where the car
 opens with a numeral, and no sentence carries more than three numbers. Both are what makes a fact-dense
 beat unreadable aloud.
 
-## Pulling from the pile
+## The humanizer pass
 
-The pile is a quarry, not a script. Paraphrase, split, recombine, quote — whatever makes the beat read as
-one voice in the chosen register. A fragment may be split across beats or merged with another. The
-article takes the pile's language unless the user says otherwise.
+Every register and every cadence gets it, per unit of text and once over the finished article: `HUMANIZE.md`, which carries the
+full checklists and needs nothing else. The style card decides how the piece sounds; this pass decides
+whether a person could have written it, and a beat can pass its card and still read as machine output.
+If the separate `sfnl-humanizer` skill happens to be installed, run it as well — it is maintained
+independently — but this skill never depends on it.
 
-When the pile lacks something a beat needs, name the gap out loud — "this beat needs an example and the
-pile has none — give me one, or we route around it" — and route around it or drop the beat.
+Two rules keep the pass from doing damage. Facts stay: it rewrites language, never a committed claim or
+its strength. And the card wins on the house forms it names and budgets — F's capitalised headings and
+conditional inversion, B's colon hinge, C's withheld opening — while the humanizer wins everywhere the
+card is silent.
+
+## The close
+
+The last beat lands one **signed judgment**: a claim the pile supports, that the author could be held to
+in three years, and that an informed reader could disagree with. Descriptive closes — a summary, a
+comparison, a restatement of the apex — end the pyramid without ending the argument.
+
+One per article. How explicit it gets is the register's call: stated outright in A, D and F, carried by
+the analysis or the ending's turn in B and C.
+
+## Ending
+
+The article is done when all three hold:
+
+- Every branch the apex needs has landed. Name them when you fix the apex and tick them off; a branch that never
+  landed is either written or dropped out loud.
+- Nothing on the grounded list was introduced and then left unused. A concept a beat grounded and no
+  later beat leaned on is a beat that was doing something other than its job.
+- The whole-text humanizer pass has run on the finished article and its fixes are logged. The
+  cross-beat tells — repeated closing shapes, uniform sentence length, three parallel blocks — exist
+  only at this level, so no per-beat pass can stand in for it.
+
+The pile being empty is not a criterion. Most piles keep leftover fragments; that is the point of having
+more material than you need.
 
 ## The sidecar
 
