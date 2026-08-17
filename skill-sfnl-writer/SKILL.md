@@ -1,10 +1,10 @@
 ---
-name: minto-journey
-version: 1.3
-description: 'Shape a pile of raw material into an article on a Minto pyramid, beat by beat, in a chosen register (McKinsey, Economist, prose, factual brief, SFNL report, or all of them then a synthesis). Fixes one governing answer, grounds every concept before a beat leans on it, and link-checks each sentence before it lands. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a structured article. Trigger on "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "beat by beat".'
+name: sfnl-writer
+version: 2.0
+description: 'Shape a pile of raw material into an article on a Minto pyramid, beat by beat, in a chosen register (SFNL report house style, McKinsey, Economist, prose, factual brief, or all of them then a synthesis), with a humanizer pass on every beat. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a finished piece. Trigger on "schrijf hier een artikel van", "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "beat by beat", "in onze huisstijl schrijven".'
 ---
 
-# Minto journey
+# SFNL writer
 
 The user has (or will pass) a markdown file of raw material — tidy fragments, a wall of prose, a
 transcript. Format does not matter. That file is the **pile**, and it is read-only: you mine it, you
@@ -14,6 +14,9 @@ This is exploit. The exploring is done and the pile is fixed. Commit to one gove
 the reader down the pyramid one beat at a time, mining the pile to fill each beat.
 
 Ask once where to save the article, then remember the path.
+
+Three files travel with this one and are all it needs: `STYLES.md` (the registers), `HUMANIZE.md` (the
+humanizer pass) and `SFNL-SPECIMENS.md` (worked passages for the house register).
 
 ## The loop
 
@@ -56,7 +59,7 @@ per-beat check:
   chooses.
 - **F. SFNL report** — the pleidooi met bewijslast: knelpunt, cases, lesson, recommendation; assertive
   headings; a number never alone; mechanisms in four steps; a close that turns. For anything that
-  belongs in a Social Finance NL report.
+  belongs in a Social Finance NL report. Fourteen worked passages sit in `SFNL-SPECIMENS.md`.
 - **E. Supermode** — write it once per card, say what each won, then land a final version with one
   register as its spine and named grafts from the rest. Costs several times the writing; offer it when
   the register is undecided or the piece matters that much.
@@ -110,10 +113,11 @@ the analysis or the ending's turn in B and C.
 
 ## The humanizer pass
 
-Every register gets it, per beat and once over the finished article: `HUMANIZE.md`. The style card
-decides how the piece sounds; this pass decides whether a person could have written it, and a beat can
-pass its card and still read as machine output. Invoke `sfnl-humanizer` when it is available; the file
-carries the checklists for when it is not, and the cross-beat checks it does not cover.
+Every register gets it, per beat and once over the finished article: `HUMANIZE.md`, which carries the
+full checklists and needs nothing else. The style card decides how the piece sounds; this pass decides
+whether a person could have written it, and a beat can pass its card and still read as machine output.
+If the separate `sfnl-humanizer` skill happens to be installed, run it as well — it is maintained
+independently — but this skill never depends on it.
 
 Two rules keep the pass from doing damage. Facts stay: it rewrites language, never a committed claim or
 its strength. And the card wins on the house forms it names and budgets — F's capitalised headings and

@@ -4,9 +4,10 @@ Every register gets it. A style card decides how the piece sounds; this pass dec
 sounds like a person wrote it. They are different jobs, and a beat can pass its card and still
 read as machine output.
 
-**Prefer the house skill.** If `sfnl-humanizer` is available, invoke it — it is the organisation's
-canonical pass and it is maintained. Use the checklists below when it is not, and as the
-cross-beat pass it does not cover.
+**The checklists below are the pass** and need nothing outside this folder. If the separate
+`sfnl-humanizer` skill happens to be installed, run it as well and treat its verdict as the
+stricter one on the per-beat list — it is maintained independently. The whole-text checks are
+this file's alone either way.
 
 ## Two moments
 

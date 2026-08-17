@@ -1,4 +1,4 @@
-# Journeylog — minto-journey op T3 (Wijkkracht Molenhoek)
+# Journeylog — sfnl-writer op T3 (Wijkkracht Molenhoek)
 
 Pile: `test/corpus/input/T3.md` (read-only). Artikel: `T3-minto.md`.
 Caveat: er was geen echte gebruiker. De keuzes hieronder heb ik zelf gemaakt en

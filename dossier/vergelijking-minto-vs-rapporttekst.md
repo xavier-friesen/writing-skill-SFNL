@@ -1,6 +1,9 @@
-# minto-journey naast sfnl-rapporttekst, op T3
+# sfnl-writer naast sfnl-rapporttekst, op T3
 
-Eén run van `minto-journey` op T3 (casetekst Wijkkracht Molenhoek, 305 woorden),
+> De skill heette tijdens deze tests `minto-journey`; sinds v2.0 heet zij `sfnl-writer` en staat
+> zij in `skill-sfnl-writer/`. De cijfers en teksten hieronder zijn ongewijzigd.
+
+Eén run van `sfnl-writer` op T3 (casetekst Wijkkracht Molenhoek, 305 woorden),
 de tekst waarop de skill-familie haar beste score haalde. Output:
 `test/rondes/minto/T3-minto.md`, journeylog: `test/rondes/minto/T3-journey.md`.
 
@@ -82,20 +85,20 @@ vraagt minder apparaat") snijdt tegen deze skill in.
 ## Wat dit zegt
 
 Het is dezelfde uitkomst als ronde 1, waar de architect-variant de structuur won
-en het proza verloor. Minto-journey is die variant plus twee dingen die de
+en het proza verloor. sfnl-writer is die variant plus twee dingen die de
 architect niet had (grounding en de link check) en min alles wat v1 tot v3.2
 eraan heeft toegevoegd. Structuur is de goedkoopste dimensie om te winnen en de
 duurste om alleen op te varen: D6 weegt 13, D4 en D5 samen 35.
 
 De twee skills concurreren ook niet echt. `sfnl-rapporttekst` is één autonome
-run op een bestaand concept; `minto-journey` is een gesprek waarin de gebruiker
+run op een bestaand concept; `sfnl-writer` is een gesprek waarin de gebruiker
 de route kiest door materiaal dat nog geen tekst is. Voor T3 is de eerste beter.
 Voor een pile fragmenten zonder concepttekst kan de tweede het enige zijn dat
 werkt — en dat geval is in dit corpus niet getest.
 
 ## Wat ik zou overzetten
 
-Naar `minto-journey`, in volgorde van opbrengst:
+Naar `sfnl-writer`, in volgorde van opbrengst:
 
 1. De oordeel-grondregel: elke journey eindigt op één ondertekende, gegronde
    uitspraak. Losse winst geschat op een half punt tot een punt via D5 en B.
@@ -113,7 +116,7 @@ Naar `sfnl-rapporttekst`, als er iets terug mag:
 
 # Addendum: v1.1, dezelfde tekst opnieuw
 
-Zes wijzigingen in de skill (`skill-minto/SKILL.md` v1.1): ondertekend slot, fact ledger met
+Zes wijzigingen in de skill (`skill-sfnl-writer/SKILL.md` v1.1): ondertekend slot, fact ledger met
 natelling, budgetten plus twee cijferregels, lichte route onder 400 woorden, sidecar met
 aanscherpte eindconditie, en de link check die zijn twee doelwitten nu bij naam noemt (echo,
 trailer). Herrun op T3 via de lichte route: `test/rondes/minto/T3-minto-v11.md`, met sidecar.
@@ -158,7 +161,7 @@ pile zonder dekking. **Selectie is vrij, precisie niet.** Weglaten is het normal
 blijft staan moet kloppen. De natelling aan het eind is geschrapt — die dwong het artikel de
 hele feitenlijst binnen te trekken en maakte elke tekst een inventaris.
 
-Wat daarvoor terugkomt, is een stijlcheck per beat. Vier registers in `skill-minto/STYLES.md`,
+Wat daarvoor terugkomt, is een stijlcheck per beat. Vier registers in `skill-sfnl-writer/STYLES.md`,
 gedestilleerd uit `dossier/onderzoek/`: **A McKinsey** (action titles, answer first op elk
 niveau, horizontale leestest), **B Economist** (geen keelschrapen, elke zin gemist als je hem
 weghaalt, scherpe zinslengtevariatie, dubbele punt als scharnier), **C proza** (opening als
@@ -192,7 +195,7 @@ willen winnen. Voor de andere drie registers blijft de rubriek bruikbaar.
 
 # Addendum 3: register F — SFNL-rapportstijl
 
-Vijfde kaart in `skill-minto/STYLES.md`, gedestilleerd uit de twee rapporten zelf
+Vijfde kaart in `skill-sfnl-writer/STYLES.md`, gedestilleerd uit de twee rapporten zelf
 (*Innovatieve financiering van preventie*, 2025, 48 p.; *De toekomst van resultaatfinanciering*,
 2024, 20 p.) en uit de bestaande huisstem-analyse in `dossier/onderzoek/sfnl-stem.md`, die
 veertien specimenpassages bevat om tegenaan te schrijven.
@@ -228,7 +231,7 @@ en met minimaal drie over.
 
 # Addendum 4: de humanizer-pas, in elk register
 
-`skill-minto/HUMANIZE.md`, aangeroepen vanuit stap 7 en uit de eindconditie. De kaart bepaalt hoe
+`skill-sfnl-writer/HUMANIZE.md`, aangeroepen vanuit stap 7 en uit de eindconditie. De kaart bepaalt hoe
 een stuk klinkt, de pas bepaalt of een mens het geschreven kan hebben; een beat kan zijn
 kaarttoetsen halen en nog steeds als machinetekst lezen.
 

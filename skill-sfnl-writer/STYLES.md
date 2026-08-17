@@ -5,11 +5,11 @@ intake and holds for the whole article; read that card and keep it beside you wh
 Each card ends in three yes/no tests — run them on every beat before it lands, alongside the
 link check.
 
-The cards are distilled from the research dossiers in the repo they came from
-(`writing-skill-SFNL`, under `dossier/onderzoek/`: `mckinsey.md`, `economist.md`, `narratief.md`,
-`sfnl-stem.md`). Everything needed to write is on the cards themselves; the dossiers are there if
-you want the sources behind a rule. Dutch examples come from that research or are built on its
-mechanics.
+Everything needed to write is on the cards themselves. They distil research into the McKinsey and
+consultancy tradition, The Economist style guide, narrative journalism, and a full house-voice
+analysis of the two Social Finance NL reports; the Dutch examples come from that research or are
+built on its mechanics. Card F has a companion file, `SFNL-SPECIMENS.md`, with fourteen passages
+from the reports themselves.
 
 ---
 
@@ -120,9 +120,10 @@ ornament that survives cutting? Is the close a judgment rather than a summary?
 
 **Pick this when** the piece belongs in a Social Finance NL report, or has to sound as if it
 could: a chapter, a case, a management summary, a recommendation. Distilled from *Innovatieve
-financiering van preventie* (2025) and *De toekomst van resultaatfinanciering* (2024), and from
-the house-voice analysis of both (`dossier/onderzoek/sfnl-stem.md` in the source repo), which
-holds fourteen specimen passages to write against if you have it to hand.
+financiering van preventie* (2025) and *De toekomst van resultaatfinanciering* (2024) and from a
+house-voice analysis of both. Fourteen passages from those reports, quoted with a note on what
+each one does technically, sit in `SFNL-SPECIMENS.md` — read the ones matching the move you are
+about to write.
 
 The genre is the **pleidooi met bewijslast**: an organisation with a position lines up practice
 and derives recommendations from it. That gives the register two tempos, and mixing them up is
@@ -163,8 +164,8 @@ sounds like a factsheet.
   niet productie, bepaalt het rendement."* A recommendation opens with a verb that is an action
   — *"Zet in op één regionaal zorg-en-verzekeringsbudget"*.
 
-**Three things the reports do that this card does not copy** — the house voice at its weakest,
-documented in `sfnl-stem.md` §1.12:
+**Three things the reports do that this card does not copy** — the house voice at its weakest
+(specimens 13 and 14 quote them):
 
 - The summarising paragraph that is more abstract than the material it summarises (three
   sentences of 23, 25 and 35 words, "samen" three times, not one amount or name in sight).
