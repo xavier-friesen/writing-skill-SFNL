@@ -1,6 +1,6 @@
 ---
 name: minto-journey
-version: 1.2
+version: 1.3
 description: 'Shape a pile of raw material into an article on a Minto pyramid, beat by beat, in a chosen register (McKinsey, Economist, prose, factual brief, SFNL report, or all of them then a synthesis). Fixes one governing answer, grounds every concept before a beat leans on it, and link-checks each sentence before it lands. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a structured article. Trigger on "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "beat by beat".'
 ---
 
@@ -29,8 +29,8 @@ Ask once where to save the article, then remember the path.
    same apex. Show them before writing anything to the article file. Say what each one grounds, and
    preview which beats that pick unlocks — the user should see a little way down the path.
 7. **Write the picked beat, and only that beat.** Re-read the article file from disk first. Run the
-   three checks — [link](#the-link-check), [budgets](#budgets), and the style card's three tests —
-   before it lands. Update the sidecar. Then stop.
+   four checks — [link](#the-link-check), [budgets](#budgets), the style card's three tests, and the
+   per-beat [humanizer pass](#the-humanizer-pass) — before it lands. Update the sidecar. Then stop.
 8. **Offer 2-3 candidate next beats.** Each must be reachable from the current grounded set, must serve
    a live branch of the pyramid, and must say what it grounds. Then loop from step 7.
 
@@ -86,12 +86,15 @@ is no completeness recount at the end.
 
 ## Ending
 
-The article is done when both hold:
+The article is done when all three hold:
 
 - Every branch the apex needs has landed. Name them at step 4 and tick them off; a branch that never
   landed is either written or dropped out loud.
 - Nothing on the grounded list was introduced and then left unused. A concept a beat grounded and no
   later beat leaned on is a beat that was doing something other than its job.
+- The whole-text humanizer pass has run on the finished article and its fixes are logged. The
+  cross-beat tells — repeated closing shapes, uniform sentence length, three parallel blocks — exist
+  only at this level, so no per-beat pass can stand in for it.
 
 The pile being empty is not a criterion. Most piles keep leftover fragments; that is the point of having
 more material than you need.
@@ -102,8 +105,20 @@ The last beat lands one **signed judgment**: a claim the pile supports, that the
 in three years, and that an informed reader could disagree with. Descriptive closes — a summary, a
 comparison, a restatement of the apex — end the pyramid without ending the argument.
 
-One per article. How explicit it gets is the register's call: stated outright in A and D, carried by the
-analysis or the ending's turn in B and C.
+One per article. How explicit it gets is the register's call: stated outright in A, D and F, carried by
+the analysis or the ending's turn in B and C.
+
+## The humanizer pass
+
+Every register gets it, per beat and once over the finished article: `HUMANIZE.md`. The style card
+decides how the piece sounds; this pass decides whether a person could have written it, and a beat can
+pass its card and still read as machine output. Invoke `sfnl-humanizer` when it is available; the file
+carries the checklists for when it is not, and the cross-beat checks it does not cover.
+
+Two rules keep the pass from doing damage. Facts stay: it rewrites language, never a committed claim or
+its strength. And the card wins on the house forms it names and budgets — F's capitalised headings and
+conditional inversion, B's colon hinge, C's withheld opening — while the humanizer wins everywhere the
+card is silent.
 
 ## The pyramid
 

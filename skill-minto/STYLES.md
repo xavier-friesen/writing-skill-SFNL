@@ -228,4 +228,8 @@ than an average? Is every graft traceable to a version?
   baseline everywhere. Card A loosens the first where a beat is genuinely a figures beat; card C
   keeps both, because prose reads aloud hardest; card F is stricter than all of them — two
   numbers per paragraph in running prose, the rest to a results list.
-- **Length discipline** is card D's default. In A, B and C the length target from intake wins.
+- **Length discipline** is card D's default. In A, B and C the length target from intake wins; F
+  follows the section it is written for.
+- **The humanizer pass** (`HUMANIZE.md`) runs in every register, per beat and once over the
+  finished text. Where it collides with a card, the card wins only on the devices it names and
+  budgets; everywhere else the pass wins.

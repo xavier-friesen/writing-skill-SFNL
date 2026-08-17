@@ -223,3 +223,34 @@ traject. Havelsteijn betaalt nu voor de ingang."
 
 Supermodus draait nu over vijf kaarten in plaats van vier; een kaart overslaan mag, mits benoemd
 en met minimaal drie over.
+
+---
+
+# Addendum 4: de humanizer-pas, in elk register
+
+`skill-minto/HUMANIZE.md`, aangeroepen vanuit stap 7 en uit de eindconditie. De kaart bepaalt hoe
+een stuk klinkt, de pas bepaalt of een mens het geschreven kan hebben; een beat kan zijn
+kaarttoetsen halen en nog steeds als machinetekst lezen.
+
+Twee momenten, en dat onderscheid is het hele punt. **Per beat** een lokale pas: één concreet
+gegeven per alinea, geen meta-commentaar, geen gedachtestreepje als los accent, geen hedge zonder
+echte onzekerheid, geen vlagwoorden, nominalisaties onder de vijf per honderd woorden, hetzelfde
+ding steeds hetzelfde woord. **Over de hele tekst** de pas die alleen daar iets kan zien:
+zinslengtebereik, hoogstens twee negatieve parallellen en twee drieslagen in het stuk, geen twee
+beats die op dezelfde grammaticale vorm sluiten, secties die in lengte verschillen naar gewicht,
+en de hardop-leestoets.
+
+Waar `sfnl-humanizer` beschikbaar is, roept de skill die aan; de checklists in `HUMANIZE.md`
+dekken het geval dat hij er niet is, plus de hele-tekstcontroles die hij niet doet.
+
+Twee remmen. **Feiten blijven** — de pas herschrijft taal, nooit een gecommitteerde claim of de
+sterkte daarvan. En **de kaart wint op de huisvormen die zij benoemt en budgetteert**; overal
+waar de kaart zwijgt, wint de pas.
+
+**Demonstratie.** `test/rondes/minto/T3-register-F.humanizer.md` logt de pas over de F-tekst. De
+per-beatpas vond niets. De hele-tekstpas vond drie dingen: geen enkele zin boven de dertig
+woorden (zestien zinnen die in één maat tikken), twee beats die op dezelfde X-niet-Y-vorm
+sloten, en één zin die hardop struikelde. Precies de tells die per beat onzichtbaar zijn. De
+kaart overrulede de pas twee keer, op de kapitalen in koppen en op het vet in de factbox. En de
+eerste poging tot een lange zin sneuvelde op de feitenrem: die smokkelde een algemene bewering
+naar binnen die niet in de pile staat.
