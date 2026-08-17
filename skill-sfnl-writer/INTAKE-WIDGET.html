@@ -1,0 +1,158 @@
+<title>sfnl-writer intake</title>
+<style>
+  :root {
+    --bg: #faf9f7; --panel: #ffffff; --ink: #1a1a1a; --muted: #6b6862;
+    --line: #e3e0da; --accent: #1f5f4e; --accent-soft: #eaf2ef; --code: #f3f1ec;
+  }
+  :root:not([data-theme="light"]) { }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17181a; --panel: #1f2124; --ink: #ececec; --muted: #a2a09b;
+      --line: #34373b; --accent: #7fc8ae; --accent-soft: #23342f; --code: #26282c;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17181a; --panel: #1f2124; --ink: #ececec; --muted: #a2a09b;
+    --line: #34373b; --accent: #7fc8ae; --accent-soft: #23342f; --code: #26282c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 2rem 1.25rem 4rem; background: var(--bg); color: var(--ink);
+    font: 16px/1.55 ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin: 0 0 .35rem; letter-spacing: -.01em; }
+  .sub { color: var(--muted); margin: 0 0 2rem; }
+  fieldset {
+    border: 1px solid var(--line); border-radius: 10px; background: var(--panel);
+    padding: 1.1rem 1.2rem 1.3rem; margin: 0 0 1.1rem;
+  }
+  legend { font-weight: 650; padding: 0 .4rem; font-size: .95rem; }
+  legend span { font-weight: 400; color: var(--muted); }
+  label.opt {
+    display: grid; grid-template-columns: 1.4rem 1fr; gap: .1rem .5rem;
+    padding: .5rem .6rem; border-radius: 8px; cursor: pointer; align-items: start;
+  }
+  label.opt:hover { background: var(--accent-soft); }
+  label.opt input { margin-top: .3rem; accent-color: var(--accent); }
+  label.opt b { font-weight: 620; }
+  label.opt em { grid-column: 2; font-style: normal; color: var(--muted); font-size: .88rem; }
+  input[type=text], input[type=number] {
+    width: 100%; padding: .5rem .6rem; border: 1px solid var(--line); border-radius: 8px;
+    background: var(--bg); color: var(--ink); font: inherit; font-size: .95rem;
+  }
+  .row { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; }
+  .row > * { flex: 1 1 12rem; }
+  .hint { color: var(--muted); font-size: .88rem; margin: .5rem 0 0; }
+  .out {
+    position: sticky; bottom: 0; margin-top: 1.5rem; border: 1px solid var(--accent);
+    border-radius: 10px; background: var(--panel); padding: 1rem 1.1rem;
+  }
+  .out h2 { font-size: .95rem; margin: 0 0 .6rem; }
+  code#line {
+    display: block; overflow-x: auto; white-space: pre; background: var(--code);
+    border-radius: 8px; padding: .7rem .8rem; font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  button {
+    margin-top: .75rem; padding: .55rem 1rem; border: 0; border-radius: 8px;
+    background: var(--accent); color: var(--bg); font: inherit; font-weight: 600; cursor: pointer;
+  }
+  button:active { transform: translateY(1px); }
+  .ok { color: var(--accent); font-size: .88rem; margin-left: .6rem; }
+</style>
+
+<main>
+  <h1>sfnl-writer — intake</h1>
+  <p class="sub">Vier keuzes, allemaal met een default: klik alleen aan wat je anders wilt.
+     Onderaan staat één regel — kopieer die en plak hem terug in het gesprek.</p>
+
+  <fieldset>
+    <legend>Referentietekst <span>— optioneel</span></legend>
+    <label class="opt" style="grid-template-columns:1.4rem 1fr"><input type="checkbox" id="ref">
+      <b>Ik heb een referentietekst bijgevoegd</b>
+      <em>Hang het document gewoon aan het gesprek. Alleen de <strong>stijl</strong> wordt
+          overgenomen: feiten, voorbeelden en formuleringen komen altijd uit je ruwe materiaal,
+          nooit uit de referentie.</em></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Register <span>— hoe het klinkt</span></legend>
+    <label class="opt"><input type="radio" name="reg" value="F"><b>F — SFNL-rapport</b>
+      <em>Knelpunt, casussen, les, aanbeveling. Huisstem uit de rapporten van 2024 en 2025.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="A"><b>A — McKinsey</b>
+      <em>Action titles, antwoord eerst op elk niveau, koppen die samen het betoog dragen.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="B"><b>B — Economist</b>
+      <em>Geen aanloop, elke zin gemist als je hem weghaalt, scherpe zinslengtevariatie.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="C"><b>C — proza</b>
+      <em>Opening als zaklamp, de abstractieladder op en af, een slot dat draait.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="D" checked><b>D — feitelijk kort</b>
+      <em>Apex in de kop, één beweging per alinea, geen versiering. De default.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="R"><b>R — als de referentietekst</b>
+      <em>Vereist de bijgevoegde referentie. De stijl wordt eerst gemeten en als kaart aan je
+          voorgelegd, dan pas geschreven.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="E"><b>E — supermodus</b>
+      <em>Alle registers schrijven, zeggen wat elk wint, dan één versie met één ruggengraat.
+          Kost een veelvoud.</em></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Cadans <span>— hoe we werken</span></legend>
+    <label class="opt"><input type="radio" name="cad" value="P"><b>P — alinea voor alinea</b>
+      <em>Per alinea 2–3 richtingen, jij kiest. Meeste grip, meeste beurten. Voor korte teksten
+          die er echt toe doen of een omstreden betoog.</em></label>
+    <label class="opt"><input type="radio" name="cad" value="S"><b>S — sectie voor sectie</b>
+      <em>Een sectie in één keer, daarna 2–3 richtingen voor de volgende. De middenversnelling.</em></label>
+    <label class="opt"><input type="radio" name="cad" value="O" checked><b>O — eerst de outline</b>
+      <em>Apex, takken en alle beats vooraf vastgelegd; daarna doorschrijven zonder aftakkingen.
+          Voor als de structuur het risico is en het proza routine.</em></label>
+    <label class="opt"><input type="radio" name="cad" value="W"><b>W — in één keer</b>
+      <em>Eén doorloop, hele tekst, daarna herzien op jouw opmerkingen. Goedkoopst, en het snelst
+          iets om op te reageren.</em></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Lengte <span>— doel in woorden</span></legend>
+    <div class="row">
+      <input type="number" id="len" min="50" step="50" placeholder="bijv. 800">
+      <label class="opt" style="grid-template-columns:1.4rem auto"><input type="checkbox" id="nolen" checked>
+        <b>geen voorkeur</b></label>
+    </div>
+    <p class="hint">Zonder voorkeur stelt de skill zelf een getal voor en zegt wat het kost: lager
+       betekent takken laten vallen, hoger betekent alinea's die meer materiaal dragen.</p>
+  </fieldset>
+
+  <div class="out">
+    <h2>Plak deze regel terug in het gesprek<span id="ok" class="ok"></span></h2>
+    <code id="line">INTAKE ref=- reg=D cad=O len=-</code>
+    <button id="copy">Kopieer</button>
+  </div>
+</main>
+
+<script>
+  const $ = s => document.querySelector(s);
+  const build = () => {
+    const ref = $('#ref').checked ? 'bijgevoegd' : '-';
+    const reg = document.querySelector('input[name=reg]:checked').value;
+    const cad = document.querySelector('input[name=cad]:checked').value;
+    const len = $('#nolen').checked || !$('#len').value ? '-' : $('#len').value;
+    $('#line').textContent = `INTAKE ref=${ref} reg=${reg} cad=${cad} len=${len}`;
+  };
+  document.addEventListener('input', () => {
+    if ($('#len').value) $('#nolen').checked = false;
+    build();
+  });
+  $('#copy').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText($('#line').textContent);
+      $('#ok').textContent = 'gekopieerd';
+      setTimeout(() => $('#ok').textContent = '', 2000);
+    } catch (e) {
+      const r = document.createRange();
+      r.selectNode($('#line'));
+      getSelection().removeAllRanges();
+      getSelection().addRange(r);
+      $('#ok').textContent = 'geselecteerd — kopieer met ctrl/cmd-C';
+    }
+  });
+  build();
+</script>

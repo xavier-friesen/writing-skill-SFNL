@@ -13,16 +13,17 @@ mine it, you never edit it.
 This is exploit. The exploring is done and the pile is fixed. Commit to one governing answer, then walk
 the reader down the pyramid, mining the pile to fill each beat, at whatever pace the cadence sets.
 
-Four files travel with this one and are all it needs: `INTAKE.md` (the four opening decisions),
-`STYLES.md` (the registers), `HUMANIZE.md` (the humanizer pass) and `SFNL-SPECIMENS.md` (worked passages
-for the house register).
+Five files travel with this one and are all it needs: `INTAKE.md` and `INTAKE-WIDGET.html` (the four
+opening decisions), `STYLES.md` (the registers), `HUMANIZE.md` (the humanizer pass) and
+`SFNL-SPECIMENS.md` (worked passages for the house register).
 
 ## The loop
 
 Steps 1 to 5 run in every cadence. Step 6 is where the cadences part.
 
 1. **Read the pile end-to-end.** Before anything else.
-2. **Intake.** Reference, register, cadence, length — one question block in the chat. See `INTAKE.md`.
+2. **Intake.** Reference, register, cadence, length — one widget, rendered in the chat. See
+   `INTAKE.md`.
 3. **Check the source.** One pass over the pile, before any writing. See
    [Checking the source](#checking-the-source).
 4. **Fix the apex.** Settle the one-sentence answer the whole article delivers, and the reader's
@@ -39,9 +40,11 @@ Whatever the cadence, every unit of text passes the four checks before it lands 
 
 ## Intake
 
-Four decisions, one question block in the chat: **reference**, **register**, **cadence**, **length**.
-`INTAKE.md` carries how to fit seven registers into a four-option question, how to tell an attached
-reference from an attached pile, and the defaults — nobody is required to choose anything.
+Four decisions in one widget, `INTAKE-WIDGET.html`, rendered inline in the conversation rather than
+handed over as a path: **reference**, **register**, **cadence**, **length**. It shows all seven registers
+with what each buys, which no four-option question can, and everything starts on its default so agreeing
+costs one click. `INTAKE.md` carries the paste-back format, how to tell an attached reference from an
+attached pile, and the defaults.
 
 **Register** — read the chosen card in `STYLES.md` before writing, and keep its three tests in the
 per-beat check:

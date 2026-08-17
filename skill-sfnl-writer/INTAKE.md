@@ -1,42 +1,44 @@
 # Intake
 
-Four things to settle before beat 1: **reference**, **register**, **cadence**, **length**. All of
-it happens in the chat, in one exchange. Skip anything the user has already decided in
+Four things to settle before beat 1: **reference**, **register**, **cadence**, **length**. One
+widget, rendered in the chat, one exchange. Skip anything the user has already decided in
 conversation, and never ask again for something they have said.
 
-## One question block, in chat
+## Render the widget inline
 
-Ask register, cadence and length together in a single `AskUserQuestion` call — three questions,
-four options each, one screen. Not three messages in a row: an intake that costs three exchanges
-has already cost more than it saves.
+`INTAKE-WIDGET.html` ships with this skill. Render it **in the conversation** — send it with the
+file tool set to render, so it opens as a page the user can click, not as a path they have to go
+and find. Never tell them to open a file.
 
-**Question 1 — Register.** Four options fit; there are seven registers. Show the four that fit
-this piece, recommended one first, and name the rest in the question text so the user can type one
-into "Other": *"Register? A (McKinsey) en E (supermodus) kun je als eigen antwoord typen."*
+The widget carries all four decisions at once, with what each option costs:
 
-- Lead with **F — SFNL-rapport** whenever the piece is Social Finance NL work, otherwise with
-  **D — feitelijk kort**.
-- When a reference document has been attached, **R — zoals mijn referentietekst** takes the first
-  slot instead.
-- Fill the remaining slots from B (Economist), C (proza), and whichever of D/F is not leading.
-- Each option gets a one-line description of what it buys, not what it is called.
+- **Reference** — a checkbox: *I have attached a reference text*.
+- **Register** — all seven, no shortlisting: F (SFNL-rapport), A (McKinsey), B (Economist),
+  C (proza), D (feitelijk kort), R (as the reference text), E (supermode). This is why the widget
+  beats a question block: seven options fit a page and do not fit four slots, and each one gets a
+  line saying what it buys.
+- **Cadence** — P (paragraph), S (section), O (outline first), W (write at once), each with its
+  cost in turns against control.
+- **Length** — a number, or *no preference*.
 
-**Question 2 — Cadans.** All four fit: O (outline eerst), S (sectie voor sectie), P (alinea voor
-alinea), W (in één keer). Lead with the default for the length in question, and put the cost in
-the description — turns against control.
+Everything is pre-selected at its default, so a user who agrees clicks copy and nothing else. The
+widget emits one line:
 
-**Question 3 — Lengte.** Kort (~300 woorden), middel (~800), lang (~1500 en meer), geen voorkeur.
-Anyone with an exact number types it. On *geen voorkeur*, read the pile, propose a number in one
-line, and say what it costs: lower means branches get dropped, higher means beats carry more from
-the pile.
+```
+INTAKE ref=<bijgevoegd|-> reg=<A|B|C|D|F|R|E> cad=<P|S|O|W> len=<number|->
+```
 
-**A fourth question, only when it is live:** if two documents have arrived and it is unclear which
-is which, ask which one is the reference. Otherwise leave it out.
+Parse it and write all four values into the sidecar. `-` on length means propose a target in one
+line and say what it costs; `-` on reference means register R is unavailable.
+
+**If the widget does not render** in this surface, or the user would rather type: put the same
+four decisions in one chat message as a short list with the defaults marked, and take a one-line
+answer. Do not fall back to asking four questions in four messages.
 
 ## The reference document
 
 The user attaches it in the chat, like any other file. Never ask for a path, and never ask them to
-put it somewhere first.
+save it somewhere first.
 
 Two documents can arrive, and they do different jobs, so keep them apart:
 
@@ -45,8 +47,8 @@ Two documents can arrive, and they do different jobs, so keep them apart:
   when it covers the same subject.
 
 Default reading: the first document is the pile. A second one, or one introduced with something
-like "in deze stijl" or "zoals dit stuk", is the reference. When that is genuinely unclear, ask —
-one question, in the same block as the rest.
+like "in deze stijl" or "zoals dit stuk", is the reference. When that is genuinely unclear, ask in
+one line while the widget is up.
 
 A reference makes register **R** available: measure the text, write the card, show it, then write
 to it (`STYLES.md`). A reference alongside some other register means the user wants that register
@@ -65,5 +67,5 @@ defaults by target length:
 | 1,200 to 3,000 | **S** section by section |
 | over 3,000, or a contested argument at any length | **S**, offering **P** |
 
-If the user declines the block, or answers only part of it, state the defaults you are taking in
-one line and start writing. Record all four decisions in the sidecar.
+If the user ignores the widget entirely, state the defaults you are taking in one line and start
+writing. Record all four decisions, and the save path, in the sidecar.
