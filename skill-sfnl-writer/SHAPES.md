@@ -14,7 +14,7 @@ written in the case-and-lesson shape reads as a case study with no cases.
 
 ## The catalogue
 
-Fifteen shapes in four families. Each entry: what it is, when it fits, and how it fails.
+Seventeen shapes in five families. Each entry: what it is, when it fits, and how it fails.
 
 ### Answer first — the reader must decide or act
 
@@ -44,6 +44,13 @@ Fifteen shapes in four families. Each entry: what it is, when it fits, and how i
 | `situatie-actie-resultaat` | situation → what we did → what it produced | a case description, a project page, a reference | the result is thin — the shape promises a payoff and must have one |
 | `zandloper` | conclusion up front → narrative middle → back to meaning | a case that must be both scannable and told: reader gets the outcome, then the story | the middle has no scene in it; then it is a bluf with a long tail |
 | `scene-nutgraf` | one concrete scene → the paragraph saying why this matters → the piece | a feature, a portrait, a newsletter, a project page that has to be felt | the scene is decorative and the nut graf could have opened the piece by itself |
+
+### Scholarly — the reader will check
+
+| Shape | Order | Fits | Fails when |
+|---|---|---|---|
+| `imrad` | introduction → method → results → discussion | an article, a working paper, an evaluation held to academic standards | interpretation leaks into the results, or the method is written after the conclusion was chosen |
+| `cars` | territory → niche → occupation | the introduction *inside* `imrad`, and any piece that must justify why it exists | there is no real gap; then the move-2 sentence turns into a rhetorical gesture |
 
 ### State of play — the reader must keep track
 
@@ -90,7 +97,8 @@ Start from the job, not the genre:
 | know what happened | `chronologisch` or `zandloper` |
 | feel it | `scene-nutgraf` |
 | stay informed | `stand-opvallend-nu` |
+| check the work | `imrad`, with `cars` in its introduction |
 
 Propose the shape at intake, in the same line as the style, and put it in the sidecar next to the
-apex. **None of the fifteen fitting is a normal outcome, not a failure**: describe the order you are
+apex. **None of the seventeen fitting is a normal outcome, not a failure**: describe the order you are
 using in one sentence, say why the material demands it, and hold it as if it were on the list.

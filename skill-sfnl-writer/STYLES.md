@@ -14,12 +14,12 @@ another without changing register. Style is how it sounds; shape is what comes a
 
 Pulling the spine out settles the question of how many registers we need. A consultancy deck and
 an SFNL chapter looked like two philosophies while both cards restated the pyramid; with the
-pyramid gone, the difference is a handful of texture settings. So this file has **six presets**
-over **eleven knobs**, plus two procedures (R and E) that are not registers at all.
+pyramid gone, the difference is a handful of texture settings. So this file has **seven presets**
+over **thirteen knobs**, plus two procedures (R and E) that are not registers at all.
 
 ## The knobs
 
-Every preset is a set of values on these eleven. The widget's advanced panel exposes them in plain
+Every preset is a set of values on these thirteen. The widget's advanced panel exposes them in plain
 Dutch, with each option written as its own example; the emitted line carries only what the user
 moved. Change one knob and you have a variant; change six and you should have picked another preset.
 
@@ -32,12 +32,14 @@ moved. Change one knob and you have a variant; change six and you should have pi
 | `alinea-start` | Does each paragraph open on its own conclusion? | `ja` · `nee` |
 | `bewijs` | Where do the facts sit? | `proza` · `lijsten` · `kader` (factbox plus a results list) |
 
-**Cijfers**
+**Cijfers, claims en bronnen**
 
 | Knob | Question it answers | Values |
 |---|---|---|
 | `cijfers` | How is a figure presented? | `geschaald` (always with something to measure it against) · `kaal-mag` · `uit-proza` (result figures leave the prose for a list) |
 | `vet` | Bold lead-ins inside running text? | `nee` · `ja` |
+| `claimsterkte` | How strong may a claim be? | `stellig` (state it) · `gekalibreerd` (state it with its limit) · `voorzichtig` (uncertainty and conditions made explicit) |
+| `bronnen` | How does a source appear? | `geen` · `in-tekst` ("volgens het RIVM") · `noten` (footnote numbers) · `verwijzing` (author-date, integral or not) |
 
 **Toon en taal**
 
@@ -54,22 +56,24 @@ carries more than three numbers. `cijfers` only tightens them.
 
 ## Preset defaults at a glance
 
-| Knob | SFNL-rapport | McKinsey-notitie | Economist-essay | Reportage | Feitelijke notitie | Bulletnotitie |
-|---|---|---|---|---|---|---|
-| kop | conclusie | conclusie | geen | conclusie | conclusie | conclusie |
-| kern | kop | kop | eerste-alinea | later | kop | kop |
-| alinea-start | ja | ja | nee | nee | ja | ja |
-| bewijs | kader | lijsten | proza | proza | proza | lijsten |
-| cijfers | uit-proza | geschaald | geschaald | geschaald | geschaald | geschaald |
-| vet | ja | ja | nee | nee | nee | ja |
-| woorden | vak-uitgelegd | vak-bekend | alledaags | alledaags | alledaags | vak-bekend |
-| ritme | gemiddeld | gelijkmatig | wisselend | wisselend | gemiddeld | gelijkmatig |
-| stem | wij | onpersoonlijk | onpersoonlijk | onpersoonlijk | onpersoonlijk | onpersoonlijk |
-| oordeel | aanbeveling | aanbeveling | impliciet | impliciet | ondertekend | aanbeveling |
-| beeldspraak | 1 | 0 | 2 | 2 | 0 | 0 |
+| Knob | SFNL-rapport | McKinsey-notitie | Economist-essay | Reportage | Feitelijke notitie | Bulletnotitie | Wetenschappelijk |
+|---|---|---|---|---|---|---|---|
+| kop | conclusie | conclusie | geen | conclusie | conclusie | conclusie | label |
+| kern | kop | kop | eerste-alinea | later | kop | kop | eerste-alinea |
+| alinea-start | ja | ja | nee | nee | ja | ja | ja |
+| bewijs | kader | lijsten | proza | proza | proza | lijsten | proza |
+| cijfers | uit-proza | geschaald | geschaald | geschaald | geschaald | geschaald | geschaald |
+| vet | ja | ja | nee | nee | nee | ja | nee |
+| woorden | vak-uitgelegd | vak-bekend | alledaags | alledaags | alledaags | vak-bekend | vak-bekend |
+| ritme | gemiddeld | gelijkmatig | wisselend | wisselend | gemiddeld | gelijkmatig | gemiddeld |
+| stem | wij | onpersoonlijk | onpersoonlijk | onpersoonlijk | onpersoonlijk | onpersoonlijk | wij |
+| oordeel | aanbeveling | aanbeveling | impliciet | impliciet | ondertekend | aanbeveling | impliciet |
+| beeldspraak | 1 | 0 | 2 | 2 | 0 | 0 | 0 |
+| claimsterkte | gekalibreerd | stellig | stellig | stellig | stellig | stellig | gekalibreerd |
+| bronnen | noten | in-tekst | in-tekst | geen | in-tekst | in-tekst | verwijzing |
 
 Codes for the emitted line: `sfnl` · `mckinsey` · `economist` · `reportage` · `feitelijk` ·
-`bullets` · `referentie` · `supermodus`.
+`bullets` · `academisch` · `referentie` · `supermodus`.
 
 ---
 
@@ -254,6 +258,56 @@ comparative reasoning sitting inside the list instead of in prose around it?
 
 ---
 
+## Wetenschappelijk artikel `academisch` — the claim held to its evidence
+
+**Pick this when** the piece must survive a reader who checks: a journal article or working paper, a
+research chapter, a literature review, an evaluation written to academic standards, a methodological
+justification an auditor or scientific committee will read. Research and sources in
+`dossier/onderzoek/academisch.md`.
+
+The genre's defining property is not formality — it is that **every claim is pinned to the evidence
+that carries it, and no further**. Formality is a side effect, and mostly a bad one; the passive
+voice and the noun-stacking that people imitate when they "write academically" are the genre's
+habits, not its virtues.
+
+- **The gap comes before the contribution.** Swales' three moves run the opening: establish the
+  territory (what is known), establish the niche (what is missing, contradictory or unanswered),
+  then occupy it (what this piece does about it). A piece without a named gap is a summary, however
+  well referenced. `SHAPES.md` carries this as `cars`.
+- **Report and interpret in separate places.** Results say what was found; the discussion says what
+  it means and where it stops. Interpretation smuggled into the results is the classic breach, and a
+  careful reader spots it immediately.
+- **Calibrate every claim.** A hedge with content is mandatory — *"the decline cannot be attributed
+  to the programme"*, *"this suggests"*, *"under these conditions"*. A hedge without content is
+  padding — *"it is important to note that"*, *"in a certain sense"*. Boosters (*demonstrates*,
+  *clearly*) are allowed exactly where the evidence carries them, which is rarer than it feels.
+- **Name the limitation before someone else does.** Sample, period, comparison group, what the design
+  cannot establish. This is where the register earns its authority, and where a consultancy text
+  usually goes quiet.
+- **Old information first, new information last.** Gopen and Swan: the sentence's opening gives
+  perspective, its ending gives emphasis. Put the link backward at the start and the point at the
+  end, and keep subject and verb together — anything wedged between them reads as an interruption
+  and is forgotten.
+- **The source's form is a choice.** Integral — *"Swales (1990) argues that…"* — puts the weight on
+  who says it, and the reporting verb carries your judgment of them: *argues*, *finds*, *claims*,
+  *demonstrates* are four different verdicts. Non-integral — *"…(Swales, 1990)"* — puts the weight on
+  the finding. Pick per sentence, deliberately.
+- **Concrete nouns and working verbs, against the genre's own habit.** Sword counted five hundred
+  articles: the stylish ones populate their sentences with people doing things and avoid
+  nominalised abstractions. The nominalisation limit and the active voice apply *harder* here than
+  elsewhere, not less.
+- **Define a term once, at first use, and then keep the same word.** Synonym-hunting for variety is a
+  precision failure in this register, whatever it does for rhythm.
+
+**What this preset refuses to copy** from real academic prose: the passive that hides who acted,
+sentences that run past forty words because nobody edited them, the literature review that lists
+instead of arguing, and the discussion that restates the results with "importantly" in front.
+
+**Tests.** Is there a named gap the piece fills? Is every claim's strength matched to its evidence,
+with the limitation stated rather than implied? Does interpretation stay out of the results?
+
+---
+
 ## Text type and audience decide the starting point
 
 Purpose and reader are settled at intake, and they propose the preset and the knob deltas. This
@@ -271,6 +325,9 @@ table is the proposal; the user overrules it in the widget. Deltas are written a
 | One-pager, pitch | Bulletnotitie | `ritme:wisselend` `beeldspraak:1` |
 | Opiniestuk, blog | Economist-essay | `oordeel:ondertekend` |
 | Nieuwsbrief, LinkedIn | Reportage | `woorden:alledaags` `ritme:wisselend` |
+| Wetenschappelijk artikel, working paper | Wetenschappelijk | — |
+| Evaluatie met wetenschappelijke lat | Wetenschappelijk | `oordeel:aanbeveling` |
+| Literatuurstudie, kennissynthese | Wetenschappelijk | `bewijs:lijsten` |
 
 Audience shifts the same three knobs, and little else: a specialist reader takes
 `woorden:vak-bekend`, a mixed or public reader takes `woorden:alledaags` and often
@@ -319,7 +376,8 @@ in the card? Is anything on it a fact or phrase rather than a technique?
 several times the writing. Not a register: a procedure that ends in one.
 
 1. **One rendering per preset — SFNL-rapport, McKinsey-notitie, Economist-essay, Reportage,
-   Feitelijke notitie, Bulletnotitie, plus the reference card when one was attached** — of the same
+   Feitelijke notitie, Bulletnotitie, Wetenschappelijk, plus the reference card when one was
+   attached** — of the same
    apex and the same committed claims. Same facts, five or six different pieces of writing, not
    paraphrases. Dropping a preset is allowed when it is plainly wrong for the piece; say which and
    why, and never run fewer than three.
@@ -347,6 +405,9 @@ an average? Is every graft traceable to a version?
 - **The number rules** (three per sentence, no numeral-initial) hold in every preset. `cijfers`
   only tightens them.
 - **Length discipline** is K's default; elsewhere the intake target wins.
+- **Content-bearing hedges survive the humanizer** in `academisch` and wherever
+  `claimsterkte` is not `stellig`. The pass still cuts hedges that carry no epistemic content; the
+  test is whether removing the words changes what is claimed.
 - **Bullets keep their reasoning in prose** in every preset, not only the bulletnotitie. The
   `bewijs:lijsten` knob moves the items, never the argument.
 - **The humanizer pass** (`HUMANIZE.md`) runs in every preset and cadence, per unit and once over

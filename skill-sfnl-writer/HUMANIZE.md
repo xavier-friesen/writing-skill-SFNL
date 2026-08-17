@@ -18,7 +18,9 @@ this file's alone either way.
 2. No meta-commentary: "in dit hoofdstuk", "zoals eerder genoemd", "samenvattend".
 3. No em-dash as a loose aside mid-sentence, no bold for emphasis in running text.
 4. No hedge that is not a real uncertainty: "het is belangrijk op te merken", "over het
-   algemeen", "in zekere zin".
+   algemeen", "in zekere zin". The test is whether removing the words changes what is claimed — a
+   hedge that calibrates a claim ("kan niet worden toegeschreven aan", "onder deze voorwaarden")
+   stays, and in the academic preset it is required.
 5. None of the flag words: cruciaal, essentieel, faciliteren, navigeren, landschap
    (metaphorical), robuust, naadloos, baanbrekend, toekomstbestendig, inzichten bieden, waarde
    toevoegen, impact maken, holistisch, borgen, ontzorgen, meenemen in.

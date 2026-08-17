@@ -118,6 +118,9 @@
           standpunt.</em></label>
     <label class="opt"><input type="radio" name="reg" value="bullets"><b>Bulletnotitie</b>
       <em>Zet de punten in lijsten en houdt de redenering ertussen in proza.</em></label>
+    <label class="opt"><input type="radio" name="reg" value="academisch"><b>Wetenschappelijk artikel</b>
+      <em>Benoemt eerst het gat in wat we weten, houdt resultaat en duiding uit elkaar en zet bij elke
+          claim hoe hard hij is.</em></label>
     <label class="opt"><input type="radio" name="reg" value="referentie"><b>Als mijn referentietekst</b>
       <em>Meet je voorbeeldtekst door op elf punten en schrijft op die maat.</em></label>
     <label class="opt"><input type="radio" name="reg" value="supermodus"><b>Supermodus</b>
@@ -183,7 +186,7 @@
           <option value="kader">In een kader plus een resultatenlijst (casusvorm)</option>
         </select></div>
 
-      <div class="knobhead">Cijfers</div>
+      <div class="knobhead">Cijfers, claims en bronnen</div>
 
       <div class="knob"><span class="q">Hoe presenteren we een getal?</span>
         <select data-k="cijfers">
@@ -196,6 +199,21 @@
         <select data-k="vet">
           <option value="nee">Nee</option>
           <option value="ja">Ja — <b>vette inzet</b> aan het begin van een alinea</option>
+        </select></div>
+
+      <div class="knob"><span class="q">Hoe hard mag een claim zijn?</span>
+        <select data-k="claimsterkte">
+          <option value="stellig">Stellig — "de aanpak werkte"</option>
+          <option value="gekalibreerd">Met de grens erbij — "de aanpak werkte, al is de daling niet toe te schrijven"</option>
+          <option value="voorzichtig">Voorzichtig — onzekerheid en voorwaarden expliciet in de zin</option>
+        </select></div>
+
+      <div class="knob"><span class="q">Hoe komt een bron in beeld?</span>
+        <select data-k="bronnen">
+          <option value="geen">Niet — de tekst noemt geen bronnen</option>
+          <option value="in-tekst">In de zin — "volgens het RIVM"</option>
+          <option value="noten">Als voetnoot achter het cijfer</option>
+          <option value="verwijzing">Als verwijzing — "(Swales, 1990)" of "Swales (1990) laat zien"</option>
         </select></div>
 
       <div class="knobhead">Toon en taal</div>
@@ -247,20 +265,22 @@
 
 <script>
   const $ = s => document.querySelector(s);
-  const KNOBS = ['kop','kern','alinea-start','bewijs','cijfers','vet','woorden','ritme','stem','oordeel','beeldspraak'];
+  const KNOBS = ['kop','kern','alinea-start','bewijs','cijfers','vet','claimsterkte','bronnen','woorden','ritme','stem','oordeel','beeldspraak'];
   const PRESET = {
     sfnl:      {kop:'conclusie', kern:'kop',           'alinea-start':'ja',  bewijs:'kader',   cijfers:'uit-proza',  vet:'ja',
-                woorden:'vak-uitgelegd', ritme:'gemiddeld',   stem:'wij',           oordeel:'aanbeveling', beeldspraak:'1'},
+                woorden:'vak-uitgelegd', ritme:'gemiddeld',   stem:'wij',           oordeel:'aanbeveling', beeldspraak:'1', claimsterkte:'gekalibreerd', bronnen:'noten'},
     mckinsey:  {kop:'conclusie', kern:'kop',           'alinea-start':'ja',  bewijs:'lijsten', cijfers:'geschaald',  vet:'ja',
-                woorden:'vak-bekend',    ritme:'gelijkmatig', stem:'onpersoonlijk', oordeel:'aanbeveling', beeldspraak:'0'},
+                woorden:'vak-bekend',    ritme:'gelijkmatig', stem:'onpersoonlijk', oordeel:'aanbeveling', beeldspraak:'0', claimsterkte:'stellig', bronnen:'in-tekst'},
     economist: {kop:'geen',      kern:'eerste-alinea', 'alinea-start':'nee', bewijs:'proza',   cijfers:'geschaald',  vet:'nee',
-                woorden:'alledaags',     ritme:'wisselend',   stem:'onpersoonlijk', oordeel:'impliciet',   beeldspraak:'2'},
+                woorden:'alledaags',     ritme:'wisselend',   stem:'onpersoonlijk', oordeel:'impliciet',   beeldspraak:'2', claimsterkte:'stellig', bronnen:'in-tekst'},
     reportage: {kop:'conclusie', kern:'later',         'alinea-start':'nee', bewijs:'proza',   cijfers:'geschaald',  vet:'nee',
-                woorden:'alledaags',     ritme:'wisselend',   stem:'onpersoonlijk', oordeel:'impliciet',   beeldspraak:'2'},
+                woorden:'alledaags',     ritme:'wisselend',   stem:'onpersoonlijk', oordeel:'impliciet',   beeldspraak:'2', claimsterkte:'stellig', bronnen:'geen'},
     feitelijk: {kop:'conclusie', kern:'kop',           'alinea-start':'ja',  bewijs:'proza',   cijfers:'geschaald',  vet:'nee',
-                woorden:'alledaags',     ritme:'gemiddeld',   stem:'onpersoonlijk', oordeel:'ondertekend', beeldspraak:'0'},
+                woorden:'alledaags',     ritme:'gemiddeld',   stem:'onpersoonlijk', oordeel:'ondertekend', beeldspraak:'0', claimsterkte:'stellig', bronnen:'in-tekst'},
     bullets:   {kop:'conclusie', kern:'kop',           'alinea-start':'ja',  bewijs:'lijsten', cijfers:'geschaald',  vet:'ja',
-                woorden:'vak-bekend',    ritme:'gelijkmatig', stem:'onpersoonlijk', oordeel:'aanbeveling', beeldspraak:'0'}
+                woorden:'vak-bekend',    ritme:'gelijkmatig', stem:'onpersoonlijk', oordeel:'aanbeveling', beeldspraak:'0', claimsterkte:'stellig', bronnen:'in-tekst'},
+    academisch:{kop:'label',     kern:'eerste-alinea', 'alinea-start':'ja',  bewijs:'proza',   cijfers:'geschaald',  vet:'nee',
+                woorden:'vak-bekend',    ritme:'gemiddeld',   stem:'wij',           oordeel:'impliciet',   beeldspraak:'0', claimsterkte:'gekalibreerd', bronnen:'verwijzing'}
   };
   const PROPOSAL = { reg: '{{REG}}', cad: '{{CAD}}', knobs: {{KNOBS_JSON}} };
   const touched = new Set();

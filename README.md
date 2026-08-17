@@ -16,7 +16,7 @@ Beide mappen zijn volledig zelfstandig: kopieer de map, herstart Claude Code (of
 open een nieuwe sessie) en de skill staat in de lijst. Ze hebben elkaar niet
 nodig en niets uit deze repo. `sfnl-writer` bestaat uit `SKILL.md` plus vijf
 bestanden die ermee mee moeten: `INTAKE.md` en `INTAKE-WIDGET.html` (de
-openingskeuzes), `STYLES.md` (de stijlen en de knoppen), `SHAPES.md` (vijftien
+openingskeuzes), `STYLES.md` (zeven stijlen over dertien knoppen), `SHAPES.md` (zeventien
 vormen en de regels om ze te combineren), `HUMANIZE.md` (de humanizer-pas) en
 `SFNL-SPECIMENS.md` (veertien passages uit de SFNL-rapporten voor het
 huisregister). Voor projectgebruik in
@@ -49,6 +49,7 @@ is en heeft anders een solo-fallback.
 | `dossier/lessen-sfnl-writer.md` | Negen lessen uit de bouw van `sfnl-writer` |
 | `dossier/test-vormen.md` | Vier tests op de vormcatalogus, geverifieerd aan het rapport van 2025 |
 | `dossier/onderzoek/bullets.md` | Onderzoek achter het bulletregister |
+| `dossier/onderzoek/academisch.md` | Onderzoek achter het wetenschappelijke register |
 | `dossier/vergelijking-minto-vs-rapporttekst.md` | `sfnl-writer` naast `sfnl-rapporttekst`, gescoord op T3 |
 
 ## De kern in twee regels
