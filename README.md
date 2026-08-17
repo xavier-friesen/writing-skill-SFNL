@@ -21,6 +21,7 @@ is en heeft anders een solo-fallback.
 | Map | Inhoud |
 |---|---|
 | `skill/` | De definitieve skill (v3.2) |
+| `skill-minto/` | `minto-journey`: ruw materiaal beat voor beat tot artikel vormen, met een Minto-piramide als ruggengraat |
 | `varianten/` | De vijf concurrerende ontwerpen uit ronde 1 |
 | `test/corpus/` | Drie vaste AI-bot-testteksten met feitenlijsten |
 | `test/rubriek.md` | Het blinde beoordelingskader (met addendum) |
