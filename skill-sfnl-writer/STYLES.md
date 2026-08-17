@@ -1,6 +1,7 @@
 # Style cards
 
-Five writing registers (A, B, C, D, F) and a supermode (E) that runs them all. One is chosen at
+Five writing registers (A, B, C, D, F), a register derived from a text the user supplies (R), and
+a supermode (E) that runs them all. One is chosen at
 intake and holds for the whole article; read that card and keep it beside you while writing.
 Each card ends in three yes/no tests — run them on every beat before it lands, alongside the
 link check.
@@ -182,6 +183,47 @@ sentence turn something over?
 
 ---
 
+## R. Reference text — derive the register
+
+**Pick this when** the user hands over a piece of writing and wants the article to sound like it:
+an earlier report of their own, a competitor's page, a colleague's chapter, something they
+admire. The reference replaces the card; everything else in the skill is unchanged.
+
+Read the reference in full, then **measure before you describe.** Impressions of a voice are
+worthless; counts are reproducible. Work through this list and write the numbers down:
+
+1. **Sentence length** — mean, shortest, longest, and whether the length actually varies or the
+   text ticks in one meter.
+2. **Paragraphs** — sentences per paragraph, and whether the first sentence summarises the rest.
+3. **Person** — who is "we", is the reader addressed, does the author appear at all.
+4. **Headings** — assertions or labels, sentence case or capitals, and how often.
+5. **Numbers** — how a figure is introduced, how many per paragraph, scaled or left bare.
+6. **Openings and closings** — what move the first sentence makes, and what the last one does.
+7. **Signature devices** — the recurring constructions, up to three, each with a count.
+8. **Vocabulary** — jargon paid off or assumed, formality, and which domain the imagery comes
+   from.
+9. **What it never does** — the moves conspicuously absent.
+
+Then write the card into the sidecar: six to eight rules in the shape of the cards above, three
+yes/no tests, and a budget on the two most frequent devices set at the sample's own rate per 500
+words. Show it to the user before beat 1 — a derived card is a reading of their text, and they
+are the one who can say it is wrong.
+
+**Three guardrails.**
+
+- **Structure and voice, never content.** Phrases, examples, framings and facts from the
+  reference stay in the reference. What transfers is how sentences are built, not what they say.
+- **Thin samples give thin cards.** Under roughly 300 words, say so, name the built-in card the
+  reference sits closest to, and run that card with the two or three derived rules laid over it.
+- **Do not copy the weaknesses.** Every real text has them. Name what you are refusing to
+  reproduce, the way card F refuses three things its own source reports do.
+
+**Tests.** Are the rules on the card numbers rather than impressions? Would the author of the
+reference recognise their own text in the card? Is anything on it a fact or phrase rather than a
+technique?
+
+---
+
 ## E. Supermode — all four, then a fifth
 
 **Pick this when** the register is genuinely undecided, or the piece matters enough to be worth
@@ -190,8 +232,8 @@ several times the writing. It is not a register of its own: it is a procedure th
 Write the same material once per writing card, then land a final version that is the one that
 goes in the file.
 
-1. **One rendering per card — A, B, C, D and F** — of the same apex and the same committed
-   claims. Same facts, five different pieces of writing, not five paraphrases. Each obeys its own
+1. **One rendering per card — A, B, C, D and F, plus R when a reference was supplied** — of the
+   same apex and the same committed claims. Same facts, five different pieces of writing, not five paraphrases. Each obeys its own
    card, including where the cards contradict each other. Dropping a card is allowed when it is
    plainly wrong for the piece (F outside SFNL work, A for a portrait), but say which you dropped
    and why, and never run fewer than three.
@@ -212,10 +254,10 @@ goes in the file.
 Only the final version goes into the article file. The renderings go in the sidecar, so a later
 beat can graft from a version the user liked.
 
-**On the light route** (under ~400 words) run the supermode on the whole article at once — short
-pieces are cheap and compare better whole. On the long route run it on the opening beat
-only, then lock the spine and continue in that register; four renderings of every beat in a
-2,000-word piece buys less each time and costs the same.
+**In cadence W or O** run the supermode on the whole article at once — short pieces are cheap and
+compare better whole, and an outline is a single object to render several ways. **In S or P** run
+it on the opening section or beat only, then lock the spine and continue in that register;
+rendering every beat five ways buys less each time and costs the same.
 
 **Tests.** Can you name what each rendering won? Does the final version have one spine rather
 than an average? Is every graft traceable to a version?

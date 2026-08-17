@@ -1,7 +1,7 @@
 ---
 name: sfnl-writer
-version: 2.0
-description: 'Shape a pile of raw material into an article on a Minto pyramid, beat by beat, in a chosen register (SFNL report house style, McKinsey, Economist, prose, factual brief, or all of them then a synthesis), with a humanizer pass on every beat. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a finished piece. Trigger on "schrijf hier een artikel van", "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "beat by beat", "in onze huisstijl schrijven".'
+version: 2.1
+description: 'Shape a pile of raw material into an article on a Minto pyramid, in a chosen register (SFNL house style, McKinsey, Economist, prose, factual brief, or the style of a reference text the user supplies) and a chosen cadence (paragraph by paragraph, section by section, outline first, or write at once), with a humanizer pass throughout. Use when the user has a markdown file of fragments, notes, or a transcript to turn into a finished piece. Trigger on "schrijf hier een artikel van", "shape this into an article", "minto", "pyramid structure", "turn this pile into a piece", "schrijf in de stijl van deze tekst", "in onze huisstijl schrijven".'
 ---
 
 # SFNL writer
@@ -15,36 +15,59 @@ the reader down the pyramid one beat at a time, mining the pile to fill each bea
 
 Ask once where to save the article, then remember the path.
 
-Three files travel with this one and are all it needs: `STYLES.md` (the registers), `HUMANIZE.md` (the
-humanizer pass) and `SFNL-SPECIMENS.md` (worked passages for the house register).
+Five files travel with this one and are all it needs: `INTAKE.md` and `INTAKE-WIDGET.html` (the four
+opening decisions), `STYLES.md` (the registers), `HUMANIZE.md` (the humanizer pass) and
+`SFNL-SPECIMENS.md` (worked passages for the house register).
 
 ## The loop
 
+Steps 1 to 5 run in every cadence. Step 6 is where the cadences part.
+
 1. **Read the pile end-to-end.** Before anything else.
-2. **Intake.** Settle register and length in one exchange. See [Intake](#intake).
+2. **Intake.** Reference, register, cadence, length — through the widget, in one exchange. See
+   `INTAKE.md`.
 3. **Check the source.** One pass over the pile, before any writing. See
    [Checking the source](#checking-the-source).
 4. **Fix the apex.** Settle the one-sentence answer the whole article delivers, and the reader's
    question it answers. See [The pyramid](#the-pyramid). Nothing gets written until it is agreed.
 5. **Establish the prerequisites.** Settle what the audience already knows walking in. Everything else
    must be grounded by a beat before a later beat can lean on it. See [Grounding](#grounding).
-6. **Offer 2-3 candidate opening beats**, drawn from the pile. Each is a different entry point to the
-   same apex. Show them before writing anything to the article file. Say what each one grounds, and
-   preview which beats that pick unlocks — the user should see a little way down the path.
-7. **Write the picked beat, and only that beat.** Re-read the article file from disk first. Run the
-   four checks — [link](#the-link-check), [budgets](#budgets), the style card's three tests, and the
-   per-beat [humanizer pass](#the-humanizer-pass) — before it lands. Update the sidecar. Then stop.
-8. **Offer 2-3 candidate next beats.** Each must be reachable from the current grounded set, must serve
-   a live branch of the pyramid, and must say what it grounds. Then loop from step 7.
+6. **Write in the chosen cadence.** See [Cadence](#cadence).
+7. **Close the article.** The whole-text humanizer pass, then the two ending conditions. See
+   [Ending](#ending).
 
-**The light route.** For a target under roughly 400 words, run steps 4-6 as one exchange: fix the apex
-and the whole beat list together, then write the beats straight through, showing each as it lands. Six
-round trips for 250 words is more apparatus than a short piece can carry. The branching loop is for
-longer pieces, where the choice of next beat genuinely changes the article.
+Whatever the cadence, every unit of text passes the four checks before it lands — [link](#the-link-check),
+[budgets](#budgets), the style card's three tests, and the per-beat [humanizer pass](#the-humanizer-pass)
+— the sidecar is updated as it lands, and the article file is re-read from disk before every write.
+
+## Cadence
+
+Four gears. They differ in one thing only: how much text goes by between the user's decisions.
+
+- **P — paragraph by paragraph.** Offer 2-3 candidate next beats, each reachable from the current
+  grounded set and each serving a live branch, saying what it grounds and what picking it unlocks.
+  Write the picked beat, and only that beat. Stop. Most control, most round trips; for a contested
+  argument, or a short piece that has to be right.
+- **S — section by section.** Settle the beats of one section together, write the section straight
+  through, then offer 2-3 candidate directions for the section after it. The middle gear, and the one
+  that suits most reports.
+- **O — outline first, then write.** Agree the apex, the branches and every beat up front, as a list
+  the user can edit. Then write straight through in order, showing each section as it lands, without
+  offering branches — the branching happened in the outline. For when the structure is the risk and
+  the prose is routine.
+- **W — write at once.** One pass over the whole piece, delivered complete, then revised on the user's
+  notes. The checks still run, all of them, before delivery rather than beat by beat. Cheapest, and the
+  fastest way to give someone something to react to.
+
+Two things hold in every gear. The user can change gear mid-article — "just write the rest" drops from
+P to W, "slow down here" lifts W to P for one section — and the sidecar records the switch. And a
+cadence never removes a check; it only changes when the check runs.
 
 ## Intake
 
-Ask both questions at once, as a single widget, and skip whichever the user has already answered.
+Four decisions, one exchange, through `INTAKE-WIDGET.html`: **reference**, **register**, **cadence**,
+**length**. `INTAKE.md` carries the widget procedure, the paste-back format, the checklist fallback for
+terminal-only sessions, and the defaults — nobody is required to choose anything.
 
 **Register** — read the chosen card in `STYLES.md` before writing, and keep its three tests in the
 per-beat check:
@@ -60,14 +83,20 @@ per-beat check:
 - **F. SFNL report** — the pleidooi met bewijslast: knelpunt, cases, lesson, recommendation; assertive
   headings; a number never alone; mechanisms in four steps; a close that turns. For anything that
   belongs in a Social Finance NL report. Fourteen worked passages sit in `SFNL-SPECIMENS.md`.
+- **R. Reference text** — measure the supplied text, write a card from the measurements, show it to the
+  user, then write to it. Requires a reference file.
 - **E. Supermode** — write it once per card, say what each won, then land a final version with one
   register as its spine and named grafts from the rest. Costs several times the writing; offer it when
   the register is undecided or the piece matters that much.
 
-**Length** — offer a short/medium/long band and an explicit *no preference*. On no preference, read the
-pile, propose a target in one line, and say what it costs: a lower target means branches get dropped,
-a higher one means beats carry more from the pile. Record whichever number is agreed in the sidecar and
-hold it; a piece drifting past its target is a pyramid with a branch nobody chose.
+**Reference** — a style source, never a pile. Its facts, phrases and examples stay where they are; only
+the pile supplies content. That line is the whole safety of the feature, and it holds even when the
+reference is about the same subject as the article.
+
+**Length** — a target in words, or no preference. On no preference, read the pile, propose a number in
+one line, and say what it costs: lower means branches get dropped, higher means beats carry more from
+the pile. Record whatever is agreed in the sidecar and hold it; a piece drifting past its target is a
+pyramid with a branch nobody chose.
 
 ## Checking the source
 
@@ -113,7 +142,7 @@ the analysis or the ending's turn in B and C.
 
 ## The humanizer pass
 
-Every register gets it, per beat and once over the finished article: `HUMANIZE.md`, which carries the
+Every register and every cadence gets it, per unit of text and once over the finished article: `HUMANIZE.md`, which carries the
 full checklists and needs nothing else. The style card decides how the piece sounds; this pass decides
 whether a person could have written it, and a beat can pass its card and still read as machine output.
 If the separate `sfnl-humanizer` skill happens to be installed, run it as well — it is maintained
@@ -219,7 +248,8 @@ pile has none — give me one, or we route around it" — and route around it or
 
 The pyramid, the grounded set and the intake decisions are working state, and a session that compacts or
 restarts loses whatever lives only in the conversation. Keep them in `<article-name>.beats.md` beside the
-article, rewritten after every beat, holding: register and length target; the apex and the reader's
+article, rewritten after every beat, holding: reference, register, cadence and length target, plus any
+mid-article gear change; the apex and the reader's
 question; the branches with a tick for each one landed; prerequisites; grounded-so-far; the committed
 claims and the flagged source claims; the beats written so far, one line each.
 
@@ -227,7 +257,8 @@ Show the user the apex and the open branches after each beat — two lines, from
 
 ## Writing rhythm
 
-- Append one beat at a time. Never write ahead.
+- Write one unit at a time and never write past it: in P that is a beat, in S a section, in O and W the
+  agreed scope. Writing ahead of the cadence is the one way to lose the user's grip on the piece.
 - Re-read the article file from disk before every write. Preserve user edits absolutely.
 - If the user edits an earlier beat substantially, let it change what comes next — and say so if it
   changes the pyramid.
