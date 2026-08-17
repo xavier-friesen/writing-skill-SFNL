@@ -7,10 +7,10 @@ their parent raises, answer first unless the user asked otherwise. That is the s
 choice — it lives in `SKILL.md` and it does not vary. What varies is **texture**: how a heading is
 worded, where the evidence sits, how a number is introduced, how loud the verdict is.
 
-A third thing is separate from both, and worth keeping distinct: the **shape** — the order a
-particular piece runs in. A preset may suggest a shape (SFNL's chapters are usually
-knelpunt → casussen → les), but material that does not fit that order takes another one without
-changing register. Style is how it sounds; shape is what comes after what.
+A third thing is separate from both, and has its own file: the **shape** — the order a piece runs
+in, and the order each of its sections runs in. See `SHAPES.md` for the catalogue of fifteen and the
+six rules for composing them. A preset may suggest a shape, but material that does not fit it takes
+another without changing register. Style is how it sounds; shape is what comes after what.
 
 Pulling the spine out settles the question of how many registers we need. A consultancy deck and
 an SFNL chapter looked like two philosophies while both cards restated the pyramid; with the
@@ -110,20 +110,9 @@ a factsheet.
   opens with a verb that is an action.
 
 **The shape is not the style.** `knelpunt → casussen → les → aanbeveling` is the report's chapter
-form, and it fits a piece built on examples. Plenty of SFNL work is not: a methodology, a financial
-analysis, a process description, a progress note, a position on someone else's proposal. The voice
-above holds in all of them; the shape is chosen per piece. Four that recur:
-
-| Shape | Fits |
-|---|---|
-| knelpunt → casussen → les → aanbeveling | a chapter carried by examples |
-| vraag → analyse → antwoord | a methodology, a calculation, an assessment |
-| situatie → wat we deden → wat het opleverde | a project or case description |
-| stand van zaken → wat opvalt → wat er nu moet | a progress note, a steering document |
-
-None of them fitting is a normal outcome, not a failure. Say which shape you are using and why,
-before the first beat, and put it in the sidecar next to the apex. What never moves is the pyramid
-underneath: one answer, groups that support it, evidence below that.
+form and it fits a piece carried by examples. Plenty of house work is not: a methodology, a
+calculation, a landscape analysis, a progress note, a choice between options. The voice above holds
+in all of them; the shape is chosen per piece and per section from `SHAPES.md`.
 
 **Three things the reports do that this preset does not copy** (specimens 13 and 14 quote them):
 the summarising paragraph more abstract than the material it summarises; the dead closing line
@@ -186,10 +175,12 @@ sentences have the same length and shape?
 
 ---
 
-## Reportage `reportage` — the narrative
+## Reportage `reportage` — narrative prose
 
-**Pick this when** the piece has to be felt: a case story, a portrait, a project page that carries
-a person or a place.
+**Pick this when** the piece has to be felt and can afford to be told rather than listed: a case
+story, a portrait, a project page carrying a person or a place. This is the one preset that writes
+**prose in the literary sense** — scenes, a narrator's eye, sentences that vary because the story
+does. Lists are close to banned here; a bulleted reportage is a contradiction.
 
 - **The opening is a torch, not an introduction.** Begin in something concrete and small. The *nut
   graf* — one paragraph saying what this is about and why you keep reading — lands second to fifth.

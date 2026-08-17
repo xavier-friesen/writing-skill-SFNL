@@ -24,9 +24,10 @@ the user fills it in where they already are and pastes the line back into the sa
 | `{{LEN}}` | proposed target in words, or empty for no preference |
 | `{{KNOBS_JSON}}` | the knob deltas you propose, as JSON: `{"bewijs":"kader"}` — `{}` for none |
 
-Derive the proposal from purpose and audience with the table in `STYLES.md` ("Text type and
-audience decide the starting point"). Say in one line why you proposed what you did; a proposal the
-user cannot see the reasoning of is a decision taken away from them.
+Derive the proposal from purpose and audience with the table in `STYLES.md` ("Text type and audience
+decide the starting point"), and propose the **shape** alongside it from `SHAPES.md` — the widget does
+not ask for the shape, you name it in the one line that goes with the widget. Say why you proposed
+what you did; a proposal the user cannot see the reasoning of is a decision taken away from them.
 
 The widget does the rest. All eight styles are visible under their own names, each with the kinds of document it is for, the
 four working methods carry their cost in turns, and the fine-tuning panel holds the eleven knobs —

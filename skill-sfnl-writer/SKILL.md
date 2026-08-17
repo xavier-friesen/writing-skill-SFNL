@@ -13,9 +13,10 @@ mine it, you never edit it.
 This is exploit. The exploring is done and the pile is fixed. Commit to one governing answer, then walk
 the reader down the pyramid, mining the pile to fill each beat, at whatever pace the cadence sets.
 
-Five files travel with this one and are all it needs: `INTAKE.md` and `INTAKE-WIDGET.html` (the
-opening decisions), `STYLES.md` (the presets and knobs), `HUMANIZE.md` (the humanizer pass) and
-`SFNL-SPECIMENS.md` (worked passages for the house register).
+Six files travel with this one and are all it needs: `INTAKE.md` and `INTAKE-WIDGET.html` (the
+opening decisions), `STYLES.md` (the presets and knobs), `SHAPES.md` (the order a piece and its
+sections run in), `HUMANIZE.md` (the humanizer pass) and `SFNL-SPECIMENS.md` (worked passages for the
+house register).
 
 ## The loop
 
@@ -26,8 +27,9 @@ Steps 1 to 5 run in every cadence. Step 6 is where the cadences part.
    one widget, rendered in the chat. See `INTAKE.md`.
 3. **Check the source.** One pass over the pile, before any writing. See
    [Checking the source](#checking-the-source).
-4. **Fix the apex.** Settle the one-sentence answer the whole article delivers, and the reader's
-   question it answers. See [The pyramid](#the-pyramid). Nothing gets written until it is agreed.
+4. **Fix the apex and the shape.** Settle the one-sentence answer the whole article delivers and the
+   reader's question it answers, then the order it runs in — `SHAPES.md`. Nothing gets written until
+   both are agreed.
 5. **Establish the prerequisites.** Settle what the audience already knows walking in. Everything else
    must be grounded by a beat before a later beat can lean on it. See [Grounding](#grounding).
 6. **Write in the chosen cadence.** See [Cadence](#cadence).
@@ -113,10 +115,10 @@ The article is a pyramid, not a list.
   carry the parent. Three or four per parent; more than five means the grouping is wrong.
 - **Order within a group** is one of: deductive (premise → premise → therefore), chronological,
   structural (part by part), or ranked by importance. Pick one per group and hold it.
-- **The shape of the whole piece** is chosen too, and separately from the style: examples-and-lesson,
-  question-analysis-answer, situation-action-result, state-of-play-and-next-step. A preset may suggest
-  one, but material that does not fit it takes another shape without changing register. Name the shape
-  you are using before the first beat and record it beside the apex.
+- **The shape** — the order the piece runs in, and the order each section runs in — is chosen
+  separately from the style, from the fifteen in `SHAPES.md`. One apex has one top-level shape; a
+  section may run its own, serving the job it does for the apex; parallel sections run the same one.
+  Name the shape per section before the first beat and record it beside the apex.
 - **Openings** work as situation → complication → question, with the apex as the answer. Useful for
   generating candidate openings that differ in which complication they lead with.
 
