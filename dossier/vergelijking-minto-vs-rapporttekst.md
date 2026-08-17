@@ -172,7 +172,7 @@ takken laten vallen, hoger betekent beats die meer uit de pile dragen).
 
 ## Demonstratie: T3 in register C
 
-`test/rondes/minto/T3-minto-v12-proza.md`, 232 woorden. Bewust níét meegenomen: de gemiddelde
+`test/rondes/minto/T3-minto-v12-proza.md`, 217 woorden. Bewust níét meegenomen: de gemiddelde
 schuld van € 24.700, de reeks 312/218/147, de € 4.130 per huishouden, de verdeling van de € 1,9
 miljoen over drie financiers, en het terugtreden van Steenhaven met € 120.000. Vijf van de
 twaalf feiten uit de lijst, weg — en onder de oude regel zou dat een fout zijn geweest.
